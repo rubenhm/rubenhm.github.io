@@ -16,5 +16,7 @@ I attended [ITAM](http://economia.itam.mx/es) in Mexico City and the [University
 In this website I publicize my research and publications. The main input for this effort is my [bibliography](/assets/bibliography/bibliography.bib) file in BibTeX format.
 
 
+The source files for this website are hosted in [GitHub](https://github.com/rubenhm/rubenhm.github.io/tree/source).
+
 
 

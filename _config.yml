@@ -5,6 +5,7 @@ description: "My Research Website by Ruben Hernandez-Murillo"
 author: "Rubén Hernández-Murillo"
 baseurl: ""
 url: "http://rubenhm.org"
+exclude: ["CNAME", "Rakefile", "MIT-LICENSE", "README.md"]
 
 # Build settings
 markdown: redcarpet
@@ -13,7 +14,6 @@ permalink: pretty
 # Jekyll-scholar
 scholar:
   style:  assets/bibliography/chicago-author-date.csl
-  # style: chicago-fullnote-bibliography.csl
   locale: en
 
   sort_by: year
