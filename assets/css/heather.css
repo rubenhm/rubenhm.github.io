@@ -1,0 +1,94 @@
+/* Customization for bootstrap.css */
+
+body { padding-top: 70px; }
+body {
+  /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+  font-family: 'Merriweather', serif;
+  /*font-size: 14px;*/
+  font-size: 18px;
+  line-height: 1.428571429;
+  /*color: #333333;*/
+  color: #333;
+  background-color: #ffffff;
+}
+
+body{
+    text-align: left;
+}
+@media screen and (min-width: 48em){
+    body{
+        text-align: justify;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+  font-family: 'Merriweather', serif;
+  /*font-weight: 500;*/
+  font-size: 32px;
+  font-weight: light;
+  /*line-height: 1.1;*/
+  line-height: 1.25;
+  color: inherit;
+}
+/*
+
+
+/* Google code prettify */
+/* For code lines */
+li.L0, li.L1, li.L2, li.L3,
+li.L5, li.L6, li.L7, li.L8
+{ list-style-type: decimal !important }
+
+
+.name {
+  /*color: #428bca;*/
+  color: #333;
+  text-decoration: none;
+}
+
+/* Navigation bar*/
+.navbar-default .navbar-nav > li > a:hover,
+  .nav > li > a:focus { text-decoration: none; background-color: #e7e7e7; }
+
+/*.navbar-nav > li{
+  margin-left:0px;
+  margin-right:0px;
+}
+
+.navbar-nav > li{
+  padding-left:0px;
+  padding-right:10px;
+}
+*/
+
+/*To ofuscate e-mail address*/
+  .my-email-domain::before {
+    content: "\0040";    /* Unicode character for @ symbol */
+  }
+
+
+  /*Jumbotro background image */
+  .jumbotron {
+    margin-bottom: 0px;
+    background-image: url(/assets/img/jumbotronbackground.jpg);
+    background-position: 0% 25%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    text-shadow: black 0.3em 0.3em 0.3em;
+    height: 600px;
+}
+
+

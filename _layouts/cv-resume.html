@@ -1,0 +1,25 @@
+{% include _head.html %}
+{% include _header.html %}
+<div class="container">  
+  <div class="row">
+    <div class="col-md-12">
+      <h1>{{ page.title }}</a></h1>
+    </div>  
+  </div>  
+  <div class="row">
+    <div class="col-md-1">
+    </div>
+    <div class="col-md-10">
+      <article class="papers">
+        
+       
+        {{ content }}
+
+
+      </article>
+    </div> <!-- of col-md-* -->
+    <div class="col-md-1">
+    </div>
+  </div> <!-- of row -->
+</div> <!-- of container -->  
+{% include _footer.html %}

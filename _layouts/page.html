@@ -1,0 +1,22 @@
+{% include _head.html %}
+{% include _header.html %}
+<div class="container">  
+  <div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+         <h1>{{ page.title }} {% if page.tagline %} <small>{{ page.tagline }}</small>{% endif %}</h1>
+ 
+        {{ content }}
+
+    </div>
+    <div class="col-md-1"></div>
+  </div>
+</div>
+<div class="footer">
+    <div class="container">
+<!--         <p class="text-muted">&copy; 2014 <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{site.author}}</span></span>
+ --><!-- <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons Attribution">Some rights reserved. </a>Please attribute properly and link back.</p>   -->
+        <p class="text-muted">Website powered by <a href="https://github.com/">GitHub</a>, <a href="http://getbootstrap.com/"> Bootstrap</a>, <a href="http://jekyllrb.com/">Jekyll</a>, <a href="https://github.com/inukshuk/jekyll-scholar">jekyll-scholar</a>, and <a href="http://johnmacfarlane.net/pandoc/">pandoc</a>. Other <a href="/attributions/">attributions.</a></p>
+    </div>
+</div>
+{% include _footer.html %}

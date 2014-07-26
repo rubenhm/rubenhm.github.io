@@ -1,0 +1,49 @@
+blockquote {
+  margin: 12px 24px 12px 24px;	
+/*  
+  margin-top : 10px;
+  margin-left : 20px;
+*/
+  background-color: #99FFFF;
+  border-left: 5px solid #3399FF;
+  padding: .5em 1em;
+  max-width: 710px;
+  min-width: 500px;
+  max-height: 500px;
+}
+/* CV */
+.papers h1 {
+  font-size: 40px;
+  margin-bottom: 25px;
+}
+.papers h2 {
+  margin-bottom: 25px;
+}
+.papers div.bibtex {
+  display: none; 
+  font-size: 100%;
+  line-height: 1.75;
+  font-family: 'Merriweather', serif; }
+.papers dt {
+  float: left;
+  display: block; }
+.papers dd {
+  margin-left: 135px;
+  display: block;
+  line-height: 1.5em; 
+  margin-bottom: 25px; 
+  padding: 0 0 0 15px;
+  text-align: left;}
+.papers blockquote {
+  margin: 12px 24px 12px 24px;
+  line-height: 1.5em; }
+.papers  a:focus {
+  color: #3333;
+  text-decoration: underline;
+}
+
+/*
+.papers dl {
+  padding-right: 100px;
+}  
+*/

@@ -1,0 +1,26 @@
+---
+layout: default
+title: Blog
+---
+
+<div class="home">
+
+  <h1>Posts</h1>
+  <p class="lead">More than a blog, this is a repository of LaTeX and Matlab annoyances I have had to deal with in my research.</p>
+
+  <ul class="posts">
+    {% for post in site.posts %}
+      <li>
+        <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></br >
+          {{ post.excerpt }} 
+          <small><a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">Read more ... </a></small>
+        </br >
+      </li>
+    {% endfor %}
+  </ul>
+
+  <p class="rss-subscribe">Subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS <i class="flaticon-rss8"></i></a></p>
+
+
+</div>
