@@ -1,21 +1,51 @@
----
-layout: none
----
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>{{ site.title | xml_escape }}</title>
-    <description>{{ site.description | xml_escape }}</description>
-    <link>{{ site.url }}{{ site.baseurl }}/</link>
-    <atom:link href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" rel="self" type="application/rss+xml" />
-    {% for post in site.posts limit:10 %}
+    <title>Rubén Hernández-Murillo</title>
+    <description>My Research Website by Ruben Hernandez-Murillo</description>
+    <link>http://rubenhm.org/</link>
+    <atom:link href="http://rubenhm.org/feed.xml" rel="self" type="application/rss+xml" />
+    
       <item>
-        <title>{{ post.title | xml_escape }}</title>
-        <description>{{ post.content | xml_escape }}</description>
-        <pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
-        <link>{{ post.url | prepend: site.baseurl | prepend: site.url }}</link>
-        <guid isPermaLink="true">{{ post.url | prepend: site.baseurl | prepend: site.url }}</guid>
+        <title>How to collaborate with Scientific Workplace users</title>
+        <description>&lt;p&gt;When writting papers in latex, I usually use &lt;em&gt;WinEdt&lt;/em&gt; and MikTeX (more recently,
+I started using &lt;em&gt;SublimeText&lt;/em&gt; with TexLive, but most of my co-authors only use
+&lt;em&gt;ScientificWorkplace&lt;/em&gt; with the standard latex engine.&lt;/p&gt;
+
+&lt;p&gt;In preparing papers, I like to have the following folder structure:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;bibfiles/
+project-files/
+    |
+    |-plots/
+    |-tables/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;But this does not work for SWP because in order to compile the main document, it copies the  tex file to a temporary file under a temporary folder, and therefore, SWP cannot find any folders or graphics included with
+&lt;code&gt;\input&lt;/code&gt; or &lt;code&gt;\includegraphics&lt;/code&gt; that are in the above subfolders. SWP also cannot find any &lt;code&gt;bib&lt;/code&gt; files, unless the &lt;code&gt;bibfiles&lt;/code&gt; folder is appropiately selected in the general settings, or the &lt;code&gt;bib&lt;/code&gt; file is copied to the standard folder.&lt;/p&gt;
+
+&lt;p&gt;The solution, which does not require to manually edit any settings file under SWP (which does not work), involves three steps:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;To fix the issue with finding graphics files (e.g, &lt;code&gt;png&lt;/code&gt; or &lt;code&gt;pdf&lt;/code&gt; files, because I use &lt;code&gt;pdflatex&lt;/code&gt;), include the following commands in the preamble. Notice the two sets of braces and the trailing &lt;code&gt;/&lt;/code&gt;. The path can be absolute or relative (see 2).&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-latex&quot; data-lang=&quot;latex&quot;&gt;&lt;span class=&quot;k&quot;&gt;\usepackage&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;graphicx&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\graphicspath&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;/path/to/graphics/folder/&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;To be able to work with relative paths and subfolders we have to prevent SWP from copying the main tex file to a temporary folder when compiling. This is achived by setting the main tex files as a &lt;code&gt;master document&lt;/code&gt;. Include the following code somewhere after &lt;code&gt;\begin{document}&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-latex&quot; data-lang=&quot;latex&quot;&gt;&lt;span class=&quot;c&quot;&gt;%TCIMACRO{\QSubDoc{Include subdoc}{\input{tables/subdoc.tex}}}%&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;%BeginExpansion&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\input&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;tables/subdoc.tex&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;%EndExpansion&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The file &lt;code&gt;subdoc.tex&lt;/code&gt; located in the &lt;code&gt;tables/&lt;/code&gt; folder has to include the following code (and it can be empty otherwise; it can also be located in the main folder, but the paths above have to reflect this):&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-latex&quot; data-lang=&quot;latex&quot;&gt;&lt;span class=&quot;c&quot;&gt;%TCIDATA{LaTeXparent=0,0,main.tex}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;where &lt;code&gt;main.tex&lt;/code&gt; is the name of the master file. For additional files in the &lt;code&gt;plots&lt;/code&gt; and &lt;code&gt;tables&lt;/code&gt; subfolders, the TCI macro is not needed, and the usual &lt;code&gt;\input&lt;/code&gt; or &lt;code&gt;\includegraphics&lt;/code&gt; commands will work and the tex or graphics files will be found.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Finally, as mentioned before, to find the correct &lt;code&gt;bib&lt;/code&gt; files, the options are to change the standard path in SWP&amp;#39;s general settings or to copy the &lt;code&gt;bib&lt;/code&gt; files to the standard path.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Tue, 01 Apr 2014 00:00:00 -0500</pubDate>
+        <link>http://rubenhm.org/blog/2014/04/01/how-to-collaborate-with-scientific-workplace-users/</link>
+        <guid isPermaLink="true">http://rubenhm.org/blog/2014/04/01/how-to-collaborate-with-scientific-workplace-users/</guid>
       </item>
-    {% endfor %}
+    
   </channel>
 </rss>
