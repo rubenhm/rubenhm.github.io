@@ -74,13 +74,13 @@ li.L5, li.L6, li.L7, li.L8
 */
 
 /*To ofuscate e-mail address*/
-  .my-email-domain::before {
+.my-email-domain::before {
     content: "\0040";    /* Unicode character for @ symbol */
-  }
+}
 
 
   /*Jumbotro background image */
-  .jumbotron {
+.jumbotron {
     margin-bottom: 0px;
     background-image: url(/assets/img/jumbotronbackground.jpg);
     background-position: 0% 25%;
