@@ -6,9 +6,9 @@ category: latex
 tags: [latex editors texlive sublime_text]
 ---
 
-When writting papers in latex, I usually use _WinEdt_ and MikTeX (more recently,
-I started using _SublimeText_ with TexLive, but most of my co-authors only use
-_ScientificWorkplace_ with the standard latex engine.
+When writting papers in latex, I usually use WinEdt and MikTeX (more recently,
+I started using SublimeText with TexLive, but most of my co-authors only use
+_ScientificWorkplace_ with the dated TrueTeX latex engine.
 
 In preparing papers, I like to have the following folder structure:
 

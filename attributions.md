@@ -29,6 +29,6 @@ The design behind this website benefited from the following.
         <a href="https://code.google.com/p/google-code-prettify/">Google code prettify</a> for syntax highlighting.
     </li>
     <li>
-        The PDF version of my CV uses the <a href="http://www.oak-tree.us/blog/index.php/2009/11/25/latex-cv-part1">XeTeXCV</a> document class, which requires the XeLaTeX engine and uses TrueType fonts and .
+        The PDF version of my CV uses the <a href="http://www.oak-tree.us/blog/index.php/2009/11/25/latex-cv-part1">XeTeXCV</a> document class, which requires the XeLaTeX engine and uses TrueType fonts.
     </li>
 </ul>
