@@ -6,7 +6,7 @@ category: latex
 tags: [latex editors texlive sublime_text]
 ---
 
-When writting papers in latex, I usually use WinEdt and MikTeX (more recently,
+When writing papers in latex, I usually use WinEdt and MikTeX (more recently,
 I started using SublimeText with TexLive), but most of my co-authors only use
 _ScientificWorkplace_ with the dated TrueTeX latex engine.
 
@@ -21,7 +21,7 @@ project-files/
 ```
 
 But this does not work for SWP because in order to compile the main document, it copies the  tex file to a temporary file under a temporary folder, and therefore, SWP cannot find any folders or graphics included with
-`\input` or `\includegraphics` that are in the above subfolders. SWP also cannot find any `bib` files, unless the `bibfiles` folder is appropiately selected in the general settings, or the `bib` file is copied to the standard folder.
+`\input` or `\includegraphics` that are in the above subfolders. SWP also cannot find any `bib` files, unless the `bibfiles` folder is appropriately selected in the general settings, or the `bib` file is copied to the standard folder.
 
 The solution, which does not require to manually edit any settings file under SWP (which does not work anyway), involves three steps:
 
@@ -32,7 +32,7 @@ The solution, which does not require to manually edit any settings file under SW
     \graphicspath{ {/path/to/graphics/folder/} }
     ```
 
-2. To be able to work with relative paths and subfolders we have to prevent SWP from copying the main tex file to a temporary folder when compiling. This is achived by setting the main tex files as a `master document`. Include the following code somewhere after `\begin{document}`:
+2. To be able to work with relative paths and subfolders we have to prevent SWP from copying the main tex file to a temporary folder when compiling. This is achieved by setting the main tex files as a `master document`. Include the following code somewhere after `\begin{document}`:
 
     ```latex
     %TCIMACRO{\QSubDoc{Include subdoc}{\input{tables/subdoc.tex}}}%

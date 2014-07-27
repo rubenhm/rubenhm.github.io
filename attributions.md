@@ -11,7 +11,7 @@ The design behind this website benefited from the following.
         Nathalie Villa's <a href="http://tuxette.nathalievilla.org/?tag=jekyll-scholar&lang=en">tutorial on jekyll-scholar.</a> 
     </li>
     <li>
-        I ended up using jekyll-scholar, but I learned a lot from <a href="https://github.com/pablooliveira/bibjekyll">bibjekyll</a> and <a href="http://www.lri.fr/~filliatr/bibtex2html/">bibtex2html.</a>
+        I ended up using <a href="https://github.com/inukshuk/jekyll-scholar">jekyll-scholar</a>, but I learned a lot from <a href="https://github.com/pablooliveira/bibjekyll">bibjekyll</a> and <a href="http://www.lri.fr/~filliatr/bibtex2html/">bibtex2html.</a>
     </li>
     <li>
         <a href="http://jxnblk.github.io/Heather/">Heather,</a>  A Hyperminimal Jekyll Theme.
