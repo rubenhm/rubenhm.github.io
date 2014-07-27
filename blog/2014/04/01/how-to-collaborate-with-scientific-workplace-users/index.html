@@ -29,6 +29,18 @@
   <!--
   <link rel="stylesheet" type="text/css" href="/assets/css/prettify.css" />
  -->
+  <!-- Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-53244112-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+
   <!-- Script to use LaTeX code with MathJax  -->
   <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <!-- CSS for flaticons -->
@@ -96,7 +108,7 @@
 
     <article class="post">
         <p>When writting papers in latex, I usually use WinEdt and MikTeX (more recently,
-I started using SublimeText with TexLive, but most of my co-authors only use
+I started using SublimeText with TexLive), but most of my co-authors only use
 <em>ScientificWorkplace</em> with the dated TrueTeX latex engine.</p>
 
 <p>In preparing papers, I like to have the following folder structure:</p>
@@ -109,7 +121,7 @@ project-files/
 <p>But this does not work for SWP because in order to compile the main document, it copies the  tex file to a temporary file under a temporary folder, and therefore, SWP cannot find any folders or graphics included with
 <code>\input</code> or <code>\includegraphics</code> that are in the above subfolders. SWP also cannot find any <code>bib</code> files, unless the <code>bibfiles</code> folder is appropiately selected in the general settings, or the <code>bib</code> file is copied to the standard folder.</p>
 
-<p>The solution, which does not require to manually edit any settings file under SWP (which does not work), involves three steps:</p>
+<p>The solution, which does not require to manually edit any settings file under SWP (which does not work anyway), involves three steps:</p>
 
 <ol>
 <li><p>To fix the issue with finding graphics files (e.g, <code>png</code> or <code>pdf</code> files, because I use <code>pdflatex</code>), include the following commands in the preamble. Notice the two sets of braces and the trailing <code>/</code>. The path can be absolute or relative (see 2).</p>

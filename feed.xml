@@ -9,7 +9,7 @@
       <item>
         <title>How to collaborate with Scientific Workplace users</title>
         <description>&lt;p&gt;When writting papers in latex, I usually use WinEdt and MikTeX (more recently,
-I started using SublimeText with TexLive, but most of my co-authors only use
+I started using SublimeText with TexLive), but most of my co-authors only use
 &lt;em&gt;ScientificWorkplace&lt;/em&gt; with the dated TrueTeX latex engine.&lt;/p&gt;
 
 &lt;p&gt;In preparing papers, I like to have the following folder structure:&lt;/p&gt;
@@ -22,7 +22,7 @@ project-files/
 &lt;p&gt;But this does not work for SWP because in order to compile the main document, it copies the  tex file to a temporary file under a temporary folder, and therefore, SWP cannot find any folders or graphics included with
 &lt;code&gt;\input&lt;/code&gt; or &lt;code&gt;\includegraphics&lt;/code&gt; that are in the above subfolders. SWP also cannot find any &lt;code&gt;bib&lt;/code&gt; files, unless the &lt;code&gt;bibfiles&lt;/code&gt; folder is appropiately selected in the general settings, or the &lt;code&gt;bib&lt;/code&gt; file is copied to the standard folder.&lt;/p&gt;
 
-&lt;p&gt;The solution, which does not require to manually edit any settings file under SWP (which does not work), involves three steps:&lt;/p&gt;
+&lt;p&gt;The solution, which does not require to manually edit any settings file under SWP (which does not work anyway), involves three steps:&lt;/p&gt;
 
 &lt;ol&gt;
 &lt;li&gt;&lt;p&gt;To fix the issue with finding graphics files (e.g, &lt;code&gt;png&lt;/code&gt; or &lt;code&gt;pdf&lt;/code&gt; files, because I use &lt;code&gt;pdflatex&lt;/code&gt;), include the following commands in the preamble. Notice the two sets of braces and the trailing &lt;code&gt;/&lt;/code&gt;. The path can be absolute or relative (see 2).&lt;/p&gt;
