@@ -8,7 +8,7 @@
     
       <item>
         <title>How to collaborate with Scientific Workplace users</title>
-        <description>&lt;p&gt;When writting papers in latex, I usually use WinEdt and MikTeX (more recently,
+        <description>&lt;p&gt;When writing papers in latex, I usually use WinEdt and MikTeX (more recently,
 I started using SublimeText with TexLive), but most of my co-authors only use
 &lt;em&gt;ScientificWorkplace&lt;/em&gt; with the dated TrueTeX latex engine.&lt;/p&gt;
 
@@ -20,7 +20,7 @@ project-files/
     |-tables/
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;But this does not work for SWP because in order to compile the main document, it copies the  tex file to a temporary file under a temporary folder, and therefore, SWP cannot find any folders or graphics included with
-&lt;code&gt;\input&lt;/code&gt; or &lt;code&gt;\includegraphics&lt;/code&gt; that are in the above subfolders. SWP also cannot find any &lt;code&gt;bib&lt;/code&gt; files, unless the &lt;code&gt;bibfiles&lt;/code&gt; folder is appropiately selected in the general settings, or the &lt;code&gt;bib&lt;/code&gt; file is copied to the standard folder.&lt;/p&gt;
+&lt;code&gt;\input&lt;/code&gt; or &lt;code&gt;\includegraphics&lt;/code&gt; that are in the above subfolders. SWP also cannot find any &lt;code&gt;bib&lt;/code&gt; files, unless the &lt;code&gt;bibfiles&lt;/code&gt; folder is appropriately selected in the general settings, or the &lt;code&gt;bib&lt;/code&gt; file is copied to the standard folder.&lt;/p&gt;
 
 &lt;p&gt;The solution, which does not require to manually edit any settings file under SWP (which does not work anyway), involves three steps:&lt;/p&gt;
 
@@ -29,7 +29,7 @@ project-files/
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-latex&quot; data-lang=&quot;latex&quot;&gt;&lt;span class=&quot;k&quot;&gt;\usepackage&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;graphicx&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;\graphicspath&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;/path/to/graphics/folder/&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;To be able to work with relative paths and subfolders we have to prevent SWP from copying the main tex file to a temporary folder when compiling. This is achived by setting the main tex files as a &lt;code&gt;master document&lt;/code&gt;. Include the following code somewhere after &lt;code&gt;\begin{document}&lt;/code&gt;:&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;To be able to work with relative paths and subfolders we have to prevent SWP from copying the main tex file to a temporary folder when compiling. This is achieved by setting the main tex files as a &lt;code&gt;master document&lt;/code&gt;. Include the following code somewhere after &lt;code&gt;\begin{document}&lt;/code&gt;:&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-latex&quot; data-lang=&quot;latex&quot;&gt;&lt;span class=&quot;c&quot;&gt;%TCIMACRO{\QSubDoc{Include subdoc}{\input{tables/subdoc.tex}}}%&lt;/span&gt;
 &lt;span class=&quot;c&quot;&gt;%BeginExpansion&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;\input&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;tables/subdoc.tex&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;

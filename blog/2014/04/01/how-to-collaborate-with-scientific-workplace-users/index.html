@@ -107,7 +107,7 @@
         <p class="small gray"><time datetime="Apr 1, 2014">01 April 2014 • Rubén Hernández-Murillo • </time></p>
 
     <article class="post">
-        <p>When writting papers in latex, I usually use WinEdt and MikTeX (more recently,
+        <p>When writing papers in latex, I usually use WinEdt and MikTeX (more recently,
 I started using SublimeText with TexLive), but most of my co-authors only use
 <em>ScientificWorkplace</em> with the dated TrueTeX latex engine.</p>
 
@@ -119,7 +119,7 @@ project-files/
     |-tables/
 </code></pre></div>
 <p>But this does not work for SWP because in order to compile the main document, it copies the  tex file to a temporary file under a temporary folder, and therefore, SWP cannot find any folders or graphics included with
-<code>\input</code> or <code>\includegraphics</code> that are in the above subfolders. SWP also cannot find any <code>bib</code> files, unless the <code>bibfiles</code> folder is appropiately selected in the general settings, or the <code>bib</code> file is copied to the standard folder.</p>
+<code>\input</code> or <code>\includegraphics</code> that are in the above subfolders. SWP also cannot find any <code>bib</code> files, unless the <code>bibfiles</code> folder is appropriately selected in the general settings, or the <code>bib</code> file is copied to the standard folder.</p>
 
 <p>The solution, which does not require to manually edit any settings file under SWP (which does not work anyway), involves three steps:</p>
 
@@ -128,7 +128,7 @@ project-files/
 <div class="highlight"><pre><code class="language-latex" data-lang="latex"><span class="k">\usepackage</span><span class="nb">{</span>graphicx<span class="nb">}</span>
 <span class="k">\graphicspath</span><span class="nb">{</span> <span class="nb">{</span>/path/to/graphics/folder/<span class="nb">}</span> <span class="nb">}</span>
 </code></pre></div></li>
-<li><p>To be able to work with relative paths and subfolders we have to prevent SWP from copying the main tex file to a temporary folder when compiling. This is achived by setting the main tex files as a <code>master document</code>. Include the following code somewhere after <code>\begin{document}</code>:</p>
+<li><p>To be able to work with relative paths and subfolders we have to prevent SWP from copying the main tex file to a temporary folder when compiling. This is achieved by setting the main tex files as a <code>master document</code>. Include the following code somewhere after <code>\begin{document}</code>:</p>
 <div class="highlight"><pre><code class="language-latex" data-lang="latex"><span class="c">%TCIMACRO{\QSubDoc{Include subdoc}{\input{tables/subdoc.tex}}}%</span>
 <span class="c">%BeginExpansion</span>
 <span class="k">\input</span><span class="nb">{</span>tables/subdoc.tex<span class="nb">}</span>
