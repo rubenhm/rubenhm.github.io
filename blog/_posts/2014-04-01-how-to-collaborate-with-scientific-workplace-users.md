@@ -7,7 +7,7 @@ tags: [latex editors texlive sublime_text]
 ---
 
 When writting papers in latex, I usually use WinEdt and MikTeX (more recently,
-I started using SublimeText with TexLive, but most of my co-authors only use
+I started using SublimeText with TexLive), but most of my co-authors only use
 _ScientificWorkplace_ with the dated TrueTeX latex engine.
 
 In preparing papers, I like to have the following folder structure:
@@ -23,7 +23,7 @@ project-files/
 But this does not work for SWP because in order to compile the main document, it copies the  tex file to a temporary file under a temporary folder, and therefore, SWP cannot find any folders or graphics included with
 `\input` or `\includegraphics` that are in the above subfolders. SWP also cannot find any `bib` files, unless the `bibfiles` folder is appropiately selected in the general settings, or the `bib` file is copied to the standard folder.
 
-The solution, which does not require to manually edit any settings file under SWP (which does not work), involves three steps:
+The solution, which does not require to manually edit any settings file under SWP (which does not work anyway), involves three steps:
 
 1. To fix the issue with finding graphics files (e.g, `png` or `pdf` files, because I use `pdflatex`), include the following commands in the preamble. Notice the two sets of braces and the trailing `/`. The path can be absolute or relative (see 2).
 
