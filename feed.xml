@@ -8,9 +8,9 @@
     
       <item>
         <title>How to collaborate with Scientific Workplace users</title>
-        <description>&lt;p&gt;When writting papers in latex, I usually use &lt;em&gt;WinEdt&lt;/em&gt; and MikTeX (more recently,
-I started using &lt;em&gt;SublimeText&lt;/em&gt; with TexLive, but most of my co-authors only use
-&lt;em&gt;ScientificWorkplace&lt;/em&gt; with the standard latex engine.&lt;/p&gt;
+        <description>&lt;p&gt;When writting papers in latex, I usually use WinEdt and MikTeX (more recently,
+I started using SublimeText with TexLive, but most of my co-authors only use
+&lt;em&gt;ScientificWorkplace&lt;/em&gt; with the dated TrueTeX latex engine.&lt;/p&gt;
 
 &lt;p&gt;In preparing papers, I like to have the following folder structure:&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;bibfiles/
