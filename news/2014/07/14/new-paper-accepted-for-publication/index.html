@@ -2,7 +2,7 @@
 <html> 
 <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
-  <title>How to collaborate with Scientific Workplace users</title>
+  <title>New paper accepted for publication</title>
   <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
   <![endif]-->
@@ -53,7 +53,7 @@
   <meta name="author" content="Rubén Hernández-Murillo">
   <meta name="description" content="Research, Writings + Code">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="canonical" href="http://rubenhm.org/blog/2014/04/01/how-to-collaborate-with-scientific-workplace-users/">
+  <link rel="canonical" href="http://rubenhm.org/news/2014/07/14/new-paper-accepted-for-publication/">
 </head>
 <body>
 
@@ -103,46 +103,96 @@
 </header>  
 
 <div class="container">
-        <h1>How to collaborate with Scientific Workplace users</h1>
+        <h1>New paper accepted for publication</h1>
   
-        <p class="small gray"><time datetime="Apr 1, 2014">01 April 2014 • Rubén Hernández-Murillo • </time></p>
+        <p class="small gray"><time datetime="Jul 14, 2014">14 July 2014 • Rubén Hernández-Murillo • </time></p>
 
     <article class="post">
-        <p>When writing papers in latex, I usually use WinEdt and MikTeX (more recently,
-I started using SublimeText with TexLive), but most of my co-authors only use
-<em>ScientificWorkplace</em> with the dated TrueTeX latex engine.</p>
+        <p>Our paper, <a href="#rsue2014">(Ghent, Hernández-Murillo, and Owyang 2014)</a>, was just accepted for publication in RSUE.</p>
 
-<p>In preparing papers, I like to have the following folder structure:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">bibfiles/
-project-files/
-    |
-    |-plots/
-    |-tables/
-</code></pre></div>
-<p>But this does not work for SWP because in order to compile the main document, it copies the  tex file to a temporary file under a temporary folder, and therefore, SWP cannot find any folders or graphics included with
-<code>\input</code> or <code>\includegraphics</code> that are in the above subfolders. SWP also cannot find any <code>bib</code> files, unless the <code>bibfiles</code> folder is appropriately selected in the general settings, or the <code>bib</code> file is copied to the standard folder.</p>
+<h2>References</h2>
 
-<p>The solution, which does not require to manually edit any settings file under SWP (which does not work anyway), involves three steps:</p>
+<ol class="bibliography"><li>            <dl><dt>2014</dt>
+                <dd><p class="text-left"><span id="rsue2014"><b>“Differences in Subprime Loan Pricing Across Races And Neighborhoods .”</b> Ghent, Andra C., Rubén Hernández-Murillo, and Michael T. Owyang. 2014. <i>Regional Science And Urban Economics </i>. doi:10.1016/j.regsciurbeco.2014.07.006.</span></p></dd>
+            </dl>
+<div class="row ">
+    <div class="btn-toolbar" role="toolbar">
+        <div class="col-md-2"></div>
+    <ul class="pagination">
+        <li>
+             
+            <div class="btn-group">
+                    <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                        Abstract
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-left" role="menu">
+                        <li>
+                            <blockquote class="pre-scrollable"><font size="-1">We investigate whether race and ethnicity influenced subprime
+  loan pricing during 2005, the peak of the subprime mortgage expansion.
+  We combine loan-level data on the performance of non-prime securitized
+  mortgages with individual- and neighborhood-level data on racial
+  and ethnic characteristics for metropolitan areas in California and
+  Florida. Using a model of rate determination that accounts for predicted
+  loan performance, we evaluate the differences in subprime mortgage
+  rates in terms of racial and ethnic groups and neighborhood characteristics.
+  We find evidence of adverse pricing for blacks and Hispanics. The
+  evidence of adverse pricing is strongest for purchase mortgages and
+  mortgages originated by non-depository institutions. </font></blockquote>
+                        </li>
+                    </ul>
+            </div>
+            
 
-<ol>
-<li><p>To fix the issue with finding graphics files (e.g, <code>png</code> or <code>pdf</code> files, because I use <code>pdflatex</code>), include the following commands in the preamble. Notice the two sets of braces and the trailing <code>/</code>. The path can be absolute or relative (see 2).</p>
-<div class="highlight"><pre><code class="language-latex" data-lang="latex"><span class="k">\usepackage</span><span class="nb">{</span>graphicx<span class="nb">}</span>
-<span class="k">\graphicspath</span><span class="nb">{</span> <span class="nb">{</span>/path/to/graphics/folder/<span class="nb">}</span> <span class="nb">}</span>
-</code></pre></div></li>
-<li><p>To be able to work with relative paths and subfolders we have to prevent SWP from copying the main tex file to a temporary folder when compiling. This is achieved by setting the main tex files as a <code>master document</code>. Include the following code somewhere after <code>\begin{document}</code>:</p>
-<div class="highlight"><pre><code class="language-latex" data-lang="latex"><span class="c">%TCIMACRO{\QSubDoc{Include subdoc}{\input{tables/subdoc.tex}}}%</span>
-<span class="c">%BeginExpansion</span>
-<span class="k">\input</span><span class="nb">{</span>tables/subdoc.tex<span class="nb">}</span>
-<span class="c">%EndExpansion</span>
-</code></pre></div>
-<p>The file <code>subdoc.tex</code> located in the <code>tables/</code> folder has to include the following code (and it can be empty otherwise; it can also be located in the main folder, but the paths above have to reflect this):</p>
-<div class="highlight"><pre><code class="language-latex" data-lang="latex"><span class="c">%TCIDATA{LaTeXparent=0,0,main.tex}</span>
-</code></pre></div>
-<p>where <code>main.tex</code> is the name of the master file. For additional files in the <code>plots</code> and <code>tables</code> subfolders, the TCI macro is not needed, and the usual <code>\input</code> or <code>\includegraphics</code> commands will work and the tex or graphics files will be found.</p></li>
-<li><p>As mentioned before, to find the correct <code>bib</code> files, the options are to change the standard path in SWP&#39;s general settings or to copy the <code>bib</code> files to the standard path under the SWP installation folder,
-<code>c:\SWP folder\TrueTeX\TeX\BibTeX\bib\</code>.</p></li>
-<li><p>Finally, it goes without saying that your coauthors should always save project files in <code>Portable LaTeX</code> format.</p></li>
-</ol>
+        </li>
+        <li>
+            <div class="btn-group">
+                    <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                        Bib Entry
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-left" role="menu">
+                        <li>
+                            <blockquote class="pre-scrollable"><font size="-1"><pre>@article{rsue2014,
+  author = {Ghent, Andra C. and Hernández-Murillo, Rubén and Owyang, Michael T.},
+  title = {Differences in Subprime Loan Pricing Across Races and Neighborhoods },
+  journal = {Regional Science and Urban Economics },
+  year = {2014},
+  pages = {},
+  number = {},
+  doi = {10.1016/j.regsciurbeco.2014.07.006},
+  issn = {0166-0462},
+  keywords = {Fair Housing Act},
+  url = {http://research.stlouisfed.org/wp/2011/2011-033.pdf},
+  pdf = {http://research.stlouisfed.org/wp/2011/2011-033.pdf},
+  pubtype = {Journal}
+}
+</pre></font></blockquote>
+                        </li>
+                    </ul>
+            </div>
+        </li>
+        <li>
+            <div class="btn-group">
+                    <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                        Links to File
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-left" role="menu">
+                        
+                        <li><a href="http://dx.doi.org/10.1016/j.regsciurbeco.2014.07.006" target="_blank">journal website (doi)</a></li>
+                        
+                        <li><a href="http://research.stlouisfed.org/wp/2011/2011-033.pdf" target="_blank">working paper (pdf)</a></li>
+                        
+                        
+                    </ul>
+            </div>
+        </li>
+    </ul>
+    </div>
+</div>
+
+</li></ol>
 
 
     </article>
