@@ -1,7 +1,7 @@
 # Site settings
 name: "rubenhm.org"
 title: "Rubén Hernández-Murillo"
-description: "My Research Website by Ruben Hernandez-Murillo"
+description: "Research, Writings + Code"
 author: "Rubén Hernández-Murillo"
 baseurl: ""
 url: "http://rubenhm.org"
@@ -33,3 +33,17 @@ scholar:
   query: "@*"
 
 
+# Sitemap builder
+sitemap:
+    file: "/sitemap.xml"
+    exclude:
+        - "/news.xml"
+        - "/feed.xml"
+        - "/feed/index.xml"
+        - "/news/index.xml"
+    include_posts:
+        - "/index.html"
+        - "/news/index.html"
+        - "/blog/index.html"
+    change_frequency_name: "weekly"
+    # priority_name: "priority"

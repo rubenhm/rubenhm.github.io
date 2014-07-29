@@ -2,8 +2,8 @@
 layout: post
 title: "How to collaborate with Scientific Workplace users"
 description: "Collaborate with SWP users"
-category: latex
-tags: [latex editors texlive sublime_text]
+category: blog coding latex
+tags: [latex, editors, texlive, sublime_text]
 ---
 
 When writing papers in latex, I usually use WinEdt and MikTeX (more recently,
@@ -49,7 +49,10 @@ The solution, which does not require to manually edit any settings file under SW
     
     where `main.tex` is the name of the master file. For additional files in the `plots` and `tables` subfolders, the TCI macro is not needed, and the usual `\input` or `\includegraphics` commands will work and the tex or graphics files will be found.
 
-3. Finally, as mentioned before, to find the correct `bib` files, the options are to change the standard path in SWP's general settings or to copy the `bib` files to the standard path.
+3. As mentioned before, to find the correct `bib` files, the options are to change the standard path in SWP's general settings or to copy the `bib` files to the standard path under the SWP installation folder,
+`c:\SWP folder\TrueTeX\TeX\BibTeX\bib\`.
+
+4. Finally, it goes without saying that your coauthors should always save project files in `Portable LaTeX` format.
 
 
 

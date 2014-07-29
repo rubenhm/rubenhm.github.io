@@ -1,16 +1,17 @@
 ---
 layout: default
-title: Blog
+title: News
 ---
 
 <div class="home">
 
-  <h1>Coding Annoyances</h1>
-  <p class="lead">More than a blog, this is a repository of LaTeX and Matlab annoyances I have had to deal with in my research.</p>
+  <h1>News</h1>
+  <p class="lead">This is a list of the most recent news about my research <br />
+    (new working papers, new acceptances, etcetera).</p>
 
   <ul class="posts">
     {% for post in site.posts %}
-      {% if post.categories contains 'blog' %}
+      {% if post.categories contains 'news' %}
         <li>
           <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
           <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></br >
@@ -22,7 +23,7 @@ title: Blog
     {% endfor %}
   </ul>
 
-  <p class="rss-subscribe">Subscribe to <strong>Coding Annoyances</strong> <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS <i class="flaticon-rss8"></i></a></p>
+  <p class="rss-subscribe">Subscribe to <strong>News</strong> <a href="{{ "/news.xml" | prepend: site.baseurl }}">via RSS <i class="flaticon-rss8"></i></a></p>
 
 
 </div>

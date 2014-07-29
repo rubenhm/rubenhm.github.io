@@ -4,16 +4,16 @@ layout: none
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title type="text" xml:lang="en">{{ site.title | xml_escape }}: Coding Annoyances</title>
+    <title type="text" xml:lang="en">{{ site.title | xml_escape }}: News</title>
     <description>{{ site.description | xml_escape }}</description>
     <link>{{ site.url }}{{ site.baseurl }}/</link>
     <author>
       <name>Rubén Hernández-Murillo</name>
     </author>
     <rights>Copyright (c) 2014 Rubén Hernández-Murillo</rights>
-    <atom:link href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" rel="self" type="application/rss+xml" />
+    <atom:link href="{{ "/news.xml" | prepend: site.baseurl | prepend: site.url }}" rel="self" type="application/rss+xml" />
     {% for post in site.posts limit:10 %}
-    {% if post.categories contains 'coding' %}
+    {% if post.categories contains 'news' %}
       <item>
         <title>{{ post.title | xml_escape }}</title>
         <description>{{ post.content | xml_escape }}</description>
