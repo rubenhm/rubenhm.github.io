@@ -4,10 +4,11 @@
         <h1>{{ page.title }}</h1>
   
         <p class="small gray"><time datetime="{{ page.date | date:"%b %-d, %Y"}}">{{ page.date | date_to_long_string }} • {{site.author}} • {% if page.meta %} • {{ page.meta }}{% endif %}</time></p>
-
+    <hr>
     <article class="post">
         {{ content }}
 
     </article>
+    <hr>
 </div>
 {% include _footer_blog.html %}
