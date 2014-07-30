@@ -103,6 +103,8 @@
 </header>  
 
 <div class="container">
+        <h1><em>Codding Annoyances</em></h1>
+        <hr>    
         <h1>How to collaborate with Scientific Workplace users</h1>
   
         <p class="small gray"><time datetime="Apr 1, 2014">01 April 2014 • Rubén Hernández-Murillo • </time></p>
@@ -120,7 +122,7 @@ project-files/
     |-tables/
 </code></pre></div>
 <p>But this does not work for SWP because in order to compile the main document, it copies the  tex file to a temporary file under a temporary folder, and therefore, SWP cannot find any folders or graphics included with
-<code>\input</code> or <code>\includegraphics</code> that are in the above subfolders. SWP also cannot find any <code>bib</code> files, unless the <code>bibfiles</code> folder is appropriately selected in the general settings, or the <code>bib</code> file is copied to the standard folder.</p>
+<code>\input</code> or <code>\includegraphics</code> that are in the above subfolders. SWP also cannot find any <code>bib</code> files, unless the <code>bibfiles</code> folder is appropriately selected in the general settings, or the <code>bib</code> file is copied to the standard folder: <code>c:\SWP folder\TCITeX\TeX\BibTeX\bib\</code>.</p>
 
 <p>The solution, which does not require to manually edit any settings file under SWP (which does not work anyway), involves three steps:</p>
 
@@ -140,13 +142,30 @@ project-files/
 </code></pre></div>
 <p>where <code>main.tex</code> is the name of the master file. For additional files in the <code>plots</code> and <code>tables</code> subfolders, the TCI macro is not needed, and the usual <code>\input</code> or <code>\includegraphics</code> commands will work and the tex or graphics files will be found.</p></li>
 <li><p>As mentioned before, to find the correct <code>bib</code> files, the options are to change the standard path in SWP&#39;s general settings or to copy the <code>bib</code> files to the standard path under the SWP installation folder,
-<code>c:\SWP folder\TrueTeX\TeX\BibTeX\bib\</code>.</p></li>
+<code>c:\SWP folder\TCITeX\TeX\BibTeX\bib\</code>.</p></li>
 <li><p>Finally, it goes without saying that your coauthors should always save project files in <code>Portable LaTeX</code> format.</p></li>
 </ol>
 
 
     </article>
     <hr>
+        <div class="row">
+        <div class="col-md-6">
+            <p>If you enjoyed this article, consider sharing it.</p>
+            <p><a href="https://twitter.com/intent/tweet?text=How to collaborate with Scientific Workplace users&url=http://rubenhm.org/blog/2014/04/01/how-to-collaborate-with-scientific-workplace-users/&via=rubenhm_org" title="Share link on Twitter"><span class="flaticon-social19"></span></a>
+            <a  href="https://plus.google.com/share?url=http://rubenhm.org/blog/2014/04/01/how-to-collaborate-with-scientific-workplace-users/" title="Share link on G+"><span class="flaticon-google23"></span></a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://rubenhm.org/blog/2014/04/01/how-to-collaborate-with-scientific-workplace-users/" title="Share link on FB"><span class="flaticon-facebook29"></span></a>
+            <a href="mailto:?Subject=How to collaborate with Scientific Workplace users&amp;Body=http://rubenhm.org/blog/2014/04/01/how-to-collaborate-with-scientific-workplace-users/" title="Share url by email"><span class="flaticon-opened4"></span></a></p>
+            <!-- <a><span class="flaticon-printer70"></span></a> -->
+        </div>
+        <div class="col-md-6">
+            <p>Follow for updates.</p>
+            <p><a href="/feed.xml" title="Subscribe to Blog Feed"><span class="flaticon-rss8"></span></a> 
+            <a href="http://twitter.com/intent/follow?screen_name=rubenhm_org" title="Follow on Twitter"><span class="flaticon-social19"></span></a></p>
+        </div>
+    </div>
+    <hr>
+
 </div>
 <!-- Script to fix <pre> tag to highlight code -->
 <script type="text/javascript">
