@@ -1,17 +1,17 @@
 <div class="row container-home">
      <div class="col-xs-8">
         <div class="btn-toolbar btn-xs" role="toolbar">
-            <div class="btn-group">
+            <div class="btn-group dropup">
                 <button class="btn btn-default btn-xs dropdown-toggle"  data-toggle="dropdown">Share <span class="glyphicon glyphicon-link"></span><b class="caret"></b>
                 </button>
                 <ul class="dropdown-menu" role="menu">
-                    <li><a href="https://twitter.com/intent/tweet?text={{ site.title }}{{ site.description }}&url={{ site.url }}&via=rubenhm_org" title="Share link on Twitter"><span class="flaticon-social19"></span> Twitter</a></li>
+                    <li><a href="https://twitter.com/intent/tweet?text={{ site.title }}: {{ site.description }}&url={{ site.url }}&via=rubenhm_org" title="Share link on Twitter"><span class="flaticon-social19"></span> Twitter</a></li>
                     <li><a  href="https://plus.google.com/share?url={{ site.url }}" title="Share link on G+"><span class="flaticon-google23"></span> Google+</a></li>
                     <li><a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}" title="Share link on FB"><span class="flaticon-facebook29"> Facebook</span></a></li>
-                    <li><a href="mailto:?Subject={{ page.title }}&amp;Body={{ site.url }}{{ page.url }}" title="Share url by email"><span class="flaticon-opened4"> Email</span></a></li>
+                    <li><a href="mailto:?Subject={{ site.title }}&amp;Body={{ site.url }}{{ page.url }}" title="Share url by email"><span class="flaticon-opened4"> Email</span></a></li>
                 </ul>
             </div>
-            <div class="btn-group">
+            <div class="btn-group dropup">
                 <button class="dropdown-toggle btn btn-default btn-xs navbar-right" data-toggle="dropdown">Follow <span class="glyphicon glyphicon-plus"></span><b class="caret"></b>
                 </button>
                 <ul class="dropdown-menu" role="menu">
