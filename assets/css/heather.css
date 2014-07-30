@@ -96,3 +96,11 @@ li.L5, li.L6, li.L7, li.L8
 {
 max-width:100%;
 }
+
+.container-home {
+  /*background-color:#FFE700; */
+  border-radius: 6px;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  margin-top: 700px;
+}
