@@ -2,7 +2,7 @@
 layout: post
 title: "New paper accepted for publication"
 description: "Research: new paper accepted"
-category: news acceptances
+category: news 
 tags: [news, journal, regional, discrimination, redlining]
 ---
 

@@ -2,7 +2,7 @@
 layout: post
 title: "How to collaborate with Scientific Workplace users"
 description: "Collaborate with SWP users"
-category: blog coding latex
+category: blog 
 tags: [latex, editors, texlive, sublime_text]
 ---
 
