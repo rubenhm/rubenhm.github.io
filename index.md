@@ -10,13 +10,8 @@ layout: default
 </div>
 
 
-<div class="jumbotron">
-    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-          
-    </div>
-    {% include _social_home.html %}
-    
-</div>
+<img src="/assets/img/jumbotronbackground.jpg" alt=" " class="jumbotronwidth">          
+{% include _social_home.html %}
 
 
 
