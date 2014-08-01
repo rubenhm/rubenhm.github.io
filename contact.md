@@ -15,7 +15,7 @@ The easiest way to reach me is via email or Twitter.
 
 Your may also find me at my other research websites:
 
-+ [Federal Reserve Bank of St. Louis](http://http://research.stlouisfed.org/econ/hernandez/)
++ [Federal Reserve Bank of St. Louis](http://research.stlouisfed.org/econ/hernandez/)
 + [Google Scholar site](http://scholar.google.com/citations?user=ONu4SBcAAAAJ&hl=en)
 + [SSRN](http://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=341818)
 + [IDEAS Repec](http://ideas.repec.org/e/phe35.html)

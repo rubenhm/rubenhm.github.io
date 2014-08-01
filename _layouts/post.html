@@ -13,5 +13,14 @@
     </article>
     <hr>
     {% include _social_blog.html %}
+    <h2>Comments section</h2>
+    <div class="alert alert-info" role="alert"> 
+        <p>This forum is intented for collegial discussion on economics and research tools. <br/>
+            All comments will be moderated and will be approved before publication. Thanks for your understanding.</p>
+    </div>
+   
+    <hr>
+    {% include _disqus_load.html %}
 </div>
+{% include _disqus_js.html %}
 {% include _footer_blog.html %}
