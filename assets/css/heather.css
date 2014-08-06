@@ -114,3 +114,12 @@ li.L5, li.L6, li.L7, li.L8
 .header-title {
   padding-left: 50px;
 }
+
+@media print {
+ body {
+  padding-top: 0px;
+ }
+  .container {
+  padding-top: 0px;
+}
+}

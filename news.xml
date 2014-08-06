@@ -10,6 +10,8 @@
     <rights>Copyright (c) 2014 Rubén Hernández-Murillo</rights>
     <atom:link href="http://rubenhm.org/news.xml" rel="self" type="application/rss+xml" />
     
+      
+    
     
       <item>
         <title>New paper accepted for publication</title>
@@ -20,8 +22,53 @@
 &lt;ol class=&quot;bibliography&quot;&gt;&lt;li&gt;            &lt;dl&gt;&lt;dt&gt;2014&lt;/dt&gt;
                 &lt;dd&gt;&lt;p class=&quot;text-left&quot;&gt;&lt;span id=&quot;rsue2014&quot;&gt;&lt;b&gt;“Differences in Subprime Loan Pricing Across Races And Neighborhoods .”&lt;/b&gt; Ghent, Andra C., Rubén Hernández-Murillo, and Michael T. Owyang. 2014. &lt;i&gt;Regional Science And Urban Economics &lt;/i&gt;. doi:10.1016/j.regsciurbeco.2014.07.006.&lt;/span&gt;&lt;/p&gt;&lt;/dd&gt;
             &lt;/dl&gt;
-&lt;div class=&quot;row &quot;&gt;
-    &lt;div class=&quot;btn-toolbar&quot; role=&quot;toolbar&quot;&gt;
+
+&lt;!-- The following content will be available for printing --&gt;
+&lt;div class=&quot;row visible-print&quot;&gt;
+     
+        &lt;p&gt;Abstract:&lt;/p&gt;
+        &lt;p&gt;We investigate whether race and ethnicity influenced subprime
+  loan pricing during 2005, the peak of the subprime mortgage expansion.
+  We combine loan-level data on the performance of non-prime securitized
+  mortgages with individual- and neighborhood-level data on racial
+  and ethnic characteristics for metropolitan areas in California and
+  Florida. Using a model of rate determination that accounts for predicted
+  loan performance, we evaluate the differences in subprime mortgage
+  rates in terms of racial and ethnic groups and neighborhood characteristics.
+  We find evidence of adverse pricing for blacks and Hispanics. The
+  evidence of adverse pricing is strongest for purchase mortgages and
+  mortgages originated by non-depository institutions. &lt;/p&gt;
+    
+        &lt;p&gt;BibTeX entry:&lt;/p&gt;
+        &lt;pre&gt;@article{rsue2014,
+  author = {Ghent, Andra C. and Hern{\&#39;a}ndez-Murillo, Rub{\&#39;e}n and Owyang, Michael T.},
+  title = {Differences in Subprime Loan Pricing Across Races and Neighborhoods },
+  journal = {Regional Science and Urban Economics },
+  year = {2014},
+  pages = {},
+  number = {},
+  doi = {10.1016/j.regsciurbeco.2014.07.006},
+  issn = {0166-0462},
+  keywords = {Fair Housing Act},
+  url = {http://research.stlouisfed.org/wp/2011/2011-033.pdf},
+  pdf = {http://research.stlouisfed.org/wp/2011/2011-033.pdf},
+  pubtype = {Journal}
+}
+&lt;/pre&gt;
+        &lt;p&gt;Links to file:&lt;/p&gt;
+        &lt;ul &gt;
+            
+            &lt;li&gt;&lt;a href=&quot;http://dx.doi.org/10.1016/j.regsciurbeco.2014.07.006&quot; target=&quot;_blank&quot;&gt;journal website (doi)&lt;/a&gt;&lt;/li&gt;
+            
+            &lt;li&gt;&lt;a href=&quot;http://research.stlouisfed.org/wp/2011/2011-033.pdf&quot; target=&quot;_blank&quot;&gt;working paper (pdf)&lt;/a&gt;&lt;/li&gt;
+            
+            
+        &lt;/ul&gt;
+&lt;/div&gt;
+        
+&lt;!-- The following buttons will be hidden for printing --&gt;
+&lt;div class=&quot;row &quot;&gt; 
+    &lt;div class=&quot;btn-toolbar hidden-print&quot; role=&quot;toolbar&quot;&gt;
         &lt;div class=&quot;col-md-2&quot;&gt;&lt;/div&gt;
     &lt;ul class=&quot;pagination&quot;&gt;
         &lt;li&gt;

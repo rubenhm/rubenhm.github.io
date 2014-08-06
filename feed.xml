@@ -10,6 +10,76 @@
     <rights>Copyright (c) 2014 Rubén Hernández-Murillo</rights>
     <atom:link href="http://rubenhm.org/feed.xml" rel="self" type="application/rss+xml" />
     
+    
+      <item>
+        <title>Pandoc, beamer, MAKE workflow</title>
+        <description>&lt;p&gt;The goal is to produce a nicely formatted beamer presentation in pdf format without losing focus away from the slides content by constantly meddling with the latex styles.&lt;/p&gt;
+
+&lt;p&gt;The solution is to write the presentation core content in &lt;code&gt;markdown&lt;/code&gt;, then process the file with &lt;code&gt;pandoc&lt;/code&gt; to obtain the pdf using a &lt;code&gt;beamer&lt;/code&gt; template, automating the process with &lt;code&gt;make&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;We require the following tools. (I won&amp;#39;t discuss how to install them in this post.)&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://johnmacfarlane.net/pandoc/&quot;&gt;Pandoc&lt;/a&gt; is a tool used to convert files between different formats. In particular, it is great for converting markdown input files into LaTeX, html, pdf, or Word format, including beamer latex presentations.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://www.tug.org/texlive/&quot;&gt;Texlive&lt;/a&gt; is one of the many LaTeX system distributions, available for Linux and Windows.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://www.gnu.org/software/make/&quot;&gt;Make&lt;/a&gt; is a &amp;quot;tool which controls the generation of executables and other non-source files of a program from the program&amp;#39;s source files.&amp;quot; In our case, we will use it to automate the generation of pdf files from a markdown source using texlive as the engine to compile the latex files.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://www.gnu.org/software/sed/&quot;&gt;Sed&lt;/a&gt; is a stream editor which operates on files. We will use it to automatically change strings of text using regular expressions.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;While &lt;code&gt;make&lt;/code&gt; and &lt;code&gt;sed&lt;/code&gt; are common tools in a Linux environment, the &lt;a href=&quot;http://gnuwin32.sourceforge.net/&quot;&gt;GnuWin32 project&lt;/a&gt; provides alternatives for Windows.&lt;/p&gt;
+
+&lt;h2&gt;Steps&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;The core of the presentation is written in markdown. See &lt;a href=&quot;http://rubenhm.org/downloads/blog/2014-08-01-pandoc-beamer-make-workflow/example_pres.md&quot;&gt;example&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;This file is run through pandoc to generate a &lt;code&gt;tex&lt;/code&gt; &lt;a href=&quot;http://rubenhm.org/downloads/blog/2014-08-01-pandoc-beamer-make-workflow/example_pres.tex&quot;&gt;file&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;The above tex file is embedded as input in a beamer presentation &lt;a href=&quot;http://rubenhm.org/downloads/blog/2014-08-01-pandoc-beamer-make-workflow/presentation_example.tex&quot;&gt;template&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;The presentation template file is finally processed by &lt;code&gt;xelatex&lt;/code&gt; to generate a pdf &lt;a href=&quot;http://rubenhm.org/downloads/blog/2014-08-01-pandoc-beamer-make-workflow/presentation_example.pdf&quot;&gt;presentation&lt;/a&gt;. 
+We use &lt;code&gt;xelatex&lt;/code&gt; because in Windows we can use TrueType fonts, for example &lt;code&gt;Calibri&lt;/code&gt;. The example uses &lt;code&gt;Times New Roman&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;The entire process is automated with &lt;code&gt;make&lt;/code&gt; (with optional use of &lt;code&gt;sed&lt;/code&gt;).&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Running the following command in the command line will produce the final presentation pdf file and will clean up any auxiliary files, except for the intermediate tex files and the original markdown source.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;make FILE=example
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;To automate the process, the &lt;code&gt;make&lt;/code&gt; command uses the following set of instructions from a file named &lt;a href=&quot;http://rubenhm.org/downloads/blog/2014-08-01-pandoc-beamer-make-workflow/makefile&quot;&gt;makefile&lt;/a&gt;.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;FILE=
+MDFILE=$(FILE)_pres
+TEXFILE=presentation_$(FILE)
+INPUTS=
+
+all:  pdf; make clean
+
+.PHONY: all clean
+
+pdf:
+    # Use pandoc to convert the main markdown source to latex
+    pandoc $(MDFILE).md --slide-level 2 -t beamer -o $(MDFILE).tex
+    # Use sed to replace a string in the latex file that sets spaces in itemize environment
+    sed -i &amp;quot;s/\\itemsep1pt\\parskip0pt\\parsep0pt/\\itemsep1.6pt\\parskip1.6pt\\parsep0pt/g&amp;quot; $(MDFILE).tex
+    # Apply xelatex twice to obtain the pdf
+    xelatex $(TEXFILE).tex
+    xelatex $(TEXFILE).tex  
+
+# Remove unnecessary files
+clean: 
+    -rm -f $(TEXFILE).log $(TEXFILE).aux  $(TEXFILE).toc  $(TEXFILE).snm $(TEXFILE).nav $(TEXFILE).out $(TEXFILE).fdb_latemk $(TEXFILE).synctex.gz $(TEXFILE).fls
+    -rm -f sed*.*
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The &lt;code&gt;--slide-level 2&lt;/code&gt; option indicates we can use &lt;code&gt;##&lt;/code&gt; in the markdown file to generate new slides, and &lt;code&gt;###&lt;/code&gt; to create subheadings inside a slide. A single &lt;code&gt;#&lt;/code&gt; creates sections.&lt;/p&gt;
+
+&lt;h2&gt;Attributions&lt;/h2&gt;
+
+&lt;p&gt;This post is my implementation (really a simplified version) of this post in &lt;a href=&quot;http://jeromyanglim.blogspot.com/2012/07/beamer-pandoc-markdown.html&quot;&gt;Jeromy Anglim&amp;#39;s blog&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Pictures used in the example are attributed to &lt;a href=&quot;http://placekitten.com/attribution.html&quot;&gt;placekitten.com&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 01 Aug 2014 00:00:00 -0500</pubDate>
+        <link>http://rubenhm.org/blog/2014/08/01/pandoc-beamer-make-workflow/</link>
+        <guid isPermaLink="true">http://rubenhm.org/blog/2014/08/01/pandoc-beamer-make-workflow/</guid>
+      </item>
+      
+    
       
     
     
