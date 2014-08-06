@@ -1,0 +1,104 @@
+%!TEX program = <xelatex>
+\documentclass[t]{beamer}
+% Use tikz to modify opacity of background images
+\usepackage{tikz}
+
+\usepackage{graphicx}
+% Package to use huge fonts
+\usepackage{anyfontsize}
+
+% Package to use truetype fonts. Requires compiling with XeLaTeX instead of pdflatex
+\usepackage{fontspec}
+\setsansfont[Ligatures={Common,TeX}]{Times New Roman}  
+
+
+% ===============
+%\defaultfontfeatures{Mapping=tex-text}
+\usepackage{xunicode}
+\usepackage{xltxtra}
+% ============
+
+% Change font size of frametitle and linespace
+% can control also family and series
+% \setbeamerfont{frametitle}{family=\rmfamily,series=\bfseries,size={\fontsize{32}{36}}}
+% Tip found at http://stackoverflow.com/questions/2619337/how-to-set-any-font-size-e-g-32pt-with-setbeamerfont
+\setbeamerfont{frametitle}{size={\fontsize{14}{14}}}
+\setbeamerfont{framesubtitle}{size={\fontsize{12}{12}}}
+
+% Put frame number in footer
+\setbeamertemplate{footline}[frame number]
+\setbeamercolor{structure}{fg=black}
+\setbeamertemplate{navigation symbols}{} %no nav symbols
+
+% The following commands to have triangles instead of bullets for itemized and enumerate
+\setbeamertemplate{itemize items}[default]
+\setbeamertemplate{enumerate items}[default]
+
+% Frame titles in Cyan box
+\setbeamercolor{structure}{bg=cyan!90!cyan}
+\setbeamertemplate{frametitle}
+{
+  
+  \nointerlineskip
+  \begin{beamercolorbox}[sep=0.3cm,ht=2.5em,wd=\paperwidth]{frametitle}
+  \vbox{}\vskip-2ex%
+  \strut\insertframetitle\strut
+  \vskip-0.8ex%
+  \end{beamercolorbox}
+}
+
+% Make block background transparent
+\setbeamertemplate{blocks}[default]
+\setbeamercolor{block title}{fg=black,bg=}
+\setbeamercolor{block body}{use=block title,bg=}
+
+%% Define a HUGE
+\newcommand\HUGE{\@setfontsize\Huge{38}{45}}
+\begin{document}
+
+
+% Frame 0: Empty Frame with Logo
+\begin{frame}[plain]
+% Do not count the logo page as a frame
+\setcounter{framenumber}{0}
+\vspace{1in}
+\begin{center}
+\includegraphics[width=1.2in]{400.jpg}
+\end{center}
+\end{frame}
+
+% Frame 1: Title Frame with Transparent Background
+{\usebackgroundtemplate{%
+ \tikz[overlay,remember picture] \node[opacity=0.3, at=(current page.center)] {
+\includegraphics[height=\paperheight,keepaspectratio]{800.jpg}
+ };
+ }
+% Frame 1: Title Frame with Title and Author.
+\begin{frame}
+\begin{center}
+  \vspace{1in}
+  \onslide<1->{\vspace{-0.5in} {\Huge \emph{Awesome} \\
+  \vspace{2mm} Presentation}}\\
+  \vspace{0.2cm}
+  \onslide<1->{
+  {\Large
+    \vspace{0.2cm}
+    by \\
+   Author M. Lastname }
+  }
+\end{center}
+\end{frame}
+}
+
+
+% Insert presentation tex from pandoc output
+\input{example_pres.tex}
+
+
+% Final Frame with Recap of Section headings
+\begin{frame}{Recap of sections}
+ \tableofcontents
+\end{frame}
+
+
+\end{document}

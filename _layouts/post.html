@@ -1,27 +1,42 @@
 {% include _head_blog.html %}
 {% include _header.html %}
 <div class="container">
-        <h1><em>{% if page.url contains 'blog' %}Coding Annoyances{% else %}Research Updates{% endif %}</em></h1>
+    <div class="visible-print"> <!--Header for print version -->
+            <h1 class="text-left">{{ site.url }}{% if page.url contains 'blog' %}/blog/{% else %}/news/{% endif %}</h1>
+            <p class="lead text-left">Research, Writings + Code</p>
+            <hr>
+    </div>
+        
+    <h1><em>{% if page.url contains 'blog' %}Coding Annoyances{% else %}Research Updates{% endif %}</em></h1>
         <hr>    
-        <h1>{{ page.title }}</h1>
+    <h1>{{ page.title }}</h1>
   
-        <p class="small gray"><time datetime="{{ page.date | date:"%b %-d, %Y"}}">{{ page.date | date_to_long_string }} • {{site.author}} • {% if page.meta %} • {{ page.meta }}{% endif %}</time></p>
+    <p class="small gray"><time datetime="{{ page.date | date:"%b %-d, %Y"}}">{{ page.date | date_to_long_string }} • {{site.author}} • {% if page.meta %} • {{ page.meta }}{% endif %}</time></p>
     <hr>
     <article class="post">
+
         {{ content }}
 
     </article>
     <hr>
     {% include _social_blog.html %}
-    <h2>Comments section</h2>
-    <div class="alert alert-info" role="alert"> 
+    <div class="visible-print">
+            <p><small>Follow for updates.</small></p>
+            <p>{% if page.url contains 'blog' %}<a href="{{ site.url }}{{"/feed.xml"}}" title="Subscribe to Blog Feed"><span class="flaticon-rss8"></span></a>{% else %}<a href="{{ site.url}}{{"/news.xml"}}" title="Subscribe to News Feed"><span class="flaticon-rss8"></span></a>{% endif %} 
+            <span class="flaticon-social19"></span> @rubenhm_org</a></p>
+            <hr>
+    </div>
+    <div class="hidden-print">
+        <h2>Comments section</h2>
+        <div class="alert alert-info" role="alert"> 
         <p><span class="flaticon-info12"></span> <strong>Rules:</strong> This forum is intended for a collegial discussion on economics and research tools. <br/>
             All comments will be initially withheld and promptly moderated prior to posting. Comments will be posted if they are done in a respectful and courteous manner.  
             We reserve the right to remove or not publish inappropriate comments.</p>
-    </div>
+        </div>
    
-    <hr>
-    {% include _disqus_load.html %}
+        <hr>
+        {% include _disqus_load.html %}
+    </div>
 </div>
 {% include _disqus_js.html %}
 {% include _footer_blog.html %}

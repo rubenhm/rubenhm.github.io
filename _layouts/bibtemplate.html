@@ -4,8 +4,33 @@
             <dl><dt>{{ entry.year }}</dt>
                 <dd><p class="text-left">{{ reference }}</p></dd>
             </dl>
-<div class="row ">
-    <div class="btn-toolbar" role="toolbar">
+
+<!-- The following content will be available for printing -->
+<div class="row visible-print">
+    {% if entry.abstract %} 
+        <p>Abstract:</p>
+        <p>{{ entry.abstract %}}</p>
+    {% endif %}
+        <p>BibTeX entry:</p>
+        <pre>{{ entry.bibtex %}}</pre>
+        <p>Links to file:</p>
+        <ul >
+            {% if entry.doi %}
+            <li><a href="http://dx.doi.org/{{ entry.doi %}}" target="_blank">journal website (doi)</a></li>
+            {% if entry.url %}
+            <li><a href="{{ entry.url %}}" target="_blank">working paper (pdf)</a></li>
+            {% endif %}
+            {% else %}
+            {% if entry.url %}
+            <li><a href="{{ entry.url %}}" target="_blank">pdf version</a></li>
+            {% endif %}
+            {% endif %}
+        </ul>
+</div>
+        
+<!-- The following buttons will be hidden for printing -->
+<div class="row "> 
+    <div class="btn-toolbar hidden-print" role="toolbar">
         <div class="col-md-2"></div>
     <ul class="pagination">
         <li>
