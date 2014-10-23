@@ -13,9 +13,7 @@
     
       <item>
         <title>Export PNG charts from Excel</title>
-        <description>&lt;h1&gt;Export PNG charts from Excel&lt;/h1&gt;
-
-&lt;p&gt;Excel cannot directly export charts or &lt;code&gt;Save As&lt;/code&gt; in other image formats,
+        <description>&lt;p&gt;Excel cannot directly export charts or &lt;code&gt;Save As&lt;/code&gt; in other image formats,
 but with a simple macro one can export charts in &lt;code&gt;PNG&lt;/code&gt; format.
 This format is great for including charts in LaTeX documents
 with &lt;code&gt;\includegraphics{chart.png}&lt;/code&gt;.&lt;/p&gt;
