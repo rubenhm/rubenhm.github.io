@@ -6,8 +6,6 @@ category: "blog"
 tags: [PNG, beamer, Excel, LaTeX]
 ---
 
-# Export PNG charts from Excel
-
 Excel cannot directly export charts or `Save As` in other image formats,
 but with a simple macro one can export charts in `PNG` format.
 This format is great for including charts in LaTeX documents
