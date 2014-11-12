@@ -10,6 +10,8 @@
     <rights>Copyright (c) 2014 Rubén Hernández-Murillo</rights>
     <atom:link href="http://rubenhm.org/feed.xml" rel="self" type="application/rss+xml" />
     
+      
+    
     
       <item>
         <title>Export PNG charts from Excel</title>
