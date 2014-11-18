@@ -4,7 +4,23 @@ title: About
 permalink: /about/
 ---
 
+<div class="row">
+  <div class="col-md-1">
+    
+  </div>
+
+  <div class="col-md-2">
+        <p>
+        <img  src="/assets/img/rhernandez.jpg"  height="300px">
+        </p>
+  </div>
+
+  <div class="col-md-2">
+    
+  </div>
+  <div class="col-md-7">
 My name is Rubén Hernández-Murillo.
+
 
 I am a economist, currently at the [Research Division](http://research.stlouisfed.org/) of the [Federal Reserve Bank of St. Louis.](http://www.stlouisfed.org)
 
@@ -18,5 +34,5 @@ In this website I publicize my research and publications. The main input for thi
 
 The source files for this website are hosted in [GitHub](https://github.com/rubenhm/rubenhm.github.io/tree/source).
 
-
+ </div>
 
