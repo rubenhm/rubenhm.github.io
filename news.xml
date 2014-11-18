@@ -27,7 +27,7 @@
         &lt;p&gt;BibTeX entry:&lt;/p&gt;
         &lt;pre&gt;@article{fedles2014n23,
   author = {Hern{\&#39;a}ndez-Murillo, Rub{\&#39;e}n and Shell, Hannah},
-  title = {The Rising Complexity of the FOMC Statement},
+  title = {The Rising Complexity of the {FOMC} Statement},
   journal = {Federal Reserve Bank of St. Louis Economic Synopses},
   year = {2014},
   number = {23},
@@ -65,7 +65,7 @@
                         &lt;li&gt;
                             &lt;blockquote class=&quot;pre-scrollable&quot;&gt;&lt;font size=&quot;-1&quot;&gt;&lt;pre&gt;@article{fedles2014n23,
   author = {Hern{\&#39;a}ndez-Murillo, Rub{\&#39;e}n and Shell, Hannah},
-  title = {The Rising Complexity of the FOMC Statement},
+  title = {The Rising Complexity of the {FOMC} Statement},
   journal = {Federal Reserve Bank of St. Louis Economic Synopses},
   year = {2014},
   number = {23},
@@ -117,7 +117,7 @@
 &lt;h2&gt;References&lt;/h2&gt;
 
 &lt;ol class=&quot;bibliography&quot;&gt;&lt;li&gt;            &lt;dl&gt;&lt;dt&gt;2014&lt;/dt&gt;
-                &lt;dd&gt;&lt;p class=&quot;text-left&quot;&gt;&lt;span id=&quot;rsue2014&quot;&gt;&lt;b&gt;“Differences in Subprime Loan Pricing Across Races and Neighborhoods .”&lt;/b&gt; Ghent, Andra C., Rubén Hernández-Murillo, and Michael T. Owyang. 2014. &lt;i&gt;Regional Science and Urban Economics &lt;/i&gt;. doi:10.1016/j.regsciurbeco.2014.07.006.&lt;/span&gt;&lt;/p&gt;&lt;/dd&gt;
+                &lt;dd&gt;&lt;p class=&quot;text-left&quot;&gt;&lt;span id=&quot;rsue2014&quot;&gt;&lt;b&gt;“Differences in Subprime Loan Pricing Across Races and Neighborhoods .”&lt;/b&gt; Ghent, Andra C., Rubén Hernández-Murillo, and Michael T. Owyang. 2014. &lt;i&gt;Regional Science and Urban Economics &lt;/i&gt;48 (September): 199–215. doi:10.1016/j.regsciurbeco.2014.07.006.&lt;/span&gt;&lt;/p&gt;&lt;/dd&gt;
             &lt;/dl&gt;
 
 &lt;!-- The following content will be available for printing --&gt;
@@ -142,7 +142,9 @@
   title = {Differences in Subprime Loan Pricing Across Races and Neighborhoods },
   journal = {Regional Science and Urban Economics },
   year = {2014},
-  pages = {},
+  volume = {48},
+  month = {sep},
+  pages = {199--215},
   number = {},
   doi = {10.1016/j.regsciurbeco.2014.07.006},
   issn = {0166-0462},
@@ -207,7 +209,9 @@
   title = {Differences in Subprime Loan Pricing Across Races and Neighborhoods },
   journal = {Regional Science and Urban Economics },
   year = {2014},
-  pages = {},
+  volume = {48},
+  month = {sep},
+  pages = {199--215},
   number = {},
   doi = {10.1016/j.regsciurbeco.2014.07.006},
   issn = {0166-0462},
