@@ -4,10 +4,6 @@ title: About
 permalink: /about/
 ---
 
-<div class="row">
-  <div class="col-md-1">
-    
-  </div>
 
   <div class="col-md-2">
         <p>
@@ -15,10 +11,9 @@ permalink: /about/
         </p>
   </div>
 
-  <div class="col-md-2">
-    
+  <div class="col-md-2">   
   </div>
-  <div class="col-md-7">
+  <div class="col-md-6">
 My name is Rubén Hernández-Murillo.
 
 
@@ -34,5 +29,5 @@ In this website I publicize my research and publications. The main input for thi
 
 The source files for this website are hosted in [GitHub](https://github.com/rubenhm/rubenhm.github.io/tree/source).
 
- </div>
+  </div>
 
