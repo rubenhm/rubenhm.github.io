@@ -54,7 +54,7 @@ but the resulting &lt;code&gt;PDF&lt;/code&gt; has a significant white margin al
 would have to be cropped for better results. 
 Cropping a &lt;code&gt;PDF&lt;/code&gt; without the full version of Acrobat can be a problem, so the &lt;code&gt;PNG&lt;/code&gt; route works  better, in my opinion.&lt;/p&gt;
 </description>
-        <pubDate>Thu, 25 Sep 2014 00:00:00 +0000</pubDate>
+        <pubDate>Thu, 25 Sep 2014 00:00:00 -0500</pubDate>
         <link>http://rubenhm.org/blog/2014/09/25/export-png-charts-from-excel/</link>
         <guid isPermaLink="true">http://rubenhm.org/blog/2014/09/25/export-png-charts-from-excel/</guid>
       </item>
@@ -124,7 +124,7 @@ clean:
 
 &lt;p&gt;Pictures used in the example are attributed to &lt;a href=&quot;http://placekitten.com/attribution.html&quot;&gt;placekitten.com&lt;/a&gt;.&lt;/p&gt;
 </description>
-        <pubDate>Fri, 01 Aug 2014 00:00:00 +0000</pubDate>
+        <pubDate>Fri, 01 Aug 2014 00:00:00 -0500</pubDate>
         <link>http://rubenhm.org/blog/2014/08/01/pandoc-beamer-make-workflow/</link>
         <guid isPermaLink="true">http://rubenhm.org/blog/2014/08/01/pandoc-beamer-make-workflow/</guid>
       </item>
@@ -171,7 +171,7 @@ project-files/
 &lt;li&gt;&lt;p&gt;Finally, it goes without saying that your coauthors should always save project files in &lt;code&gt;Portable LaTeX&lt;/code&gt; format.&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 </description>
-        <pubDate>Tue, 01 Apr 2014 00:00:00 +0000</pubDate>
+        <pubDate>Tue, 01 Apr 2014 00:00:00 -0500</pubDate>
         <link>http://rubenhm.org/blog/2014/04/01/how-to-collaborate-with-scientific-workplace-users/</link>
         <guid isPermaLink="true">http://rubenhm.org/blog/2014/04/01/how-to-collaborate-with-scientific-workplace-users/</guid>
       </item>
