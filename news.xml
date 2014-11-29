@@ -118,6 +118,13 @@
 
 &lt;!-- The following content will be available for printing --&gt;
 &lt;div class=&quot;row visible-print&quot;&gt;
+     
+        &lt;p&gt;Abstract:&lt;/p&gt;
+        &lt;p&gt;We examine the welfare properties of alternative regimes of interjurisdictional competition for heterogeneous mobile firms. Firms differ not only in terms of the degree of mobility across jurisdictions but also in terms of productivity. Alternative taxation regimes represent restraints on the discretionary powers of taxation of local governments. 
+
+ We find that average welfare is higher under discretionary and more efficient taxation regimes (in the sense of minimizing dead-weight losses from distortionary taxation) when firms are highly mobile. In this situation, further limiting competition by imposing a system of non-discretionary instruments can reduce average welfare by reducing the efficiency of the local governments at raising and allocating public funds. 
+
+ When firms face high moving costs, on the other hand, switching to a non-discretionary and less efficient taxation regime may increase welfare by preventing local governments from engaging in excessive redistribution of resources.&lt;/p&gt;
     
         &lt;p&gt;BibTeX entry:&lt;/p&gt;
         &lt;pre&gt;@techreport{fedlwp2014-036,
@@ -147,6 +154,22 @@
         &lt;div class=&quot;col-md-2&quot;&gt;&lt;/div&gt;
     &lt;ul class=&quot;pagination&quot;&gt;
         &lt;li&gt;
+             
+            &lt;div class=&quot;btn-group&quot;&gt;
+                    &lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-xs dropdown-toggle&quot; data-toggle=&quot;dropdown&quot;&gt;
+                        Abstract
+                        &lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;
+                    &lt;/button&gt;
+                    &lt;ul class=&quot;dropdown-menu dropdown-menu-left&quot; role=&quot;menu&quot;&gt;
+                        &lt;li&gt;
+                            &lt;blockquote class=&quot;pre-scrollable&quot;&gt;&lt;font size=&quot;-1&quot;&gt;We examine the welfare properties of alternative regimes of interjurisdictional competition for heterogeneous mobile firms. Firms differ not only in terms of the degree of mobility across jurisdictions but also in terms of productivity. Alternative taxation regimes represent restraints on the discretionary powers of taxation of local governments. 
+
+ We find that average welfare is higher under discretionary and more efficient taxation regimes (in the sense of minimizing dead-weight losses from distortionary taxation) when firms are highly mobile. In this situation, further limiting competition by imposing a system of non-discretionary instruments can reduce average welfare by reducing the efficiency of the local governments at raising and allocating public funds. 
+
+ When firms face high moving costs, on the other hand, switching to a non-discretionary and less efficient taxation regime may increase welfare by preventing local governments from engaging in excessive redistribution of resources.&lt;/font&gt;&lt;/blockquote&gt;
+                        &lt;/li&gt;
+                    &lt;/ul&gt;
+            &lt;/div&gt;
             
 
         &lt;/li&gt;
