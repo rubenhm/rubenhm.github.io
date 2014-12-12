@@ -4,7 +4,7 @@ Rubén Hernández-Murillo
 Email: <ruben@rubenhm.org> • Website: [rubenhm.org](http://www.rubenhm.org) • 314-827-6381 (c) • Citizenship: US • 
 
 
-Formats: [Markdown](https://raw.github.com/rubenhm/rubenhm.github.io/source/downloads/docs/Ruben_Hernandez-Murillo-Resume.md), [PDF](https://raw.github.com/rubenhm/rubenhm.github.io/source/downloads/docs/Ruben_Hernandez-Murillo-Resume.pdf), [HTML](http://www.rubenhm.org/resume/).
+Formats: [Markdown](https://raw.github.com/rubenhm/rubenhm.github.io/source/assets/docs/Ruben_Hernandez-Murillo-Resume.md), [PDF](https://www.rubenhm.org/assets/docs/Ruben_Hernandez-Murillo-Resume.pdf), [HTML](http://www.rubenhm.org/resume/).
 
 Education
 ---------
