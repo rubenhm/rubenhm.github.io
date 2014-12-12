@@ -12,6 +12,126 @@
     
     
       <item>
+        <title>New paper accepted for publication</title>
+        <description>&lt;p&gt;Our paper, &lt;a href=&quot;#ree2015&quot;&gt;(Ghent, Hernández-Murillo, and Owyang)&lt;/a&gt;, was just accepted for publication in &lt;em&gt;Real Estate Economics&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h2&gt;References&lt;/h2&gt;
+
+&lt;ol class=&quot;bibliography&quot;&gt;&lt;li&gt;            &lt;dl&gt;&lt;dt&gt;Forthcoming&lt;/dt&gt;
+                &lt;dd&gt;&lt;p class=&quot;text-left&quot;&gt;&lt;span id=&quot;ree2015&quot;&gt;&lt;b&gt;“Did Affordable Housing Legislation Contribute to the Subprime Securities Boom?”&lt;/b&gt; Ghent, Andra C., Rubén Hernández-Murillo, and Michael T. Owyang. &lt;i&gt;Real Estate Economics&lt;/i&gt;. http://research.stlouisfed.org/wp/2012/2012-005.pdf.&lt;/span&gt;&lt;/p&gt;&lt;/dd&gt;
+            &lt;/dl&gt;
+
+&lt;!-- The following content will be available for printing --&gt;
+&lt;div class=&quot;row visible-print&quot;&gt;
+     
+        &lt;p&gt;Abstract:&lt;/p&gt;
+        &lt;p&gt;In this paper, we use a regression discontinuity approach and present new institutional evidence to investigate whether affordable housing policies influenced the market for securitized subprime mortgages. 
+
+ We use merged loan-level data on non-prime mortgages with individual- and neighborhood- level data for California and Florida. We find no evidence that lenders increased subprime originations or altered pricing around the discrete eligibility cutoffs for the Government Sponsored Enterprises’ (GSEs) affordable housing goals or the Community Reinvestment Act. 
+
+ Although we find evidence that the GSEs bought significant quantities of subprime securities, our results indicate that these purchases were not directly related to their affordable housing mandates.&lt;/p&gt;
+    
+        &lt;p&gt;BibTeX entry:&lt;/p&gt;
+        &lt;pre&gt;@article{ree2015,
+  author = {Ghent, Andra C. and Hern{\&#39;a}ndez-Murillo, Rub{\&#39;e}n and Owyang, Michael T.},
+  title = {Did Affordable Housing Legislation Contribute to the Subprime Securities Boom?},
+  journal = {Real Estate Economics},
+  year = {Forthcoming},
+  number = {},
+  month = {},
+  pages = {},
+  pubtype = {Journal},
+  url = {http://research.stlouisfed.org/wp/2012/2012-005.pdf}
+}
+&lt;/pre&gt;
+        &lt;p&gt;Links to file:&lt;/p&gt;
+        &lt;ul &gt;
+            
+            
+            &lt;li&gt;&lt;a href=&quot;http://research.stlouisfed.org/wp/2012/2012-005.pdf&quot; target=&quot;_blank&quot;&gt;pdf version&lt;/a&gt;&lt;/li&gt;
+            
+            
+        &lt;/ul&gt;
+&lt;/div&gt;
+        
+&lt;!-- The following buttons will be hidden for printing --&gt;
+&lt;div class=&quot;row &quot;&gt; 
+    &lt;div class=&quot;btn-toolbar hidden-print&quot; role=&quot;toolbar&quot;&gt;
+        &lt;div class=&quot;col-md-2&quot;&gt;&lt;/div&gt;
+    &lt;ul class=&quot;pagination&quot;&gt;
+        &lt;li&gt;
+             
+            &lt;div class=&quot;btn-group&quot;&gt;
+                    &lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-xs dropdown-toggle&quot; data-toggle=&quot;dropdown&quot;&gt;
+                        Abstract
+                        &lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;
+                    &lt;/button&gt;
+                    &lt;ul class=&quot;dropdown-menu dropdown-menu-left&quot; role=&quot;menu&quot;&gt;
+                        &lt;li&gt;
+                            &lt;blockquote class=&quot;pre-scrollable&quot;&gt;&lt;font size=&quot;-1&quot;&gt;In this paper, we use a regression discontinuity approach and present new institutional evidence to investigate whether affordable housing policies influenced the market for securitized subprime mortgages. 
+
+ We use merged loan-level data on non-prime mortgages with individual- and neighborhood- level data for California and Florida. We find no evidence that lenders increased subprime originations or altered pricing around the discrete eligibility cutoffs for the Government Sponsored Enterprises’ (GSEs) affordable housing goals or the Community Reinvestment Act. 
+
+ Although we find evidence that the GSEs bought significant quantities of subprime securities, our results indicate that these purchases were not directly related to their affordable housing mandates.&lt;/font&gt;&lt;/blockquote&gt;
+                        &lt;/li&gt;
+                    &lt;/ul&gt;
+            &lt;/div&gt;
+            
+
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;div class=&quot;btn-group&quot;&gt;
+                    &lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-xs dropdown-toggle&quot; data-toggle=&quot;dropdown&quot;&gt;
+                        Bib Entry
+                        &lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;
+                    &lt;/button&gt;
+                    &lt;ul class=&quot;dropdown-menu dropdown-menu-left&quot; role=&quot;menu&quot;&gt;
+                        &lt;li&gt;
+                            &lt;blockquote class=&quot;pre-scrollable&quot;&gt;&lt;font size=&quot;-1&quot;&gt;&lt;pre&gt;@article{ree2015,
+  author = {Ghent, Andra C. and Hern{\&#39;a}ndez-Murillo, Rub{\&#39;e}n and Owyang, Michael T.},
+  title = {Did Affordable Housing Legislation Contribute to the Subprime Securities Boom?},
+  journal = {Real Estate Economics},
+  year = {Forthcoming},
+  number = {},
+  month = {},
+  pages = {},
+  pubtype = {Journal},
+  url = {http://research.stlouisfed.org/wp/2012/2012-005.pdf}
+}
+&lt;/pre&gt;&lt;/font&gt;&lt;/blockquote&gt;
+                        &lt;/li&gt;
+                    &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;div class=&quot;btn-group&quot;&gt;
+                    &lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-xs dropdown-toggle&quot; data-toggle=&quot;dropdown&quot;&gt;
+                        Links to File
+                        &lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;
+                    &lt;/button&gt;
+                    &lt;ul class=&quot;dropdown-menu dropdown-menu-left&quot; role=&quot;menu&quot;&gt;
+                        
+                        
+                        &lt;li&gt;&lt;a href=&quot;http://research.stlouisfed.org/wp/2012/2012-005.pdf&quot; target=&quot;_blank&quot;&gt;pdf version&lt;/a&gt;&lt;/li&gt;
+                        
+                        
+                    &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/li&gt;&lt;/ol&gt;
+</description>
+        <pubDate>Fri, 12 Dec 2014 00:00:00 -0600</pubDate>
+        <link>http://rubenhm.org/news/2014/12/12/new-paper-accepted-for-publication/</link>
+        <guid isPermaLink="true">http://rubenhm.org/news/2014/12/12/new-paper-accepted-for-publication/</guid>
+      </item>
+      
+    
+    
+      <item>
         <title>New ES on the complexity of FOMC statements</title>
         <description>&lt;p&gt;New &lt;em&gt;Economic Synopsis&lt;/em&gt;, &lt;a href=&quot;#fedles2014n23&quot;&gt;(Hernández-Murillo and Shell 2014)&lt;/a&gt;, is now available online.&lt;/p&gt;
 
@@ -230,7 +350,7 @@
     
       <item>
         <title>New paper accepted for publication</title>
-        <description>&lt;p&gt;Our paper, &lt;a href=&quot;#rsue2014&quot;&gt;(Ghent, Hernández-Murillo, and Owyang 2014)&lt;/a&gt;, was just accepted for publication in RSUE.&lt;/p&gt;
+        <description>&lt;p&gt;Our paper, &lt;a href=&quot;#rsue2014&quot;&gt;(Ghent, Hernández-Murillo, and Owyang 2014)&lt;/a&gt;, was just accepted for publication in &lt;em&gt;Regional Science and Urban Economics&lt;/em&gt;.&lt;/p&gt;
 
 &lt;h2&gt;References&lt;/h2&gt;
 
@@ -268,7 +388,6 @@
   issn = {0166-0462},
   keywords = {Fair Housing Act},
   url = {http://research.stlouisfed.org/wp/2011/2011-033.pdf},
-  pdf = {http://research.stlouisfed.org/wp/2011/2011-033.pdf},
   pubtype = {Journal}
 }
 &lt;/pre&gt;
@@ -335,7 +454,6 @@
   issn = {0166-0462},
   keywords = {Fair Housing Act},
   url = {http://research.stlouisfed.org/wp/2011/2011-033.pdf},
-  pdf = {http://research.stlouisfed.org/wp/2011/2011-033.pdf},
   pubtype = {Journal}
 }
 &lt;/pre&gt;&lt;/font&gt;&lt;/blockquote&gt;
