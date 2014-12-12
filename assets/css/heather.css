@@ -123,3 +123,60 @@ li.L5, li.L6, li.L7, li.L8
   padding-top: 0px;
 }
 }
+
+#contact {
+    float: right;
+    text-align: right;
+}
+
+#contact p {
+    margin: .5em;
+}
+
+/*http://css-tricks.com/snippets/css/triangular-list-bullets/*/
+
+.resume ul {
+    margin-left: 135px;
+    margin-bottom: 20px;
+    padding: 0 1em;
+    list-style: none;
+}
+.resume li:before { 
+    content: "";
+    border-color: transparent #111;
+    border-style: solid;
+    border-width: 0.35em 0 0.35em 0.45em;
+    display: block;
+    height: 0;
+    width: 0;
+    left: -1em;
+    top: 0.9em;
+    position: relative;
+}
+.resume h2 {
+    font-variant: small-caps;
+    font-weight: 500;
+}
+
+.resume h3 {
+   font-size: 26px; 
+   font-weight: 500;
+   margin-bottom: 20px;
+}
+
+.resume dt {
+  float: left;
+  display: block; 
+  font-weight: normal;
+  font-style: italic;
+}
+
+.resume dd {
+  margin-left: 135px;
+  display: block;
+  line-height: 1.5em; 
+  margin-bottom: 25px;
+  padding: 0 0 0 15px;
+  text-align: left;
+}
+
