@@ -4,7 +4,9 @@ Rubén Hernández-Murillo
 Email: <ruben@rubenhm.org> • Website: [rubenhm.org](http://www.rubenhm.org) • 314-827-6381 (c) • Citizenship: US • 
 
 
-Formats: [Markdown](https://raw.github.com/rubenhm/rubenhm.github.io/source/assets/docs/Ruben_Hernandez-Murillo-Resume.md), [PDF](https://www.rubenhm.org/assets/docs/Ruben_Hernandez-Murillo-Resume.pdf), [HTML](http://www.rubenhm.org/resume/).
+Formats: [Markdown](https://raw.github.com/rubenhm/rubenhm.github.io/source/assets/docs/Ruben_Hernandez-Murillo-Resume.md),
+[PDF](https://www.rubenhm.org/assets/docs/Ruben_Hernandez-Murillo-Resume.pdf),
+[HTML](http://www.rubenhm.org/resume/).
 
 Education
 ---------
@@ -41,11 +43,11 @@ Work Experience
 2000-Present
 :   _Federal Reserve Bank of St. Louis._ 
 
-+   Served as analyst in the Federal Reserve System's _Comprehensive Capital Analysis and Review_ (CCAR). (2012-2014)
-+   Chaired Federal Reserve System's  _Committee on Regional Analysis_; organized its _Annual Conference_. (2013-2014)
++   Served as analyst in the Federal Reserve System’s _Comprehensive Capital Analysis and Review_ (CCAR). (2012-2014)
++   Chaired Federal Reserve System’s  _Committee on Regional Analysis_; organized its _Annual Conference_. (2013-2014)
 +   Coordinated the St. Louis District's _Beige Book_. (2002-2014)
-+   Briefed the Bank's President on current economic conditions in the St. Louis District. (2002-2014)
-+   Traveled across the St. Louis District to inform the Boards of Directors of the Bank's branches and industry and community leaders on regional economic conditions. (2000-2013)
++   Briefed the Bank’s President on current economic conditions in the St. Louis District. (2002-2014)
++   Traveled across the St. Louis District to inform the Boards of Directors of the Bank’s branches and industry and community leaders on regional economic conditions. (2000-2013)
 
 1994-1995
 :   _ITAM, CAIE (Center for Economic Research and Analysis)._ Junior researcher.

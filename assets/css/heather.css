@@ -118,9 +118,13 @@ li.L5, li.L6, li.L7, li.L8
 @media print {
  body {
   padding-top: 0px;
- }
+}
   .container {
   padding-top: 0px;
+}
+  .resume  {
+    font-size: 85%;
+    color: black;
 }
 }
 
