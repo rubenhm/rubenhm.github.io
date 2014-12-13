@@ -5,7 +5,7 @@ Email: <ruben@rubenhm.org> â€¢ Website: [rubenhm.org](http://www.rubenhm.org) â€
 
 
 Formats: [Markdown](https://raw.github.com/rubenhm/rubenhm.github.io/source/assets/docs/Ruben_Hernandez-Murillo-Resume.md),
-[PDF](https://www.rubenhm.org/assets/docs/Ruben_Hernandez-Murillo-Resume.pdf),
+[PDF](http://www.rubenhm.org/assets/docs/Ruben_Hernandez-Murillo-Resume.pdf),
 [HTML](http://www.rubenhm.org/resume/).
 
 Education
