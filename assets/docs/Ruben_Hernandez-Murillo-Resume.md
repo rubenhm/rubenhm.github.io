@@ -21,22 +21,24 @@ Education
 Work Experience
 ---------------
 
-### Research ### 
+### Research  ### 
 
 2005-Present
 :   _Federal Reserve Bank of St. Louis._  Senior economist.
 2000-2005
 :   _Federal Reserve Bank of St. Louis._  Economist.
 
-+   Published 20+ scholarly articles.
-+   Published 40+ articles aimed at non-technical audiences.
++   Published 20+ scholarly articles and 40+ non-technical articles.
 +   Served as reviewer for 30+ academic journals.
++   Interests: applied microeconomics, public, regional and urban, and real estate economics.
 
 1995-2000
 :   _University of Rochester._ PhD student.
 
 + Served as research assistant to professor Per Krusell. Wrote Fortran 95 code. (1999, 2000)
-+ Attended PhD program in Economics. Dissertation: _Essays on Economic Competition Among Jurisdictions._
++ Attended PhD program in Economics.  Fields: Industrial organization and political economy.   
+  Advisor: Per Krusell. Dissertation: _Essays on Economic Competition Among Jurisdictions._    
+ 
 
 ### Policy/Analysis ###
 
@@ -57,7 +59,7 @@ Work Experience
 ### Teaching ###
 
 2013 (summer)
-:   _Washington University in St. Louis. Olin School of Business._ Managerial economics.
+:   _Washington University in St. Louis. Olin Business School._ Managerial economics.
 2002 (spring)
 :   _ITAM. CIE (Center for Economic Research)._ Introductory microeconomics, industrial organization (master's).
 1998, 1999
@@ -70,15 +72,15 @@ Selected publications
 ---------------------
 
 2014
-:   “Differences in Subprime Loan Pricing Across Races and Neighborhoods,” (with  Andra C. Ghent and Michael T. Owyang). _Regional Science and Urban Economics_, 48, pp.199-215.
+:   [“Differences in Subprime Loan Pricing Across Races and Neighborhoods,”](http://dx.doi.org/10.1016/j.regsciurbeco.2014.07.006) (with  Andra C. Ghent and Michael T. Owyang). _Regional Science and Urban Economics_, 48, pp.199-215.
 2010
-:   “Strategic Online Banking Adoption,” (with Gerard Llobet and Roberto Fuentes) _Journal of Banking and Finance_, 34(7), pp. 1650–1663. 
+:   [“Strategic Online Banking Adoption,”](http://dx.doi.org/10.1016/j.jbankfin.2010.03.011) (with Gerard Llobet and Roberto Fuentes) _Journal of Banking and Finance_, 34(7), pp. 1650–1663. 
 2009
-:   “Measuring the Information Content of the Beige Book: A Mixed Data Sampling Approach,” (with Michelle T. Armesto;  Michael T. Owyang; and Jeremy Piger). _Journal of Money, Credit and Banking_, 41(1), pp. 35–55. 
+:   [“Measuring the Information Content of the Beige Book: A Mixed Data Sampling Approach,”](http://dx.doi.org/10.1111/j.1538-4616.2008.00186.x) (with Michelle T. Armesto;  Michael T. Owyang; and Jeremy Piger). _Journal of Money, Credit and Banking_, 41(1), pp. 35–55. 
 2006
-:   “Patent Licensing Revisited: Heterogeneous Firms and Product Differentiation,” (with Gerard Llobet). _International Journal of Industrial Organization_, 24(1), pp. 149–175.
+:   [“Patent Licensing Revisited: Heterogeneous Firms and Product Differentiation,”](http://dx.doi.org/10.1016/j.ijindorg.2005.03.008) (with Gerard Llobet). _International Journal of Industrial Organization_, 24(1), pp. 149–175.
 2004
-:   “Racial Profiling or Racist Policing? Bounds Tests in Aggregate Data,” (with John Knowles). _International Economic Review_, 45(3), pp. 959–989.
+:   [“Racial Profiling or Racist Policing? Bounds Tests in Aggregate Data,”](http://dx.doi.org/10.1111/j.0020-6598.2004.00293.x) (with John Knowles). _International Economic Review_, 45(3), pp. 959–989.
 
 Skills
 ------
