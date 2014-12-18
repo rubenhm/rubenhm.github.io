@@ -6,7 +6,8 @@ Email: <ruben@rubenhm.org> • Website: [rubenhm.org](http://www.rubenhm.org) �
 
 Formats: [Markdown](https://raw.github.com/rubenhm/rubenhm.github.io/source/assets/docs/Ruben_Hernandez-Murillo-Resume.md),
 [PDF](http://www.rubenhm.org/assets/docs/Ruben_Hernandez-Murillo-Resume.pdf),
-[HTML](http://www.rubenhm.org/resume/).
+[\LaTeX](https://raw.github.com/rubenhm/rubenhm.github.io/source/assets/docs/Ruben_Hernandez-Murillo-Resume.tex),
+[HTML](http://www.rubenhm.org/resume/) .
 
 Education
 ---------
@@ -30,13 +31,13 @@ Work Experience
 
 +   Published 20+ scholarly articles and 40+ non-technical articles.
 +   Served as reviewer for 30+ academic journals.
-+   Interests: applied microeconomics, public, regional and urban, and real estate economics.
++   Interests: applied microeconomics, public economics, regional and urban, and real estate economics.
 
 1995-2000
 :   _University of Rochester._ PhD student.
 
 + Served as research assistant to professor Per Krusell. Wrote Fortran 95 code. (1999, 2000)
-+ Attended PhD program in Economics.  Fields: Industrial organization and political economy.   
++ Completed PhD program in Economics.  Fields: Industrial organization; political economy.   
   Advisor: Per Krusell. Dissertation: _Essays on Economic Competition Among Jurisdictions._    
  
 
@@ -45,11 +46,10 @@ Work Experience
 2000-Present
 :   _Federal Reserve Bank of St. Louis._ 
 
-+   Served as analyst in the Federal Reserve System’s _Comprehensive Capital Analysis and Review_ (CCAR). (2012-2014)
++   Served as reviewer in Federal Reserve System’s _Comprehensive Capital Analysis and Review_ (CCAR). (2012-2014)
 +   Chaired Federal Reserve System’s  _Committee on Regional Analysis_; organized its _Annual Conference_. (2013-2014)
 +   Coordinated the St. Louis District's _Beige Book_. (2002-2014)
-+   Briefed the Bank’s President on current economic conditions in the St. Louis District. (2002-2014)
-+   Traveled across the St. Louis District to inform the Boards of Directors of the Bank’s branches and industry and community leaders on regional economic conditions. (2000-2013)
++   Briefed the Bank’s President, Boards of Directors of the Bank’s branches, and industry and community leaders on current economic conditions in the St. Louis District and the nation. (2000-2014)
 
 1994-1995
 :   _ITAM, CAIE (Center for Economic Research and Analysis)._ Junior researcher.
@@ -61,7 +61,7 @@ Work Experience
 2013 (summer)
 :   _Washington University in St. Louis. Olin Business School._ Managerial economics.
 2002 (spring)
-:   _ITAM. CIE (Center for Economic Research)._ Introductory microeconomics, industrial organization (master's).
+:   _ITAM. CIE (Center for Economic Research)._ Intermediate microeconomics; industrial organization (master's).
 1998, 1999
 :   _University of Rochester. Department of Economics._ Intermediate microeconomics.
 1994
