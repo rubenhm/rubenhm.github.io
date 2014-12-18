@@ -1,0 +1,264 @@
+\documentclass[10pt,]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+    \usepackage{xltxtra,xunicode}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+  \newcommand{\euro}{€}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{\usepackage{microtype}}{}
+\ifxetex
+  \usepackage[setpagesize=false, % page size defined by xetex
+              unicode=false, % unicode breaks when used with xetex
+              xetex]{hyperref}
+\else
+  \usepackage[unicode=true]{hyperref}
+\fi
+\hypersetup{breaklinks=true,
+            bookmarks=true,
+            pdfauthor={},
+            pdftitle={},
+            colorlinks=true,
+            citecolor=blue,
+            urlcolor=black,
+            linkcolor=magenta,
+            pdfborder={0 0 0}}
+\urlstyle{same}  % don't use monospace font for urls
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\setcounter{secnumdepth}{0}
+
+\usepackage[top=.3in, bottom=.5in, left=1in, right=1in]{geometry}
+\usepackage{tgpagella}
+\ifxetex
+  \setmainfont[Mapping=tex-text]{Gentium}
+  \setromanfont[BoldFont={Gentium Basic Bold}]{Gentium}
+  \setsansfont{FontinSans-Bold}
+\fi
+
+% http://tex.stackexchange.com/questions/91124/itemize-removing-natural-indent
+% http://tex.stackexchange.com/questions/78167/indentation-within-an-itemized-list
+% http://tex.stackexchange.com/questions/126221/spacing-between-item-and-description-using-description-list
+% http://stackoverflow.com/questions/1061112/eliminate-space-before-beginitemize
+% http://tex.stackexchange.com/questions/149187/description-environment-with-italic-non-bold-labels-bullets-and-normal-font-in
+\usepackage{enumitem}
+\setlist{nolistsep}
+\setlist[itemize]{leftmargin=.5in}
+\setlist[description]{leftmargin=.5in,font=\normalfont\itshape,labelwidth=.8in,labelindent=-.5in}
+
+
+\usepackage{titlesec}
+\titleformat{\section}{\huge\bfseries}{\thesection}{1em}{}
+\titlespacing{\section}{0pt}{0pt}{.5em}
+\titleformat{\subsection}{\large\bfseries\MakeUppercase}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\large\bfseries}{\thesubsubsection}{1em}{}
+
+% http://tex.stackexchange.com/questions/108684/spacing-before-and-after-section-titles
+\titlespacing*{\subsection}{0pt}{0pt}{0pt}
+\titlespacing*{\subsubsection}{0pt}{0pt}{0pt}
+
+\usepackage{multicol}
+\pagestyle{empty}
+\hyphenation{Media-Wiki}
+
+\renewcommand{\labelitemi}{\raise .5ex\hbox{\tiny$\blacktriangleright$}}
+\renewcommand{\labelitemii}{\raise .5ex\hbox{\tiny$\blacktriangleright$}}
+
+% from http://tex.stackexchange.com/a/29796/16139
+\newsavebox{\zerobox}
+\newenvironment{nospace}
+  {\par\edef\theprevdepth{\the\prevdepth}\nointerlineskip
+   \setbox\zerobox=\vtop to 0pt\bgroup
+   \hrule height0pt\kern\dimexpr\baselineskip-\topskip\relax
+  }
+  {\par\vss\egroup\ht\zerobox=0pt \wd\zerobox=0pt \dp\zerobox=0pt
+   \box\zerobox}
+
+\usepackage[singlespacing]{setspace}
+
+\begin{document}
+
+\begin{nospace}\begin{flushright}
+Email: \href{mailto:ruben@rubenhm.org}{ruben@rubenhm.org}
+
+Website: \href{http://www.rubenhm.org}{rubenhm.org}
+
+314-827-6381 (c)
+
+Citizenship: US
+
+
+\end{flushright}\end{nospace}
+
+\section{Rubén Hernández-Murillo}\label{rubuxe9n-hernuxe1ndez-murillo}
+
+Formats:
+\href{https://raw.github.com/rubenhm/rubenhm.github.io/source/assets/docs/Ruben_Hernandez-Murillo-Resume.md}{Markdown},
+\href{http://www.rubenhm.org/assets/docs/Ruben_Hernandez-Murillo-Resume.pdf}{PDF},
+\href{https://raw.github.com/rubenhm/rubenhm.github.io/source/assets/docs/Ruben_Hernandez-Murillo-Resume.tex}{\LaTeX},
+\href{http://www.rubenhm.org/resume/}{HTML} .
+
+\subsection{Education}\label{education}
+
+\begin{description}
+\itemsep1pt\parskip0pt\parsep0pt
+\item[2001]
+PhD in Economics. \emph{University of Rochester.}
+\item[1998]
+MA in Economics. \emph{University of Rochester.}
+\item[1995]
+BA in Economics, \emph{summa cum laude}. \emph{ITAM (Instituto
+Tecnológico Autónomo de México).}
+\end{description}
+
+\subsection{Work Experience}\label{work-experience}
+
+\subsubsection{Research}\label{research}
+
+\begin{description}
+\itemsep1pt\parskip0pt\parsep0pt
+\item[2005-Present]
+\emph{Federal Reserve Bank of St.~Louis.} Senior economist.
+\item[2000-2005]
+\emph{Federal Reserve Bank of St.~Louis.} Economist.
+\end{description}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Published 20+ scholarly articles and 40+ non-technical articles.
+\item
+  Served as reviewer for 30+ academic journals.
+\item
+  Interests: applied microeconomics, public economics, regional and
+  urban, and real estate economics.
+\end{itemize}
+
+\begin{description}
+\itemsep1pt\parskip0pt\parsep0pt
+\item[1995-2000]
+\emph{University of Rochester.} PhD student.
+\end{description}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Served as research assistant to professor Per Krusell. Wrote Fortran
+  95 code. (1999, 2000)
+\item
+  Completed PhD program in Economics. Fields: Industrial organization;
+  political economy.\\ Advisor: Per Krusell. Dissertation: \emph{Essays
+  on Economic Competition Among Jurisdictions.}
+\end{itemize}
+
+\subsubsection{Policy/Analysis}\label{policyanalysis}
+
+\begin{description}
+\itemsep1pt\parskip0pt\parsep0pt
+\item[2000-Present]
+\emph{Federal Reserve Bank of St.~Louis.}
+\end{description}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Served as reviewer in Federal Reserve System's \emph{Comprehensive
+  Capital Analysis and Review} (CCAR). (2012-2014)
+\item
+  Chaired Federal Reserve System's \emph{Committee on Regional
+  Analysis}; organized its \emph{Annual Conference}. (2013-2014)
+\item
+  Coordinated the St.~Louis District's \emph{Beige Book}. (2002-2014)
+\item
+  Briefed the Bank's President, Boards of Directors of the Bank's
+  branches, and industry and community leaders on current economic
+  conditions in the St.~Louis District and the nation. (2000-2014)
+\end{itemize}
+
+\begin{description}
+\itemsep1pt\parskip0pt\parsep0pt
+\item[1994-1995]
+\emph{ITAM, CAIE (Center for Economic Research and Analysis).} Junior
+researcher.
+\end{description}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Wrote periodical reports on economic conditions in Mexico.
+\end{itemize}
+
+\subsubsection{Teaching}\label{teaching}
+
+\begin{description}
+\itemsep1pt\parskip0pt\parsep0pt
+\item[2013 (summer)]
+\emph{Washington University in St.~Louis. Olin Business School.}
+Managerial economics.
+\item[2002 (spring)]
+\emph{ITAM. CIE (Center for Economic Research).} Intermediate
+microeconomics; industrial organization (master's).
+\item[1998, 1999]
+\emph{University of Rochester. Department of Economics.} Intermediate
+microeconomics.
+\item[1994]
+\emph{ITAM. Department of Economics.} Introductory microeconomics.
+\end{description}
+
+\subsection{Selected publications}\label{selected-publications}
+
+\begin{description}
+\itemsep1pt\parskip0pt\parsep0pt
+\item[2014]
+\href{http://dx.doi.org/10.1016/j.regsciurbeco.2014.07.006}{``Differences
+in Subprime Loan Pricing Across Races and Neighborhoods,''} (with Andra
+C. Ghent and Michael T. Owyang). \emph{Regional Science and Urban
+Economics}, 48, pp.199-215.
+\item[2010]
+\href{http://dx.doi.org/10.1016/j.jbankfin.2010.03.011}{``Strategic
+Online Banking Adoption,''} (with Gerard Llobet and Roberto Fuentes)
+\emph{Journal of Banking and Finance}, 34(7), pp.~1650--1663.
+\item[2009]
+\href{http://dx.doi.org/10.1111/j.1538-4616.2008.00186.x}{``Measuring
+the Information Content of the Beige Book: A Mixed Data Sampling
+Approach,''} (with Michelle T. Armesto; Michael T. Owyang; and Jeremy
+Piger). \emph{Journal of Money, Credit and Banking}, 41(1), pp.~35--55.
+\item[2006]
+\href{http://dx.doi.org/10.1016/j.ijindorg.2005.03.008}{``Patent
+Licensing Revisited: Heterogeneous Firms and Product Differentiation,''}
+(with Gerard Llobet). \emph{International Journal of Industrial
+Organization}, 24(1), pp.~149--175.
+\item[2004]
+\href{http://dx.doi.org/10.1111/j.0020-6598.2004.00293.x}{``Racial
+Profiling or Racist Policing? Bounds Tests in Aggregate Data,''} (with
+John Knowles). \emph{International Economic Review}, 45(3),
+pp.~959--989.
+\end{description}
+
+\subsection{Skills}\label{skills}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Very experienced with MATLAB, STATA, \LaTeX, Markdown, GNU/Linux.
+\item
+  Familiar with MS Office Suite products, GNU Make, pandoc.
+\item
+  Languages: English (fluent), Spanish (native).
+\end{itemize}
+
+\end{document}
