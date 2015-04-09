@@ -9,7 +9,7 @@ layout: default
 </div>
 
 
-<img src="/assets/img/jumbotronbackground.jpg"  class="jumbotronwidth">          
+<img src="/assets/img/rhm_rochester.jpg"  class="jumbotronwidth">          
 {% include _social_home.html %}
 
 

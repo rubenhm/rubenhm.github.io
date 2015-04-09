@@ -5,13 +5,13 @@ permalink: /about/
 ---
 
   <div class="col-md-2">
-      <img  src="/assets/img/rhernandez.jpg"  height="300px">
+      <img  src="/assets/img/rhm_chapala.jpg"  height="300px">
   </div>
   <div class="col-md-2"></div>
   <div class="col-md-8">
   <h2 >I am Rubén Hernández-Murillo.</h2>
  
-  I am a economist, currently at the [Research Division](http://research.stlouisfed.org/) of the [Federal Reserve Bank of St. Louis.](http://www.stlouisfed.org)
+  I am a economist at the [Federal Reserve Bank of St. Cleveland.](http://www.clevelandfed.org)
 
   I attended [ITAM](http://economia.itam.mx/es) in Mexico City and the [University of Rochester](http://www.econ.rochester.edu) in Rochester, NY.
 

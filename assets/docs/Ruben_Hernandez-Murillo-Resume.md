@@ -23,8 +23,9 @@ Work Experience
 ---------------
 
 ### Research  ### 
-
-2005-Present
+2015-Present
+:   _Federal Reserve Bank of St. Cleveland._  Senior policy economist.
+2005-2015
 :   _Federal Reserve Bank of St. Louis._  Senior economist.
 2000-2005
 :   _Federal Reserve Bank of St. Louis._  Economist.
@@ -43,7 +44,7 @@ Work Experience
 
 ### Policy/Analysis ###
 
-2000-Present
+2000-2015
 :   _Federal Reserve Bank of St. Louis._ 
 
 +   Served as reviewer in Federal Reserve System’s _Comprehensive Capital Analysis and Review_ (CCAR). (2012-2014)
