@@ -12,17 +12,6 @@
   url = {http://research.stlouisfed.org/publications/es/14/ES_23_2014-11-05.pdf}
 }
 
-@ARTICLE{fedles2011n11,
-  author = {Hern{\'a}ndez-Murillo, Rub{\'e}n and Martinek, Christopher J.},
-  title = {The effects of education on health},
-  journal = {Federal Reserve Bank of St. Louis Economic Synopses},
-  year = {2011},
-  number = {11},
-  keywords = {Education ; Public health - Economic aspects},
-  pubtype = {ES},
-  url = {http://research.stlouisfed.org/publications/es/11/ES1111.pdf}
-}
-
 @ARTICLE{fedles2011n31,
   author = {Hern{\'a}ndez-Murillo, Rub{\'e}n and Martinek, Christopher J. },
   title = {Immigration at the extremes of the skill distribution},
@@ -32,6 +21,17 @@
   keywords = {Immigrants ; Labor supply - United States},
   pubtype = {ES},
   url = {http://research.stlouisfed.org/publications/es/11/ES1131.pdf}
+}
+
+@ARTICLE{fedles2011n11,
+  author = {Hern{\'a}ndez-Murillo, Rub{\'e}n and Martinek, Christopher J.},
+  title = {The effects of education on health},
+  journal = {Federal Reserve Bank of St. Louis Economic Synopses},
+  year = {2011},
+  number = {11},
+  keywords = {Education ; Public health - Economic aspects},
+  pubtype = {ES},
+  url = {http://research.stlouisfed.org/publications/es/11/ES1111.pdf}
 }
 
 @ARTICLE{fedles2010n13,
@@ -188,29 +188,24 @@
   url = {http://research.stlouisfed.org/publications/net/20011001/cover.pdf}
 }
 
+
 @ARTICLE{ree2015,
   author = {Ghent, Andra C. and Hern{\'a}ndez-Murillo, Rub{\'e}n and Owyang, Michael T.},
   title = {Did Affordable Housing Legislation Contribute to the Subprime Securities Boom?},
   journal = {Real Estate Economics},
   year = {Forthcoming},
-  abstract = {In this paper, we use a regression discontinuity approach and present
-	new institutional evidence to investigate whether affordable housing
-	policies influenced the market for securitized subprime mortgages.
-	
-	
-	 We use merged loan-level data on non-prime mortgages with individual-
-	and neighborhood- level data for California and Florida. We find
-	no evidence that lenders increased subprime originations or altered
-	pricing around the discrete eligibility cutoffs for the Government
-	Sponsored Enterprises' (GSEs) affordable housing goals or the Community
-	Reinvestment Act. 
-	
-	 Although we find evidence that the GSEs bought significant quantities
-	of subprime securities, our results indicate that these purchases
-	were not directly related to their affordable housing mandates.},
+  number = {},
+  month = {},
+  pages = {},
   pubtype = {Journal},
-  url = {http://research.stlouisfed.org/wp/2012/2012-005.pdf}
+  abstract = {In this paper, we use a regression discontinuity approach and present new institutional evidence to investigate whether affordable housing policies influenced the market for securitized subprime mortgages. 
+
+ We use merged loan-level data on non-prime mortgages with individual- and neighborhood- level data for California and Florida. We find no evidence that lenders increased subprime originations or altered pricing around the discrete eligibility cutoffs for the Government Sponsored Enterprises' (GSEs) affordable housing goals or the Community Reinvestment Act. 
+
+ Although we find evidence that the GSEs bought significant quantities of subprime securities, our results indicate that these purchases were not directly related to their affordable housing mandates.},
+ url = {http://research.stlouisfed.org/wp/2012/2012-005.pdf},
 }
+
 
 @ARTICLE{rsue2014,
   author = {Andra C. Ghent and Rub{\'e}n Hern{\'a}ndez-Murillo and Michael T. Owyang},
@@ -218,24 +213,25 @@
   journal = {Regional Science and Urban Economics },
   year = {2014},
   volume = {48},
-  pages = {199--215},
   month = sep,
-  abstract = {We investigate whether race and ethnicity influenced subprime loan
-	pricing during 2005, the peak of the subprime mortgage expansion.
-	We combine loan-level data on the performance of non-prime securitized
-	mortgages with individual- and neighborhood-level data on racial
-	and ethnic characteristics for metropolitan areas in California and
-	Florida. Using a model of rate determination that accounts for predicted
-	loan performance, we evaluate the differences in subprime mortgage
-	rates in terms of racial and ethnic groups and neighborhood characteristics.
-	We find evidence of adverse pricing for blacks and Hispanics. The
-	evidence of adverse pricing is strongest for purchase mortgages and
-	mortgages originated by non-depository institutions. },
+  pages = {199--215},
+  number = {},
+  abstract = {We investigate whether race and ethnicity influenced subprime
+  loan pricing during 2005, the peak of the subprime mortgage expansion.
+  We combine loan-level data on the performance of non-prime securitized
+  mortgages with individual- and neighborhood-level data on racial
+  and ethnic characteristics for metropolitan areas in California and
+  Florida. Using a model of rate determination that accounts for predicted
+  loan performance, we evaluate the differences in subprime mortgage
+  rates in terms of racial and ethnic groups and neighborhood characteristics.
+  We find evidence of adverse pricing for blacks and Hispanics. The
+  evidence of adverse pricing is strongest for purchase mortgages and
+  mortgages originated by non-depository institutions. },
   doi = {10.1016/j.regsciurbeco.2014.07.006},
   issn = {0166-0462},
   keywords = {Fair Housing Act},
-  pubtype = {Journal},
-  url = {http://research.stlouisfed.org/wp/2011/2011-033.pdf}
+  url ={http://research.stlouisfed.org/wp/2011/2011-033.pdf},
+  pubtype = {Journal}, 
 }
 
 @ARTICLE{jepsy2013,
@@ -249,8 +245,12 @@
   abstract = {This is the abstract.},
   doi = {10.1016/j.joep.2013.09.005},
   keywords = {Relative risk aversion; Marginal utility of income; Happiness; Health dependence},
-  pubtype = {Journal},
-  url = {http://research.stlouisfed.org/wp/2011/2011-039.pdf}
+  url = {http://research.stlouisfed.org/wp/2011/2011-039.pdf},
+  abstract = {In this paper we provide estimates of the coefficient of relative risk aversion using information on self-reports of subjective personal well-being from multiple datasets, including three cross-sectional surveys and two panel surveys, namely the Gallup World Poll, the European Social Survey, the World Values Survey, the British Household Panel Survey for the United Kingdom, and the General Social Survey for the United States. 
+  We additionally consider the implications of allowing for health-state dependence in the utility function on the estimates of risk aversion and examine how the marginal utility of income changes in poor health states. 
+  Our estimates of relative risk aversion with cross-section data vary closely around 1, which corresponds to logarithmic utility, while the estimates with panel data are slightly larger. 
+  We find that controlling for health dependence generally reduces these estimates. In contrast with other studies in the literature, our results also suggest that the marginal utility of income increases when satisfaction with health deteriorates, and this effect is robust across the various datasets analyzed.}, 
+  pubtype = {Journal}, 
 }
 
 @ARTICLE{jobafi2010,
@@ -262,22 +262,14 @@
   pages = {1650-1663},
   number = {7},
   month = jul,
-  abstract = {In this paper we study the determinants of banks' decisions to adopt
-	a transactional website for their customers. Using a panel of commercial
-	banks in the United States for the period 2003--2006, we show that
-	although bank-specific characteristics are important determinants
-	of banks' adoption decisions, competition also plays a prominent
-	role. The extent of competition is related to the geographic overlap
-	of banks in different markets and their relative market share in
-	terms of deposits. In particular, banks adopt online banking services
-	earlier in markets where their competitors have already adopted this
-	technology. This paper is one of the first to construct local banking
-	markets using the geographic market definitions delimited by the
-	CASSIDI Database compiled at the Federal Reserve Bank of St. Louis.},
   doi = {10.1016/j.jbankfin.2010.03.011},
+  url = {http://research.stlouisfed.org/wp/2006/2006-058.pdf},
+  abstract = {In this paper we study the determinants of banks' decisions to adopt a transactional website for their customers. 
+  Using a panel of commercial banks in the United States for the period 2003--2006, we show that although bank-specific characteristics are important determinants of banks' adoption decisions, competition also plays a prominent role. 
+  The extent of competition is related to the geographic overlap of banks in different markets and their relative market share in terms of deposits. In particular, banks adopt online banking services earlier in markets where their competitors have already adopted this technology.
+  This paper is one of the first to construct local banking markets using the geographic market definitions delimited by the CASSIDI Database compiled at the Federal Reserve Bank of St. Louis.}, 
   pubtype = {Journal},
-  url = {http://research.stlouisfed.org/wp/2006/2006-058.pdf}
-}
+}  
 
 @ARTICLE{jmoncb2009,
   author = {Armesto, Michelle T. and Hern{\'a}ndez-Murillo, Rub{\'e}n and Owyang, Michael T. and Piger, Jeremy },
@@ -288,18 +280,11 @@
   pages = {35-55},
   number = {1},
   month = feb,
-  abstract = { Studies of the predictive ability of the Federal Reserve's Beige
-	Book for aggregate output and employment have proven inconclusive.
-	This might be attributed, in part, to its irregular release schedule.
-	We use a model that allows for data sampling at mixed frequencies
-	to analyze the predictive power of the Beige Book. We find that the
-	Beige Book's national summary and District reports predict GDP and
-	aggregate employment and that most District reports provide information
-	content for regional employment. In addition, there appears to be
-	an asymmetry in the predictive content of the Beige Book language.},
   doi = {10.1111/j.1538-4616.2008.00186.x},
-  pubtype = {Journal},
-  url = {http://research.stlouisfed.org/wp/2007/2007-010.pdf}
+  url = {http://research.stlouisfed.org/wp/2007/2007-010.pdf},
+  abstract = { Studies of the predictive ability of the Federal Reserve's Beige Book for aggregate output and employment have proven inconclusive. This might be attributed, in part, to its irregular release schedule. We use a model that allows for data sampling at mixed frequencies to analyze the predictive power of the Beige Book. 
+  We find that the Beige Book's national summary and District reports predict GDP and aggregate employment and that most District reports provide information content for regional employment. In addition, there appears to be an asymmetry in the predictive content of the Beige Book language.}, 
+  pubtype = {Journal}
 }
 
 @ARTICLE{pufire2007,
@@ -311,22 +296,12 @@
   pages = {361-384},
   number = {3},
   month = may,
-  abstract = {We apply spatial econometric techniques to models of state and local
-	fiscal policy convergence. Our work extends the work of Scully and
-	Annala in much the same way that Rey and Montouri extended the literature
-	on income convergence among U.S. states. Our results indicate that
-	most fiscal policies have been converging and that the growth paths
-	of state and local fiscal policies are not independent. In addition,
-	we find that total expenditures have been converging faster than
-	output, whereas total tax revenues have been converging slower than
-	output. Our models further demonstrate that state expenditure growth
-	is dependent on expenditure growth in economically and demographically
-	similar states, while output growth and revenue growth in a state
-	are dependent on output growth and revenue growth, respectively,
-	in contiguous states.},
   doi = {10.1177/1091142106295766},
-  pubtype = {Journal},
-  url = {http://research.stlouisfed.org/wp/2006/2006-001.pdf}
+  url = {http://research.stlouisfed.org/wp/2006/2006-001.pdf},
+  abstract = {We apply spatial econometric techniques to models of state and local fiscal policy convergence. Our work extends the work of Scully and Annala in much the same way that Rey and Montouri extended the literature on income convergence among U.S. states. 
+  Our results indicate that most fiscal policies have been converging and that the growth paths of state and local fiscal policies are not independent. In addition, we find that total expenditures have been converging faster than output, whereas total tax revenues have been converging slower than output.
+  Our models further demonstrate that state expenditure growth is dependent on expenditure growth in economically and demographically similar states, while output growth and revenue growth in a state are dependent on output growth and revenue growth, respectively, in contiguous states.},
+  pubtype = {Journal}
 }
 
 @ARTICLE{indorg2006,
@@ -338,24 +313,14 @@
   pages = {149-175},
   number = {1},
   month = jan,
-  abstract = {In this paper we study the optimal licensing agreement between a patentholder
-	of a cost-reducing innovation and firms that have heterogeneous uses
-	for the new technology. We consider the case in which these firms
-	are competitors in a downstream market. 
-	
-	 We extend the competition environment among the licensees beyond
-	the Cournot/Bertrand models considered by the previous literature
-	to a framework with differentiated products. We also assume that
-	potential licensees have private information about the usefulness
-	of the new technology. 
-	
-	 We characterize two purposes the optimal licensing contract serves
-	to the patentholder: separation of the licensees and competition
-	softening in the downstream market. We also describe how the optimal
-	contract changes with the degree of product differentiation.},
   doi = {10.1016/j.ijindorg.2005.03.008},
-  pubtype = {Journal},
-  url = {http://research.stlouisfed.org/wp/2002/2002-031.pdf}
+  url = {http://research.stlouisfed.org/wp/2002/2002-031.pdf},
+  abstract = {In this paper we study the optimal licensing agreement between a patentholder of a cost-reducing innovation and firms that have heterogeneous uses for the new technology. We consider the case in which these firms are competitors in a downstream market. 
+
+  We extend the competition environment among the licensees beyond the Cournot/Bertrand models considered by the previous literature to a framework with differentiated products. We also assume that potential licensees have private information about the usefulness of the new technology. 
+
+  We characterize two purposes the optimal licensing contract serves to the patentholder: separation of the licensees and competition softening in the downstream market. We also describe how the optimal contract changes with the degree of product differentiation.},
+  pubtype = {Journal}
 }
 
 @ARTICLE{ecolet2006,
@@ -367,14 +332,10 @@
   pages = {335-339},
   number = {3},
   month = mar,
-  abstract = {We consider whether disaggregated data enhance the efficiency of aggregate
-	employment forecasts. We find that incorporating spatial interaction
-	into a disaggregated forecasting model lowers the out-of-sample mean
-	squared error from a univariate aggregate model by 70% at a two-year
-	horizon.},
   doi = {10.1016/j.econlet.2005.08.023},
-  pubtype = {Journal},
-  url = {http://research.stlouisfed.org/wp/2004/2004-005.pdf}
+  url = {http://research.stlouisfed.org/wp/2004/2004-005.pdf},
+  abstract = {We consider whether disaggregated data enhance the efficiency of aggregate employment forecasts. We find that incorporating spatial interaction into a disaggregated forecasting model lowers the out-of-sample mean squared error from a univariate aggregate model by 70% at a two-year horizon.}, 
+  pubtype = {Journal} 
 }
 
 @ARTICLE{bejeap2004,
@@ -385,23 +346,15 @@
   volume = {4},
   number = {1},
   month = may,
-  abstract = { We examine a two-jurisdiction tax competition environment where local
-	governments can only imperfectly monitor where agents pay taxes and
-	risk-averse individuals may choose to cross borders to pay lower
-	taxes in a neighboring location.
-	
-	 In a game between local authorities, we find that, when communities
-	differ in size, in equilibrium the smaller community sets lower taxes
-	and attracts agents from the larger jurisdiction. With identical
-	communities, tax rates must be equal.
-	
-	 Finally, we examine the incentives of jurisdictions to harmonize
-	tax rates and find that, whenever the smaller community benefits
-	from tax harmonization, the larger jurisdiction will benefit also.},
   doi = {10.2202/1538-0653.1219},
+  url = {http://research.stlouisfed.org/wp/2002/2002-015.pdf},
   keywords = {Tax Competition; Tax Evasion; Tax Harmonization; Risk Aversion},
-  pubtype = {Journal},
-  url = {http://research.stlouisfed.org/wp/2002/2002-015.pdf}
+  abstract = { We examine a two-jurisdiction tax competition environment where local governments can only imperfectly monitor where agents pay taxes and risk-averse individuals may choose to cross borders to pay lower taxes in a neighboring location.
+
+  In a game between local authorities, we find that, when communities differ in size, in equilibrium the smaller community sets lower taxes and attracts agents from the larger jurisdiction. With identical communities, tax rates must be equal.
+
+  Finally, we examine the incentives of jurisdictions to harmonize tax rates and find that, whenever the smaller community benefits from tax harmonization, the larger jurisdiction will benefit also.}, 
+  pubtype = {Journal}
 }
 
 @ARTICLE{iecrev2004,
@@ -413,21 +366,12 @@
   pages = {959-989},
   number = {3},
   month = aug,
-  abstract = {State-wide reports on police traffic stops and searches summarize
-	very large populations, making them potentially powerful tools for
-	identifying racial bias, particularly when statistics on search outcomes
-	are included. But when the reported statistics conflate searches
-	involving different levels of police discretion, standard tests for
-	racial bias are not applicable. 
-	
-	 This article develops a model of police search decisions that allows
-	for nondiscretionary searches and derives tests for racial bias in
-	data that mix different search types. Our tests reject unbiased policing
-	as an explanation of the disparate impact of motor-vehicle searches
-	on minorities in Missouri.},
   doi = {10.1111/j.0020-6598.2004.00293.x},
-  pubtype = {Journal},
-  url = {http://research.stlouisfed.org/wp/2004/2004-012.pdf}
+  url = {http://research.stlouisfed.org/wp/2004/2004-012.pdf},
+  abstract = {State-wide reports on police traffic stops and searches summarize very large populations, making them potentially powerful tools for identifying racial bias, particularly when statistics on search outcomes are included. But when the reported statistics conflate searches involving different levels of police discretion, standard tests for racial bias are not applicable. 
+
+  This article develops a model of police search decisions that allows for nondiscretionary searches and derives tests for racial bias in data that mix different search types. Our tests reject unbiased policing as an explanation of the disparate impact of motor-vehicle searches on minorities in Missouri.},
+  pubtype = {Journal}
 }
 
 @ARTICLE{fedlre2013jul,
@@ -741,30 +685,8 @@
   url = {http://research.stlouisfed.org/publications/red/2008/01/Engemann.pdf}
 }
 
-@ARTICLE{fedlrv2015q1,
-  author = {Gandelman, N{\'e}stor and Hern{\'a}ndez-Murillo, Rub{\'e}n},
-  title = {Risk Aversion at the Country Level},
-  journal = {Federal Reserve Bank of St. Louis Review},
-  year = {2015},
-  volume = {97},
-  pages = {53--66},
-  number = {1},
-  month = {First Quarter},
-  abstract = {This article estimates the coefficient of relative risk aversion for
-	75 countries using data on self-reports of personal well-being from
-	the 2006 Gallup World Poll. The analysis suggests that the coefficient
-	of relative risk aversion varies closely around 1, which corresponds
-	to a logarithmic utility function. The authors conclude that their
-	results support the use of the log utility function in numerical
-	simulations of economic models.},
-  institution = {Federal Reserve Bank of St. Louis},
-  pubtype = {Review},
-  type = {Review},
-  url = {http://research.stlouisfed.org/publications/review/2015/q1/53-66GandelmanHernandez.pdf}
-}
-
 @ARTICLE{fedlrv2011mayb,
-  author = {Engemann, Kristie M. and Hern{\'a}ndez-Murillo, Rub{\'e}n and Owyang, Michael T.},
+  author = {Engemann, Kristie M. and Hern{\'a}ndez-Murillo, Rub{\'e}n and Owyang, Michael T. },
   title = {Regional aggregation in forecasting: {A}n application to the {F}ederal {R}eserve's {E}ighth {D}istrict},
   journal = {Federal Reserve Bank of St. Louis Review},
   year = {2011},
@@ -916,27 +838,28 @@
   year = {2014},
   type = {Working Paper},
   number = {No. 2014-036A},
-  abstract = {We examine the welfare properties of alternative regimes of interjurisdictional
-	competition for heterogeneous mobile firms. Firms differ not only
-	in terms of the degree of mobility across jurisdictions but also
-	in terms of productivity. Alternative taxation regimes represent
-	restraints on the discretionary powers of taxation of local governments.
-	
-	
-	 We find that average welfare is higher under discretionary and more
-	efficient taxation regimes (in the sense of minimizing dead-weight
-	losses from distortionary taxation) when firms are highly mobile.
-	In this situation, further limiting competition by imposing a system
-	of non-discretionary instruments can reduce average welfare by reducing
-	the efficiency of the local governments at raising and allocating
-	public funds. 
-	
-	 When firms face high moving costs, on the other hand, switching to
-	a non-discretionary and less efficient taxation regime may increase
-	welfare by preventing local governments from engaging in excessive
-	redistribution of resources.},
   pubtype = {WP},
-  url = {http://research.stlouisfed.org/wp/2014/2014-036.pdf}
+  url = {http://research.stlouisfed.org/wp/2014/2014-036.pdf},
+  abstract = {We examine the welfare properties of alternative regimes of interjurisdictional competition for heterogeneous mobile firms. Firms differ not only in terms of the degree of mobility across jurisdictions but also in terms of productivity. Alternative taxation regimes represent restraints on the discretionary powers of taxation of local governments. 
+
+ We find that average welfare is higher under discretionary and more efficient taxation regimes (in the sense of minimizing dead-weight losses from distortionary taxation) when firms are highly mobile. In this situation, further limiting competition by imposing a system of non-discretionary instruments can reduce average welfare by reducing the efficiency of the local governments at raising and allocating public funds. 
+
+ When firms face high moving costs, on the other hand, switching to a non-discretionary and less efficient taxation regime may increase welfare by preventing local governments from engaging in excessive redistribution of resources.} 
+}
+
+
+@TECHREPORT{fedlwp2014-005,
+  author = {Gandelman, N{\'e}stor and Hern{\'a}ndez-Murillo, Rub{\'e}n},
+  title = {Risk Aversion at the Country Level},
+  institution = {Federal Reserve Bank of St. Louis},
+  year = {2014},
+  type = {Working Paper},
+  number = {No. 2014-005A},
+  pubtype = {WP},
+  url = {http://research.stlouisfed.org/wp/2014/2014-005.pdf},
+  abstract = {In this paper the authors estimate the coefficient of relative risk aversion for 75 countries using data on self-reports of personal well-being from the Gallup World Poll. 
+
+ Their analysis suggests that the coefficient of relative risk aversion varies closely around one, which corresponds to a logarithmic utility function. The authors conclude that their results support the use of the log utility function in numerical simulations.} 
 }
 
 @TECHREPORT{fedlwp2013-021,
@@ -946,29 +869,15 @@
   year = {2013},
   type = {Working Paper},
   number = {No. 2013-021A},
-  abstract = {Past studies have argued that housing is an important driver of business
-	cycles. Housing markets, however, are highly localized, while business
-	cycles are often measured at the national level. We model a national
-	housing cycle using a panel of cities while also allowing for idiosyncratic
-	departures from the national cycle. These departures occur for clusters
-	of cities that experience simultaneous idiosyncratic housing recessions.
-	
-	
-	 We estimate the clustered Markov-switching model proposed in Hamilton
-	and Owyang (2012) using city-level building permits data, a series
-	commonly used at the national level as a business cycle indicator.
-	
-	
-	 We find that cities do not form housing regions in the traditional,
-	geographic sense. Instead, similarities in factors affecting the
-	demand for housing (such as the average winter temperature and the
-	unemployment rate) appear to be more important determinants of cyclical
-	co-movements than similarities in factors affecting the supply for
-	housing (such as housing density and geographic constraints in the
-	availability of developable land).},
   pubtype = {WP},
-  url = {http://research.stlouisfed.org/wp/2013/2013-021.pdf}
+  url = {http://research.stlouisfed.org/wp/2013/2013-021.pdf},
+  abstract = {Past studies have argued that housing is an important driver of business cycles. Housing markets, however, are highly localized, while business cycles are often measured at the national level. We model a national housing cycle using a panel of cities while also allowing for idiosyncratic departures from the national cycle. These departures occur for clusters of cities that experience simultaneous idiosyncratic housing recessions. 
+
+ We estimate the clustered Markov-switching model proposed in Hamilton and Owyang (2012) using city-level building permits data, a series commonly used at the national level as a business cycle indicator. 
+
+ We find that cities do not form housing regions in the traditional, geographic sense. Instead, similarities in factors affecting the demand for housing (such as the average winter temperature and the unemployment rate) appear to be more important determinants of cyclical co-movements than similarities in factors affecting the supply for housing (such as housing density and geographic constraints in the availability of developable land).} 
 }
+
 
 @TECHREPORT{fedlwp2012-052,
   author = {Hern{\'a}ndez-Murillo, Rub{\'e}n},
@@ -977,28 +886,17 @@
   year = {2012},
   type = {Working Paper},
   number = {No. 2012-052B},
-  abstract = {In this paper, I study the welfare consequences of imposing alternative
-	regimes of competition between two local governments that compete
-	for mobile firms which have private information on their degree of
-	mobility. 
-	
-	 Competition among jurisdictions raises the firms' rents to higher
-	levels than if jurisdictions were to cooperate. Therefore, from the
-	perspective of a utilitarian federation, constitutional constraints
-	on the competition process may be desirable. 
-	
-	 I find that imposing a system of coarser policy instruments improves
-	welfare relative to competition with discretionary instruments, because
-	it reduces the socially costly rents that are granted to firms in
-	equilibrium. 
-	
-	 I also find that the gains from resorting to constitutional constraints
-	are maximal when communities are identical, but decline if the extent
-	of asymmetry between locations (in terms of local market size or
-	technological complementarities) increases.},
   pubtype = {WP},
-  url = {http://research.stlouisfed.org/wp/2012/2012-052.pdf}
+  url = {http://research.stlouisfed.org/wp/2012/2012-052.pdf},
+  abstract ={In this paper, I study the welfare consequences of imposing alternative regimes of competition between two local governments that compete for mobile firms which have private information on their degree of mobility. 
+
+ Competition among jurisdictions raises the firms' rents to higher levels than if jurisdictions were to cooperate.  Therefore, from the perspective of a utilitarian federation, constitutional constraints on the competition process may be desirable. 
+
+ I find that imposing a system of coarser policy instruments improves welfare relative to competition with discretionary instruments, because it reduces the socially costly rents that are granted to firms in equilibrium. 
+
+ I also find that the gains from resorting to constitutional constraints are maximal when communities are identical, but decline if the extent of asymmetry between locations (in terms of local market size or technological complementarities) increases.}
 }
+
 
 @TECHREPORT{fedlwp2011-036,
   author = {Hern{\'a}ndez-Murillo, Rub{\'e}n and Murphy, Alvin D. and Sengupta, Rajdeep},
