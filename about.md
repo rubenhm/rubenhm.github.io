@@ -11,7 +11,7 @@ permalink: /about/
   <div class="col-md-8">
   <h2 >I am Rubén Hernández-Murillo.</h2>
  
-  I am a economist at the [Federal Reserve Bank of St. Cleveland.](http://www.clevelandfed.org)
+  I am a economist at the [Federal Reserve Bank of  Cleveland.](http://www.clevelandfed.org)
 
   I attended [ITAM](http://economia.itam.mx/es) in Mexico City and the [University of Rochester](http://www.econ.rochester.edu) in Rochester, NY.
 
