@@ -1,0 +1,48 @@
+\usepackage[top=.3in, bottom=.5in, left=1in, right=1in]{geometry}
+\usepackage{tgpagella}
+\ifxetex
+  \setmainfont[Mapping=tex-text]{Gentium}
+  \setromanfont[BoldFont={Gentium Basic Bold}]{Gentium}
+  \setsansfont{FontinSans-Bold}
+\fi
+
+% http://tex.stackexchange.com/questions/91124/itemize-removing-natural-indent
+% http://tex.stackexchange.com/questions/78167/indentation-within-an-itemized-list
+% http://tex.stackexchange.com/questions/126221/spacing-between-item-and-description-using-description-list
+% http://stackoverflow.com/questions/1061112/eliminate-space-before-beginitemize
+% http://tex.stackexchange.com/questions/149187/description-environment-with-italic-non-bold-labels-bullets-and-normal-font-in
+\usepackage{enumitem}
+\setlist{nolistsep}
+\setlist[itemize]{leftmargin=.5in}
+\setlist[description]{leftmargin=.5in,font=\normalfont\itshape,labelwidth=.8in,labelindent=-.5in}
+
+
+\usepackage{titlesec}
+\titleformat{\section}{\huge\bfseries}{\thesection}{1em}{}
+\titlespacing{\section}{0pt}{0pt}{.5em}
+\titleformat{\subsection}{\large\bfseries\MakeUppercase}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\large\bfseries}{\thesubsubsection}{1em}{}
+
+% http://tex.stackexchange.com/questions/108684/spacing-before-and-after-section-titles
+\titlespacing*{\subsection}{0pt}{0pt}{0pt}
+\titlespacing*{\subsubsection}{0pt}{0pt}{0pt}
+
+\usepackage{multicol}
+\pagestyle{empty}
+\hyphenation{Media-Wiki}
+
+\renewcommand{\labelitemi}{\raise .5ex\hbox{\tiny$\blacktriangleright$}}
+\renewcommand{\labelitemii}{\raise .5ex\hbox{\tiny$\blacktriangleright$}}
+
+% from http://tex.stackexchange.com/a/29796/16139
+\newsavebox{\zerobox}
+\newenvironment{nospace}
+  {\par\edef\theprevdepth{\the\prevdepth}\nointerlineskip
+   \setbox\zerobox=\vtop to 0pt\bgroup
+   \hrule height0pt\kern\dimexpr\baselineskip-\topskip\relax
+  }
+  {\par\vss\egroup\ht\zerobox=0pt \wd\zerobox=0pt \dp\zerobox=0pt
+   \box\zerobox}
+
+\usepackage[singlespacing]{setspace}
+

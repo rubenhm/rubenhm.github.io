@@ -1,0 +1,18 @@
+This is the repository for my CV in latex format.
+The main file is Ruben_Hernandez-Murillo-cv.tex.
+The bibliography in BiBTeX format is bibliography.bib.
+This file is found in the repository for the website:
+/home/ruben/repos/rubenhm.github.io/assets/bibliography/bibliography.bib.
+
+
+
+The document is compiled with XeLaTeX using the script compile-cv.sh.
+The script uses the perl script fixbbl.pl.
+
+The bibliography style is rhmIEEEtran.bst.
+After the first run of xelatex and bibtex on Ruben_Hernandez-Murillo-cv
+the resulting .bbl file has to be processed by the perl script to
+add the \year{} command in the reference list.
+After that, xelatex is run a couple more times.
+
+

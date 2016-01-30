@@ -1,0 +1,39 @@
+---
+layout: cv-resume
+title: ""
+description: "Résumé"
+---
+
+$for(include-before)$
+$include-before$
+$endfor$
+$if(title)$
+<div id="$idprefix$header">
+<h1 class="title">$title$</h1>
+$if(subtitle)$
+<h1 class="subtitle">$subtitle$</h1>
+$endif$
+$for(author)$
+<h2 class="author">$author$</h2>
+$endfor$
+$if(date)$
+<h3 class="date">$date$</h3>
+$endif$
+</div>
+$endif$
+$if(toc)$
+<div id="$idprefix$TOC">
+$toc$
+</div>
+$endif$
+$body$
+$for(include-after)$
+$include-after$
+$endfor$
+
+
+
+<div class="row">
+  <a class="btn btn-default btn-xs  navbar-right" role="button" href="#" title="Top">Back to Top<span class="glyphicon glyphicon-arrow-up"></span></a>
+</div>  
+

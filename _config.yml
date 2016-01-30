@@ -5,7 +5,7 @@ description: "Research, Writings + Code"
 author: "Rubén Hernández-Murillo"
 baseurl: ""
 url: "http://rubenhm.org"
-exclude: ["Rakefile", "MIT-LICENSE"]
+exclude: ["Makefile","Rakefile", "MIT-LICENSE", "build-cv"]
 
 
 # Build settings
