@@ -7,7 +7,7 @@ Email: <ruben@rubenhm.org> â€¢ Website: [rubenhm.org](http://www.rubenhm.org) â€
 Formats: [Markdown](https://raw.github.com/rubenhm/rubenhm.github.io/source/assets/docs/Ruben_Hernandez-Murillo-Resume.md),
 [PDF](http://www.rubenhm.org/assets/docs/Ruben_Hernandez-Murillo-Resume.pdf),
 [\LaTeX](https://raw.github.com/rubenhm/rubenhm.github.io/source/assets/docs/Ruben_Hernandez-Murillo-Resume.tex),
-[HTML](http://www.rubenhm.org/resume/) .
+[HTML](https://raw.github.com/rubenhm/rubenhm.github.io/source/assets/docs/Ruben_Hernandez-Murillo-Resume.html) .
 
 Education
 ---------
@@ -23,6 +23,7 @@ Work Experience
 ---------------
 
 ### Research  ### 
+
 2015-Present
 :   _Federal Reserve Bank of Cleveland._  Senior policy economist.
 2005-2015
