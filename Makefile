@@ -28,7 +28,7 @@ $(CVDIRS): force_look
     # Move pdf version
 	cp build-cv/cv-pdf/Ruben_Hernandez-Murillo-cv.{tex,pdf} assets/docs/
     # Move resume version
-	cp build-cv/cv-resume/Ruben_Hernandez-Murillo-Resume.{md,tex,pdf} assets/docs/
+	cp build-cv/cv-resume/Ruben_Hernandez-Murillo-Resume.{md,tex,pdf,html} assets/docs/
 	cp build-cv/cv-resume/index.html resume/
 
 force_look:
@@ -44,12 +44,16 @@ server:  site
 	jekyll serve --detach
 
 # generate  pdf files of psgts
-postspdfs: server _site/blog/index.html _site/news/index.html
-	# Obtain url of blog post modified
-	# Print page of blog post to pdf file
-	# wkhtmltopdf --print-media-type --zoom 0.8 http://0.0.0.0:4000/blog/post/2014/09/25/export-png-charts-from-excel/ file.pdf
-	# move pdf file to correct location
-	# mv file.pdf rubenhm.github.io/download/blog/2014-09-25-export-png-charts-from-excel/2014-09-25-export-png-charts-from-excel.pdf
+postpdfs: server _site/blog/index.html _site/news/index.html
+    # regenerate pdf of most recent blog and news post
+	./mkpdf.sh
+	# Find the pid of the jekyll server
+	ps aux | grep jekyll > pid.txt
+	sed -i.bak -n 's/ruben[[:space:]]\+\([0-9]\+\).*detach/\1/p' pid.txt
+    # kill the detached jekyll process
+	kill -9 `cat pid.txt`
+    # clean up
+	-rm pid.txt*
 
 publish: postpdfs
 	# Stop serve if running
