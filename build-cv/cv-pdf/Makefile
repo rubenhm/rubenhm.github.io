@@ -20,7 +20,7 @@ SRC = $(wildcard *.tex)
 PDF = $(SRC:.tex=.pdf)
 BBL = $(SRC:.tex=.bbl)
 AUX = $(SRC:.tex=.aux)
-BIBTXT = Journal ES WP RE Review
+BIBTXT = Journal ES WP RegEco Review
 
 
 all: clean $(PDF) $(BIBTXT)
@@ -35,7 +35,7 @@ bibtxt: $(BIBTXT)
 
 $(BIBTXT): $(BIBFILE)
 	#http://tex.stackexchange.com/questions/87604/extracting-bibtex-entries-with-regular-expressions
-	bibtool '--select{pubtype "$@"}' $(BIBFILE) -o $@.bibtxt
+	bibtool '--select{pubtype "$@"} ' $(BIBFILE)  -o $@.bibtxt
 	# Extract list of keys matching pubtype
 	sed  's/@[a-zA-Z]*{[[:space:]]*\(.*\)/\1/gpw tmpbib.txt' <$@.bibtxt 
 	# Remove newlines
@@ -61,6 +61,10 @@ $(BIBTXT): $(BIBFILE)
 	lualatex $(basename $<)
 	lualatex $(basename $<)
 	-rm -f *.log *.out *.fls *.fdb* *.bak *.bbl *.aux *.blg
+	# copy pdf to correct destination
+	cp $@ /home/ruben/repos/website/rubenhm.org/assets/docs/
+	# copy tex to correct destination
+	cp $(basename $@).tex /home/ruben/repos/website/rubenhm.org/assets/docs/
 
 
 clean:

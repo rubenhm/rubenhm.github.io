@@ -18,16 +18,23 @@ tex:   clean $(TEX)
 %.plain.html: %.md $(HTML_TEMPLATE)
 	python resume.py html $(GRAVATAR_OPTION) < $< | pandoc --template=$(HTML_TEMPLATE) -t html -c resume.css -o $@
 	mv $@ index.html
+	# copy to correct destination
+	cp index.html /home/ruben/repos/website/rubenhm.org/resume/
 
 %.html: %.md
 	python resume.py html $(GRAVATAR_OPTION) < $< | pandoc -t html -c resume.css -o $@
+	# copy to correct destination
+	cp $@ /home/ruben/repos/website/rubenhm.org/assets/docs/
 
 %.pdf:  %.md $(LATEX_TEMPLATE)
 	python resume.py tex < $< | pandoc $(PANDOCARGS) --variable=fontsize:10pt --template=$(LATEX_TEMPLATE) --latex-engine=xelatex -H header.txt -o $@
+	# copy to correct destination
+	cp $@ /home/ruben/repos/website/rubenhm.org/assets/docs/
 
 %.tex: %.md
 	python resume.py tex < $< | pandoc $(PANDOCARGS) --variable=fontsize:10pt --template=$(LATEX_TEMPLATE) --latex-engine=xelatex -H header.txt -o $@
-
+	# copy to correct destination
+	cp $@ /home/ruben/repos/website/rubenhm.org/assets/docs/
 
 
 ifeq ($(OS),Windows_NT)

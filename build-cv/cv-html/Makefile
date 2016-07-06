@@ -34,11 +34,16 @@ _cv_select_pubs_long.md:  $(BIBFILE)
 	sed -i.bak -f fixindent.sed $@
 	-rm -f *.bak
 
+
 _cv_select_pubs_long.html: _cv_select_pubs_long.md
 	pandoc -f markdown+definition_lists-markdown_in_html_blocks $< -o $@ 
+	# copy to correct destination
+	cp $@ /home/ruben/repos/website/rubenhm.org/_includes/
 
 %.html: %.md
 	pandoc -f markdown+markdown_in_html_blocks --section-divs $< -o $@
+	# copy to correct destination
+	cp $@ /home/ruben/repos/website/rubenhm.org/_includes/
 
 clean:
 	-rm -f _cv*pubs*.md*  _cv*pubs*.html* _cv*.html 
