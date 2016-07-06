@@ -84,11 +84,11 @@ Selected publications
 2004
 :   [“Racial Profiling or Racist Policing? Bounds Tests in Aggregate Data,”](http://dx.doi.org/10.1111/j.0020-6598.2004.00293.x) (with John Knowles). _International Economic Review_, 45(3), pp. 959–989.
 
-Skills
+Hobbies
 ------
 
-+   Very experienced with MATLAB, STATA, \LaTeX, Markdown, GNU/Linux. 
-+   Familiar with MS Office Suite products, GNU Make, pandoc.
-+   Languages: English (fluent), Spanish (native).
++   [Scandinavian crime fiction.](https://en.wikipedia.org/wiki/Scandinavian_noir)
++   [Barbecuing with the Raspberry Pi.](https://github.com/CapnBry/HeaterMeter/wiki)
++   [Toastmasters.](https://www.toastmasters.org/)
 
 
