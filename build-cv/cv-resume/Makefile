@@ -35,6 +35,7 @@ tex:   clean $(TEX)
 	python resume.py tex < $< | pandoc $(PANDOCARGS) --variable=fontsize:10pt --template=$(LATEX_TEMPLATE) --latex-engine=xelatex -H header.txt -o $@
 	# copy to correct destination
 	cp $@ /home/ruben/repos/website/rubenhm.org/assets/docs/
+	cp $(basename $@).md /home/ruben/repos/website/rubenhm.org/assets/docs/
 
 
 ifeq ($(OS),Windows_NT)
