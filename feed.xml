@@ -19,11 +19,11 @@
 
 &lt;p&gt;Then I found another tutorial by &lt;a href=&quot;https://bost.ocks.org/mike/map/&quot;&gt;Mike Bostock&lt;/a&gt; that uses &lt;a href=&quot;http://d3js.org&quot;&gt;D3&lt;/a&gt; and &lt;a href=&quot;https://github.com/mbostock/topojson&quot;&gt;TopoJSON&lt;/a&gt; to generate the SVG map from a script. Mike Bostock&amp;#39;s multiple &lt;a href=&quot;https://bl.ocks.org/mbostock&quot;&gt;examples pages&lt;/a&gt; provide tutorials for generating and manipulating all kinds of maps.  &lt;/p&gt;
 
-&lt;p&gt;My map is based on the example for a simple Choropleth map of &lt;a href=&quot;https://bl.ocks.org/mbostock/3306362&quot;&gt;unemployment rates with thresholds&lt;/a&gt; and the example that uses a &lt;a href=&quot;https://bl.ocks.org/mbostock/5416405&quot;&gt;selection of geo units&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;My map is based on the example for a simple Choropleth map of &lt;a href=&quot;https://bl.ocks.org/mbostock/3306362&quot;&gt;unemployment rates with thresholds&lt;/a&gt; and the example that uses a &lt;a href=&quot;https://bl.ocks.org/mbostock/5416405&quot;&gt;selection of geographic units&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h2&gt;Map&lt;/h2&gt;
 
-&lt;p&gt;The Fourth Federal Reserve Districts includes all of Ohio, counties in eastern Kentucky, counties in western Pennsylvania, and a few counties in the northern section of West Virginia that lies between Ohio and Pennsylvania.&lt;/p&gt;
+&lt;p&gt;The Fourth Federal Reserve District includes all of Ohio, counties in eastern Kentucky, counties in western Pennsylvania, and a few counties in the northern section of West Virginia that lies between Ohio and Pennsylvania.&lt;/p&gt;
 
 &lt;p&gt;Here is the final result:&lt;/p&gt;
 
