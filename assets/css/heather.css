@@ -51,6 +51,22 @@ li.L0, li.L1, li.L2, li.L3,
 li.L5, li.L6, li.L7, li.L8
 { list-style-type: decimal !important }
 
+code.language-text {
+  font-size: 15px;
+}
+code.language-latex {
+  font-size: 15px;
+}
+code.language-ipy {
+  font-size: 15px;
+}
+code.language-html {
+  font-size: 15px;
+}
+pre.code { 
+  white-space: pre; 
+  overflow-x: auto; 
+}
 
 .name {
   /*color: #428bca;*/
@@ -184,3 +200,20 @@ li.L5, li.L6, li.L7, li.L8
   text-align: left;
 }
 
+/*Maps*/
+
+.map-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 35px;
+    height: 0;
+    overflow: hidden;
+}
+
+.map-container iframe {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 80%;
+    height: 200%;
+}
