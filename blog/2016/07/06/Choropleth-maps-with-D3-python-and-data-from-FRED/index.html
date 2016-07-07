@@ -1,0 +1,538 @@
+<!DOCTYPE html> 
+<html> 
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+  <title>Choropleth maps with D3, Python, and data from FRED</title>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+  <![endif]-->
+
+  <link rel="icon" href="favicon.png" />
+  <link rel="apple-touch-icon-precomposed" href="apple-touch-icon.png" />
+
+  <!--Bootstrap css -->
+  <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.css"/>
+  <!-- Sticky footer  -->
+  <link rel="stylesheet" type="text/css" href="/assets/css/sticky-footer-navbar.css" />
+  <!--Main Heather Theme css -->
+  <link rel="stylesheet" type="text/css" href="/assets/css/heather.css" />
+  <!-- CSS for publication list -->
+  <link rel="stylesheet" href="/assets/css/publications.css" type="text/css" />
+   <!-- CSS for Google Web Fonts -->
+  <link href='http://fonts.googleapis.com/css?family=Merriweather:400,700' rel='stylesheet' type='text/css'>
+  <!-- Google code prettify -->
+  <!--
+  <script src="/assets/js/run_prettify.js?skin=desert"></script>
+  -->
+  <script src="/assets/js/prettify.js"></script>
+  <link rel="stylesheet" type="text/css" href="/assets/css/prettify.css" />
+  <!--
+  <link rel="stylesheet" type="text/css" href="/assets/css/prettify.css" />
+ -->
+  <!-- Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-53244112-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+
+  <!-- Script to use LaTeX code with MathJax  -->
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- CSS for flaticons -->
+  <link rel="stylesheet" type="text/css" href="/assets/css/flaticon.css"> 
+  <!-- Script for jQuery library -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <!-- Script for bootstrap js library -->
+  <script src="/assets/js/bootstrap.min.js" type="text/javascript"></script>
+  <!-- meta data -->
+  <meta name="author" content="Rubén Hernández-Murillo">
+  <meta name="description" content="Research, Writings + Code">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="http://rubenhm.org/blog/2016/07/06/Choropleth-maps-with-D3-python-and-data-from-FRED/">
+</head>
+<body>
+
+<header> 
+  <!-- 	
+  <h1 class="h2 m-0"><a href="http://rubenhm.org">rubenhm.org</a></h1>
+  <p>Research, Writings + Code</p> 
+  -->
+
+  <!-- Bootstrap navbar -->
+  <nav class = "navbar navbar-default navbar-fixed-top" role="navigation">
+   <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+   	<div class = "navbar-header">
+   		<button type="button"  class = "navbar-toggle" data-toggle = "collapse" data-target = "#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>  
+   			<span class = "icon-bar"></span>
+   			<span class = "icon-bar"></span>
+   			<span class = "icon-bar"></span>
+   		</button>
+      <a class = "navbar-brand" href ="http://rubenhm.org">rubenhm.org</a>
+    </div>
+    
+    <!-- Collect the nav links, forms, and other content for toggling -->
+   	<div class ="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+ 			<ul class ="nav navbar-nav navbar-right">
+ 				<li ><a href = "/">Home</a></li>
+ 				<li><a href = "/cv/">CV</a></li>
+ 				<li class ="dropdown">
+ 					<a href ="#" class = "dropdown-toggle" data-toggle ="dropdown">Research <b class="caret"></b></a>
+ 					<ul class = "dropdown-menu">
+ 						<li><a href="/pubs/journal_articles/">Journal articles</a></li>
+ 						<li><a href="/pubs/fed_pubs/">Fed Pubs</a></li>
+ 						<li><a href="/pubs/commentary/">Commentary</a></li>
+ 						<li><a href="/pubs/working_papers/">Working papers</a></li>
+ 					</ul>
+ 				</li> 
+ 				<li><a href="/blog/">Blog</a></li>
+        <li><a href="/news/">News</a></li>
+        <li><a href="/about/">About</a></li>
+ 			</ul>
+   	</div><!-- /.navbar-collapse -->
+ </div><!-- /.container-fluid -->
+</nav>	
+
+</header>  
+
+<div class="container">
+    <div class="visible-print"> <!--Header for print version -->
+            <h1 class="text-left">http://rubenhm.org/blog/</h1>
+            <p class="lead text-left">Research, Writings + Code</p>
+            <hr>
+    </div>
+        
+    <h1><em>Coding Annoyances</em></h1>
+        <hr>    
+    <h1>Choropleth maps with D3, Python, and data from FRED</h1>
+  
+    <p class="small gray"><time datetime="Jul 6, 2016">06 July 2016 • Rubén Hernández-Murillo • </time></p>
+    <hr>
+    <article class="post">
+
+        <p>I often need to create simple thematic maps of the Fourth <a href="https://en.wikipedia.org/wiki/Federal_Reserve_Bank">Federal Reserve District</a>, for example of the unemployment rate by county. The data are readily available from <a href="https://fred.stlouisfed.org">FRED</a>, but using ArcView is no fun.  </p>
+
+<p>I found a nice tutorial by <a href="http://flowingdata.com/2009/11/12/how-to-make-a-us-county-thematic-map-using-free-tools/">Nathan Yau</a> that showed how to edit an SVG map with IPython using BeautifulSoup, but it required to have an SVG map to work with already.  </p>
+
+<p>Then I found another tutorial by <a href="https://bost.ocks.org/mike/map/">Mike Bostock</a> that uses <a href="http://d3js.org">D3</a> and <a href="https://github.com/mbostock/topojson">TopoJSON</a> to generate the SVG map from a script. Mike Bostock&#39;s multiple <a href="https://bl.ocks.org/mbostock">examples pages</a> provide tutorials for generating and manipulating all kinds of maps.  </p>
+
+<p>My map is based on the example for a simple Choropleth map of <a href="https://bl.ocks.org/mbostock/3306362">unemployment rates with thresholds</a> and the example that uses a <a href="https://bl.ocks.org/mbostock/5416405">selection of geo units is</a>.</p>
+
+<h2>Map</h2>
+
+<p>The Fourth Federal Reserve Districts includes all of Ohio, counties in eastern Kentucky, counties in western Pennsylvania, and a few counties in the northern section of West Virginia that lies between Ohio and Pennsylvania.</p>
+
+<p>Here is the final result:</p>
+
+<div class="map-container">
+  <iframe width="700" height="700" src="/downloads/choropleth/d4urmap.html" frameborder="0" allowfullscreen >
+  </iframe>
+</div>
+
+<h2>Steps</h2>
+
+<ol>
+<li>Create a file with the definition of the selection.<br></li>
+<li>Obtain data for each county from FRED.</li>
+<li>Create the map.</li>
+</ol>
+
+<h3>Geographic definition</h3>
+
+<p>My file <a href="/downloads/choropleth/d4ctydef.csv"><code>d4ctydef.csv</code></a> is a comma-delimited file with the <a href="http://www.census.gov/geo/reference/codes/cou.html">FIPS</a> codes of the counties in the District.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">STATE,STATE_FIPS,FIPS,COUNTY_NAME,D4
+KY,&quot;21&quot;,&quot;21001&quot;,Adair County,FALSE
+KY,&quot;21&quot;,&quot;21003&quot;,Allen County,FALSE
+KY,&quot;21&quot;,&quot;21005&quot;,Anderson County,FALSE
+KY,&quot;21&quot;,&quot;21007&quot;,Ballard County,FALSE
+KY,&quot;21&quot;,&quot;21009&quot;,Barren County,FALSE
+KY,&quot;21&quot;,&quot;21011&quot;,Bath County,TRUE
+KY,&quot;21&quot;,&quot;21013&quot;,Bell County,TRUE
+KY,&quot;21&quot;,&quot;21015&quot;,Boone County,TRUE
+KY,&quot;21&quot;,&quot;21017&quot;,Bourbon County,TRUE
+...
+</code></pre></div>
+<h3>Downloading data from FRED</h3>
+
+<p>Automated downloading of data from FRED requires an API key and signing up for the service. 
+Install the <code>fredapi</code> Python module from <a href="https://github.com/mortada/fredapi">https://github.com/mortada/fredapi</a>
+Now try the following in a Jupyter or IPython notebook.</p>
+
+<div class="highlight"><pre><code class="language-ipy" data-lang="ipy"><span class="c"># Import fredapi module</span>
+<span class="kn">from</span> <span class="nn">fredapi</span> <span class="kn">import</span> <span class="n">Fred</span>
+<span class="c"># Apply your personal api key</span>
+<span class="n">fred</span> <span class="o">=</span> <span class="n">Fred</span><span class="p">(</span><span class="n">api_key</span><span class="o">=</span><span class="s">&#39;abcdefghijklmnopqrstuv0123456789&#39;</span><span class="p">)</span>
+
+<span class="c"># Import pandas</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+
+<span class="c"># Get information on realease=116, which includes data on Unemployment in States and Local Areas</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">fred</span><span class="o">.</span><span class="n">search_by_release</span><span class="p">(</span><span class="mi">116</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s">&#39;title&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="c"># df has information on 6,000+ series</span>
+
+<span class="c"># Restrict information to the unemployment series</span>
+<span class="n">state_df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s">&#39;title&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">&#39;Unemployment Rate in&#39;</span><span class="p">)]</span>
+
+<span class="c"># Create a column with states by selecting the first two letters of the index, series id</span>
+<span class="c"># The following commands throw up an error/warning but it works</span>
+<span class="n">state_df</span><span class="p">[</span><span class="s">&#39;state&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">state_df</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">row</span><span class="p">:</span> <span class="n">row</span><span class="o">.</span><span class="n">id</span><span class="p">[:</span><span class="mi">2</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c"># Restrict further to the states in the Fourth District</span>
+<span class="n">d4_states</span> <span class="o">=</span> <span class="n">state_df</span><span class="p">[</span><span class="n">state_df</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s">&#39;OH&#39;</span><span class="p">,</span><span class="s">&#39;KY&#39;</span><span class="p">,</span><span class="s">&#39;PA&#39;</span><span class="p">,</span><span class="s">&#39;WV&#39;</span><span class="p">])]</span>
+
+<span class="c"># Read District definitions to a pandas dataframe</span>
+<span class="n">d4def</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">&#39;../data/d4ctydef.csv&#39;</span><span class="p">)</span>
+
+<span class="c"># Select District counties only using the boolean variable d4def.D4</span>
+<span class="n">d4strict</span> <span class="o">=</span> <span class="n">d4def</span><span class="p">[</span><span class="n">d4def</span><span class="p">[</span><span class="s">&quot;D4&quot;</span><span class="p">]]</span>
+
+<span class="c"># Search for county names in Fred series to obtain series id</span>
+<span class="n">d4_states</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">d4_states</span><span class="p">[</span><span class="s">&quot;title&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s">&quot;Adair County&quot;</span><span class="p">),</span><span class="s">&quot;id&quot;</span><span class="p">]</span>
+
+<span class="c"># Get FRED id of unemployment series if county is in the District and create </span>
+<span class="c"># a dictionary with county fips, county name, and FRED id</span>
+<span class="n">d4_county_series</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">d4strict</span><span class="o">.</span><span class="n">itertuples</span><span class="p">():</span>
+        <span class="n">state</span><span class="p">,</span><span class="n">fips</span><span class="p">,</span><span class="n">county</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">row</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span><span class="n">row</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+        <span class="n">seriesid</span> <span class="o">=</span> <span class="n">d4_states</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">d4_states</span><span class="p">[</span><span class="s">&quot;id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">state</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">d4_states</span><span class="p">[</span><span class="s">&quot;title&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">county</span><span class="p">)][</span><span class="s">&#39;id&#39;</span><span class="p">]</span>
+        <span class="n">d4_county_series</span><span class="p">[</span><span class="n">fips</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">seriesid</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">county</span> <span class="o">+</span> <span class="s">&#39;, &#39;</span> <span class="o">+</span> <span class="n">state</span><span class="p">,</span> <span class="s">&#39;&quot;&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">fips</span><span class="p">)</span> <span class="o">+</span> <span class="s">&#39;&quot;&#39;</span><span class="p">]</span>
+
+<span class="c"># Download the latest observation for each county and create </span>
+<span class="c"># a dictionary of FRED id, county fips, county name, and unemployment rate</span>
+<span class="n">end_time</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">d4_states</span><span class="o">.</span><span class="n">observation_end</span><span class="p">)</span>
+<span class="n">d4_cty_ur</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">fips</span><span class="p">,</span> <span class="n">dictitem</span> <span class="ow">in</span> <span class="n">d4_county_series</span><span class="o">.</span><span class="n">iteritems</span><span class="p">():</span>
+    <span class="n">seriesid</span><span class="p">,</span> <span class="n">county</span><span class="p">,</span> <span class="n">cty_fips</span> <span class="o">=</span> <span class="n">dictitem</span>
+    <span class="n">d4_cty_ur</span><span class="p">[</span><span class="n">fips</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">fips</span><span class="p">,</span> <span class="n">county</span><span class="p">,</span> <span class="n">fred</span><span class="o">.</span><span class="n">get_series</span><span class="p">(</span><span class="n">seriesid</span><span class="p">,</span> <span class="n">observation_start</span><span class="o">=</span><span class="n">end_time</span><span class="p">,</span> <span class="n">observation_end</span><span class="o">=</span><span class="n">end_time</span><span class="p">)[</span><span class="mi">0</span><span class="p">]]</span>
+
+<span class="c"># Write dictionary to tab-delimited file with header</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">&#39;urd4.tsv&#39;</span><span class="p">,</span> <span class="s">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">&#39;id</span><span class="se">\t</span><span class="s">county</span><span class="se">\t</span><span class="s">rate</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">)</span>
+    <span class="p">[</span><span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">&#39;&quot;{0}&quot;</span><span class="se">\t</span><span class="s">&quot;{1}&quot;</span><span class="se">\t</span><span class="s">{2}</span><span class="se">\n</span><span class="s">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fips</span><span class="p">,</span> <span class="n">county</span><span class="p">,</span> <span class="n">rate</span><span class="p">))</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="p">[</span><span class="n">fips</span><span class="p">,</span> <span class="n">county</span><span class="p">,</span> <span class="n">rate</span><span class="p">]</span> <span class="ow">in</span> <span class="n">d4_cty_ur</span><span class="o">.</span><span class="n">items</span><span class="p">()]</span></code></pre></div>
+
+<p>The file <code>urd4.tsv</code> looks like this:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">id  county  rate
+&quot;21165&quot; &quot;Menifee County, KY&quot;    8.0
+&quot;21011&quot; &quot;Bath County, KY&quot;   6.6
+&quot;21013&quot; &quot;Bell County, KY&quot;   8.4
+&quot;21015&quot; &quot;Boone County, KY&quot;  3.7
+&quot;21017&quot; &quot;Bourbon County, KY&quot;    4.6
+&quot;21019&quot; &quot;Boyd County, KY&quot;   7.5
+&quot;21023&quot; &quot;Bracken County, KY&quot;    5.7
+...
+</code></pre></div>
+<p>Determine natural brakes in the data using the python module <code>jenks</code> from <a href="https://github.com/perrygeo/jenks">https://github.com/perrygeo/jenks</a>.</p>
+
+<div class="highlight"><pre><code class="language-ipy" data-lang="ipy"><span class="c"># Determine cutoffs for choropleth map</span>
+<span class="kn">from</span> <span class="nn">jenks</span> <span class="kn">import</span> <span class="n">jenks</span>
+
+<span class="c"># Create list from dictionary and obtain cutoffs</span>
+<span class="c"># http://stackoverflow.com/questions/16228248/python-simplest-way-to-get-list-of-values-from-dict</span>
+<span class="n">values</span> <span class="o">=</span> <span class="p">[</span> <span class="n">d4_cty_ur</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">d4_cty_ur</span><span class="p">]</span> 
+<span class="n">cutoffs</span> <span class="o">=</span> <span class="n">jenks</span><span class="p">(</span><span class="n">values</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">cutoffs</span>
+<span class="p">[</span><span class="mf">2.9000001</span><span class="p">,</span> <span class="mf">4.8000002</span><span class="p">,</span> <span class="mf">6.4000001</span><span class="p">,</span> <span class="mf">8.3999996</span><span class="p">,</span> <span class="mf">15.6</span><span class="p">]</span></code></pre></div>
+
+<h2>Create the map</h2>
+
+<p>The TopoJSON file for the US corresponds to the file <code>topo/us-10m.json</code> and is generated according to the instructions in Mike Bostock&#39;s repository for the <a href="https://github.com/mbostock/us-atlas">US-Atlas</a>.</p>
+
+<p>Finally, the code for the SVG map is as follows:</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="c">&lt;!-- This maps uses bits and pieces from multiple Mike Bostock&#39;s examples, including: </span>
+<span class="c">  https://bl.ocks.org/mbostock/5737662 </span>
+<span class="c">  https://bl.ocks.org/mbostock/9943478</span>
+<span class="c">  https://bl.ocks.org/mbostock/9943478</span>
+<span class="c">  http://bl.ocks.org/mbostock/4090848</span>
+<span class="c">--&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">&quot;utf-8&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;style&gt;</span>
+
+<span class="c">/* CSS goes here. */</span>
+<span class="nt">path</span> <span class="p">{</span>
+  <span class="n">stroke</span><span class="o">-</span><span class="n">linejoin</span><span class="o">:</span> <span class="n">round</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* This is style for the different thresholds. */</span>
+<span class="nc">.colour1</span> <span class="p">{</span><span class="n">fill</span><span class="o">:</span> <span class="m">#f2f0f7</span><span class="p">;}</span>
+<span class="nc">.colour2</span> <span class="p">{</span><span class="n">fill</span><span class="o">:</span> <span class="m">#dadaeb</span><span class="p">;}</span>
+<span class="nc">.colour3</span> <span class="p">{</span><span class="n">fill</span><span class="o">:</span> <span class="m">#bcbddc</span><span class="p">;}</span>
+<span class="nc">.colour4</span> <span class="p">{</span><span class="n">fill</span><span class="o">:</span> <span class="m">#9e9ac8</span><span class="p">;}</span>
+<span class="nc">.colour5</span> <span class="p">{</span><span class="n">fill</span><span class="o">:</span> <span class="m">#756bb1</span><span class="p">;}</span>
+
+<span class="nc">.label</span> <span class="p">{</span>
+  <span class="k">font-family</span><span class="o">:</span> <span class="n">Verdana</span><span class="p">;</span>
+  <span class="k">font-size</span><span class="o">:</span> <span class="m">16px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.d4-county</span><span class="nd">:hover</span> <span class="p">{</span>
+  <span class="k">opacity</span><span class="o">:</span> <span class="m">0</span><span class="o">.</span><span class="m">3</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.counties</span> <span class="p">{</span>
+  <span class="n">fill</span><span class="o">:</span> <span class="m">#ccc</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.county-boundary</span> <span class="p">{</span>
+  <span class="n">fill</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
+  <span class="n">stroke</span><span class="o">:</span> <span class="m">#777</span><span class="p">;</span>
+  <span class="n">stroke</span><span class="o">-</span><span class="k">width</span><span class="o">:</span> <span class="m">.35px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.d4-county-boundary</span> <span class="p">{</span>
+  <span class="n">fill</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
+  <span class="n">stroke</span><span class="o">:</span> <span class="m">#145eda</span><span class="p">;</span>
+  <span class="n">stroke</span><span class="o">-</span><span class="k">width</span><span class="o">:</span> <span class="m">2px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.state-boundary</span> <span class="p">{</span>
+  <span class="n">fill</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
+  <span class="n">stroke</span><span class="o">:</span> <span class="nb">white</span><span class="p">;</span>
+  <span class="n">stroke</span><span class="o">-</span><span class="k">width</span><span class="o">:</span> <span class="m">2px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;//d3js.org/d3.v3.min.js&quot;</span> <span class="na">charset=</span><span class="s">&quot;utf-8&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;//d3js.org/queue.v1.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;//d3js.org/topojson.v1.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+
+<span class="cm">/* JavaScript goes here. */</span>
+
+<span class="cm">/* These constraints on width and height produce a nice squarish size. */</span>
+<span class="kd">var</span> <span class="nx">width</span>  <span class="o">=</span> <span class="mi">960</span><span class="o">*</span><span class="mf">0.7</span><span class="p">,</span>
+    <span class="nx">height</span> <span class="o">=</span> <span class="mi">500</span><span class="o">*</span><span class="mf">1.2</span><span class="p">;</span>
+
+<span class="kd">var</span> <span class="nx">formatNumber</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="s2">&quot;,.1f&quot;</span><span class="p">);</span> 
+
+<span class="cm">/* The thresholds are harcoded here. The jenks breaks are rounded some. */</span>
+<span class="kd">var</span> <span class="nx">color</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">scale</span><span class="p">.</span><span class="nx">threshold</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">domain</span><span class="p">([</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">7.0</span><span class="p">,</span> <span class="mf">9.0</span><span class="p">,</span> <span class="mf">16.0</span><span class="p">])</span>
+    <span class="p">.</span><span class="nx">range</span><span class="p">([</span><span class="s2">&quot;#f2f0f7&quot;</span><span class="p">,</span> <span class="s2">&quot;#dadaeb&quot;</span><span class="p">,</span> <span class="s2">&quot;#bcbddc&quot;</span><span class="p">,</span> <span class="s2">&quot;#9e9ac8&quot;</span><span class="p">,</span> <span class="s2">&quot;#756bb1&quot;</span><span class="p">,</span> <span class="s2">&quot;#54278f&quot;</span><span class="p">]);</span>
+
+<span class="cm">/* I played around with the projection options to limit the view to the Fourth District. */</span>
+<span class="kd">var</span> <span class="nx">projection</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">geo</span><span class="p">.</span><span class="nx">albers</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">center</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mf">39.43</span><span class="p">])</span>
+    <span class="p">.</span><span class="nx">rotate</span><span class="p">([</span><span class="mi">85</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+    <span class="p">.</span><span class="nx">parallels</span><span class="p">([</span><span class="mf">29.5</span><span class="p">,</span> <span class="mf">45.5</span><span class="p">])</span>
+    <span class="p">.</span><span class="nx">scale</span><span class="p">(</span><span class="mi">5800</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">translate</span><span class="p">([</span><span class="nx">width</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="nx">height</span> <span class="o">/</span> <span class="mi">2</span><span class="p">]);</span>
+
+<span class="kd">var</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">geo</span><span class="p">.</span><span class="nx">path</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">projection</span><span class="p">(</span><span class="nx">projection</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">svg</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">&quot;body&quot;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;svg&quot;</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;width&quot;</span><span class="p">,</span> <span class="nx">width</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;height&quot;</span><span class="p">,</span> <span class="nx">height</span><span class="p">);</span>
+
+<span class="cm">/* Here is the selection of counties in the Fourth District. */</span>
+<span class="kd">var</span> <span class="nx">selected</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;21011&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;21013&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;21015&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;21017&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;21019&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;21023&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;21025&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;21037&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;21043&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;21049&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;21051&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;21063&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;21065&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;21067&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;21069&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;21071&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;21079&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;21081&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;21089&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;21095&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;21097&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;21109&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;21113&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;21115&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;21117&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;21119&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;21121&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;21125&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;21127&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;21129&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;21131&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;21133&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;21135&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;21137&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;21147&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;21151&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;21153&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;21159&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;21161&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;21165&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;21173&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;21175&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;21181&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;21189&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;21191&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;21193&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;21195&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;21197&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;21199&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;21201&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;21203&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;21205&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;21209&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;21235&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;21237&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;21239&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39001&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39003&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39005&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39007&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39009&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39011&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39013&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39015&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39017&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39019&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39021&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39023&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39025&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39027&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39029&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39031&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39033&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39035&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39037&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39039&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39041&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39043&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39045&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39047&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39049&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39051&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39053&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39055&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39057&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39059&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39061&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39063&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39065&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39067&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39069&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39071&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39073&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39075&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39077&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39079&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39081&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39083&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39085&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39087&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39089&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39091&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39093&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39095&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39097&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39099&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39101&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39103&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39105&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39107&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39109&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39111&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39113&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39115&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39117&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39119&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39121&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39123&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39125&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39127&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39129&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39131&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39133&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39135&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39137&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39139&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39141&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39143&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39145&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39147&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39149&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39151&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39153&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39155&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39157&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39159&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39161&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39163&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39165&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39167&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39169&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39171&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39173&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;39175&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;42003&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;42005&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;42007&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;42019&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;42031&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;42039&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;42049&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;42051&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;42053&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;42059&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;42063&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;42065&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;42073&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;42085&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;42111&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;42121&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;42123&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;42125&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;42129&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;54009&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;54029&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;54051&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;54069&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;54095&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;54103&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">};</span>
+
+<span class="cm">/* Loading the JSON and unemployment data. */</span>
+
+<span class="nx">queue</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">defer</span><span class="p">(</span><span class="nx">d3</span><span class="p">.</span><span class="nx">json</span><span class="p">,</span> <span class="s2">&quot;us.json&quot;</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">defer</span><span class="p">(</span><span class="nx">d3</span><span class="p">.</span><span class="nx">tsv</span><span class="p">,</span> <span class="s2">&quot;urd4.tsv&quot;</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">await</span><span class="p">(</span><span class="nx">ready</span><span class="p">);</span>
+
+<span class="kd">function</span> <span class="nx">ready</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">us</span><span class="p">,</span> <span class="nx">unemployment</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="k">throw</span> <span class="nx">error</span><span class="p">;</span>
+
+  <span class="kd">var</span> <span class="nx">cutoffs</span>  <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">7.0</span><span class="p">,</span> <span class="mf">9.0</span><span class="p">,</span> <span class="mf">16.0</span><span class="p">]</span>
+  <span class="kd">var</span> <span class="nx">rateById</span> <span class="o">=</span> <span class="p">{},</span>
+      <span class="nx">nameById</span> <span class="o">=</span> <span class="p">{}</span>
+
+  <span class="nx">unemployment</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span> <span class="nx">rateById</span><span class="p">[</span><span class="nx">d</span><span class="p">.</span><span class="nx">id</span><span class="p">]</span> <span class="o">=</span> <span class="o">+</span><span class="nx">d</span><span class="p">.</span><span class="nx">rate</span><span class="p">;</span> <span class="p">})</span>
+  <span class="nx">unemployment</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span> <span class="nx">nameById</span><span class="p">[</span><span class="nx">d</span><span class="p">.</span><span class="nx">id</span><span class="p">]</span> <span class="o">=</span>  <span class="nx">d</span><span class="p">.</span><span class="nx">county</span><span class="p">;</span> <span class="p">})</span>
+
+  <span class="kd">var</span> <span class="nx">counties</span> <span class="o">=</span> <span class="nx">topojson</span><span class="p">.</span><span class="nx">feature</span><span class="p">(</span><span class="nx">us</span><span class="p">,</span> <span class="nx">us</span><span class="p">.</span><span class="nx">objects</span><span class="p">.</span><span class="nx">counties</span><span class="p">)</span>
+
+  <span class="kd">var</span> <span class="nx">selection</span> <span class="o">=</span> <span class="p">{</span><span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;FeatureCollection&quot;</span><span class="p">,</span> <span class="nx">features</span><span class="o">:</span> <span class="nx">counties</span><span class="p">.</span><span class="nx">features</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">d</span><span class="p">.</span><span class="nx">id</span> <span class="k">in</span> <span class="nx">selected</span><span class="p">;</span> <span class="p">})</span>
+     <span class="p">};</span>
+
+  <span class="kd">var</span> <span class="nx">exselection</span> <span class="o">=</span> <span class="p">{</span><span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;FeatureCollection&quot;</span><span class="p">,</span> <span class="nx">features</span><span class="o">:</span> <span class="nx">counties</span><span class="p">.</span><span class="nx">features</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">d</span><span class="p">.</span><span class="nx">id</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">id</span> <span class="k">in</span> <span class="nx">selected</span><span class="p">);</span> <span class="p">})</span>
+     <span class="p">};</span>
+
+<span class="c1">// Create path for Counties outside selection</span>
+  <span class="nx">svg</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;path&quot;</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">datum</span><span class="p">(</span><span class="nx">exselection</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;class&quot;</span><span class="p">,</span> <span class="s2">&quot;counties&quot;</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="nx">path</span><span class="p">);</span>
+
+  <span class="nx">svg</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;path&quot;</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">datum</span><span class="p">(</span><span class="nx">topojson</span><span class="p">.</span><span class="nx">mesh</span><span class="p">(</span><span class="nx">us</span><span class="p">,</span> <span class="nx">us</span><span class="p">.</span><span class="nx">objects</span><span class="p">.</span><span class="nx">counties</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">a</span> <span class="o">!==</span> <span class="nx">b</span> <span class="c1">// a border between two counties</span>
+            <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">id</span> <span class="o">===</span> <span class="mi">53000</span> <span class="o">||</span> <span class="nx">b</span><span class="p">.</span><span class="nx">id</span> <span class="o">===</span> <span class="mi">5300</span> <span class="c1">// where a and b are in puget sound</span>
+              <span class="o">||</span> <span class="nx">a</span><span class="p">.</span><span class="nx">id</span> <span class="o">%</span> <span class="mi">1000</span> <span class="o">&amp;&amp;</span> <span class="nx">b</span><span class="p">.</span><span class="nx">id</span> <span class="o">%</span> <span class="mi">1000</span><span class="p">)</span> <span class="c1">// or a and b are not in a lake</span>
+            <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">id</span> <span class="o">/</span> <span class="mi">1000</span> <span class="o">^</span> <span class="nx">b</span><span class="p">.</span><span class="nx">id</span> <span class="o">/</span> <span class="mi">1000</span><span class="p">)</span> <span class="c1">// and a and b are in the same state</span>
+            <span class="o">&amp;&amp;</span> <span class="p">(</span>
+               <span class="p">(</span> <span class="o">!</span><span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">id</span> <span class="k">in</span> <span class="nx">selected</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="p">(</span><span class="nx">b</span><span class="p">.</span><span class="nx">id</span> <span class="k">in</span> <span class="nx">selected</span><span class="p">)</span> <span class="p">)</span>
+            <span class="o">||</span> <span class="p">(</span>  <span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">id</span> <span class="k">in</span> <span class="nx">selected</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="p">(</span><span class="nx">b</span><span class="p">.</span><span class="nx">id</span> <span class="k">in</span> <span class="nx">selected</span><span class="p">)</span> <span class="p">)</span>
+            <span class="o">||</span> <span class="p">(</span> <span class="o">!</span><span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">id</span> <span class="k">in</span> <span class="nx">selected</span><span class="p">)</span> <span class="o">&amp;&amp;</span>  <span class="p">(</span><span class="nx">b</span><span class="p">.</span><span class="nx">id</span> <span class="k">in</span> <span class="nx">selected</span><span class="p">)</span> <span class="p">)</span>
+            <span class="p">);</span> 
+      <span class="p">}))</span>
+      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;class&quot;</span><span class="p">,</span> <span class="s2">&quot;county-boundary&quot;</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="nx">path</span><span class="p">);</span>
+
+<span class="c1">// Create path for Counties inside selection</span>
+<span class="c1">// Here the counties are color-coded according to their unemployment rate.</span>
+
+  <span class="nx">svg</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;g&quot;</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">selectAll</span><span class="p">(</span><span class="s2">&quot;path&quot;</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="nx">selection</span><span class="p">.</span><span class="nx">features</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">enter</span><span class="p">()</span>
+        <span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;path&quot;</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;class&quot;</span><span class="p">,</span> <span class="s2">&quot;d4-county&quot;</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span> 
+           <span class="k">return</span> <span class="s2">&quot;F&quot;</span> <span class="o">+</span> <span class="nx">d</span><span class="p">.</span><span class="nx">id</span> <span class="p">;}</span>
+             <span class="p">)</span>
+         <span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="s2">&quot;fill&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">color</span><span class="p">(</span><span class="nx">rateById</span><span class="p">[</span><span class="nx">d</span><span class="p">.</span><span class="nx">id</span><span class="p">]);</span> <span class="p">})</span>
+         <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="nx">path</span><span class="p">)</span>
+         <span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;title&quot;</span><span class="p">)</span>
+         <span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">nameById</span><span class="p">[</span><span class="nx">d</span><span class="p">.</span><span class="nx">id</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot; (FIPS: &quot;</span> <span class="o">+</span> <span class="nx">d</span><span class="p">.</span><span class="nx">id</span> <span class="o">+</span> <span class="s2">&quot;)&quot;</span>
+            <span class="o">+</span> <span class="s2">&quot;\nUnemployment rate: &quot;</span> <span class="o">+</span> <span class="nx">formatNumber</span><span class="p">(</span><span class="nx">rateById</span><span class="p">[</span><span class="nx">d</span><span class="p">.</span><span class="nx">id</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot;%&quot;</span><span class="p">;</span> <span class="p">});</span>
+
+  <span class="nx">svg</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;path&quot;</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">datum</span><span class="p">(</span><span class="nx">topojson</span><span class="p">.</span><span class="nx">mesh</span><span class="p">(</span><span class="nx">us</span><span class="p">,</span> <span class="nx">us</span><span class="p">.</span><span class="nx">objects</span><span class="p">.</span><span class="nx">counties</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">a</span> <span class="o">!==</span> <span class="nx">b</span> <span class="c1">// a border between two counties</span>
+            <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">id</span> <span class="o">===</span> <span class="mi">53000</span> <span class="o">||</span> <span class="nx">b</span><span class="p">.</span><span class="nx">id</span> <span class="o">===</span> <span class="mi">5300</span> <span class="c1">// where a and b are in puget sound</span>
+              <span class="o">||</span> <span class="nx">a</span><span class="p">.</span><span class="nx">id</span> <span class="o">%</span> <span class="mi">1000</span> <span class="o">&amp;&amp;</span> <span class="nx">b</span><span class="p">.</span><span class="nx">id</span> <span class="o">%</span> <span class="mi">1000</span><span class="p">)</span> <span class="c1">// or a and b are not in a lake</span>
+            <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">id</span> <span class="o">/</span> <span class="mi">1000</span> <span class="o">^</span> <span class="nx">b</span><span class="p">.</span><span class="nx">id</span> <span class="o">/</span> <span class="mi">1000</span><span class="p">)</span> <span class="c1">// and a and b are in the same state</span>
+            <span class="o">&amp;&amp;</span> <span class="p">(</span>
+               <span class="p">(</span>  <span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">id</span> <span class="k">in</span> <span class="nx">selected</span><span class="p">)</span> <span class="o">&amp;&amp;</span>  <span class="p">(</span><span class="nx">b</span><span class="p">.</span><span class="nx">id</span> <span class="k">in</span> <span class="nx">selected</span><span class="p">)</span> <span class="p">)</span>
+            <span class="o">||</span> <span class="p">(</span>  <span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">id</span> <span class="k">in</span> <span class="nx">selected</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="p">(</span><span class="nx">b</span><span class="p">.</span><span class="nx">id</span> <span class="k">in</span> <span class="nx">selected</span><span class="p">)</span> <span class="p">)</span>
+            <span class="o">||</span> <span class="p">(</span> <span class="o">!</span><span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">id</span> <span class="k">in</span> <span class="nx">selected</span><span class="p">)</span> <span class="o">&amp;&amp;</span>  <span class="p">(</span><span class="nx">b</span><span class="p">.</span><span class="nx">id</span> <span class="k">in</span> <span class="nx">selected</span><span class="p">)</span> <span class="p">)</span>
+            <span class="p">);</span> 
+      <span class="p">}))</span>
+      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;class&quot;</span><span class="p">,</span> <span class="s2">&quot;d4-county-boundary&quot;</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="nx">path</span><span class="p">);</span>
+
+<span class="c1">// Create path for State boundaries</span>
+
+  <span class="nx">svg</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;path&quot;</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">datum</span><span class="p">(</span><span class="nx">topojson</span><span class="p">.</span><span class="nx">mesh</span><span class="p">(</span><span class="nx">us</span><span class="p">,</span> <span class="nx">us</span><span class="p">.</span><span class="nx">objects</span><span class="p">.</span><span class="nx">states</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span> 
+         <span class="k">return</span> <span class="nx">a</span> <span class="o">!==</span> <span class="nx">b</span> <span class="p">;</span> <span class="c1">// a and b not in selection//</span>
+        <span class="p">}))</span>
+      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;class&quot;</span><span class="p">,</span> <span class="s2">&quot;state-boundary&quot;</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="nx">path</span><span class="p">);</span>
+
+<span class="c1">// Add labels and color guide</span>
+  <span class="nx">svg</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;g&quot;</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;class&quot;</span><span class="p">,</span> <span class="s2">&quot;label&quot;</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;keycolor&quot;</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">selectAll</span><span class="p">(</span><span class="s2">&quot;rect&quot;</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">data</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
+    <span class="p">.</span><span class="nx">enter</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;rect&quot;</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="mi">450</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span><span class="k">return</span> <span class="mi">350</span> <span class="o">+</span> <span class="nx">d</span><span class="o">*</span><span class="mi">25</span><span class="p">;</span> <span class="p">})</span>
+        <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;width&quot;</span><span class="p">,</span> <span class="mi">20</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;height&quot;</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;class&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span><span class="k">return</span> <span class="s2">&quot;key colour&quot;</span> <span class="o">+</span> <span class="nx">d</span> <span class="p">;});</span>
+
+  <span class="nx">svg</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;g&quot;</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;class&quot;</span><span class="p">,</span> <span class="s2">&quot;label&quot;</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;keytext&quot;</span><span class="p">)</span> 
+    <span class="p">.</span><span class="nx">selectAll</span><span class="p">(</span><span class="s2">&quot;text&quot;</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">data</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
+    <span class="p">.</span><span class="nx">enter</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;text&quot;</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="mi">475</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span><span class="k">return</span> <span class="mi">365</span> <span class="o">+</span> <span class="nx">d</span><span class="o">*</span><span class="mi">25</span><span class="p">;</span> <span class="p">})</span>
+        <span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span> 
+          <span class="k">if</span> <span class="p">(</span><span class="nx">d</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span>
+            <span class="p">{</span><span class="k">return</span> <span class="s2">&quot;0.0 to &quot;</span> <span class="o">+</span> <span class="nx">formatNumber</span><span class="p">(</span><span class="nx">cutoffs</span><span class="p">[</span><span class="nx">d</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot;%&quot;</span><span class="p">}</span>
+          <span class="k">else</span>
+            <span class="p">{</span><span class="k">return</span> <span class="nx">formatNumber</span><span class="p">(</span><span class="nx">cutoffs</span><span class="p">[</span><span class="nx">d</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot; to &quot;</span> <span class="o">+</span> <span class="nx">formatNumber</span><span class="p">(</span><span class="nx">cutoffs</span><span class="p">[</span><span class="nx">d</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot;%&quot;</span> <span class="p">}</span>
+          <span class="p">;});</span>
+
+<span class="p">}</span>
+
+<span class="nx">d3</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="nx">self</span><span class="p">.</span><span class="nx">frameElement</span><span class="p">).</span><span class="nx">style</span><span class="p">(</span><span class="s2">&quot;height&quot;</span><span class="p">,</span> <span class="nx">height</span> <span class="o">+</span> <span class="s2">&quot;px&quot;</span><span class="p">);</span>
+
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div>
+
+    </article>
+    <hr>
+        <div class="row hidden-print">
+        <div class="col-md-6">
+            <p>If you enjoyed this article, consider sharing it.</p>
+            <p><a href="https://twitter.com/intent/tweet?text=Choropleth maps with D3, Python, and data from FRED&url=http://rubenhm.org/blog/2016/07/06/Choropleth-maps-with-D3-python-and-data-from-FRED/&via=rubenhm_org" title="Share link on Twitter"><span class="flaticon-social19"></span></a>
+            <a  href="https://plus.google.com/share?url=http://rubenhm.org/blog/2016/07/06/Choropleth-maps-with-D3-python-and-data-from-FRED/" title="Share link on G+"><span class="flaticon-google23"></span></a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://rubenhm.org/blog/2016/07/06/Choropleth-maps-with-D3-python-and-data-from-FRED/" title="Share link on FB"><span class="flaticon-facebook29"></span></a>
+            <a href="mailto:?Subject=Choropleth maps with D3, Python, and data from FRED&amp;Body=http://rubenhm.org/blog/2016/07/06/Choropleth-maps-with-D3-python-and-data-from-FRED/" title="Share link by email"><span class="flaticon-opened4"></span></a>
+            <a href="/downloads/blog/2016-07-06-choropleth-maps-with-d3-python-and-data-from-fred/2016-07-06-choropleth-maps-with-d3-python-and-data-from-fred.pdf" title="Download PDF"><span class="flaticon-adobe21"></span></a></p>
+            
+            <!-- <a><span class="flaticon-printer70"></span></a> -->
+        </div>
+        <div class="col-md-6">
+            <p>Follow for updates.</p>
+            <p><a href="/feed.xml" title="Subscribe to Blog Feed"><span class="flaticon-rss8"></span></a> 
+            <a href="http://twitter.com/intent/follow?screen_name=rubenhm_org" title="Follow on Twitter"><span class="flaticon-social19"></span></a></p>
+        </div>
+    </div>
+    <hr>
+
+    <div class="visible-print">
+            <p><small>Follow for updates.</small></p>
+            <p><a href="http://rubenhm.org/feed.xml" title="Subscribe to Blog Feed"><span class="flaticon-rss8"></span></a> 
+            <span class="flaticon-social19"></span> @rubenhm_org</a></p>
+            <hr>
+    </div>
+    <div class="hidden-print">
+        <h2>Comments section</h2>
+        <div class="alert alert-info" role="alert"> 
+        <p><span class="flaticon-info12"></span> <strong>Rules:</strong> This forum is intended for a collegial discussion on economics and research tools. <br/>
+            All comments will be initially withheld and promptly moderated prior to posting. Comments will be posted if they are done in a respectful and courteous manner.  
+            We reserve the right to remove or not publish inappropriate comments.</p>
+        </div>
+   
+        <hr>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'rubenhm'; // required: replace example with your forum shortnam
+        var disqus_identifier = '/blog/2016/07/06/Choropleth-maps-with-D3-python-and-data-from-FRED/';
+        var disqus_url = 'http://rubenhm.org/blog/2016/07/06/Choropleth-maps-with-D3-python-and-data-from-FRED/';
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">   comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+    </div>
+</div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'rubenhm'; // required: replace example with your forum shortname
+    var disqus_identifier = '/blog/2016/07/06/Choropleth-maps-with-D3-python-and-data-from-FRED/';
+    var disqus_url = 'http://rubenhm.org/blog/2016/07/06/Choropleth-maps-with-D3-python-and-data-from-FRED/';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+    
+<!-- Script to fix <pre> tag to highlight code -->
+<script type="text/javascript">
+    $(document).ready(function(){
+    $("pre").addClass("prettyprint linenums");
+     prettyPrint();
+});
+</script>
+</body>
+</html>
