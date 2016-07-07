@@ -13,11 +13,11 @@ I found a nice tutorial by [Nathan Yau](http://flowingdata.com/2009/11/12/how-to
 
 Then I found another tutorial by [Mike Bostock](https://bost.ocks.org/mike/map/) that uses [D3](http://d3js.org) and [TopoJSON](https://github.com/mbostock/topojson) to generate the SVG map from a script. Mike Bostock's multiple [examples pages](https://bl.ocks.org/mbostock) provide tutorials for generating and manipulating all kinds of maps.  
 
-My map is based on the example for a simple Choropleth map of [unemployment rates with thresholds](https://bl.ocks.org/mbostock/3306362) and the example that uses a [selection of geo units](https://bl.ocks.org/mbostock/5416405).
+My map is based on the example for a simple Choropleth map of [unemployment rates with thresholds](https://bl.ocks.org/mbostock/3306362) and the example that uses a [selection of geographic units](https://bl.ocks.org/mbostock/5416405).
 
 ## Map
 
-The Fourth Federal Reserve Districts includes all of Ohio, counties in eastern Kentucky, counties in western Pennsylvania, and a few counties in the northern section of West Virginia that lies between Ohio and Pennsylvania.
+The Fourth Federal Reserve District includes all of Ohio, counties in eastern Kentucky, counties in western Pennsylvania, and a few counties in the northern section of West Virginia that lies between Ohio and Pennsylvania.
 
 Here is the final result:
 
