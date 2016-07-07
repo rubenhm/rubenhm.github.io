@@ -13,7 +13,7 @@ I found a nice tutorial by [Nathan Yau](http://flowingdata.com/2009/11/12/how-to
 
 Then I found another tutorial by [Mike Bostock](https://bost.ocks.org/mike/map/) that uses [D3](http://d3js.org) and [TopoJSON](https://github.com/mbostock/topojson) to generate the SVG map from a script. Mike Bostock's multiple [examples pages](https://bl.ocks.org/mbostock) provide tutorials for generating and manipulating all kinds of maps.  
 
-My map is based on the example for a simple Choropleth map of [unemployment rates with thresholds](https://bl.ocks.org/mbostock/3306362) and the example that uses a [selection of geo units is](https://bl.ocks.org/mbostock/5416405).
+My map is based on the example for a simple Choropleth map of [unemployment rates with thresholds](https://bl.ocks.org/mbostock/3306362) and the example that uses a [selection of geo units](https://bl.ocks.org/mbostock/5416405).
 
 ## Map
 
@@ -22,8 +22,11 @@ The Fourth Federal Reserve Districts includes all of Ohio, counties in eastern K
 Here is the final result:
 
 <div class="map-container">
-  <iframe width="700" height="700" src="/downloads/choropleth/d4urmap.html" frameborder="0" allowfullscreen >
+  <iframe src="/downloads/blog/2016-07-06-choropleth-maps-with-d3-python-and-data-from-fred/d4urmap.html" frameborder="0" allowfullscreen marginwidth="0" marginheight="0" style="height:600px;" scrolling="no">
   </iframe>
+</div>
+<div class="index-pop">
+    <a target="_blank" title="Open map in a new window." href="/downloads/blog/2016-07-06-choropleth-maps-with-d3-python-and-data-from-fred/d4urmap.html">Open<svg height="16" width="12"><path d="M11 10h1v3c0 0.55-0.45 1-1 1H1c-0.55 0-1-0.45-1-1V3c0-0.55 0.45-1 1-1h3v1H1v10h10V10zM6 2l2.25 2.25-3.25 3.25 1.5 1.5 3.25-3.25 2.25 2.25V2H6z"></path></svg></a>
 </div>
 
 ## Steps
@@ -34,7 +37,7 @@ Here is the final result:
 
 ### Geographic definition
 
-My file [`d4ctydef.csv`](/downloads/choropleth/d4ctydef.csv) is a comma-delimited file with the [FIPS](http://www.census.gov/geo/reference/codes/cou.html) codes of the counties in the District.
+My file [d4ctydef.csv](/downloads/blog/2016-07-06-choropleth-maps-with-d3-python-and-data-from-fred/d4ctydef.csv) is a comma-delimited file with the [FIPS](http://www.census.gov/geo/reference/codes/cou.html) codes of the counties in the District.
 
 ```
 STATE,STATE_FIPS,FIPS,COUNTY_NAME,D4
@@ -53,7 +56,7 @@ KY,"21","21017",Bourbon County,TRUE
 ### Downloading data from FRED
 
 Automated downloading of data from FRED requires an API key and signing up for the service. 
-Install the `fredapi` Python module from <https://github.com/mortada/fredapi>
+Install the `fredapi` Python module from <https://github.com/mortada/fredapi>.
 Now try the following in a Jupyter or IPython notebook.
 
 
@@ -112,7 +115,7 @@ with open('urd4.tsv', 'w') as f:
 
 {% endhighlight %}
 
-The file `urd4.tsv` looks like this:
+The file [urd4.tsv](/downloads/blog/2016-07-06-choropleth-maps-with-d3-python-and-data-from-fred/urd4.tsv) looks like this:
 
 ```
 id	county	rate
@@ -128,7 +131,7 @@ id	county	rate
 
 
 
-Determine natural brakes in the data using the python module `jenks` from <https://github.com/perrygeo/jenks>.
+Determine natural breaks in the data using the python module `jenks` from <https://github.com/perrygeo/jenks>.
 
 {% highlight ipy %}
 # Determine cutoffs for choropleth map
@@ -218,7 +221,7 @@ var width  = 960*0.7,
 
 var formatNumber = d3.format(",.1f"); 
 
-/* The thresholds are harcoded here. The jenks breaks are rounded some. */
+/* The thresholds are hardcoded here. The jenks breaks are rounded some. */
 var color = d3.scale.threshold()
     .domain([3.0, 5.0, 7.0, 9.0, 16.0])
     .range(["#f2f0f7", "#dadaeb", "#bcbddc", "#9e9ac8", "#756bb1", "#54278f"]);
