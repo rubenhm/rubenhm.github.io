@@ -19,7 +19,7 @@
 
 &lt;p&gt;Then I found another tutorial by &lt;a href=&quot;https://bost.ocks.org/mike/map/&quot;&gt;Mike Bostock&lt;/a&gt; that uses &lt;a href=&quot;http://d3js.org&quot;&gt;D3&lt;/a&gt; and &lt;a href=&quot;https://github.com/mbostock/topojson&quot;&gt;TopoJSON&lt;/a&gt; to generate the SVG map from a script. Mike Bostock&amp;#39;s multiple &lt;a href=&quot;https://bl.ocks.org/mbostock&quot;&gt;examples pages&lt;/a&gt; provide tutorials for generating and manipulating all kinds of maps.  &lt;/p&gt;
 
-&lt;p&gt;My map is based on the example for a simple Choropleth map of &lt;a href=&quot;https://bl.ocks.org/mbostock/3306362&quot;&gt;unemployment rates with thresholds&lt;/a&gt; and the example that uses a &lt;a href=&quot;https://bl.ocks.org/mbostock/5416405&quot;&gt;selection of geo units is&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;My map is based on the example for a simple Choropleth map of &lt;a href=&quot;https://bl.ocks.org/mbostock/3306362&quot;&gt;unemployment rates with thresholds&lt;/a&gt; and the example that uses a &lt;a href=&quot;https://bl.ocks.org/mbostock/5416405&quot;&gt;selection of geo units&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h2&gt;Map&lt;/h2&gt;
 
@@ -28,8 +28,12 @@
 &lt;p&gt;Here is the final result:&lt;/p&gt;
 
 &lt;div class=&quot;map-container&quot;&gt;
-  &lt;iframe width=&quot;700&quot; height=&quot;700&quot; src=&quot;/downloads/choropleth/d4urmap.html&quot; frameborder=&quot;0&quot; allowfullscreen &gt;
+  &lt;iframe src=&quot;/downloads/blog/2016-07-06-choropleth-maps-with-d3-python-and-data-from-fred/d4urmap.html&quot; frameborder=&quot;0&quot; allowfullscreen marginwidth=&quot;0&quot; marginheight=&quot;0&quot; style=&quot;height:600px;&quot; scrolling=&quot;no&quot;&gt;
   &lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;index-pop&quot;&gt;
+    &lt;a target=&quot;_blank&quot; title=&quot;Open map in a new window.&quot; href=&quot;/downloads/blog/2016-07-06-choropleth-maps-with-d3-python-and-data-from-fred/d4urmap.html&quot;&gt;Open&lt;svg height=&quot;16&quot; width=&quot;12&quot;&gt;&lt;path d=&quot;M11 10h1v3c0 0.55-0.45 1-1 1H1c-0.55 0-1-0.45-1-1V3c0-0.55 0.45-1 1-1h3v1H1v10h10V10zM6 2l2.25 2.25-3.25 3.25 1.5 1.5 3.25-3.25 2.25 2.25V2H6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;
 &lt;/div&gt;
 
 &lt;h2&gt;Steps&lt;/h2&gt;
@@ -42,7 +46,7 @@
 
 &lt;h3&gt;Geographic definition&lt;/h3&gt;
 
-&lt;p&gt;My file &lt;a href=&quot;/downloads/choropleth/d4ctydef.csv&quot;&gt;&lt;code&gt;d4ctydef.csv&lt;/code&gt;&lt;/a&gt; is a comma-delimited file with the &lt;a href=&quot;http://www.census.gov/geo/reference/codes/cou.html&quot;&gt;FIPS&lt;/a&gt; codes of the counties in the District.&lt;/p&gt;
+&lt;p&gt;My file &lt;a href=&quot;/downloads/blog/2016-07-06-choropleth-maps-with-d3-python-and-data-from-fred/d4ctydef.csv&quot;&gt;d4ctydef.csv&lt;/a&gt; is a comma-delimited file with the &lt;a href=&quot;http://www.census.gov/geo/reference/codes/cou.html&quot;&gt;FIPS&lt;/a&gt; codes of the counties in the District.&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;STATE,STATE_FIPS,FIPS,COUNTY_NAME,D4
 KY,&amp;quot;21&amp;quot;,&amp;quot;21001&amp;quot;,Adair County,FALSE
 KY,&amp;quot;21&amp;quot;,&amp;quot;21003&amp;quot;,Allen County,FALSE
@@ -58,7 +62,7 @@ KY,&amp;quot;21&amp;quot;,&amp;quot;21017&amp;quot;,Bourbon County,TRUE
 &lt;h3&gt;Downloading data from FRED&lt;/h3&gt;
 
 &lt;p&gt;Automated downloading of data from FRED requires an API key and signing up for the service. 
-Install the &lt;code&gt;fredapi&lt;/code&gt; Python module from &lt;a href=&quot;https://github.com/mortada/fredapi&quot;&gt;https://github.com/mortada/fredapi&lt;/a&gt;
+Install the &lt;code&gt;fredapi&lt;/code&gt; Python module from &lt;a href=&quot;https://github.com/mortada/fredapi&quot;&gt;https://github.com/mortada/fredapi&lt;/a&gt;.
 Now try the following in a Jupyter or IPython notebook.&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ipy&quot; data-lang=&quot;ipy&quot;&gt;&lt;span class=&quot;c&quot;&gt;# Import fredapi module&lt;/span&gt;
@@ -113,7 +117,7 @@ Now try the following in a Jupyter or IPython notebook.&lt;/p&gt;
     &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;id&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\t&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;county&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\t&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;rate&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;&amp;quot;{0}&amp;quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\t&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;{1}&amp;quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\t&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;{2}&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fips&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;county&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fips&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;county&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d4_cty_ur&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;items&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;The file &lt;code&gt;urd4.tsv&lt;/code&gt; looks like this:&lt;/p&gt;
+&lt;p&gt;The file &lt;a href=&quot;/downloads/blog/2016-07-06-choropleth-maps-with-d3-python-and-data-from-fred/urd4.tsv&quot;&gt;urd4.tsv&lt;/a&gt; looks like this:&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;id  county  rate
 &amp;quot;21165&amp;quot; &amp;quot;Menifee County, KY&amp;quot;    8.0
 &amp;quot;21011&amp;quot; &amp;quot;Bath County, KY&amp;quot;   6.6
@@ -124,7 +128,7 @@ Now try the following in a Jupyter or IPython notebook.&lt;/p&gt;
 &amp;quot;21023&amp;quot; &amp;quot;Bracken County, KY&amp;quot;    5.7
 ...
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Determine natural brakes in the data using the python module &lt;code&gt;jenks&lt;/code&gt; from &lt;a href=&quot;https://github.com/perrygeo/jenks&quot;&gt;https://github.com/perrygeo/jenks&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Determine natural breaks in the data using the python module &lt;code&gt;jenks&lt;/code&gt; from &lt;a href=&quot;https://github.com/perrygeo/jenks&quot;&gt;https://github.com/perrygeo/jenks&lt;/a&gt;.&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ipy&quot; data-lang=&quot;ipy&quot;&gt;&lt;span class=&quot;c&quot;&gt;# Determine cutoffs for choropleth map&lt;/span&gt;
 &lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;jenks&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;jenks&lt;/span&gt;
@@ -209,7 +213,7 @@ Now try the following in a Jupyter or IPython notebook.&lt;/p&gt;
 
 &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;formatNumber&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;d3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;,.1f&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; 
 
-&lt;span class=&quot;cm&quot;&gt;/* The thresholds are harcoded here. The jenks breaks are rounded some. */&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;/* The thresholds are hardcoded here. The jenks breaks are rounded some. */&lt;/span&gt;
 &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;color&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;d3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;scale&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;threshold&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;domain&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;3.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;5.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;7.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;9.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;16.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;#f2f0f7&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;#dadaeb&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;#bcbddc&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;#9e9ac8&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;#756bb1&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;#54278f&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
