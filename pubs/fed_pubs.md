@@ -30,7 +30,7 @@ title: Articles in Fed Publications
 # <a name="regional-economist"></a>**Federal Reserve Bank of St. Louis _The Regional Economist_** 
 
 
-{% bibliography  -q @*[pubtype=RE] %}
+{% bibliography  -q @*[pubtype=RegEco] %}
 
 
 <div class="row">
