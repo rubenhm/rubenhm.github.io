@@ -12,6 +12,8 @@
     
       
     
+      
+    
     
       <item>
         <title>New paper accepted for publication</title>
@@ -20,7 +22,7 @@
 &lt;h2&gt;References&lt;/h2&gt;
 
 &lt;ol class=&quot;bibliography&quot;&gt;&lt;li&gt;            &lt;dl&gt;&lt;dt&gt;2015&lt;/dt&gt;
-                &lt;dd&gt;&lt;p class=&quot;text-left&quot;&gt;&lt;span id=&quot;ree2015&quot;&gt;&lt;b&gt;“Did Affordable Housing Legislation Contribute To the Subprime Securities Boom?”&lt;/b&gt; Ghent, Andra C., Rubén Hernández-Murillo, and Michael T. Owyang. 2015. &lt;i&gt;Real Estate Economics&lt;/i&gt; 43 (4): 820–54. doi:10.1111/1540-6229.12110.&lt;/span&gt;&lt;/p&gt;&lt;/dd&gt;
+                &lt;dd&gt;&lt;p class=&quot;text-left&quot;&gt;&lt;span id=&quot;ree2015&quot;&gt;&lt;b&gt;“Did Affordable Housing Legislation Contribute to the Subprime Securities Boom?”&lt;/b&gt; Ghent, Andra C., Rubén Hernández-Murillo, and Michael T. Owyang. 2015. &lt;i&gt;Real Estate Economics&lt;/i&gt; 43 (4): 820–54. doi:10.1111/1540-6229.12110.&lt;/span&gt;&lt;/p&gt;&lt;/dd&gt;
             &lt;/dl&gt;
 
 &lt;!-- The following content will be available for printing --&gt;
@@ -35,7 +37,7 @@
         &lt;p&gt;BibTeX entry:&lt;/p&gt;
         &lt;pre&gt;@article{ree2015,
   title = {Did Affordable Housing Legislation Contribute to the Subprime Securities Boom?},
-  author = {Ghent, Andra C. and Hern{\&#39;a}ndez-Murillo, Rub{\&#39;e}n and Owyang, Michael T.},
+  author = {Ghent, Andra C. and Hern{\'a}ndez-Murillo, Rub{\'e}n and Owyang, Michael T.},
   journal = {Real Estate Economics},
   year = {2015},
   month = {Winter},
@@ -93,7 +95,7 @@
                         &lt;li&gt;
                             &lt;blockquote class=&quot;pre-scrollable&quot;&gt;&lt;font size=&quot;-1&quot;&gt;&lt;pre&gt;@article{ree2015,
   title = {Did Affordable Housing Legislation Contribute to the Subprime Securities Boom?},
-  author = {Ghent, Andra C. and Hern{\&#39;a}ndez-Murillo, Rub{\&#39;e}n and Owyang, Michael T.},
+  author = {Ghent, Andra C. and Hern{\'a}ndez-Murillo, Rub{\'e}n and Owyang, Michael T.},
   journal = {Real Estate Economics},
   year = {2015},
   month = {Winter},
@@ -146,7 +148,7 @@
 &lt;h2&gt;References&lt;/h2&gt;
 
 &lt;ol class=&quot;bibliography&quot;&gt;&lt;li&gt;            &lt;dl&gt;&lt;dt&gt;2014&lt;/dt&gt;
-                &lt;dd&gt;&lt;p class=&quot;text-left&quot;&gt;&lt;span id=&quot;fedles2014n23&quot;&gt;&lt;b&gt;“The Rising Complexity Of the FOMC Statement.”&lt;/b&gt; Hernández-Murillo, Rubén, and Hannah Shell. 2014. &lt;i&gt;Federal Reserve Bank Of St. Louis Economic Synopses&lt;/i&gt;, no. 23. http://research.stlouisfed.org/publications/es/14/ES_23_2014-11-05.pdf.&lt;/span&gt;&lt;/p&gt;&lt;/dd&gt;
+                &lt;dd&gt;&lt;p class=&quot;text-left&quot;&gt;&lt;span id=&quot;fedles2014n23&quot;&gt;&lt;b&gt;“The Rising Complexity of the FOMC Statement.”&lt;/b&gt; Hernández-Murillo, Rubén, and Hannah Shell. 2014. &lt;i&gt;Federal Reserve Bank of St. Louis Economic Synopses&lt;/i&gt;, no. 23. http://research.stlouisfed.org/publications/es/14/ES_23_2014-11-05.pdf.&lt;/span&gt;&lt;/p&gt;&lt;/dd&gt;
             &lt;/dl&gt;
 
 &lt;!-- The following content will be available for printing --&gt;
@@ -155,7 +157,7 @@
         &lt;p&gt;BibTeX entry:&lt;/p&gt;
         &lt;pre&gt;@article{fedles2014n23,
   title = {The Rising Complexity of the {FOMC} Statement},
-  author = {Hern{\&#39;a}ndez-Murillo, Rub{\&#39;e}n and Shell, Hannah},
+  author = {Hern{\'a}ndez-Murillo, Rub{\'e}n and Shell, Hannah},
   journal = {Federal Reserve Bank of St. Louis Economic Synopses},
   year = {2014},
   number = {23},
@@ -193,7 +195,7 @@
                         &lt;li&gt;
                             &lt;blockquote class=&quot;pre-scrollable&quot;&gt;&lt;font size=&quot;-1&quot;&gt;&lt;pre&gt;@article{fedles2014n23,
   title = {The Rising Complexity of the {FOMC} Statement},
-  author = {Hern{\&#39;a}ndez-Murillo, Rub{\&#39;e}n and Shell, Hannah},
+  author = {Hern{\'a}ndez-Murillo, Rub{\'e}n and Shell, Hannah},
   journal = {Federal Reserve Bank of St. Louis Economic Synopses},
   year = {2014},
   number = {23},
@@ -241,7 +243,7 @@
 &lt;h2&gt;References&lt;/h2&gt;
 
 &lt;ol class=&quot;bibliography&quot;&gt;&lt;li&gt;            &lt;dl&gt;&lt;dt&gt;2014&lt;/dt&gt;
-                &lt;dd&gt;&lt;p class=&quot;text-left&quot;&gt;&lt;span id=&quot;fedlwp2014-036&quot;&gt;&lt;b&gt;&lt;i&gt;Interjurisdictional Competition And Location Decisions of Firms&lt;/i&gt;&lt;/b&gt;. Hernández-Murillo, Rubén. 2014. Working Paper No. 2014-036A. Federal Reserve Bank of St. Louis. http://research.stlouisfed.org/wp/2014/2014-036.pdf.&lt;/span&gt;&lt;/p&gt;&lt;/dd&gt;
+                &lt;dd&gt;&lt;p class=&quot;text-left&quot;&gt;&lt;span id=&quot;fedlwp2014-036&quot;&gt;&lt;b&gt;&lt;i&gt;Interjurisdictional Competition and Location Decisions of Firms&lt;/i&gt;&lt;/b&gt;. Hernández-Murillo, Rubén. 2014. Working Paper No. 2014-036A. Federal Reserve Bank of St. Louis. http://research.stlouisfed.org/wp/2014/2014-036.pdf.&lt;/span&gt;&lt;/p&gt;&lt;/dd&gt;
             &lt;/dl&gt;
 
 &lt;!-- The following content will be available for printing --&gt;
@@ -256,7 +258,7 @@
         &lt;p&gt;BibTeX entry:&lt;/p&gt;
         &lt;pre&gt;@techreport{fedlwp2014-036,
   title = {Interjurisdictional Competition and Location Decisions of Firms},
-  author = {Hern{\&#39;a}ndez-Murillo, Rub{\&#39;e}n},
+  author = {Hern{\'a}ndez-Murillo, Rub{\'e}n},
   institution = {Federal Reserve Bank of St. Louis},
   year = {2014},
   number = {No. 2014-036A},
@@ -309,7 +311,7 @@
                         &lt;li&gt;
                             &lt;blockquote class=&quot;pre-scrollable&quot;&gt;&lt;font size=&quot;-1&quot;&gt;&lt;pre&gt;@techreport{fedlwp2014-036,
   title = {Interjurisdictional Competition and Location Decisions of Firms},
-  author = {Hern{\&#39;a}ndez-Murillo, Rub{\&#39;e}n},
+  author = {Hern{\'a}ndez-Murillo, Rub{\'e}n},
   institution = {Federal Reserve Bank of St. Louis},
   year = {2014},
   number = {No. 2014-036A},
@@ -361,7 +363,7 @@
 &lt;h2&gt;References&lt;/h2&gt;
 
 &lt;ol class=&quot;bibliography&quot;&gt;&lt;li&gt;            &lt;dl&gt;&lt;dt&gt;2014&lt;/dt&gt;
-                &lt;dd&gt;&lt;p class=&quot;text-left&quot;&gt;&lt;span id=&quot;rsue2014&quot;&gt;&lt;b&gt;“Differences In Subprime Loan Pricing Across Races and Neighborhoods .”&lt;/b&gt; Ghent, Andra C., Rubén Hernández-Murillo, and Michael T. Owyang. 2014. &lt;i&gt;Regional Science And Urban Economics &lt;/i&gt;48 (September): 199–215. doi:10.1016/j.regsciurbeco.2014.07.006.&lt;/span&gt;&lt;/p&gt;&lt;/dd&gt;
+                &lt;dd&gt;&lt;p class=&quot;text-left&quot;&gt;&lt;span id=&quot;rsue2014&quot;&gt;&lt;b&gt;“Differences in Subprime Loan Pricing Across Races and Neighborhoods .”&lt;/b&gt; Ghent, Andra C., Rubén Hernández-Murillo, and Michael T. Owyang. 2014. &lt;i&gt;Regional Science and Urban Economics &lt;/i&gt;48 (September): 199–215. doi:10.1016/j.regsciurbeco.2014.07.006.&lt;/span&gt;&lt;/p&gt;&lt;/dd&gt;
             &lt;/dl&gt;
 
 &lt;!-- The following content will be available for printing --&gt;
@@ -373,7 +375,7 @@
         &lt;p&gt;BibTeX entry:&lt;/p&gt;
         &lt;pre&gt;@article{rsue2014,
   title = {Differences in Subprime Loan Pricing Across Races and Neighborhoods },
-  author = {Ghent, Andra C. and Hern{\&#39;a}ndez-Murillo, Rub{\&#39;e}n and Owyang, Michael T.},
+  author = {Ghent, Andra C. and Hern{\'a}ndez-Murillo, Rub{\'e}n and Owyang, Michael T.},
   journal = {Regional Science and Urban Economics },
   year = {2014},
   month = sep,
@@ -429,7 +431,7 @@
                         &lt;li&gt;
                             &lt;blockquote class=&quot;pre-scrollable&quot;&gt;&lt;font size=&quot;-1&quot;&gt;&lt;pre&gt;@article{rsue2014,
   title = {Differences in Subprime Loan Pricing Across Races and Neighborhoods },
-  author = {Ghent, Andra C. and Hern{\&#39;a}ndez-Murillo, Rub{\&#39;e}n and Owyang, Michael T.},
+  author = {Ghent, Andra C. and Hern{\'a}ndez-Murillo, Rub{\'e}n and Owyang, Michael T.},
   journal = {Regional Science and Urban Economics },
   year = {2014},
   month = sep,

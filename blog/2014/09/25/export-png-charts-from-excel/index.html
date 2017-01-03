@@ -18,6 +18,7 @@
   <link rel="stylesheet" type="text/css" href="/assets/css/heather.css" />
   <!-- CSS for publication list -->
   <link rel="stylesheet" href="/assets/css/publications.css" type="text/css" />
+  <link rel="stylesheet" href="/assets/css/posts.css" type="text/css" />
    <!-- CSS for Google Web Fonts -->
   <link href='http://fonts.googleapis.com/css?family=Merriweather:400,700' rel='stylesheet' type='text/css'>
   <!-- Google code prettify -->
@@ -127,17 +128,17 @@ Excel 2010 places the file in the following location:
 
 <p>This file is hidden when first starting Excel. To unhide, perform
 the following steps.</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">+ View -&gt; Unhide
+<div class="highlight"><pre><code class="language-" data-lang="">+ View -&gt; Unhide
     + Unhide personal macros file.
 </code></pre></div>
 <p>You can now select the <code>View -&gt; Macro</code> or the <code>Developer -&gt; Macros</code> menu items to create a new macro.
 The macro for saving the generated <code>PNG</code> files is as follows:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">Sub Export_ActiveChart_as_PNG()
-&#39;
-&#39; Export_ActiveChart_as_PNG Macro
-&#39; Export Active Chart as PNG
-&#39;
-        ActiveChart.Export Filename:=&quot;C:\path\to\save\excelcharts\&quot; &amp; ActiveSheet.Name &amp; &quot;.png&quot;, Filtername:=&quot;PNG&quot;
+<div class="highlight"><pre><code class="language-" data-lang="">Sub Export_ActiveChart_as_PNG()
+'
+' Export_ActiveChart_as_PNG Macro
+' Export Active Chart as PNG
+'
+        ActiveChart.Export Filename:="C:\path\to\save\excelcharts\" &amp; ActiveSheet.Name &amp; ".png", Filtername:="PNG"
 
 End Sub
 </code></pre></div>

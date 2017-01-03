@@ -18,6 +18,7 @@
   <link rel="stylesheet" type="text/css" href="/assets/css/heather.css" />
   <!-- CSS for publication list -->
   <link rel="stylesheet" href="/assets/css/publications.css" type="text/css" />
+  <link rel="stylesheet" href="/assets/css/posts.css" type="text/css" />
    <!-- CSS for Google Web Fonts -->
   <link href='http://fonts.googleapis.com/css?family=Merriweather:400,700' rel='stylesheet' type='text/css'>
   <!-- Google code prettify -->
@@ -143,31 +144,32 @@ We use <code>xelatex</code> because in Windows we can use TrueType fonts, for ex
 </ol>
 
 <p>Running the following command in the command line will produce the final presentation pdf file and will clean up any auxiliary files, except for the intermediate tex files and the original markdown source.</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">make FILE=example
+<div class="highlight"><pre><code class="language-" data-lang="">make FILE=example
 </code></pre></div>
 <p>To automate the process, the <code>make</code> command uses the following set of instructions from a file named <a href="http://rubenhm.org/downloads/blog/2014-08-01-pandoc-beamer-make-workflow/makefile">makefile</a>.</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">FILE=
-MDFILE=$(FILE)_pres
-TEXFILE=presentation_$(FILE)
-INPUTS=
+<div class="highlight"><pre><code class="language-" data-lang=""><span class="nv">FILE</span><span class="o">=</span>
+<span class="nv">MDFILE</span><span class="o">=</span><span class="nv">$(FILE)</span>_pres
+<span class="nv">TEXFILE</span><span class="o">=</span>presentation_<span class="nv">$(FILE)</span>
+<span class="nv">INPUTS</span><span class="o">=</span>
 
-all:  pdf; make clean
+<span class="nl">all</span><span class="o">:</span>  <span class="nf">pdf; make clean</span>
 
-.PHONY: all clean
+<span class="nl">.PHONY</span><span class="o">:</span> <span class="nf">all clean</span>
 
-pdf:
-    # Use pandoc to convert the main markdown source to latex
-    pandoc $(MDFILE).md --slide-level 2 -t beamer -o $(MDFILE).tex
-    # Use sed to replace a string in the latex file that sets spaces in itemize environment
-    sed -i &quot;s/\\itemsep1pt\\parskip0pt\\parsep0pt/\\itemsep1.6pt\\parskip1.6pt\\parsep0pt/g&quot; $(MDFILE).tex
-    # Apply xelatex twice to obtain the pdf
-    xelatex $(TEXFILE).tex
-    xelatex $(TEXFILE).tex  
+<span class="nl">pdf</span><span class="o">:</span>
+	<span class="c"># Use pandoc to convert the main markdown source to latex</span>
+	pandoc <span class="nv">$(MDFILE)</span>.md --slide-level 2 -t beamer -o <span class="nv">$(MDFILE)</span>.tex
+	<span class="c"># Use sed to replace a string in the latex file that sets spaces in itemize environment</span>
+	sed -i <span class="s2">"s/</span><span class="se">\\</span><span class="s2">itemsep1pt</span><span class="se">\\</span><span class="s2">parskip0pt</span><span class="se">\\</span><span class="s2">parsep0pt/</span><span class="se">\\</span><span class="s2">itemsep1.6pt</span><span class="se">\\</span><span class="s2">parskip1.6pt</span><span class="se">\\</span><span class="s2">parsep0pt/g"</span> <span class="nv">$(MDFILE)</span>.tex
+	<span class="c"># Apply xelatex twice to obtain the pdf</span>
+	xelatex <span class="nv">$(TEXFILE)</span>.tex
+	xelatex <span class="nv">$(TEXFILE)</span>.tex  
 
-# Remove unnecessary files
-clean: 
-    -rm -f $(TEXFILE).log $(TEXFILE).aux  $(TEXFILE).toc  $(TEXFILE).snm $(TEXFILE).nav $(TEXFILE).out $(TEXFILE).fdb_latemk $(TEXFILE).synctex.gz $(TEXFILE).fls
-    -rm -f sed*.*
+<span class="c"># Remove unnecessary files
+</span><span class="nl">clean</span><span class="o">:</span> 
+	<span class="p">-</span>rm -f <span class="nv">$(TEXFILE)</span>.log <span class="nv">$(TEXFILE)</span>.aux  <span class="nv">$(TEXFILE)</span>.toc  <span class="nv">$(TEXFILE)</span>.snm <span class="nv">$(TEXFILE)</span>.nav <span class="nv">$(TEXFILE)</span>.out <span class="nv">$(TEXFILE)</span>.fdb_latemk <span class="nv">$(TEXFILE)</span>.synctex.gz <span class="nv">$(TEXFILE)</span>.fls
+	<span class="p">-</span>rm -f sed<span class="k">*</span>.<span class="k">*</span>
+
 </code></pre></div>
 <p>The <code>--slide-level 2</code> option indicates we can use <code>##</code> in the markdown file to generate new slides, and <code>###</code> to create subheadings inside a slide. A single <code>#</code> creates sections.</p>
 
