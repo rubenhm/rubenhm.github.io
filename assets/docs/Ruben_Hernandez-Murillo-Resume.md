@@ -14,8 +14,10 @@ Education
 
 2001
 :   PhD in Economics. _University of Rochester._
+
 1998
 :   MA in Economics. _University of Rochester._
+
 1995
 :   BA in Economics, _summa cum laude_. _ITAM (Instituto Tecnológico Autónomo de México)._ 
 
@@ -26,8 +28,10 @@ Work Experience
 
 2015-Present
 :   _Federal Reserve Bank of Cleveland._  Senior policy economist.
+
 2005-2015
 :   _Federal Reserve Bank of St. Louis._  Senior economist.
+
 2000-2005
 :   _Federal Reserve Bank of St. Louis._  Economist.
 
@@ -62,25 +66,32 @@ Work Experience
 
 2013 (summer)
 :   _Washington University in St. Louis. Olin Business School._ Managerial economics.
+
 2002 (spring)
 :   _ITAM. CIE (Center for Economic Research)._ Intermediate microeconomics; industrial organization (master's).
-1998, 1999
+
+1998, 1999 
 :   _University of Rochester. Department of Economics._ Intermediate microeconomics.
-1994
+
+1994  
 :   _ITAM. Department of Economics._ Introductory microeconomics. 
 
 
 Selected publications
 ---------------------
 
-2014
-:   [“Differences in Subprime Loan Pricing Across Races and Neighborhoods,”](http://dx.doi.org/10.1016/j.regsciurbeco.2014.07.006) (with  Andra C. Ghent and Michael T. Owyang). _Regional Science and Urban Economics_, 48, pp.199-215.
+2015
+:   [“Did Affordable Housing Legislation Contribute to the Subprime Securities Boom?”](http://dx.doi.org/10.1111/1540-6229.12110) (with  Andra C. Ghent and Michael T. Owyang). _Real Estate Economics_, 43(4), pp. 820–854.
+
 2010
 :   [“Strategic Online Banking Adoption,”](http://dx.doi.org/10.1016/j.jbankfin.2010.03.011) (with Gerard Llobet and Roberto Fuentes) _Journal of Banking and Finance_, 34(7), pp. 1650–1663. 
+
 2009
 :   [“Measuring the Information Content of the Beige Book: A Mixed Data Sampling Approach,”](http://dx.doi.org/10.1111/j.1538-4616.2008.00186.x) (with Michelle T. Armesto;  Michael T. Owyang; and Jeremy Piger). _Journal of Money, Credit and Banking_, 41(1), pp. 35–55. 
+
 2006
 :   [“Patent Licensing Revisited: Heterogeneous Firms and Product Differentiation,”](http://dx.doi.org/10.1016/j.ijindorg.2005.03.008) (with Gerard Llobet). _International Journal of Industrial Organization_, 24(1), pp. 149–175.
+
 2004
 :   [“Racial Profiling or Racist Policing? Bounds Tests in Aggregate Data,”](http://dx.doi.org/10.1111/j.0020-6598.2004.00293.x) (with John Knowles). _International Economic Review_, 45(3), pp. 959–989.
 
