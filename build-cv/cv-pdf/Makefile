@@ -20,7 +20,7 @@ SRC = $(wildcard *.tex)
 PDF = $(SRC:.tex=.pdf)
 BBL = $(SRC:.tex=.bbl)
 AUX = $(SRC:.tex=.aux)
-BIBTXT = Journal ES WP RegEco Review
+BIBTXT = Journal ES FF WP RegEco Review
 
 
 all: clean $(PDF) $(BIBTXT)
