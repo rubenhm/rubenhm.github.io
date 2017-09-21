@@ -20,6 +20,12 @@ permalink: /about/
   This is my [CV in TeX format](https://raw.github.com/rubenhm/rubenhm.github.io/source/assets/docs/Ruben_Hernandez-Murillo-cv.tex), and this is my [CV in PDF format](https://raw.github.com/rubenhm/rubenhm.github.io/source/assets/docs/Ruben_Hernandez-Murillo-cv.pdf).
 
   The source files for this website are hosted in [GitHub](https://github.com/rubenhm/rubenhm.github.io/tree/source).
+  
+  <h3>My other research pages:</h3>
+
+  + [Repec](https://ideas.repec.org/e/phe35.html)
+  + [Google Scholar](https://scholar.google.com/citations?user=ONu4SBcAAAAJ&hl=en)
+  + [SSRN](https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=341818)
 
   </div>
 
