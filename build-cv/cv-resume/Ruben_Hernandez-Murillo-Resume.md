@@ -9,17 +9,6 @@ Formats: [Markdown](https://raw.github.com/rubenhm/rubenhm.github.io/source/asse
 [\LaTeX](https://raw.github.com/rubenhm/rubenhm.github.io/source/assets/docs/Ruben_Hernandez-Murillo-Resume.tex),
 [HTML](https://raw.github.com/rubenhm/rubenhm.github.io/source/assets/docs/Ruben_Hernandez-Murillo-Resume.html) .
 
-Education
----------
-
-2001
-:   PhD in Economics. _University of Rochester._
-
-1998
-:   MA in Economics. _University of Rochester._
-
-1995
-:   BA in Economics, _summa cum laude_. _ITAM (Instituto Tecnológico Autónomo de México)._ 
 
 Work Experience
 ---------------
@@ -39,15 +28,13 @@ Work Experience
 +   Served as reviewer for 30+ academic journals.
 +   Interests: applied microeconomics, public economics, regional and urban, and real estate economics.
 
-1995-2000
-:   _University of Rochester._ PhD student.
-
-+ Served as research assistant to professor Per Krusell. Wrote Fortran 95 code. (1999, 2000)
-+ Completed PhD program in Economics.  Fields: Industrial organization; political economy.   
-  Advisor: Per Krusell. Dissertation: _Essays on Economic Competition Among Jurisdictions._    
- 
 
 ### Policy/Analysis ###
+
+2015-Present
+:   _Federal Reserve Bank of Cleveland._
+
++   Briefed the Bank’s President, Boards of Directors of the Bank’s branches, and industry and community leaders on current economic conditions in the Fourth District and the nation. 
 
 2000-2015
 :   _Federal Reserve Bank of St. Louis._ 
@@ -55,12 +42,27 @@ Work Experience
 +   Served as reviewer in Federal Reserve System’s _Comprehensive Capital Analysis and Review_ (CCAR). (2012-2014)
 +   Chaired Federal Reserve System’s  _Committee on Regional Analysis_; organized its _Annual Conference_. (2013-2014)
 +   Coordinated the St. Louis District's _Beige Book_. (2002-2014)
-+   Briefed the Bank’s President, Boards of Directors of the Bank’s branches, and industry and community leaders on current economic conditions in the St. Louis District and the nation. (2000-2014)
++   Briefed the Bank’s President, Boards of Directors of the Bank’s branches, and industry and community leaders on current economic conditions in the Eighth District and the nation.
 
 1994-1995
 :   _ITAM, CAIE (Center for Economic Research and Analysis)._ Junior researcher.
 
 +   Wrote periodical reports on economic conditions in Mexico. 
+
+Education
+---------
+
+2001
+:   PhD in Economics. _University of Rochester._
+
++   Fields: Industrial organization; political economy.   
+    Advisor: Per Krusell. Dissertation: _Essays on Economic Competition Among Jurisdictions._    
+
+1998
+:   MA in Economics. _University of Rochester._
+
+1995
+:   BA in Economics, _summa cum laude_. _ITAM (Instituto Tecnológico Autónomo de México)._ 
 
 ### Teaching ###
 
@@ -80,8 +82,8 @@ Work Experience
 Selected publications
 ---------------------
 
-2015
-:   [“Did Affordable Housing Legislation Contribute to the Subprime Securities Boom?”](http://dx.doi.org/10.1111/1540-6229.12110) (with  Andra C. Ghent and Michael T. Owyang). _Real Estate Economics_, 43(4), pp. 820–854.
+2017
+:   [“Clustered Housing Cycles.”](https://doi.org/10.1016/j.regsciurbeco.2017.06.003) (with Michael T. Owyang and Margarita Rubio) _Regional Science and Urban Economics_, 66, pp. 185–197.
 
 2010
 :   [“Strategic Online Banking Adoption,”](http://dx.doi.org/10.1016/j.jbankfin.2010.03.011) (with Gerard Llobet and Roberto Fuentes) _Journal of Banking and Finance_, 34(7), pp. 1650–1663. 
