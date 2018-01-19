@@ -10,6 +10,240 @@
     <rights>Copyright (c) 2014 Rubén Hernández-Murillo</rights>
     <atom:link href="http://rubenhm.org/news.xml" rel="self" type="application/rss+xml" />
     
+    
+      <item>
+        <title>New paper accepted for publication</title>
+        <description>&lt;p&gt;Our paper, (missing reference), was just accepted for publication in &lt;em&gt;Regional Science and Urban Economics&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h2&gt;References&lt;/h2&gt;
+
+&lt;ol class=&quot;bibliography&quot;&gt;&lt;/ol&gt;
+</description>
+        <pubDate>Fri, 19 Jan 2018 00:00:00 -0500</pubDate>
+        <link>http://rubenhm.org/news/2018/01/19/new-paper-accepted-for-publication/</link>
+        <guid isPermaLink="true">http://rubenhm.org/news/2018/01/19/new-paper-accepted-for-publication/</guid>
+      </item>
+      
+    
+    
+      <item>
+        <title>New paper accepted for publication</title>
+        <description>&lt;p&gt;Our paper, &lt;a href=&quot;#rsue2017&quot;&gt;(Hernández-Murillo, Owyang, and Rubio 2017)&lt;/a&gt;, was just accepted for publication in &lt;em&gt;Regional Science and Urban Economics&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h2&gt;References&lt;/h2&gt;
+
+&lt;ol class=&quot;bibliography&quot;&gt;&lt;li&gt;            &lt;dl&gt;&lt;dt&gt;2017&lt;/dt&gt;
+                &lt;dd&gt;&lt;p class=&quot;text-left&quot;&gt;&lt;span id=&quot;rsue2017&quot;&gt;&lt;b&gt;“Clustered Housing Cycles.”&lt;/b&gt; Hernández-Murillo, Rubén, Michael T. Owyang, and Margarita Rubio. 2017. &lt;i&gt;Regional Science and Urban Economics&lt;/i&gt; 66 (September): 185–97. doi:10.1016/j.regsciurbeco.2017.06.003.&lt;/span&gt;&lt;/p&gt;&lt;/dd&gt;
+            &lt;/dl&gt;
+
+&lt;!-- The following content will be available for printing --&gt;
+&lt;div class=&quot;row visible-print&quot;&gt;
+     
+        &lt;p&gt;Abstract:&lt;/p&gt;
+        &lt;p&gt;Using a panel of U.S. city-level building permits data, we estimate a Markov-switching model of housing cycles that allows cities to systematically deviate from the national housing cycle. These deviations occur for clusters of cities that experience simultaneous housing contractions. We find that cities do not form housing regions in the traditional geographic sense. Instead, similarities in factors affecting the demand for housing (such as population growth or availability of credit) appear to be more important determinants of cyclical co-movements than similarities in factors affecting the supply for land (such as the availability of developable land or the elasticity of land supply).&lt;/p&gt;
+    
+        &lt;p&gt;BibTeX entry:&lt;/p&gt;
+        &lt;pre&gt;@article{rsue2017,
+  journal = {Regional Science and Urban Economics},
+  title = {Clustered Housing Cycles},
+  author = {Hern{\'a}ndez-Murillo, Rub{\'e}n and Owyang, Michael~T. and Rubio, Margarita},
+  month = sep,
+  year = {2017},
+  volume = {66},
+  pages = {185--197},
+  pubtype = {Journal},
+  selectpub = {Yes},
+  doi = {10.1016/j.regsciurbeco.2017.06.003},
+  keywords = {Clustered Markov switchingBusiness cyclesBuilding permitsCo-movements},
+  url = {http://research.stlouisfed.org/wp/2013/2013-021.pdf}
+}
+&lt;/pre&gt;
+        &lt;p&gt;Links to file:&lt;/p&gt;
+        &lt;ul &gt;
+            
+            &lt;li&gt;&lt;a href=&quot;http://dx.doi.org/10.1016/j.regsciurbeco.2017.06.003&quot; target=&quot;_blank&quot;&gt;journal website (doi)&lt;/a&gt;&lt;/li&gt;
+            
+            &lt;li&gt;&lt;a href=&quot;http://research.stlouisfed.org/wp/2013/2013-021.pdf&quot; target=&quot;_blank&quot;&gt;working paper (pdf)&lt;/a&gt;&lt;/li&gt;
+            
+            
+        &lt;/ul&gt;
+&lt;/div&gt;
+        
+&lt;!-- The following buttons will be hidden for printing --&gt;
+&lt;div class=&quot;row &quot;&gt; 
+    &lt;div class=&quot;btn-toolbar hidden-print&quot; role=&quot;toolbar&quot;&gt;
+        &lt;div class=&quot;col-md-2&quot;&gt;&lt;/div&gt;
+    &lt;ul class=&quot;pagination&quot;&gt;
+        &lt;li&gt;
+             
+            &lt;div class=&quot;btn-group&quot;&gt;
+                    &lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-xs dropdown-toggle&quot; data-toggle=&quot;dropdown&quot;&gt;
+                        Abstract
+                        &lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;
+                    &lt;/button&gt;
+                    &lt;ul class=&quot;dropdown-menu dropdown-menu-left&quot; role=&quot;menu&quot;&gt;
+                        &lt;li&gt;
+                            &lt;blockquote class=&quot;pre-scrollable&quot;&gt;&lt;font size=&quot;-1&quot;&gt;Using a panel of U.S. city-level building permits data, we estimate a Markov-switching model of housing cycles that allows cities to systematically deviate from the national housing cycle. These deviations occur for clusters of cities that experience simultaneous housing contractions. We find that cities do not form housing regions in the traditional geographic sense. Instead, similarities in factors affecting the demand for housing (such as population growth or availability of credit) appear to be more important determinants of cyclical co-movements than similarities in factors affecting the supply for land (such as the availability of developable land or the elasticity of land supply).&lt;/font&gt;&lt;/blockquote&gt;
+                        &lt;/li&gt;
+                    &lt;/ul&gt;
+            &lt;/div&gt;
+            
+
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;div class=&quot;btn-group&quot;&gt;
+                    &lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-xs dropdown-toggle&quot; data-toggle=&quot;dropdown&quot;&gt;
+                        Bib Entry
+                        &lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;
+                    &lt;/button&gt;
+                    &lt;ul class=&quot;dropdown-menu dropdown-menu-left&quot; role=&quot;menu&quot;&gt;
+                        &lt;li&gt;
+                            &lt;blockquote class=&quot;pre-scrollable&quot;&gt;&lt;font size=&quot;-1&quot;&gt;&lt;pre&gt;@article{rsue2017,
+  journal = {Regional Science and Urban Economics},
+  title = {Clustered Housing Cycles},
+  author = {Hern{\'a}ndez-Murillo, Rub{\'e}n and Owyang, Michael~T. and Rubio, Margarita},
+  month = sep,
+  year = {2017},
+  volume = {66},
+  pages = {185--197},
+  pubtype = {Journal},
+  selectpub = {Yes},
+  doi = {10.1016/j.regsciurbeco.2017.06.003},
+  keywords = {Clustered Markov switchingBusiness cyclesBuilding permitsCo-movements},
+  url = {http://research.stlouisfed.org/wp/2013/2013-021.pdf}
+}
+&lt;/pre&gt;&lt;/font&gt;&lt;/blockquote&gt;
+                        &lt;/li&gt;
+                    &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;div class=&quot;btn-group&quot;&gt;
+                    &lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-xs dropdown-toggle&quot; data-toggle=&quot;dropdown&quot;&gt;
+                        Links to File
+                        &lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;
+                    &lt;/button&gt;
+                    &lt;ul class=&quot;dropdown-menu dropdown-menu-left&quot; role=&quot;menu&quot;&gt;
+                        
+                        &lt;li&gt;&lt;a href=&quot;http://dx.doi.org/10.1016/j.regsciurbeco.2017.06.003&quot; target=&quot;_blank&quot;&gt;journal website (doi)&lt;/a&gt;&lt;/li&gt;
+                        
+                        &lt;li&gt;&lt;a href=&quot;http://research.stlouisfed.org/wp/2013/2013-021.pdf&quot; target=&quot;_blank&quot;&gt;working paper (pdf)&lt;/a&gt;&lt;/li&gt;
+                        
+                        
+                    &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/li&gt;&lt;/ol&gt;
+</description>
+        <pubDate>Sat, 02 Sep 2017 00:00:00 -0400</pubDate>
+        <link>http://rubenhm.org/news/2017/09/02/new-paper-accepted-for-publication/</link>
+        <guid isPermaLink="true">http://rubenhm.org/news/2017/09/02/new-paper-accepted-for-publication/</guid>
+      </item>
+      
+    
+      
+    
+    
+      <item>
+        <title>New Forefront article on Fourth District manufacturing</title>
+        <description>&lt;p&gt;New &lt;em&gt;Forefront&lt;/em&gt;, &lt;a href=&quot;#fedff2016fall&quot;&gt;(Hernández-Murillo and Mattson 2016)&lt;/a&gt;, is now available online.&lt;/p&gt;
+
+&lt;h2&gt;References&lt;/h2&gt;
+
+&lt;ol class=&quot;bibliography&quot;&gt;&lt;li&gt;            &lt;dl&gt;&lt;dt&gt;2016&lt;/dt&gt;
+                &lt;dd&gt;&lt;p class=&quot;text-left&quot;&gt;&lt;span id=&quot;fedff2016fall&quot;&gt;&lt;b&gt;“Rosie the Refiner? Two Manufacturing Industries’ Rising District Importance.”&lt;/b&gt; Hernández-Murillo, Rubén, and Sarah Mattson. 2016. &lt;i&gt;Forefront. New Ideas on Economic Policy from the Federal Reserve Bank of Cleveland&lt;/i&gt; 7 (3): 15–19. https://www.clevelandfed.org/newsroom-and-events/publications/forefront/ff-v7n03.aspx.&lt;/span&gt;&lt;/p&gt;&lt;/dd&gt;
+            &lt;/dl&gt;
+
+&lt;!-- The following content will be available for printing --&gt;
+&lt;div class=&quot;row visible-print&quot;&gt;
+    
+        &lt;p&gt;BibTeX entry:&lt;/p&gt;
+        &lt;pre&gt;@article{fedff2016fall,
+  title = {Rosie the Refiner? {T}wo Manufacturing Industries' Rising {D}istrict Importance},
+  author = {Hern{\'a}ndez-Murillo, Rub{\'e}n and Mattson, Sarah},
+  journal = {Forefront. New Ideas on Economic Policy from the Federal Reserve Bank of Cleveland},
+  year = {2016},
+  month = {Fall},
+  number = {3},
+  volume = {7},
+  pages = {15--19},
+  pubtype = {FF},
+  url = {https://www.clevelandfed.org/newsroom-and-events/publications/forefront/ff-v7n03.aspx}
+}
+&lt;/pre&gt;
+        &lt;p&gt;Links to file:&lt;/p&gt;
+        &lt;ul &gt;
+            
+            
+            &lt;li&gt;&lt;a href=&quot;https://www.clevelandfed.org/newsroom-and-events/publications/forefront/ff-v7n03.aspx&quot; target=&quot;_blank&quot;&gt;pdf version&lt;/a&gt;&lt;/li&gt;
+            
+            
+        &lt;/ul&gt;
+&lt;/div&gt;
+        
+&lt;!-- The following buttons will be hidden for printing --&gt;
+&lt;div class=&quot;row &quot;&gt; 
+    &lt;div class=&quot;btn-toolbar hidden-print&quot; role=&quot;toolbar&quot;&gt;
+        &lt;div class=&quot;col-md-2&quot;&gt;&lt;/div&gt;
+    &lt;ul class=&quot;pagination&quot;&gt;
+        &lt;li&gt;
+            
+
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;div class=&quot;btn-group&quot;&gt;
+                    &lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-xs dropdown-toggle&quot; data-toggle=&quot;dropdown&quot;&gt;
+                        Bib Entry
+                        &lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;
+                    &lt;/button&gt;
+                    &lt;ul class=&quot;dropdown-menu dropdown-menu-left&quot; role=&quot;menu&quot;&gt;
+                        &lt;li&gt;
+                            &lt;blockquote class=&quot;pre-scrollable&quot;&gt;&lt;font size=&quot;-1&quot;&gt;&lt;pre&gt;@article{fedff2016fall,
+  title = {Rosie the Refiner? {T}wo Manufacturing Industries' Rising {D}istrict Importance},
+  author = {Hern{\'a}ndez-Murillo, Rub{\'e}n and Mattson, Sarah},
+  journal = {Forefront. New Ideas on Economic Policy from the Federal Reserve Bank of Cleveland},
+  year = {2016},
+  month = {Fall},
+  number = {3},
+  volume = {7},
+  pages = {15--19},
+  pubtype = {FF},
+  url = {https://www.clevelandfed.org/newsroom-and-events/publications/forefront/ff-v7n03.aspx}
+}
+&lt;/pre&gt;&lt;/font&gt;&lt;/blockquote&gt;
+                        &lt;/li&gt;
+                    &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;div class=&quot;btn-group&quot;&gt;
+                    &lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-xs dropdown-toggle&quot; data-toggle=&quot;dropdown&quot;&gt;
+                        Links to File
+                        &lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;
+                    &lt;/button&gt;
+                    &lt;ul class=&quot;dropdown-menu dropdown-menu-left&quot; role=&quot;menu&quot;&gt;
+                        
+                        
+                        &lt;li&gt;&lt;a href=&quot;https://www.clevelandfed.org/newsroom-and-events/publications/forefront/ff-v7n03.aspx&quot; target=&quot;_blank&quot;&gt;pdf version&lt;/a&gt;&lt;/li&gt;
+                        
+                        
+                    &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/li&gt;&lt;/ol&gt;
+</description>
+        <pubDate>Thu, 01 Sep 2016 00:00:00 -0400</pubDate>
+        <link>http://rubenhm.org/news/2016/09/01/new-FF-on-D4-Manufacturing/</link>
+        <guid isPermaLink="true">http://rubenhm.org/news/2016/09/01/new-FF-on-D4-Manufacturing/</guid>
+      </item>
       
     
       
@@ -351,130 +585,6 @@
       </item>
       
     
-      
-    
-      
-    
-    
-      <item>
-        <title>New paper accepted for publication</title>
-        <description>&lt;p&gt;Our paper, &lt;a href=&quot;#rsue2014&quot;&gt;(Ghent, Hernández-Murillo, and Owyang 2014)&lt;/a&gt;, was just accepted for publication in &lt;em&gt;Regional Science and Urban Economics&lt;/em&gt;.&lt;/p&gt;
-
-&lt;h2&gt;References&lt;/h2&gt;
-
-&lt;ol class=&quot;bibliography&quot;&gt;&lt;li&gt;            &lt;dl&gt;&lt;dt&gt;2014&lt;/dt&gt;
-                &lt;dd&gt;&lt;p class=&quot;text-left&quot;&gt;&lt;span id=&quot;rsue2014&quot;&gt;&lt;b&gt;“Differences in Subprime Loan Pricing Across Races and Neighborhoods .”&lt;/b&gt; Ghent, Andra C., Rubén Hernández-Murillo, and Michael T. Owyang. 2014. &lt;i&gt;Regional Science and Urban Economics &lt;/i&gt;48 (September): 199–215. doi:10.1016/j.regsciurbeco.2014.07.006.&lt;/span&gt;&lt;/p&gt;&lt;/dd&gt;
-            &lt;/dl&gt;
-
-&lt;!-- The following content will be available for printing --&gt;
-&lt;div class=&quot;row visible-print&quot;&gt;
-     
-        &lt;p&gt;Abstract:&lt;/p&gt;
-        &lt;p&gt;We investigate whether race and ethnicity influenced subprime loan pricing during 2005, the peak of the subprime mortgage expansion. We combine loan-level data on the performance of non-prime securitized mortgages with individual- and neighborhood-level data on racial and ethnic characteristics for metropolitan areas in California and Florida. Using a model of rate determination that accounts for predicted loan performance, we evaluate the differences in subprime mortgage rates in terms of racial and ethnic groups and neighborhood characteristics. We find evidence of adverse pricing for blacks and Hispanics. The evidence of adverse pricing is strongest for purchase mortgages and mortgages originated by non-depository institutions. &lt;/p&gt;
-    
-        &lt;p&gt;BibTeX entry:&lt;/p&gt;
-        &lt;pre&gt;@article{rsue2014,
-  title = {Differences in Subprime Loan Pricing Across Races and Neighborhoods },
-  author = {Ghent, Andra C. and Hern{\'a}ndez-Murillo, Rub{\'e}n and Owyang, Michael T.},
-  journal = {Regional Science and Urban Economics },
-  year = {2014},
-  month = sep,
-  pages = {199--215},
-  volume = {48},
-  doi = {10.1016/j.regsciurbeco.2014.07.006},
-  issn = {0166-0462},
-  keywords = {Fair Housing Act},
-  pubtype = {Journal},
-  selectpub = {Yes},
-  url = {http://research.stlouisfed.org/wp/2011/2011-033.pdf}
-}
-&lt;/pre&gt;
-        &lt;p&gt;Links to file:&lt;/p&gt;
-        &lt;ul &gt;
-            
-            &lt;li&gt;&lt;a href=&quot;http://dx.doi.org/10.1016/j.regsciurbeco.2014.07.006&quot; target=&quot;_blank&quot;&gt;journal website (doi)&lt;/a&gt;&lt;/li&gt;
-            
-            &lt;li&gt;&lt;a href=&quot;http://research.stlouisfed.org/wp/2011/2011-033.pdf&quot; target=&quot;_blank&quot;&gt;working paper (pdf)&lt;/a&gt;&lt;/li&gt;
-            
-            
-        &lt;/ul&gt;
-&lt;/div&gt;
-        
-&lt;!-- The following buttons will be hidden for printing --&gt;
-&lt;div class=&quot;row &quot;&gt; 
-    &lt;div class=&quot;btn-toolbar hidden-print&quot; role=&quot;toolbar&quot;&gt;
-        &lt;div class=&quot;col-md-2&quot;&gt;&lt;/div&gt;
-    &lt;ul class=&quot;pagination&quot;&gt;
-        &lt;li&gt;
-             
-            &lt;div class=&quot;btn-group&quot;&gt;
-                    &lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-xs dropdown-toggle&quot; data-toggle=&quot;dropdown&quot;&gt;
-                        Abstract
-                        &lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;
-                    &lt;/button&gt;
-                    &lt;ul class=&quot;dropdown-menu dropdown-menu-left&quot; role=&quot;menu&quot;&gt;
-                        &lt;li&gt;
-                            &lt;blockquote class=&quot;pre-scrollable&quot;&gt;&lt;font size=&quot;-1&quot;&gt;We investigate whether race and ethnicity influenced subprime loan pricing during 2005, the peak of the subprime mortgage expansion. We combine loan-level data on the performance of non-prime securitized mortgages with individual- and neighborhood-level data on racial and ethnic characteristics for metropolitan areas in California and Florida. Using a model of rate determination that accounts for predicted loan performance, we evaluate the differences in subprime mortgage rates in terms of racial and ethnic groups and neighborhood characteristics. We find evidence of adverse pricing for blacks and Hispanics. The evidence of adverse pricing is strongest for purchase mortgages and mortgages originated by non-depository institutions. &lt;/font&gt;&lt;/blockquote&gt;
-                        &lt;/li&gt;
-                    &lt;/ul&gt;
-            &lt;/div&gt;
-            
-
-        &lt;/li&gt;
-        &lt;li&gt;
-            &lt;div class=&quot;btn-group&quot;&gt;
-                    &lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-xs dropdown-toggle&quot; data-toggle=&quot;dropdown&quot;&gt;
-                        Bib Entry
-                        &lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;
-                    &lt;/button&gt;
-                    &lt;ul class=&quot;dropdown-menu dropdown-menu-left&quot; role=&quot;menu&quot;&gt;
-                        &lt;li&gt;
-                            &lt;blockquote class=&quot;pre-scrollable&quot;&gt;&lt;font size=&quot;-1&quot;&gt;&lt;pre&gt;@article{rsue2014,
-  title = {Differences in Subprime Loan Pricing Across Races and Neighborhoods },
-  author = {Ghent, Andra C. and Hern{\'a}ndez-Murillo, Rub{\'e}n and Owyang, Michael T.},
-  journal = {Regional Science and Urban Economics },
-  year = {2014},
-  month = sep,
-  pages = {199--215},
-  volume = {48},
-  doi = {10.1016/j.regsciurbeco.2014.07.006},
-  issn = {0166-0462},
-  keywords = {Fair Housing Act},
-  pubtype = {Journal},
-  selectpub = {Yes},
-  url = {http://research.stlouisfed.org/wp/2011/2011-033.pdf}
-}
-&lt;/pre&gt;&lt;/font&gt;&lt;/blockquote&gt;
-                        &lt;/li&gt;
-                    &lt;/ul&gt;
-            &lt;/div&gt;
-        &lt;/li&gt;
-        &lt;li&gt;
-            &lt;div class=&quot;btn-group&quot;&gt;
-                    &lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-xs dropdown-toggle&quot; data-toggle=&quot;dropdown&quot;&gt;
-                        Links to File
-                        &lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;
-                    &lt;/button&gt;
-                    &lt;ul class=&quot;dropdown-menu dropdown-menu-left&quot; role=&quot;menu&quot;&gt;
-                        
-                        &lt;li&gt;&lt;a href=&quot;http://dx.doi.org/10.1016/j.regsciurbeco.2014.07.006&quot; target=&quot;_blank&quot;&gt;journal website (doi)&lt;/a&gt;&lt;/li&gt;
-                        
-                        &lt;li&gt;&lt;a href=&quot;http://research.stlouisfed.org/wp/2011/2011-033.pdf&quot; target=&quot;_blank&quot;&gt;working paper (pdf)&lt;/a&gt;&lt;/li&gt;
-                        
-                        
-                    &lt;/ul&gt;
-            &lt;/div&gt;
-        &lt;/li&gt;
-    &lt;/ul&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/li&gt;&lt;/ol&gt;
-</description>
-        <pubDate>Mon, 14 Jul 2014 00:00:00 -0400</pubDate>
-        <link>http://rubenhm.org/news/2014/07/14/new-paper-accepted-for-publication/</link>
-        <guid isPermaLink="true">http://rubenhm.org/news/2014/07/14/new-paper-accepted-for-publication/</guid>
-      </item>
       
     
       
