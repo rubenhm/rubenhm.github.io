@@ -27,12 +27,12 @@ tex:   clean $(TEX)
 	cp $@ /home/ruben/repos/website/rubenhm.org/assets/docs/
 
 %.pdf:  %.md $(LATEX_TEMPLATE)
-	python resume.py tex < $< | pandoc $(PANDOCARGS) --variable=fontsize:10pt --template=$(LATEX_TEMPLATE) --latex-engine=xelatex -H header.txt -o $@
+	python resume.py tex < $< | pandoc $(PANDOCARGS) --variable=fontsize:10pt --template=$(LATEX_TEMPLATE) --pdf-engine=xelatex -H header.txt -o $@
 	# copy to correct destination
 	cp $@ /home/ruben/repos/website/rubenhm.org/assets/docs/
 
 %.tex: %.md
-	python resume.py tex < $< | pandoc $(PANDOCARGS) --variable=fontsize:10pt --template=$(LATEX_TEMPLATE) --latex-engine=xelatex -H header.txt -o $@
+	python resume.py tex < $< | pandoc $(PANDOCARGS) --variable=fontsize:10pt --template=$(LATEX_TEMPLATE) --pdf-engine=xelatex -H header.txt -o $@
 	# copy to correct destination
 	cp $@ /home/ruben/repos/website/rubenhm.org/assets/docs/
 	cp $(basename $@).md /home/ruben/repos/website/rubenhm.org/assets/docs/
