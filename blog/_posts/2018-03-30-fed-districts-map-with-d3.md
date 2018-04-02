@@ -133,7 +133,7 @@ g.call(d3.axisBottom(x)
 
 d3.queue()
     .defer(d3.json, "https://d3js.org/us-10m.v1.json")
-    .defer(d3.csv, "counties-by-fed-district.csv", function(d) { 
+    .defer(d3.tsv, "counties-by-fed-district.tsv", function(d) { 
     	frbdefinitions.set(d.countyfips, +d.dist_frb); 
         countynames.set(d.countyfips, d.county_name+", "+d.state_abbr);
       })
