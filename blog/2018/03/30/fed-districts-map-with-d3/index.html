@@ -132,12 +132,12 @@
 
 <p>The historical definitions of the Fed Districts are available from <a href="https://fraser.stlouisfed.org/files/docs/historical/federal%20reserve%20history/frdistricts/frb_districts_199603.pdf">FRASER</a>, a service for archival information from the St. Louis Fed.</p>
 
-<p>The county definitions in the PDF were manually coded into a <a href="/downloads/blog/2018-03-30-fed-districts-map-with-d3/counties-by-fed-district.csv">CSV file</a>.
+<p>The county definitions in the PDF were manually coded into a <a href="/downloads/blog/2018-03-30-fed-districts-map-with-d3/counties-by-fed-district.tsv">TSV file</a> by <a href="https://github.com/chris-vecchio">Chris Vecchio</a>.
 Over time, some of the county definitions <a href="https://www.census.gov/geo/reference/county-changes.html">have changed</a> but some may have been missed, so clearly, this file does not represent official definitions.</p>
 
 <h2>Choropleth map</h2>
 
-<p>The Fed Districts map is a straight-up modification of the recent example of a choropleth map for unemployment rates by <a href="https://bl.ocks.org/mbostock/4060606">Mike Bostock</a>. He uses a threshold scale and the blues color scheme which work great for a continuous variable such as the unemployment rate, but are probably not the best choice for a categorical map with 12 categories! For one, the blues color scheme does not even have 12 categories. So I went over to <a href="http://colorbrewer2.org/#type=qualitative&amp;scheme=Set3&amp;n=12">ColorBrewer</a> and select a scheme with soft colors for qualitative data with 12 categories.</p>
+<p>The Fed Districts map is a straight-up modification of the recent example of a choropleth map for unemployment rates by <a href="https://bl.ocks.org/mbostock/4060606">Mike Bostock</a>. He uses a threshold scale and the blues color scheme which work great for a continuous variable such as the unemployment rate, but are probably not the best choice for a categorical map with 12 categories! For one, the blues color scheme does not even have 12 categories. So I went over to <a href="http://colorbrewer2.org/#type=qualitative&amp;scheme=Set3&amp;n=12">ColorBrewer</a> and selected a scheme with soft colors for qualitative data with 12 categories.</p>
 
 <p>I replaced the CSV file for the unemployment rates with the Fed Districts definitions and I added code to define the boundaries between Districts using <code>topojson.mesh</code> in the same way as Mike generated the boundaries between states.</p>
 

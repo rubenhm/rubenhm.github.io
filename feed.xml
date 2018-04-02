@@ -28,12 +28,12 @@
 
 &lt;p&gt;The historical definitions of the Fed Districts are available from &lt;a href=&quot;https://fraser.stlouisfed.org/files/docs/historical/federal%20reserve%20history/frdistricts/frb_districts_199603.pdf&quot;&gt;FRASER&lt;/a&gt;, a service for archival information from the St. Louis Fed.&lt;/p&gt;
 
-&lt;p&gt;The county definitions in the PDF were manually coded into a &lt;a href=&quot;/downloads/blog/2018-03-30-fed-districts-map-with-d3/counties-by-fed-district.csv&quot;&gt;CSV file&lt;/a&gt;.
+&lt;p&gt;The county definitions in the PDF were manually coded into a &lt;a href=&quot;/downloads/blog/2018-03-30-fed-districts-map-with-d3/counties-by-fed-district.tsv&quot;&gt;TSV file&lt;/a&gt; by &lt;a href=&quot;https://github.com/chris-vecchio&quot;&gt;Chris Vecchio&lt;/a&gt;.
 Over time, some of the county definitions &lt;a href=&quot;https://www.census.gov/geo/reference/county-changes.html&quot;&gt;have changed&lt;/a&gt; but some may have been missed, so clearly, this file does not represent official definitions.&lt;/p&gt;
 
 &lt;h2&gt;Choropleth map&lt;/h2&gt;
 
-&lt;p&gt;The Fed Districts map is a straight-up modification of the recent example of a choropleth map for unemployment rates by &lt;a href=&quot;https://bl.ocks.org/mbostock/4060606&quot;&gt;Mike Bostock&lt;/a&gt;. He uses a threshold scale and the blues color scheme which work great for a continuous variable such as the unemployment rate, but are probably not the best choice for a categorical map with 12 categories! For one, the blues color scheme does not even have 12 categories. So I went over to &lt;a href=&quot;http://colorbrewer2.org/#type=qualitative&amp;amp;scheme=Set3&amp;amp;n=12&quot;&gt;ColorBrewer&lt;/a&gt; and select a scheme with soft colors for qualitative data with 12 categories.&lt;/p&gt;
+&lt;p&gt;The Fed Districts map is a straight-up modification of the recent example of a choropleth map for unemployment rates by &lt;a href=&quot;https://bl.ocks.org/mbostock/4060606&quot;&gt;Mike Bostock&lt;/a&gt;. He uses a threshold scale and the blues color scheme which work great for a continuous variable such as the unemployment rate, but are probably not the best choice for a categorical map with 12 categories! For one, the blues color scheme does not even have 12 categories. So I went over to &lt;a href=&quot;http://colorbrewer2.org/#type=qualitative&amp;amp;scheme=Set3&amp;amp;n=12&quot;&gt;ColorBrewer&lt;/a&gt; and selected a scheme with soft colors for qualitative data with 12 categories.&lt;/p&gt;
 
 &lt;p&gt;I replaced the CSV file for the unemployment rates with the Fed Districts definitions and I added code to define the boundaries between Districts using &lt;code&gt;topojson.mesh&lt;/code&gt; in the same way as Mike generated the boundaries between states.&lt;/p&gt;
 
