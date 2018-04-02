@@ -7,7 +7,7 @@ tags: [news, Forefront, Manufacturing]
 ---
 
 
-New _Forefront_, {% cite rsue2017%}, is now available online.
+New publication, {% cite rsue2017%}, is now available online.
 
 
 References

@@ -44,16 +44,15 @@ scholar:
 
 
 # Sitemap builder
-sitemap:
-    file: "/sitemap.xml"
-    exclude:
-        - "/news.xml"
-        - "/feed.xml"
-        - "/feed/index.xml"
-        - "/news/index.xml"
-    include_posts:
-        - "/index.html"
-        - "/news/index.html"
-        - "/blog/index.html"
-    change_frequency_name: "weekly"
-    # priority_name: "priority"
+# sitemap:
+#     file: "/sitemap.xml"
+#     exclude:
+#         - "/news.xml"
+#         - "/feed.xml"
+#         - "/feed/index.xml"
+#         - "/news/index.xml"
+#     include_posts:
+#         - "/news/index.html"
+#         - "/blog/index.html"
+#     change_frequency_name: "weekly"
+#     priority_name: "priority"
