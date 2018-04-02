@@ -122,7 +122,7 @@ I started using SublimeText with TexLive), but most of my co-authors only use
 <em>ScientificWorkplace</em> with the dated TrueTeX latex engine.</p>
 
 <p>In preparing papers, I like to have the following folder structure:</p>
-<div class="highlight"><pre><code class="language-" data-lang="">bibfiles/
+<div class="highlight"><pre><code class="language-text" data-lang="text">bibfiles/
 project-files/
     |
     |-plots/
@@ -135,13 +135,13 @@ project-files/
 
 <ol>
 <li><p>To fix the issue with finding graphics files (e.g, <code>png</code> or <code>pdf</code> files, because I use <code>pdflatex</code>), include the following commands in the preamble. Notice the two sets of braces and the trailing <code>/</code>. The path can be absolute or relative (see 2).</p>
-<div class="highlight"><pre><code class="language-latex" data-lang="latex"><span class="k">\usepackage</span><span class="p">{</span>graphicx<span class="p">}</span>
-<span class="k">\graphicspath</span><span class="p">{</span> <span class="p">{</span>/path/to/graphics/folder/<span class="p">}</span> <span class="p">}</span>
+<div class="highlight"><pre><code class="language-latex" data-lang="latex"><span class="k">\usepackage</span><span class="nb">{</span>graphicx<span class="nb">}</span>
+<span class="k">\graphicspath</span><span class="nb">{</span> <span class="nb">{</span>/path/to/graphics/folder/<span class="nb">}</span> <span class="nb">}</span>
 </code></pre></div></li>
 <li><p>To be able to work with relative paths and subfolders we have to prevent SWP from copying the main tex file to a temporary folder when compiling. This is achieved by setting the main tex files as a <code>master document</code>. Include the following code somewhere after <code>\begin{document}</code>:</p>
 <div class="highlight"><pre><code class="language-latex" data-lang="latex"><span class="c">%TCIMACRO{\QSubDoc{Include subdoc}{\input{tables/subdoc.tex}}}%</span>
 <span class="c">%BeginExpansion</span>
-<span class="k">\input</span><span class="p">{</span>tables/subdoc.tex<span class="p">}</span>
+<span class="k">\input</span><span class="nb">{</span>tables/subdoc.tex<span class="nb">}</span>
 <span class="c">%EndExpansion</span>
 </code></pre></div>
 <p>The file <code>subdoc.tex</code> located in the <code>tables/</code> folder has to include the following code (and it can be empty otherwise; it can also be located in the main folder, but the paths above have to reflect this):</p>
