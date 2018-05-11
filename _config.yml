@@ -4,7 +4,7 @@ title: "Rubén Hernández-Murillo"
 description: "Research, Writings + Code"
 author: "Rubén Hernández-Murillo"
 baseurl: ""
-url: "http://rubenhm.org"
+url: "https://rubenhm.org"
 exclude: ["Makefile","mkpdf.sh","Rakefile", "MIT-LICENSE", "build-cv"]
 
 
