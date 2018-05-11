@@ -3,12 +3,12 @@
   <channel>
     <title type="text" xml:lang="en">Rubén Hernández-Murillo: Coding Annoyances</title>
     <description>Research, Writings + Code</description>
-    <link>http://rubenhm.org/</link>
+    <link>https://rubenhm.org/</link>
     <author>
       <name>Rubén Hernández-Murillo</name>
     </author>
     <rights>Copyright (c) 2014 Rubén Hernández-Murillo</rights>
-    <atom:link href="http://rubenhm.org/feed.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://rubenhm.org/feed.xml" rel="self" type="application/rss+xml" />
     
     
       <item>
@@ -182,8 +182,8 @@ function ready(error, us) {
 &amp;lt;/script&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
         <pubDate>Fri, 30 Mar 2018 00:00:00 -0400</pubDate>
-        <link>http://rubenhm.org/blog/2018/03/30/fed-districts-map-with-d3/</link>
-        <guid isPermaLink="true">http://rubenhm.org/blog/2018/03/30/fed-districts-map-with-d3/</guid>
+        <link>https://rubenhm.org/blog/2018/03/30/fed-districts-map-with-d3/</link>
+        <guid isPermaLink="true">https://rubenhm.org/blog/2018/03/30/fed-districts-map-with-d3/</guid>
       </item>
       
     
@@ -841,8 +841,8 @@ d3.json(&#39;dotplot.json&#39;, function (error, data) {
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
         <pubDate>Tue, 03 Jan 2017 00:00:00 -0500</pubDate>
-        <link>http://rubenhm.org/blog/2017/01/03/fomc-dotplot-with-d3-and-python/</link>
-        <guid isPermaLink="true">http://rubenhm.org/blog/2017/01/03/fomc-dotplot-with-d3-and-python/</guid>
+        <link>https://rubenhm.org/blog/2017/01/03/fomc-dotplot-with-d3-and-python/</link>
+        <guid isPermaLink="true">https://rubenhm.org/blog/2017/01/03/fomc-dotplot-with-d3-and-python/</guid>
       </item>
       
     
@@ -1196,8 +1196,8 @@ Now try the following in a Jupyter or IPython notebook.&lt;/p&gt;
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
         <pubDate>Wed, 06 Jul 2016 00:00:00 -0400</pubDate>
-        <link>http://rubenhm.org/blog/2016/07/06/choropleth-maps-with-d3-python-and-data-from-fred/</link>
-        <guid isPermaLink="true">http://rubenhm.org/blog/2016/07/06/choropleth-maps-with-d3-python-and-data-from-fred/</guid>
+        <link>https://rubenhm.org/blog/2016/07/06/choropleth-maps-with-d3-python-and-data-from-fred/</link>
+        <guid isPermaLink="true">https://rubenhm.org/blog/2016/07/06/choropleth-maps-with-d3-python-and-data-from-fred/</guid>
       </item>
       
     
@@ -1248,8 +1248,8 @@ would have to be cropped for better results.
 Cropping a &lt;code&gt;PDF&lt;/code&gt; without the full version of Acrobat can be a problem, so the &lt;code&gt;PNG&lt;/code&gt; route works  better, in my opinion.&lt;/p&gt;
 </description>
         <pubDate>Thu, 25 Sep 2014 00:00:00 -0400</pubDate>
-        <link>http://rubenhm.org/blog/2014/09/25/export-png-charts-from-excel/</link>
-        <guid isPermaLink="true">http://rubenhm.org/blog/2014/09/25/export-png-charts-from-excel/</guid>
+        <link>https://rubenhm.org/blog/2014/09/25/export-png-charts-from-excel/</link>
+        <guid isPermaLink="true">https://rubenhm.org/blog/2014/09/25/export-png-charts-from-excel/</guid>
       </item>
       
     
