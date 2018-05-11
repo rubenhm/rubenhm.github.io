@@ -6,6 +6,7 @@ category: blog
 tags: [fomc, dotplot, python, D3]
 ---
 
+
 The FOMC's **dotplot** is part of the Summary of Economic Projections (SEPs) released 4 times per year along with the policy decision statement on the 2nd, 4th, 6th, and 8th meetings of the FOMC. 
 It shows the views of each of the FOMC's participants regarding the end-of-year level of the fed funds rate over the next few years and in the longer run.  
 
@@ -75,7 +76,6 @@ The simplest approach is to scrap the html code for the table using python and e
 
 
 {% highlight ipy %}
-
 # Download data for constructing the dotplot.
 # The source URL has the following structure:
 # https://www.federalreserve.gov/monetarypolicy/fomcprojtabl20161214.htm
@@ -154,10 +154,12 @@ for rows in range(0,dfsize[0]-1):
 # http://stackoverflow.com/questions/28590663/pandas-dataframe-to-json-without-index
 
 df.transpose().reset_index().to_json("dotplot.json",orient='records')
-
 {% endhighlight %}
 
+
+
 Here is the [resulting JSON file](/downloads/blog/2017-01-03-fomc-dotplot-with-d3-and-python/dotplot.json).
+
 
 ## The javascript code 
 
@@ -170,7 +172,8 @@ The trickiest part was to figure out I had to use two scales for the x-axis: fir
 I also had to figure out how to center the dots in each period using the appropriate `translate` operation calculating where to start placing the dots along the point scale.
 
 
-```html
+
+{% highlight html %}
 <!DOCTYPE html>
 <meta charset="utf-8">
 <style>
@@ -431,5 +434,4 @@ d3.json('dotplot.json', function (error, data) {
 })
 </script>
 
-```
-
+{% endhighlight %}
