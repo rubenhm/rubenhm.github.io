@@ -76,8 +76,8 @@ var districtNames  = d3.map();
 // The city name indicates the city of the main office
 // Notice that the district numbers are defined in a Westerly direction 
 districtNames.set(1,"Boston")
-districtNames.set(2,"Philadelphia")
-districtNames.set(3,"New York")
+districtNames.set(2,"New York")
+districtNames.set(3,"Philadelphia")
 districtNames.set(4,"Cleveland")
 districtNames.set(5,"Richmond")
 districtNames.set(6,"Atlanta")
