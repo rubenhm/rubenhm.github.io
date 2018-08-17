@@ -30,6 +30,8 @@ permalink: /about/
   + [Fed in Print](https://fedinprint.org/authors/rubenhernandezmurillo.html)
   + [Google Scholar](https://scholar.google.com/citations?user=ONu4SBcAAAAJ&hl=en)
   + [SSRN](https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=341818)
+  + [ORCiD](https://orcid.org/0000-0001-6474-9510)
+  + [ResearcherID](https://www.researcherid.com/rid/P-4834-2018)
 
   </div>
 
