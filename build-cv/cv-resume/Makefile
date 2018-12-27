@@ -22,7 +22,7 @@ tex:   clean $(TEX)
 	cp index.html /home/ruben/repos/website/rubenhm.org/resume/
 
 %.html: %.md
-	python resume.py html $(GRAVATAR_OPTION) < $< | pandoc -t html -c resume.css -o $@
+	python resume.py html $(GRAVATAR_OPTION) < $< | pandoc -s -t html -c resume.css -o $@
 	# copy to correct destination
 	cp $@ /home/ruben/repos/website/rubenhm.org/assets/docs/
 

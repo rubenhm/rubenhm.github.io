@@ -135,7 +135,7 @@ def html(lines, contact_lines, *args):
     if gravatar is not None:
         contact_lines.insert(0, "<img src='{}' />".format(gravatar))
 
-    lines.insert(0, """<div id='container' class"resume"><div id='contact'>%s</div>\n""" %
+    lines.insert(0, """<div id="container" class="resume"><div id="contact">%s</div>\n""" %
                  ("<p>" + "</p><p>".join(contact_lines) + "</p>"))
     lines.insert(1, """<div class="resume">""")
     lines.append("</div>")

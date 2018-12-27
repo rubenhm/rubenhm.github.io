@@ -25,13 +25,18 @@ _cv_select_pubs_long.md:  $(BIBFILE)
 	# Append  code to turn into markdown with nocite in yaml preamble
 	sed -i.bak 's/^\(.*\),/@\1/g' selbib.txt
 	sed -i.bak 's/,/, @/g' selbib.txt
-	sed  's/\(^.*\)/---\nnocite: |\n    \1\n.../g' <selbib.txt >selbib.md	
+	sed  's/\(^.*\)/---\nnocite: |\n  \1\n.../g' <selbib.txt >selbib.md	
 	-rm selbib.txt*
 	# generate markdown file with expanded list of citations 
-	pandoc -t markdown-citations --bibliography=$(BIBFILE) --csl=$(CSLFILE) --filter pandoc-citeproc selbib.md -o $@
+	pandoc -t markdown-citations-fenced_divs --bibliography=$(BIBFILE) --csl=$(CSLFILE) --filter pandoc-citeproc selbib.md -o $@
 	-rm selbib.md
 	# fix indentations with sed to prepare for conversion to html
+	# Insert 4 spaces after definition colon : 
+	sed -i.bak 's/^\([0-9]\{4\}\) \:\\$$/\1\n:    /g' $@
+	# Remove the end line following :
+	sed -i.bak ':a;N;$$!ba;s/\:    \n/:    /g' $@ 
 	sed -i.bak -f fixindent.sed $@
+	# Clean up
 	-rm -f *.bak
 
 
