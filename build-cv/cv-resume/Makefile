@@ -19,23 +19,23 @@ tex:   clean $(TEX)
 	python resume.py html $(GRAVATAR_OPTION) < $< | pandoc --template=$(HTML_TEMPLATE) -t html -c resume.css -o $@
 	mv $@ index.html
 	# copy to correct destination
-	cp index.html /home/ruben/repos/website/rubenhm.org/resume/
+	cp index.html /workdir/rubenhm.github.io/resume/
 
 %.html: %.md
 	python resume.py html $(GRAVATAR_OPTION) < $< | pandoc -s -t html -c resume.css -o $@
 	# copy to correct destination
-	cp $@ /home/ruben/repos/website/rubenhm.org/assets/docs/
+	cp $@ /workdir/rubenhm.github.io/assets/docs/
 
 %.pdf:  %.md $(LATEX_TEMPLATE)
 	python resume.py tex < $< | pandoc $(PANDOCARGS) --variable=fontsize:10pt --template=$(LATEX_TEMPLATE) --pdf-engine=xelatex -H header.txt -o $@
 	# copy to correct destination
-	cp $@ /home/ruben/repos/website/rubenhm.org/assets/docs/
+	cp $@ /workdir/rubenhm.github.io/assets/docs/
 
 %.tex: %.md
 	python resume.py tex < $< | pandoc $(PANDOCARGS) --variable=fontsize:10pt --template=$(LATEX_TEMPLATE) --pdf-engine=xelatex -H header.txt -o $@
 	# copy to correct destination
-	cp $@ /home/ruben/repos/website/rubenhm.org/assets/docs/
-	cp $(basename $@).md /home/ruben/repos/website/rubenhm.org/assets/docs/
+	cp $@ /workdir/rubenhm.github.io/assets/docs/
+	cp $(basename $@).md /workdir/rubenhm.github.io/assets/docs/
 
 
 ifeq ($(OS),Windows_NT)

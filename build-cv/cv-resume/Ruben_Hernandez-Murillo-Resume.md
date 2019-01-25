@@ -82,11 +82,11 @@ Education
 Selected publications
 ---------------------
 
+Forthcoming
+:   “Interjurisdictional Competition with Adverse Selection.” _Journal of Public Economics_.  
+
 2018
 :   [“A State Level Analysis of Okun’s Law.”](https://doi.org/10.1016/j.regsciurbeco.2017.11.005) (with Amy Y. Guisinger, Michael T. Owyang, and Tara Sinclair) _Regional Science and Urban Economics_, 68, pp. 239-248.
-
-2017
-:   [“Clustered Housing Cycles.”](https://doi.org/10.1016/j.regsciurbeco.2017.06.003) (with Michael T. Owyang and Margarita Rubio) _Regional Science and Urban Economics_, 66, pp. 185–197.
 
 2010
 :   [“Strategic Online Banking Adoption,”](http://dx.doi.org/10.1016/j.jbankfin.2010.03.011) (with Gerard Llobet and Roberto Fuentes) _Journal of Banking and Finance_, 34(7), pp. 1650–1663. 

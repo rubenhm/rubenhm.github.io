@@ -47,7 +47,7 @@ $(BIBTXT): $(BIBFILE)
 
 %.aux: %.tex $(BIBTXT)
 	# Generate an aux file from a first xelatex pass
-	lualatex $(basename $<)
+	xelatex $(basename $<)
 
 %.bbl: %.aux $(BIBTXT)
 	# Generate the .bbl file from the .aux file 
@@ -58,13 +58,13 @@ $(BIBTXT): $(BIBFILE)
 
 %.pdf: %.tex %.bbl %.aux $(BIBTXT)   
 	# Run a couple more xelatex passes and clean up ancillary files
-	lualatex $(basename $<)
-	lualatex $(basename $<)
+	xelatex $(basename $<)
+	xelatex $(basename $<)
 	-rm -f *.log *.out *.fls *.fdb* *.bak *.bbl *.aux *.blg
 	# copy pdf to correct destination
-	cp $@ /home/ruben/repos/website/rubenhm.org/assets/docs/
+	cp $@ /workdir/rubenhm.github.io/assets/docs/
 	# copy tex to correct destination
-	cp $(basename $@).tex /home/ruben/repos/website/rubenhm.org/assets/docs/
+	cp $(basename $@).tex /workdir/rubenhm.github.io/assets/docs/
 
 
 clean:
