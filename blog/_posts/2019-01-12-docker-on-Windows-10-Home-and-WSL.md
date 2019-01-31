@@ -1,17 +1,17 @@
 ---
 layout: post
-title: "Docker for reproducible research--On Android"
-description: "Use docker on Android via termux and Alpine chroot"
+title: "Docker on Windows 10 Home edition and WSL"
+description: "How to get Docker running on Windows 10 Home with WSL"
 category: "blog"
 tags: [docker,termux,android,jekyll,texlive]
 ---
 
 Recently I started learning about Docker for reproducible research. 
-I also wanted to try the Windos Subsystem for Linux in Windows 10. 
+I also wanted to try the _Windows Subsystem for Linux_ (WSL) in Windows 10. 
 My old Thinkpad X230 only has Windows 10 Home, which means I could not
- install Docker for Windows and the Docker engine does not run on WSL.
+ install _Docker for Windows_ and the Docker engine does not run on WSL.
 
-## Docker on Windows Home
+### Docker on Windows 10 Home
 
 Docker for Windows requires Windows 10 Professional or 
 Enterprise edition. The alternative with Windows 10 Home edition 
@@ -27,7 +27,6 @@ of choice. Docker for Windows uses a linux vm running on
 Hyper-V, which runs natively on Windows 10 Pro. On Windows Home, 
 we can use VirtualBox or VMWare. Getting docker to work 
 with VMWare is a bit more painful.
-
 
 I found this guideline for [Docker on WSL and Windows 10]() which 
 has an aside for setting up the docker engine inside a linux
