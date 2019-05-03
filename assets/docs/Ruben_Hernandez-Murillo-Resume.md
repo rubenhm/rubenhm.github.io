@@ -82,8 +82,10 @@ Education
 Selected publications
 ---------------------
 
-Forthcoming
-:   “Interjurisdictional Competition with Adverse Selection.” _Journal of Public Economics_.  
+2019
+:   [“Interjurisdictional Competition with Adverse 
+Selection.”](https://doi.org/10.1016/j.jpubeco.2019.01.012) _Journal of Public Economics_, 
+173, pp. 85--95.  
 
 2018
 :   [“A State Level Analysis of Okun’s Law.”](https://doi.org/10.1016/j.regsciurbeco.2017.11.005) (with Amy Y. Guisinger, Michael T. Owyang, and Tara Sinclair) _Regional Science and Urban Economics_, 68, pp. 239-248.
