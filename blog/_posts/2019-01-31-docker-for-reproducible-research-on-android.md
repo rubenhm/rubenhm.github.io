@@ -1,17 +1,24 @@
 ---
 layout: post
-title: "Docker for reproducible research-_On Android_"
+title: "Docker for reproducible research on Android"
 description: "Use docker on Android via termux and Alpine chroot"
 category: "blog"
 tags: [docker,termux,android,jekyll,texlive]
 ---
 
-# Docker on Android
+While researching about docker I came across this [reddit 
+post](https://www.reddit.com/r/docker/comments/7r7t6b/is_docker_possible_on_mobile/) 
+on how to install [_anyfed_](https://github.com/nmilosev/anyfed) in [Termux](https://termux.com) on Android to run a Fedora linux image as a `chroot` on the phone.
 
-While researching about docker I came across this [reddit post]() 
-on running Alpine linux in [Termux]() on Android as a `chroot`. 
-From there, I was able to install docker as client inside the 
-Alpine chroot and set up a remote docker host at home to which 
-I could connect via OpenVPN.
+A similar project, [TermuxAlpine](https://github.com/Hax4us/TermuxAlpine), 
+runs [Alpine linux](https://alpinelinux.org) on Termux. 
+One can then install the docker client on Alpine and set it up 
+to run images from a remote Docker engine. 
+ 
+For example, you can set up the remote Docker host at home, securing access with the instructions in the documentation for [protecting the Docker daemon socket](htts://docs.docker.com/engine/security/https/).
+
+You can build and run Docker images, create data volumes, etc. Everything lives in the remote 
+host, but it seems to work fine and you can run all kinds of things on your phone. I have images for TeXLive and RStudio.
+
 
 
