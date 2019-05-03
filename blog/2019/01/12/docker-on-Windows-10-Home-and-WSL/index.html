@@ -2,7 +2,7 @@
 <html> 
 <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
-  <title>Pandoc, beamer, MAKE workflow</title>
+  <title>Docker on Windows 10 Home edition and WSL</title>
   <!--[if lt IE 9]>
     <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
   <![endif]-->
@@ -54,7 +54,7 @@
   <meta name="author" content="Rubén Hernández-Murillo">
   <meta name="description" content="Research, Writings + Code">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="canonical" href="https://rubenhm.org/blog/2014/08/01/pandoc-beamer-make-workflow/">
+  <link rel="canonical" href="https://rubenhm.org/blog/2019/01/12/docker-on-Windows-10-Home-and-WSL/">
 </head>
 <body>
 
@@ -111,73 +111,37 @@
         
     <h1><em>Coding Annoyances</em></h1>
         <hr>    
-    <h1>Pandoc, beamer, MAKE workflow</h1>
+    <h1>Docker on Windows 10 Home edition and WSL</h1>
   
-    <p class="small gray"><time datetime="Aug 1, 2014">01 August 2014 • Rubén Hernández-Murillo • </time></p>
+    <p class="small gray"><time datetime="Jan 12, 2019">12 January 2019 • Rubén Hernández-Murillo • </time></p>
     <hr>
     <article class="post">
 
-        <p>The goal is to produce a nicely formatted beamer presentation in pdf format without losing focus away from the slides content by constantly meddling with the latex styles.</p>
+        <p>Recently I started learning about Docker for reproducible research. 
+I also wanted to try the <em>Windows Subsystem for Linux</em> (WSL) in Windows 10. </p>
 
-<p>The solution is to write the presentation core content in <code>markdown</code>, then process the file with <code>pandoc</code> to obtain the pdf using a <code>beamer</code> template, automating the process with <code>make</code>.</p>
+<h3>Docker on Windows 10 Home</h3>
 
-<p>We require the following tools. (I won&#39;t discuss how to install them in this post.)</p>
+<p>My old Thinkpad X230 only has Windows 10 Home, which means I could not
+ install <em>Docker for Windows</em>, as it requires Windows 10 Professional or 
+Enterprise edition. The alternative for Windows 10 Home edition 
+is to install <a href="https://docs.docker.com/toolbox/toolbox_install_windows/">Docker Toolbox</a>. </p>
 
-<ol>
-<li><p><a href="http://johnmacfarlane.net/pandoc/">Pandoc</a> is a tool used to convert files between different formats. In particular, it is great for converting markdown input files into LaTeX, html, pdf, or Word format, including beamer latex presentations.</p></li>
-<li><p><a href="https://www.tug.org/texlive/">Texlive</a> is one of the many LaTeX system distributions, available for Linux and Windows.</p></li>
-<li><p><a href="http://www.gnu.org/software/make/">Make</a> is a &quot;tool which controls the generation of executables and other non-source files of a program from the program&#39;s source files.&quot; In our case, we will use it to automate the generation of pdf files from a markdown source using texlive as the engine to compile the latex files.</p></li>
-<li><p><a href="http://www.gnu.org/software/sed/">Sed</a> is a stream editor which operates on files. We will use it to automatically change strings of text using regular expressions.</p></li>
-</ol>
+<h3>Docker engine on Windows</h3>
 
-<p>While <code>make</code> and <code>sed</code> are common tools in a Linux environment, the <a href="http://gnuwin32.sourceforge.net/">GnuWin32 project</a> provides alternatives for Windows.</p>
+<p>The docker engine does not run natively on Windows, it has to 
+run on a linux virtual machine. The difference is the hypervisor 
+of choice. <em>Docker for Windows</em> uses a linux VM running on 
+Hyper-V, which runs natively on Windows 10 Pro, but not on Windows Home. 
+Docker Toolbox instead uses a linux VM running on Virtualbox, which runs on Windows Home.</p>
 
-<h2>Steps</h2>
-
-<ol>
-<li>The core of the presentation is written in markdown. See <a href="http://rubenhm.org/downloads/blog/2014-08-01-pandoc-beamer-make-workflow/example_pres.md">example</a>.</li>
-<li>This file is run through pandoc to generate a <code>tex</code> <a href="http://rubenhm.org/downloads/blog/2014-08-01-pandoc-beamer-make-workflow/example_pres.tex">file</a>.</li>
-<li>The above tex file is embedded as input in a beamer presentation <a href="http://rubenhm.org/downloads/blog/2014-08-01-pandoc-beamer-make-workflow/presentation_example.tex">template</a>.</li>
-<li>The presentation template file is finally processed by <code>xelatex</code> to generate a pdf <a href="http://rubenhm.org/downloads/blog/2014-08-01-pandoc-beamer-make-workflow/presentation_example.pdf">presentation</a>. 
-We use <code>xelatex</code> because in Windows we can use TrueType fonts, for example <code>Calibri</code>. The example uses <code>Times New Roman</code>.</li>
-<li>The entire process is automated with <code>make</code> (with optional use of <code>sed</code>).</li>
-</ol>
-
-<p>Running the following command in the command line will produce the final presentation pdf file and will clean up any auxiliary files, except for the intermediate tex files and the original markdown source.</p>
-<div class="highlight"><pre><code class="language-" data-lang="">make FILE=example
-</code></pre></div>
-<p>To automate the process, the <code>make</code> command uses the following set of instructions from a file named <a href="http://rubenhm.org/downloads/blog/2014-08-01-pandoc-beamer-make-workflow/makefile">makefile</a>.</p>
-<div class="highlight"><pre><code class="language-" data-lang="">FILE=
-MDFILE=$(FILE)_pres
-TEXFILE=presentation_$(FILE)
-INPUTS=
-
-all:  pdf; make clean
-
-.PHONY: all clean
-
-pdf:
-    # Use pandoc to convert the main markdown source to latex
-    pandoc $(MDFILE).md --slide-level 2 -t beamer -o $(MDFILE).tex
-    # Use sed to replace a string in the latex file that sets spaces in itemize environment
-    sed -i "s/\\itemsep1pt\\parskip0pt\\parsep0pt/\\itemsep1.6pt\\parskip1.6pt\\parsep0pt/g" $(MDFILE).tex
-    # Apply xelatex twice to obtain the pdf
-    xelatex $(TEXFILE).tex
-    xelatex $(TEXFILE).tex  
-
-# Remove unnecessary files
-clean: 
-    -rm -f $(TEXFILE).log $(TEXFILE).aux  $(TEXFILE).toc  $(TEXFILE).snm $(TEXFILE).nav $(TEXFILE).out $(TEXFILE).fdb_latemk $(TEXFILE).synctex.gz $(TEXFILE).fls
-    -rm -f sed*.*
-
-</code></pre></div>
-<p>The <code>--slide-level 2</code> option indicates we can use <code>##</code> in the markdown file to generate new slides, and <code>###</code> to create subheadings inside a slide. A single <code>#</code> creates sections.</p>
-
-<h2>Attributions</h2>
-
-<p>This post is my implementation (really a simplified version) of this post in <a href="http://jeromyanglim.blogspot.com/2012/07/beamer-pandoc-markdown.html">Jeromy Anglim&#39;s blog</a>.</p>
-
-<p>Pictures used in the example are attributed to <a href="http://placekitten.com/attribution.html">placekitten.com</a>.</p>
+<p>This guideline for setting up <a href="https://nickjanetakis.com/blog/setting-up-docker-for-windows-and-wsl-to-work-flawlessly">Docker on WSL and Windows 
+10</a> 
+was useful to set up docker on Windows Home.
+If you prefer, you can also install the linux VM on the free  VMWare player
+as an alternative to Virtualbox to run the Docker engine. 
+Follow <a href="https://nickjanetakis.com/blog/docker-tip-73-connecting-to-a-remote-docker-daemon">this 
+guide</a></p>
 
 
     </article>
@@ -185,11 +149,11 @@ clean:
         <div class="row hidden-print">
         <div class="col-md-6">
             <p>If you enjoyed this article, consider sharing it.</p>
-            <p><a href="https://twitter.com/intent/tweet?text=Pandoc, beamer, MAKE workflow&url=https://rubenhm.org/blog/2014/08/01/pandoc-beamer-make-workflow/&via=rubenhm_org" title="Share link on Twitter"><span class="flaticon-social19"></span></a>
-            <a  href="https://plus.google.com/share?url=https://rubenhm.org/blog/2014/08/01/pandoc-beamer-make-workflow/" title="Share link on G+"><span class="flaticon-google23"></span></a>
-            <a href="https://www.facebook.com/sharer/sharer.php?u=https://rubenhm.org/blog/2014/08/01/pandoc-beamer-make-workflow/" title="Share link on FB"><span class="flaticon-facebook29"></span></a>
-            <a href="mailto:?Subject=Pandoc, beamer, MAKE workflow&amp;Body=https://rubenhm.org/blog/2014/08/01/pandoc-beamer-make-workflow/" title="Share link by email"><span class="flaticon-opened4"></span></a>
-            <a href="/downloads/blog/2014-08-01-pandoc-beamer-make-workflow/2014-08-01-pandoc-beamer-make-workflow.pdf" title="Download PDF"><span class="flaticon-adobe21"></span></a></p>
+            <p><a href="https://twitter.com/intent/tweet?text=Docker on Windows 10 Home edition and WSL&url=https://rubenhm.org/blog/2019/01/12/docker-on-Windows-10-Home-and-WSL/&via=rubenhm_org" title="Share link on Twitter"><span class="flaticon-social19"></span></a>
+            <a  href="https://plus.google.com/share?url=https://rubenhm.org/blog/2019/01/12/docker-on-Windows-10-Home-and-WSL/" title="Share link on G+"><span class="flaticon-google23"></span></a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://rubenhm.org/blog/2019/01/12/docker-on-Windows-10-Home-and-WSL/" title="Share link on FB"><span class="flaticon-facebook29"></span></a>
+            <a href="mailto:?Subject=Docker on Windows 10 Home edition and WSL&amp;Body=https://rubenhm.org/blog/2019/01/12/docker-on-Windows-10-Home-and-WSL/" title="Share link by email"><span class="flaticon-opened4"></span></a>
+            <a href="/downloads/blog/2019-01-12-docker-on-windows-10-home-edition-and-wsl/2019-01-12-docker-on-windows-10-home-edition-and-wsl.pdf" title="Download PDF"><span class="flaticon-adobe21"></span></a></p>
             
             <!-- <a><span class="flaticon-printer70"></span></a> -->
         </div>
@@ -220,8 +184,8 @@ clean:
     <script type="text/javascript">
         /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
         var disqus_shortname = 'rubenhm'; // required: replace example with your forum shortnam
-        var disqus_identifier = '/blog/2014/08/01/pandoc-beamer-make-workflow/';
-        var disqus_url = 'https://rubenhm.org/blog/2014/08/01/pandoc-beamer-make-workflow/';
+        var disqus_identifier = '/blog/2019/01/12/docker-on-Windows-10-Home-and-WSL/';
+        var disqus_url = 'https://rubenhm.org/blog/2019/01/12/docker-on-Windows-10-Home-and-WSL/';
 
         /* * * DON'T EDIT BELOW THIS LINE * * */
         (function() {
@@ -238,8 +202,8 @@ clean:
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
     var disqus_shortname = 'rubenhm'; // required: replace example with your forum shortname
-    var disqus_identifier = '/blog/2014/08/01/pandoc-beamer-make-workflow/';
-    var disqus_url = 'https://rubenhm.org/blog/2014/08/01/pandoc-beamer-make-workflow/';
+    var disqus_identifier = '/blog/2019/01/12/docker-on-Windows-10-Home-and-WSL/';
+    var disqus_url = 'https://rubenhm.org/blog/2019/01/12/docker-on-Windows-10-Home-and-WSL/';
 
     /* * * DON'T EDIT BELOW THIS LINE * * */
     (function () {

@@ -15,12 +15,154 @@
     
       <item>
         <title>New paper accepted for publication</title>
+        <description>&lt;p&gt;Our paper, &lt;a href=&quot;#jpube2019&quot;&gt;(Hernández-Murillo 2019)&lt;/a&gt;, was just accepted for publication in &lt;em&gt;Journal of Public Economics&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h2&gt;References&lt;/h2&gt;
+
+&lt;ol class=&quot;bibliography&quot;&gt;&lt;li&gt;            &lt;dl&gt;&lt;dt&gt;2019&lt;/dt&gt;
+                &lt;dd&gt;&lt;p class=&quot;text-left&quot;&gt;&lt;span id=&quot;jpube2019&quot;&gt;&lt;b&gt;“Interjurisdictional Competition with Adverse Selection.”&lt;/b&gt; Hernández-Murillo, Rubén. 2019. &lt;i&gt;Journal of Public Economics&lt;/i&gt; 173 (May): 85–95. doi:10.1016/j.jpubeco.2019.01.012.&lt;/span&gt;&lt;/p&gt;&lt;/dd&gt;
+            &lt;/dl&gt;
+
+&lt;!-- The following content will be available for printing --&gt;
+&lt;div class=&quot;row visible-print&quot;&gt;
+     
+        &lt;p&gt;Abstract:&lt;/p&gt;
+        &lt;p&gt;In this paper, we study the welfare consequences of imposing alternative regimes of competition between two local 
+governments that compete for mobile firms which have private information on their degree of mobility.
+Competition among jurisdictions raises the firms’ rents to higher levels than if jurisdictions were to cooperate. Therefore, from the perspective of a utilitarian 
+federation, constitutional constraints on the competition process may be desirable.
+We find that imposing a system of coarser policy instruments improves welfare
+relative to competition with discretionary instruments because it reduces the socially
+costly rents that are granted to firms in equilibrium.
+We also find that the gains from constraining competition to uniform policy instruments are 
+maximal when communities are identical, but decline if the extent of
+asymmetry between locations (in terms of local market size or technological 
+complementarities) increases. &lt;/p&gt;
+    
+        &lt;p&gt;BibTeX entry:&lt;/p&gt;
+        &lt;pre&gt;@article{jpube2019,
+  title = {Interjurisdictional Competition with Adverse Selection},
+  author = {Hern{\'a}ndez-Murillo, Rub{\'e}n},
+  journal = {Journal of Public Economics},
+  year = {2019},
+  month = may,
+  volume = {173},
+  pages = {85--95},
+  pubtype = {Journal},
+  selectpub = {Yes},
+  doi = {10.1016/j.jpubeco.2019.01.012},
+  url = {https://doi.org/10.20955/wp.2012.052}
+}
+&lt;/pre&gt;
+        &lt;p&gt;Links to file:&lt;/p&gt;
+        &lt;ul &gt;
+            
+            &lt;li&gt;&lt;a href=&quot;https://dx.doi.org/10.1016/j.jpubeco.2019.01.012&quot; target=&quot;_blank&quot;&gt;journal website (doi)&lt;/a&gt;&lt;/li&gt;
+            
+            &lt;li&gt;&lt;a href=&quot;https://doi.org/10.20955/wp.2012.052&quot; target=&quot;_blank&quot;&gt;working paper (pdf)&lt;/a&gt;&lt;/li&gt;
+            
+            
+        &lt;/ul&gt;
+&lt;/div&gt;
+        
+&lt;!-- The following buttons will be hidden for printing --&gt;
+&lt;div class=&quot;row &quot;&gt; 
+    &lt;div class=&quot;btn-toolbar hidden-print&quot; role=&quot;toolbar&quot;&gt;
+        &lt;div class=&quot;col-md-2&quot;&gt;&lt;/div&gt;
+    &lt;ul class=&quot;pagination&quot;&gt;
+        &lt;li&gt;
+             
+            &lt;div class=&quot;btn-group&quot;&gt;
+                    &lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-xs dropdown-toggle&quot; data-toggle=&quot;dropdown&quot;&gt;
+                        Abstract
+                        &lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;
+                    &lt;/button&gt;
+                    &lt;ul class=&quot;dropdown-menu dropdown-menu-left&quot; role=&quot;menu&quot;&gt;
+                        &lt;li&gt;
+                            &lt;blockquote class=&quot;pre-scrollable&quot;&gt;&lt;font size=&quot;-1&quot;&gt;In this paper, we study the welfare consequences of imposing alternative regimes of competition between two local 
+governments that compete for mobile firms which have private information on their degree of mobility.
+Competition among jurisdictions raises the firms’ rents to higher levels than if jurisdictions were to cooperate. Therefore, from the perspective of a utilitarian 
+federation, constitutional constraints on the competition process may be desirable.
+We find that imposing a system of coarser policy instruments improves welfare
+relative to competition with discretionary instruments because it reduces the socially
+costly rents that are granted to firms in equilibrium.
+We also find that the gains from constraining competition to uniform policy instruments are 
+maximal when communities are identical, but decline if the extent of
+asymmetry between locations (in terms of local market size or technological 
+complementarities) increases. &lt;/font&gt;&lt;/blockquote&gt;
+                        &lt;/li&gt;
+                    &lt;/ul&gt;
+            &lt;/div&gt;
+            
+
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;div class=&quot;btn-group&quot;&gt;
+                    &lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-xs dropdown-toggle&quot; data-toggle=&quot;dropdown&quot;&gt;
+                        Bib Entry
+                        &lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;
+                    &lt;/button&gt;
+                    &lt;ul class=&quot;dropdown-menu dropdown-menu-left&quot; role=&quot;menu&quot;&gt;
+                        &lt;li&gt;
+                            &lt;blockquote class=&quot;pre-scrollable&quot;&gt;&lt;font size=&quot;-1&quot;&gt;&lt;pre&gt;@article{jpube2019,
+  title = {Interjurisdictional Competition with Adverse Selection},
+  author = {Hern{\'a}ndez-Murillo, Rub{\'e}n},
+  journal = {Journal of Public Economics},
+  year = {2019},
+  month = may,
+  volume = {173},
+  pages = {85--95},
+  pubtype = {Journal},
+  selectpub = {Yes},
+  doi = {10.1016/j.jpubeco.2019.01.012},
+  url = {https://doi.org/10.20955/wp.2012.052}
+}
+&lt;/pre&gt;&lt;/font&gt;&lt;/blockquote&gt;
+                        &lt;/li&gt;
+                    &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;div class=&quot;btn-group&quot;&gt;
+                    &lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-xs dropdown-toggle&quot; data-toggle=&quot;dropdown&quot;&gt;
+                        Links to File
+                        &lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;
+                    &lt;/button&gt;
+                    &lt;ul class=&quot;dropdown-menu dropdown-menu-left&quot; role=&quot;menu&quot;&gt;
+                        
+                        &lt;li&gt;&lt;a href=&quot;https://dx.doi.org/10.1016/j.jpubeco.2019.01.012&quot; target=&quot;_blank&quot;&gt;journal website (doi)&lt;/a&gt;&lt;/li&gt;
+                        
+                        &lt;li&gt;&lt;a href=&quot;https://doi.org/10.20955/wp.2012.052&quot; target=&quot;_blank&quot;&gt;working paper (pdf)&lt;/a&gt;&lt;/li&gt;
+                        
+                        
+                    &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/li&gt;&lt;/ol&gt;
+</description>
+        <pubDate>Tue, 22 Jan 2019 00:00:00 +0000</pubDate>
+        <link>https://rubenhm.org/news/2019/01/22/new-paper-accepted-for-publication/</link>
+        <guid isPermaLink="true">https://rubenhm.org/news/2019/01/22/new-paper-accepted-for-publication/</guid>
+      </item>
+      
+    
+      
+    
+      
+    
+    
+      <item>
+        <title>New paper accepted for publication</title>
         <description>&lt;p&gt;Our paper, &lt;a href=&quot;#rsue2018&quot;&gt;(Guisinger et al. 2018)&lt;/a&gt;, was just accepted for publication in &lt;em&gt;Regional Science and Urban Economics&lt;/em&gt;.&lt;/p&gt;
 
 &lt;h2&gt;References&lt;/h2&gt;
 
 &lt;ol class=&quot;bibliography&quot;&gt;&lt;li&gt;            &lt;dl&gt;&lt;dt&gt;2018&lt;/dt&gt;
-                &lt;dd&gt;&lt;p class=&quot;text-left&quot;&gt;&lt;span id=&quot;rsue2018&quot;&gt;&lt;b&gt;“A State Level Analysis Of Okun’s Law.”&lt;/b&gt; Guisinger, Amy Y., Rubén Hernández-Murillo, Michael T. Owyang, and Tara M. Sinclair. 2018. &lt;i&gt;Regional Science And Urban Economics&lt;/i&gt; 68 (January): 239–48. doi:10.1016/j.regsciurbeco.2017.11.005.&lt;/span&gt;&lt;/p&gt;&lt;/dd&gt;
+                &lt;dd&gt;&lt;p class=&quot;text-left&quot;&gt;&lt;span id=&quot;rsue2018&quot;&gt;&lt;b&gt;“A State Level Analysis of Okun’s Law.”&lt;/b&gt; Guisinger, Amy Y., Rubén Hernández-Murillo, Michael T. Owyang, and Tara M. Sinclair. 2018. &lt;i&gt;Regional Science and Urban Economics&lt;/i&gt; 68 (January): 239–48. doi:10.1016/j.regsciurbeco.2017.11.005.&lt;/span&gt;&lt;/p&gt;&lt;/dd&gt;
             &lt;/dl&gt;
 
 &lt;!-- The following content will be available for printing --&gt;
@@ -31,8 +173,8 @@
     
         &lt;p&gt;BibTeX entry:&lt;/p&gt;
         &lt;pre&gt;@article{rsue2018,
-  title = {A State Level Analysis of {O}kun&#39;s {L}aw},
-  author = {Guisinger, Amy Y. and Hern{\&#39;a}ndez-Murillo, Rub{\&#39;e}n and Owyang, Michael T. and Sinclair, Tara M.},
+  title = {A State Level Analysis of {O}kun's {L}aw},
+  author = {Guisinger, Amy Y. and Hern{\'a}ndez-Murillo, Rub{\'e}n and Owyang, Michael T. and Sinclair, Tara M.},
   journal = {Regional Science and Urban Economics},
   year = {2018},
   month = jan,
@@ -86,8 +228,8 @@
                     &lt;ul class=&quot;dropdown-menu dropdown-menu-left&quot; role=&quot;menu&quot;&gt;
                         &lt;li&gt;
                             &lt;blockquote class=&quot;pre-scrollable&quot;&gt;&lt;font size=&quot;-1&quot;&gt;&lt;pre&gt;@article{rsue2018,
-  title = {A State Level Analysis of {O}kun&#39;s {L}aw},
-  author = {Guisinger, Amy Y. and Hern{\&#39;a}ndez-Murillo, Rub{\&#39;e}n and Owyang, Michael T. and Sinclair, Tara M.},
+  title = {A State Level Analysis of {O}kun's {L}aw},
+  author = {Guisinger, Amy Y. and Hern{\'a}ndez-Murillo, Rub{\'e}n and Owyang, Michael T. and Sinclair, Tara M.},
   journal = {Regional Science and Urban Economics},
   year = {2018},
   month = jan,
@@ -126,7 +268,7 @@
 
 &lt;/li&gt;&lt;/ol&gt;
 </description>
-        <pubDate>Fri, 19 Jan 2018 00:00:00 -0500</pubDate>
+        <pubDate>Fri, 19 Jan 2018 00:00:00 +0000</pubDate>
         <link>https://rubenhm.org/news/2018/01/19/new-paper-accepted-for-publication/</link>
         <guid isPermaLink="true">https://rubenhm.org/news/2018/01/19/new-paper-accepted-for-publication/</guid>
       </item>
@@ -140,7 +282,7 @@
 &lt;h2&gt;References&lt;/h2&gt;
 
 &lt;ol class=&quot;bibliography&quot;&gt;&lt;li&gt;            &lt;dl&gt;&lt;dt&gt;2017&lt;/dt&gt;
-                &lt;dd&gt;&lt;p class=&quot;text-left&quot;&gt;&lt;span id=&quot;rsue2017&quot;&gt;&lt;b&gt;“Clustered Housing Cycles.”&lt;/b&gt; Hernández-Murillo, Rubén, Michael T. Owyang, and Margarita Rubio. 2017. &lt;i&gt;Regional Science And Urban Economics&lt;/i&gt; 66 (September): 185–97. doi:10.1016/j.regsciurbeco.2017.06.003.&lt;/span&gt;&lt;/p&gt;&lt;/dd&gt;
+                &lt;dd&gt;&lt;p class=&quot;text-left&quot;&gt;&lt;span id=&quot;rsue2017&quot;&gt;&lt;b&gt;“Clustered Housing Cycles.”&lt;/b&gt; Hernández-Murillo, Rubén, Michael T. Owyang, and Margarita Rubio. 2017. &lt;i&gt;Regional Science and Urban Economics&lt;/i&gt; 66 (September): 185–97. doi:10.1016/j.regsciurbeco.2017.06.003.&lt;/span&gt;&lt;/p&gt;&lt;/dd&gt;
             &lt;/dl&gt;
 
 &lt;!-- The following content will be available for printing --&gt;
@@ -153,7 +295,7 @@
         &lt;pre&gt;@article{rsue2017,
   journal = {Regional Science and Urban Economics},
   title = {Clustered Housing Cycles},
-  author = {Hern{\&#39;a}ndez-Murillo, Rub{\&#39;e}n and Owyang, Michael~T. and Rubio, Margarita},
+  author = {Hern{\'a}ndez-Murillo, Rub{\'e}n and Owyang, Michael~T. and Rubio, Margarita},
   month = sep,
   year = {2017},
   volume = {66},
@@ -208,7 +350,7 @@
                             &lt;blockquote class=&quot;pre-scrollable&quot;&gt;&lt;font size=&quot;-1&quot;&gt;&lt;pre&gt;@article{rsue2017,
   journal = {Regional Science and Urban Economics},
   title = {Clustered Housing Cycles},
-  author = {Hern{\&#39;a}ndez-Murillo, Rub{\&#39;e}n and Owyang, Michael~T. and Rubio, Margarita},
+  author = {Hern{\'a}ndez-Murillo, Rub{\'e}n and Owyang, Michael~T. and Rubio, Margarita},
   month = sep,
   year = {2017},
   volume = {66},
@@ -246,7 +388,7 @@
 
 &lt;/li&gt;&lt;/ol&gt;
 </description>
-        <pubDate>Fri, 01 Sep 2017 00:00:00 -0400</pubDate>
+        <pubDate>Fri, 01 Sep 2017 00:00:00 +0000</pubDate>
         <link>https://rubenhm.org/news/2017/09/01/new-paper-accepted-for-publication/</link>
         <guid isPermaLink="true">https://rubenhm.org/news/2017/09/01/new-paper-accepted-for-publication/</guid>
       </item>
@@ -262,7 +404,7 @@
 &lt;h2&gt;References&lt;/h2&gt;
 
 &lt;ol class=&quot;bibliography&quot;&gt;&lt;li&gt;            &lt;dl&gt;&lt;dt&gt;2016&lt;/dt&gt;
-                &lt;dd&gt;&lt;p class=&quot;text-left&quot;&gt;&lt;span id=&quot;fedff2016fall&quot;&gt;&lt;b&gt;“Rosie The Refiner? Two Manufacturing Industries’ Rising District Importance.”&lt;/b&gt; Hernández-Murillo, Rubén, and Sarah Mattson. 2016. &lt;i&gt;Forefront. New Ideas On Economic Policy from the Federal Reserve Bank of Cleveland&lt;/i&gt; 7 (3): 15–19. https://www.clevelandfed.org/newsroom-and-events/publications/forefront/ff-v7n03.aspx.&lt;/span&gt;&lt;/p&gt;&lt;/dd&gt;
+                &lt;dd&gt;&lt;p class=&quot;text-left&quot;&gt;&lt;span id=&quot;fedff2016fall&quot;&gt;&lt;b&gt;“Rosie the Refiner? Two Manufacturing Industries’ Rising District Importance.”&lt;/b&gt; Hernández-Murillo, Rubén, and Sarah Mattson. 2016. &lt;i&gt;Forefront. New Ideas on Economic Policy from the Federal Reserve Bank of Cleveland&lt;/i&gt; 7 (3): 15–19. https://www.clevelandfed.org/newsroom-and-events/publications/forefront/ff-v7n03.aspx.&lt;/span&gt;&lt;/p&gt;&lt;/dd&gt;
             &lt;/dl&gt;
 
 &lt;!-- The following content will be available for printing --&gt;
@@ -270,8 +412,8 @@
     
         &lt;p&gt;BibTeX entry:&lt;/p&gt;
         &lt;pre&gt;@article{fedff2016fall,
-  title = {Rosie the Refiner? {T}wo Manufacturing Industries&#39; Rising {D}istrict Importance},
-  author = {Hern{\&#39;a}ndez-Murillo, Rub{\&#39;e}n and Mattson, Sarah},
+  title = {Rosie the Refiner? {T}wo Manufacturing Industries' Rising {D}istrict Importance},
+  author = {Hern{\'a}ndez-Murillo, Rub{\'e}n and Mattson, Sarah},
   journal = {Forefront. New Ideas on Economic Policy from the Federal Reserve Bank of Cleveland},
   year = {2016},
   month = {Fall},
@@ -310,8 +452,8 @@
                     &lt;ul class=&quot;dropdown-menu dropdown-menu-left&quot; role=&quot;menu&quot;&gt;
                         &lt;li&gt;
                             &lt;blockquote class=&quot;pre-scrollable&quot;&gt;&lt;font size=&quot;-1&quot;&gt;&lt;pre&gt;@article{fedff2016fall,
-  title = {Rosie the Refiner? {T}wo Manufacturing Industries&#39; Rising {D}istrict Importance},
-  author = {Hern{\&#39;a}ndez-Murillo, Rub{\&#39;e}n and Mattson, Sarah},
+  title = {Rosie the Refiner? {T}wo Manufacturing Industries' Rising {D}istrict Importance},
+  author = {Hern{\'a}ndez-Murillo, Rub{\'e}n and Mattson, Sarah},
   journal = {Forefront. New Ideas on Economic Policy from the Federal Reserve Bank of Cleveland},
   year = {2016},
   month = {Fall},
@@ -347,7 +489,7 @@
 
 &lt;/li&gt;&lt;/ol&gt;
 </description>
-        <pubDate>Thu, 01 Sep 2016 00:00:00 -0400</pubDate>
+        <pubDate>Thu, 01 Sep 2016 00:00:00 +0000</pubDate>
         <link>https://rubenhm.org/news/2016/09/01/new-forefront-article-on-fourth-district-manufacturing/</link>
         <guid isPermaLink="true">https://rubenhm.org/news/2016/09/01/new-forefront-article-on-fourth-district-manufacturing/</guid>
       </item>
@@ -363,7 +505,7 @@
 &lt;h2&gt;References&lt;/h2&gt;
 
 &lt;ol class=&quot;bibliography&quot;&gt;&lt;li&gt;            &lt;dl&gt;&lt;dt&gt;2015&lt;/dt&gt;
-                &lt;dd&gt;&lt;p class=&quot;text-left&quot;&gt;&lt;span id=&quot;ree2015&quot;&gt;&lt;b&gt;“Did Affordable Housing Legislation Contribute To the Subprime Securities Boom?”&lt;/b&gt; Ghent, Andra C., Rubén Hernández-Murillo, and Michael T. Owyang. 2015. &lt;i&gt;Real Estate Economics&lt;/i&gt; 43 (4): 820–54. doi:10.1111/1540-6229.12110.&lt;/span&gt;&lt;/p&gt;&lt;/dd&gt;
+                &lt;dd&gt;&lt;p class=&quot;text-left&quot;&gt;&lt;span id=&quot;ree2015&quot;&gt;&lt;b&gt;“Did Affordable Housing Legislation Contribute to the Subprime Securities Boom?”&lt;/b&gt; Ghent, Andra C., Rubén Hernández-Murillo, and Michael T. Owyang. 2015. &lt;i&gt;Real Estate Economics&lt;/i&gt; 43 (4): 820–54. doi:10.1111/1540-6229.12110.&lt;/span&gt;&lt;/p&gt;&lt;/dd&gt;
             &lt;/dl&gt;
 
 &lt;!-- The following content will be available for printing --&gt;
@@ -378,7 +520,7 @@
         &lt;p&gt;BibTeX entry:&lt;/p&gt;
         &lt;pre&gt;@article{ree2015,
   title = {Did Affordable Housing Legislation Contribute to the Subprime Securities Boom?},
-  author = {Ghent, Andra C. and Hern{\&#39;a}ndez-Murillo, Rub{\&#39;e}n and Owyang, Michael T.},
+  author = {Ghent, Andra C. and Hern{\'a}ndez-Murillo, Rub{\'e}n and Owyang, Michael T.},
   journal = {Real Estate Economics},
   year = {2015},
   month = {Winter},
@@ -387,7 +529,6 @@
   doi = {10.1111/1540-6229.12110},
   issue = {4},
   pubtype = {Journal},
-  selectpub = {Yes},
   url = {http://research.stlouisfed.org/wp/2012/2012-005.pdf}
 }
 &lt;/pre&gt;
@@ -436,7 +577,7 @@
                         &lt;li&gt;
                             &lt;blockquote class=&quot;pre-scrollable&quot;&gt;&lt;font size=&quot;-1&quot;&gt;&lt;pre&gt;@article{ree2015,
   title = {Did Affordable Housing Legislation Contribute to the Subprime Securities Boom?},
-  author = {Ghent, Andra C. and Hern{\&#39;a}ndez-Murillo, Rub{\&#39;e}n and Owyang, Michael T.},
+  author = {Ghent, Andra C. and Hern{\'a}ndez-Murillo, Rub{\'e}n and Owyang, Michael T.},
   journal = {Real Estate Economics},
   year = {2015},
   month = {Winter},
@@ -445,7 +586,6 @@
   doi = {10.1111/1540-6229.12110},
   issue = {4},
   pubtype = {Journal},
-  selectpub = {Yes},
   url = {http://research.stlouisfed.org/wp/2012/2012-005.pdf}
 }
 &lt;/pre&gt;&lt;/font&gt;&lt;/blockquote&gt;
@@ -475,221 +615,10 @@
 
 &lt;/li&gt;&lt;/ol&gt;
 </description>
-        <pubDate>Fri, 12 Dec 2014 00:00:00 -0500</pubDate>
+        <pubDate>Fri, 12 Dec 2014 00:00:00 +0000</pubDate>
         <link>https://rubenhm.org/news/2014/12/12/new-paper-accepted-for-publication/</link>
         <guid isPermaLink="true">https://rubenhm.org/news/2014/12/12/new-paper-accepted-for-publication/</guid>
       </item>
-      
-    
-    
-      <item>
-        <title>New ES on the complexity of FOMC statements</title>
-        <description>&lt;p&gt;New &lt;em&gt;Economic Synopsis&lt;/em&gt;, &lt;a href=&quot;#fedles2014n23&quot;&gt;(Hernández-Murillo and Shell 2014)&lt;/a&gt;, is now available online.&lt;/p&gt;
-
-&lt;h2&gt;References&lt;/h2&gt;
-
-&lt;ol class=&quot;bibliography&quot;&gt;&lt;li&gt;            &lt;dl&gt;&lt;dt&gt;2014&lt;/dt&gt;
-                &lt;dd&gt;&lt;p class=&quot;text-left&quot;&gt;&lt;span id=&quot;fedles2014n23&quot;&gt;&lt;b&gt;“The Rising Complexity Of the FOMC Statement.”&lt;/b&gt; Hernández-Murillo, Rubén, and Hannah Shell. 2014. &lt;i&gt;Federal Reserve Bank Of St. Louis Economic Synopses&lt;/i&gt;, no. 23. http://research.stlouisfed.org/publications/es/14/ES_23_2014-11-05.pdf.&lt;/span&gt;&lt;/p&gt;&lt;/dd&gt;
-            &lt;/dl&gt;
-
-&lt;!-- The following content will be available for printing --&gt;
-&lt;div class=&quot;row visible-print&quot;&gt;
-    
-        &lt;p&gt;BibTeX entry:&lt;/p&gt;
-        &lt;pre&gt;@article{fedles2014n23,
-  title = {The Rising Complexity of the {FOMC} Statement},
-  author = {Hern{\&#39;a}ndez-Murillo, Rub{\&#39;e}n and Shell, Hannah},
-  journal = {Federal Reserve Bank of St. Louis Economic Synopses},
-  year = {2014},
-  number = {23},
-  keywords = {FOMC ; Reading grade level ; Text analysis},
-  pubtype = {ES},
-  url = {http://research.stlouisfed.org/publications/es/14/ES_23_2014-11-05.pdf}
-}
-&lt;/pre&gt;
-        &lt;p&gt;Links to file:&lt;/p&gt;
-        &lt;ul &gt;
-            
-            
-            &lt;li&gt;&lt;a href=&quot;http://research.stlouisfed.org/publications/es/14/ES_23_2014-11-05.pdf&quot; target=&quot;_blank&quot;&gt;pdf version&lt;/a&gt;&lt;/li&gt;
-            
-            
-        &lt;/ul&gt;
-&lt;/div&gt;
-        
-&lt;!-- The following buttons will be hidden for printing --&gt;
-&lt;div class=&quot;row &quot;&gt; 
-    &lt;div class=&quot;btn-toolbar hidden-print&quot; role=&quot;toolbar&quot;&gt;
-        &lt;div class=&quot;col-md-2&quot;&gt;&lt;/div&gt;
-    &lt;ul class=&quot;pagination&quot;&gt;
-        &lt;li&gt;
-            
-
-        &lt;/li&gt;
-        &lt;li&gt;
-            &lt;div class=&quot;btn-group&quot;&gt;
-                    &lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-xs dropdown-toggle&quot; data-toggle=&quot;dropdown&quot;&gt;
-                        Bib Entry
-                        &lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;
-                    &lt;/button&gt;
-                    &lt;ul class=&quot;dropdown-menu dropdown-menu-left&quot; role=&quot;menu&quot;&gt;
-                        &lt;li&gt;
-                            &lt;blockquote class=&quot;pre-scrollable&quot;&gt;&lt;font size=&quot;-1&quot;&gt;&lt;pre&gt;@article{fedles2014n23,
-  title = {The Rising Complexity of the {FOMC} Statement},
-  author = {Hern{\&#39;a}ndez-Murillo, Rub{\&#39;e}n and Shell, Hannah},
-  journal = {Federal Reserve Bank of St. Louis Economic Synopses},
-  year = {2014},
-  number = {23},
-  keywords = {FOMC ; Reading grade level ; Text analysis},
-  pubtype = {ES},
-  url = {http://research.stlouisfed.org/publications/es/14/ES_23_2014-11-05.pdf}
-}
-&lt;/pre&gt;&lt;/font&gt;&lt;/blockquote&gt;
-                        &lt;/li&gt;
-                    &lt;/ul&gt;
-            &lt;/div&gt;
-        &lt;/li&gt;
-        &lt;li&gt;
-            &lt;div class=&quot;btn-group&quot;&gt;
-                    &lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-xs dropdown-toggle&quot; data-toggle=&quot;dropdown&quot;&gt;
-                        Links to File
-                        &lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;
-                    &lt;/button&gt;
-                    &lt;ul class=&quot;dropdown-menu dropdown-menu-left&quot; role=&quot;menu&quot;&gt;
-                        
-                        
-                        &lt;li&gt;&lt;a href=&quot;http://research.stlouisfed.org/publications/es/14/ES_23_2014-11-05.pdf&quot; target=&quot;_blank&quot;&gt;pdf version&lt;/a&gt;&lt;/li&gt;
-                        
-                        
-                    &lt;/ul&gt;
-            &lt;/div&gt;
-        &lt;/li&gt;
-    &lt;/ul&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/li&gt;&lt;/ol&gt;
-</description>
-        <pubDate>Wed, 12 Nov 2014 00:00:00 -0500</pubDate>
-        <link>https://rubenhm.org/news/2014/11/12/new-ES-on-the-complexity-of-FOMC-statements/</link>
-        <guid isPermaLink="true">https://rubenhm.org/news/2014/11/12/new-ES-on-the-complexity-of-FOMC-statements/</guid>
-      </item>
-      
-    
-    
-      <item>
-        <title>New working paper on public economics</title>
-        <description>&lt;p&gt;New working paper, &lt;a href=&quot;#fedlwp2014-036&quot;&gt;(Hernández-Murillo 2014)&lt;/a&gt;, is now available online.&lt;/p&gt;
-
-&lt;h2&gt;References&lt;/h2&gt;
-
-&lt;ol class=&quot;bibliography&quot;&gt;&lt;li&gt;            &lt;dl&gt;&lt;dt&gt;2014&lt;/dt&gt;
-                &lt;dd&gt;&lt;p class=&quot;text-left&quot;&gt;&lt;span id=&quot;fedlwp2014-036&quot;&gt;&lt;b&gt;&lt;i&gt;Interjurisdictional Competition And Location Decisions of Firms&lt;/i&gt;&lt;/b&gt;. Hernández-Murillo, Rubén. 2014. No. 2014-036A. Federal Reserve Bank of St. Louis. http://research.stlouisfed.org/wp/2014/2014-036.pdf.&lt;/span&gt;&lt;/p&gt;&lt;/dd&gt;
-            &lt;/dl&gt;
-
-&lt;!-- The following content will be available for printing --&gt;
-&lt;div class=&quot;row visible-print&quot;&gt;
-     
-        &lt;p&gt;Abstract:&lt;/p&gt;
-        &lt;p&gt;We examine the welfare properties of alternative regimes of interjurisdictional competition for heterogeneous mobile firms. Firms differ not only in terms of the degree of mobility across jurisdictions but also in terms of productivity. Alternative taxation regimes represent restraints on the discretionary powers of taxation of local governments.
-
- We find that average welfare is higher under discretionary and more efficient taxation regimes (in the sense of minimizing dead-weight losses from distortionary taxation) when firms are highly mobile. In this situation, further limiting competition by imposing a system of non-discretionary instruments can reduce average welfare by reducing the efficiency of the local governments at raising and allocating public funds. 
- When firms face high moving costs, on the other hand, switching to a non-discretionary and less efficient taxation regime may increase welfare by preventing local governments from engaging in excessive redistribution of resources.&lt;/p&gt;
-    
-        &lt;p&gt;BibTeX entry:&lt;/p&gt;
-        &lt;pre&gt;@techreport{fedlwp2014-036,
-  title = {Interjurisdictional Competition and Location Decisions of Firms},
-  author = {Hern{\&#39;a}ndez-Murillo, Rub{\&#39;e}n},
-  institution = {Federal Reserve Bank of St. Louis},
-  year = {2014},
-  number = {No. 2014-036A},
-  pubtype = {WP},
-  url = {http://research.stlouisfed.org/wp/2014/2014-036.pdf}
-}
-&lt;/pre&gt;
-        &lt;p&gt;Links to file:&lt;/p&gt;
-        &lt;ul &gt;
-            
-            
-            &lt;li&gt;&lt;a href=&quot;http://research.stlouisfed.org/wp/2014/2014-036.pdf&quot; target=&quot;_blank&quot;&gt;pdf version&lt;/a&gt;&lt;/li&gt;
-            
-            
-        &lt;/ul&gt;
-&lt;/div&gt;
-        
-&lt;!-- The following buttons will be hidden for printing --&gt;
-&lt;div class=&quot;row &quot;&gt; 
-    &lt;div class=&quot;btn-toolbar hidden-print&quot; role=&quot;toolbar&quot;&gt;
-        &lt;div class=&quot;col-md-2&quot;&gt;&lt;/div&gt;
-    &lt;ul class=&quot;pagination&quot;&gt;
-        &lt;li&gt;
-             
-            &lt;div class=&quot;btn-group&quot;&gt;
-                    &lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-xs dropdown-toggle&quot; data-toggle=&quot;dropdown&quot;&gt;
-                        Abstract
-                        &lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;
-                    &lt;/button&gt;
-                    &lt;ul class=&quot;dropdown-menu dropdown-menu-left&quot; role=&quot;menu&quot;&gt;
-                        &lt;li&gt;
-                            &lt;blockquote class=&quot;pre-scrollable&quot;&gt;&lt;font size=&quot;-1&quot;&gt;We examine the welfare properties of alternative regimes of interjurisdictional competition for heterogeneous mobile firms. Firms differ not only in terms of the degree of mobility across jurisdictions but also in terms of productivity. Alternative taxation regimes represent restraints on the discretionary powers of taxation of local governments.
-
- We find that average welfare is higher under discretionary and more efficient taxation regimes (in the sense of minimizing dead-weight losses from distortionary taxation) when firms are highly mobile. In this situation, further limiting competition by imposing a system of non-discretionary instruments can reduce average welfare by reducing the efficiency of the local governments at raising and allocating public funds. 
- When firms face high moving costs, on the other hand, switching to a non-discretionary and less efficient taxation regime may increase welfare by preventing local governments from engaging in excessive redistribution of resources.&lt;/font&gt;&lt;/blockquote&gt;
-                        &lt;/li&gt;
-                    &lt;/ul&gt;
-            &lt;/div&gt;
-            
-
-        &lt;/li&gt;
-        &lt;li&gt;
-            &lt;div class=&quot;btn-group&quot;&gt;
-                    &lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-xs dropdown-toggle&quot; data-toggle=&quot;dropdown&quot;&gt;
-                        Bib Entry
-                        &lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;
-                    &lt;/button&gt;
-                    &lt;ul class=&quot;dropdown-menu dropdown-menu-left&quot; role=&quot;menu&quot;&gt;
-                        &lt;li&gt;
-                            &lt;blockquote class=&quot;pre-scrollable&quot;&gt;&lt;font size=&quot;-1&quot;&gt;&lt;pre&gt;@techreport{fedlwp2014-036,
-  title = {Interjurisdictional Competition and Location Decisions of Firms},
-  author = {Hern{\&#39;a}ndez-Murillo, Rub{\&#39;e}n},
-  institution = {Federal Reserve Bank of St. Louis},
-  year = {2014},
-  number = {No. 2014-036A},
-  pubtype = {WP},
-  url = {http://research.stlouisfed.org/wp/2014/2014-036.pdf}
-}
-&lt;/pre&gt;&lt;/font&gt;&lt;/blockquote&gt;
-                        &lt;/li&gt;
-                    &lt;/ul&gt;
-            &lt;/div&gt;
-        &lt;/li&gt;
-        &lt;li&gt;
-            &lt;div class=&quot;btn-group&quot;&gt;
-                    &lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-xs dropdown-toggle&quot; data-toggle=&quot;dropdown&quot;&gt;
-                        Links to File
-                        &lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;
-                    &lt;/button&gt;
-                    &lt;ul class=&quot;dropdown-menu dropdown-menu-left&quot; role=&quot;menu&quot;&gt;
-                        
-                        
-                        &lt;li&gt;&lt;a href=&quot;http://research.stlouisfed.org/wp/2014/2014-036.pdf&quot; target=&quot;_blank&quot;&gt;pdf version&lt;/a&gt;&lt;/li&gt;
-                        
-                        
-                    &lt;/ul&gt;
-            &lt;/div&gt;
-        &lt;/li&gt;
-    &lt;/ul&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/li&gt;&lt;/ol&gt;
-</description>
-        <pubDate>Fri, 31 Oct 2014 00:00:00 -0400</pubDate>
-        <link>https://rubenhm.org/news/2014/10/31/new-working-paper-on-public-economics/</link>
-        <guid isPermaLink="true">https://rubenhm.org/news/2014/10/31/new-working-paper-on-public-economics/</guid>
-      </item>
-      
-    
       
     
   </channel>

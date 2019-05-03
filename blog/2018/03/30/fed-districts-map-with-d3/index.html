@@ -137,153 +137,153 @@ Over time, some of the county definitions <a href="https://www.census.gov/geo/re
 
 <h2>Choropleth map</h2>
 
-<p>The Fed Districts map is a straight-up modification of the recent example of a choropleth map for unemployment rates by <a href="https://bl.ocks.org/mbostock/4060606">Mike Bostock</a>. He uses a threshold scale and the blues color scheme which work great for a continuous variable such as the unemployment rate, but are probably not the best choice for a categorical map with 12 categories! For one, the blues color scheme does not even have 12 categories. So I went over to <a href="http://colorbrewer2.org/#type=qualitative&amp;scheme=Set3&amp;n=12">ColorBrewer</a> and selected a scheme with soft colors for qualitative data with 12 categories.</p>
+<p>The Fed Districts map is a straight-up modification of the recent example of a choropleth map for unemployment rates by <a href="https://bl.ocks.org/mbostock/4060606">Mike Bostock</a>. He uses a threshold scale and the blues color scheme which work great for a continuous variable such as the unemployment rate, but are probably not the best choice for a categorical map with 12 categories! For one, the blues color scheme does not even have 12 categories. So I went over to <a href="http://colorbrewer2.org/#type=qualitative&scheme=Set3&n=12">ColorBrewer</a> and selected a scheme with soft colors for qualitative data with 12 categories.</p>
 
 <p>I replaced the CSV file for the unemployment rates with the Fed Districts definitions and I added code to define the boundaries between Districts using <code>topojson.mesh</code> in the same way as Mike generated the boundaries between states.</p>
 
 <p>I also learned about <code>map()</code> to define dictionary-like variables that contain useful information about each county to display on hover.</p>
 
 <p>Notice that the Fed District numbers are defined in a Westerly direction.</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;!DOCTYPE html&gt;
-&lt;meta charset=&quot;utf-8&quot;&gt;
-&lt;style&gt;
+<div class="highlight"><pre><code class="language-" data-lang=""><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;style&gt;</span>
 
-.counties {
-  fill: none;
-}
+<span class="nc">.counties</span> <span class="p">{</span>
+  <span class="py">fill</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+<span class="p">}</span>
 
-.states {
-  fill: none;
-  stroke: #fff;
-  stroke-linejoin: round;
-}
+<span class="nc">.states</span> <span class="p">{</span>
+  <span class="py">fill</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+  <span class="py">stroke</span><span class="p">:</span> <span class="m">#fff</span><span class="p">;</span>
+  <span class="py">stroke-linejoin</span><span class="p">:</span> <span class="n">round</span><span class="p">;</span>
+<span class="p">}</span>
 
-.districts {
-  fill: none;
-  stroke: #808080;
-  stroke-linejoin: round;
-  stroke-width: 1.5px;
-}
+<span class="nc">.districts</span> <span class="p">{</span>
+  <span class="py">fill</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+  <span class="py">stroke</span><span class="p">:</span> <span class="m">#808080</span><span class="p">;</span>
+  <span class="py">stroke-linejoin</span><span class="p">:</span> <span class="n">round</span><span class="p">;</span>
+  <span class="py">stroke-width</span><span class="p">:</span> <span class="m">1.5px</span><span class="p">;</span>
+<span class="p">}</span>
 
-&lt;/style&gt;
-&lt;svg width=&quot;960&quot; height=&quot;600&quot;&gt;&lt;/svg&gt;
-&lt;script src=&quot;https://d3js.org/d3.v4.min.js&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;https://d3js.org/d3-scale-chromatic.v1.min.js&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;https://d3js.org/topojson.v2.min.js&quot;&gt;&lt;/script&gt;
-&lt;script&gt;
+<span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;svg</span> <span class="na">width=</span><span class="s">"960"</span> <span class="na">height=</span><span class="s">"600"</span><span class="nt">&gt;&lt;/svg&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://d3js.org/d3.v4.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://d3js.org/d3-scale-chromatic.v1.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://d3js.org/topojson.v2.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script&gt;</span>
 
-var svg = d3.select(&quot;svg&quot;),
-    width = +svg.attr(&quot;width&quot;),
-    height = +svg.attr(&quot;height&quot;);
+<span class="kd">var</span> <span class="nx">svg</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">"svg"</span><span class="p">),</span>
+    <span class="nx">width</span> <span class="o">=</span> <span class="o">+</span><span class="nx">svg</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"width"</span><span class="p">),</span>
+    <span class="nx">height</span> <span class="o">=</span> <span class="o">+</span><span class="nx">svg</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"height"</span><span class="p">);</span>
 
-// Define maps with definitions and county and District names
-var frbdefinitions = d3.map();
-var countynames    = d3.map();
-var districtNames  = d3.map();
+<span class="c1">// Define maps with definitions and county and District names</span>
+<span class="kd">var</span> <span class="nx">frbdefinitions</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">map</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">countynames</span>    <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">map</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">districtNames</span>  <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">map</span><span class="p">();</span>
 
-// Harcoded Fed District denominations
-// The city name indicates the city of the main office
-// Notice that the district numbers are defined in a Westerly direction 
-districtNames.set(1,&quot;Boston&quot;)
-districtNames.set(2,&quot;New York&quot;)
-districtNames.set(3,&quot;Philadelphia&quot;)
-districtNames.set(4,&quot;Cleveland&quot;)
-districtNames.set(5,&quot;Richmond&quot;)
-districtNames.set(6,&quot;Atlanta&quot;)
-districtNames.set(7,&quot;Chicago&quot;)
-districtNames.set(8,&quot;St. Louis&quot;)
-districtNames.set(9,&quot;Minneapolis&quot;)
-districtNames.set(10,&quot;Kansas City&quot;)
-districtNames.set(11,&quot;Dallas&quot;)
-districtNames.set(12,&quot;San Francisco&quot;)
+<span class="c1">// Harcoded Fed District denominations</span>
+<span class="c1">// The city name indicates the city of the main office</span>
+<span class="c1">// Notice that the district numbers are defined in a Westerly direction </span>
+<span class="nx">districtNames</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s2">"Boston"</span><span class="p">)</span>
+<span class="nx">districtNames</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="s2">"New York"</span><span class="p">)</span>
+<span class="nx">districtNames</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="s2">"Philadelphia"</span><span class="p">)</span>
+<span class="nx">districtNames</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="s2">"Cleveland"</span><span class="p">)</span>
+<span class="nx">districtNames</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="s2">"Richmond"</span><span class="p">)</span>
+<span class="nx">districtNames</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="s2">"Atlanta"</span><span class="p">)</span>
+<span class="nx">districtNames</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="s2">"Chicago"</span><span class="p">)</span>
+<span class="nx">districtNames</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="s2">"St. Louis"</span><span class="p">)</span>
+<span class="nx">districtNames</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="s2">"Minneapolis"</span><span class="p">)</span>
+<span class="nx">districtNames</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="s2">"Kansas City"</span><span class="p">)</span>
+<span class="nx">districtNames</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span><span class="s2">"Dallas"</span><span class="p">)</span>
+<span class="nx">districtNames</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="s2">"San Francisco"</span><span class="p">)</span>
 
-var path = d3.geoPath();
+<span class="kd">var</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">geoPath</span><span class="p">();</span>
 
-var x = d3.scaleLinear()
-    .domain([0, 12])
-    .rangeRound([600, 860]);
+<span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">scaleLinear</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">domain</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">12</span><span class="p">])</span>
+    <span class="p">.</span><span class="nx">rangeRound</span><span class="p">([</span><span class="mi">600</span><span class="p">,</span> <span class="mi">860</span><span class="p">]);</span>
 
-var color = d3.scaleThreshold()
-    .domain(d3.range(1, 13))
-    .range([&#39;#8dd3c7&#39;,&#39;#ffffb3&#39;,&#39;#bebada&#39;,&#39;#fb8072&#39;,&#39;#80b1d3&#39;,&#39;#fdb462&#39;,&#39;#b3de69&#39;,&#39;#fccde5&#39;,&#39;#d9d9d9&#39;,&#39;#bc80bd&#39;,&#39;#ccebc5&#39;,&#39;#ffed6f&#39;]);
+<span class="kd">var</span> <span class="nx">color</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">scaleThreshold</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">domain</span><span class="p">(</span><span class="nx">d3</span><span class="p">.</span><span class="nx">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">13</span><span class="p">))</span>
+    <span class="p">.</span><span class="nx">range</span><span class="p">([</span><span class="s1">'#8dd3c7'</span><span class="p">,</span><span class="s1">'#ffffb3'</span><span class="p">,</span><span class="s1">'#bebada'</span><span class="p">,</span><span class="s1">'#fb8072'</span><span class="p">,</span><span class="s1">'#80b1d3'</span><span class="p">,</span><span class="s1">'#fdb462'</span><span class="p">,</span><span class="s1">'#b3de69'</span><span class="p">,</span><span class="s1">'#fccde5'</span><span class="p">,</span><span class="s1">'#d9d9d9'</span><span class="p">,</span><span class="s1">'#bc80bd'</span><span class="p">,</span><span class="s1">'#ccebc5'</span><span class="p">,</span><span class="s1">'#ffed6f'</span><span class="p">]);</span>
 
-var g = svg.append(&quot;g&quot;)
-    .attr(&quot;class&quot;, &quot;key&quot;)
-    .attr(&quot;transform&quot;, &quot;translate(0,40)&quot;);
+<span class="kd">var</span> <span class="nx">g</span> <span class="o">=</span> <span class="nx">svg</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">"g"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"class"</span><span class="p">,</span> <span class="s2">"key"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"transform"</span><span class="p">,</span> <span class="s2">"translate(0,40)"</span><span class="p">);</span>
 
-g.selectAll(&quot;rect&quot;)
-  .data(color.range().map(function(d) {
-      d = color.invertExtent(d);
-      if (d[0] == null) d[0] = x.domain()[0];
-      if (d[1] == null) d[1] = x.domain()[1];
-      return d;
-    }))
-  .enter().append(&quot;rect&quot;)
-    .attr(&quot;height&quot;, 8)
-    .attr(&quot;x&quot;, function(d) { return x(d[0]); })
-    .attr(&quot;width&quot;, function(d) { return x(d[1]) - x(d[0]); })
-    .attr(&quot;fill&quot;, function(d) { return color(d[0]); });
+<span class="nx">g</span><span class="p">.</span><span class="nx">selectAll</span><span class="p">(</span><span class="s2">"rect"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="nx">color</span><span class="p">.</span><span class="nx">range</span><span class="p">().</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">d</span> <span class="o">=</span> <span class="nx">color</span><span class="p">.</span><span class="nx">invertExtent</span><span class="p">(</span><span class="nx">d</span><span class="p">);</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">d</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="nx">d</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="nx">x</span><span class="p">.</span><span class="nx">domain</span><span class="p">()[</span><span class="mi">0</span><span class="p">];</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">d</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="nx">d</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nx">x</span><span class="p">.</span><span class="nx">domain</span><span class="p">()[</span><span class="mi">1</span><span class="p">];</span>
+      <span class="k">return</span> <span class="nx">d</span><span class="p">;</span>
+    <span class="p">}))</span>
+  <span class="p">.</span><span class="nx">enter</span><span class="p">().</span><span class="nx">append</span><span class="p">(</span><span class="s2">"rect"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"height"</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"x"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">x</span><span class="p">(</span><span class="nx">d</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span> <span class="p">})</span>
+    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"width"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">x</span><span class="p">(</span><span class="nx">d</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">-</span> <span class="nx">x</span><span class="p">(</span><span class="nx">d</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span> <span class="p">})</span>
+    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"fill"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">color</span><span class="p">(</span><span class="nx">d</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span> <span class="p">});</span>
 
-g.append(&quot;text&quot;)
-    .attr(&quot;class&quot;, &quot;caption&quot;)
-    .attr(&quot;x&quot;, x.range()[0])
-    .attr(&quot;y&quot;, -6)
-    .attr(&quot;fill&quot;, &quot;#000&quot;)
-    .attr(&quot;text-anchor&quot;, &quot;start&quot;)
-    .attr(&quot;font-weight&quot;, &quot;bold&quot;)
-    .text(&quot;Fed District&quot;);
+<span class="nx">g</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">"text"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"class"</span><span class="p">,</span> <span class="s2">"caption"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"x"</span><span class="p">,</span> <span class="nx">x</span><span class="p">.</span><span class="nx">range</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"y"</span><span class="p">,</span> <span class="o">-</span><span class="mi">6</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"fill"</span><span class="p">,</span> <span class="s2">"#000"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"text-anchor"</span><span class="p">,</span> <span class="s2">"start"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"font-weight"</span><span class="p">,</span> <span class="s2">"bold"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="s2">"Fed District"</span><span class="p">);</span>
 
-g.call(d3.axisBottom(x)
-    .tickSize(13)
-    .tickFormat(function(x, i) { return i ? x : x ; })
-    .tickValues(color.domain()))
-  .select(&quot;.domain&quot;)
-    .remove();
+<span class="nx">g</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">d3</span><span class="p">.</span><span class="nx">axisBottom</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">tickSize</span><span class="p">(</span><span class="mi">13</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">tickFormat</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">i</span> <span class="p">?</span> <span class="nx">x</span> <span class="p">:</span> <span class="nx">x</span> <span class="p">;</span> <span class="p">})</span>
+    <span class="p">.</span><span class="nx">tickValues</span><span class="p">(</span><span class="nx">color</span><span class="p">.</span><span class="nx">domain</span><span class="p">()))</span>
+  <span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">".domain"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">remove</span><span class="p">();</span>
 
-d3.queue()
-    .defer(d3.json, &quot;https://d3js.org/us-10m.v1.json&quot;)
-    .defer(d3.tsv, &quot;counties-by-fed-district.tsv&quot;, function(d) { 
-        frbdefinitions.set(d.countyfips, +d.dist_frb); 
-        countynames.set(d.countyfips, d.county_name+&quot;, &quot;+d.state_abbr);
-      })
-    .await(ready);
+<span class="nx">d3</span><span class="p">.</span><span class="nx">queue</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">defer</span><span class="p">(</span><span class="nx">d3</span><span class="p">.</span><span class="nx">json</span><span class="p">,</span> <span class="s2">"https://d3js.org/us-10m.v1.json"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">defer</span><span class="p">(</span><span class="nx">d3</span><span class="p">.</span><span class="nx">tsv</span><span class="p">,</span> <span class="s2">"counties-by-fed-district.tsv"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span> 
+        <span class="nx">frbdefinitions</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">countyfips</span><span class="p">,</span> <span class="o">+</span><span class="nx">d</span><span class="p">.</span><span class="nx">dist_frb</span><span class="p">);</span> 
+        <span class="nx">countynames</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">countyfips</span><span class="p">,</span> <span class="nx">d</span><span class="p">.</span><span class="nx">county_name</span><span class="o">+</span><span class="s2">", "</span><span class="o">+</span><span class="nx">d</span><span class="p">.</span><span class="nx">state_abbr</span><span class="p">);</span>
+      <span class="p">})</span>
+    <span class="p">.</span><span class="kr">await</span><span class="p">(</span><span class="nx">ready</span><span class="p">);</span>
 
-function ready(error, us) {
-  if (error) throw error;
+<span class="kd">function</span> <span class="nx">ready</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">us</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="k">throw</span> <span class="nx">error</span><span class="p">;</span>
 
-  // Select fill color for Fed Districts using the map for the definitions
-  // and the color scheme defined earlier
-  // Also add information to each county to be displayed on hover
-  svg.append(&quot;g&quot;)
-      .attr(&quot;class&quot;, &quot;counties&quot;)
-    .selectAll(&quot;path&quot;)
-    .data(topojson.feature(us, us.objects.counties).features)
-    .enter().append(&quot;path&quot;)
-      .attr(&quot;fill&quot;, function(d) { return color(d.dist_frb  = frbdefinitions.get(d.id) -1); })
-      .attr(&quot;d&quot;, path)
-    .append(&quot;title&quot;)
-      .text(function(d) { 
-        return &quot;District: &quot; + (+d.dist_frb + 1) + &quot;. &quot; +
-               districtNames.get(+d.dist_frb + 1) + &quot;\n&quot; +
-               &quot;County fips: &quot; + d.id + &quot;\n&quot; +
-               &quot;County name: &quot; + countynames.get(d.id)});
+  <span class="c1">// Select fill color for Fed Districts using the map for the definitions</span>
+  <span class="c1">// and the color scheme defined earlier</span>
+  <span class="c1">// Also add information to each county to be displayed on hover</span>
+  <span class="nx">svg</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">"g"</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"class"</span><span class="p">,</span> <span class="s2">"counties"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">selectAll</span><span class="p">(</span><span class="s2">"path"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="nx">topojson</span><span class="p">.</span><span class="nx">feature</span><span class="p">(</span><span class="nx">us</span><span class="p">,</span> <span class="nx">us</span><span class="p">.</span><span class="nx">objects</span><span class="p">.</span><span class="nx">counties</span><span class="p">).</span><span class="nx">features</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">enter</span><span class="p">().</span><span class="nx">append</span><span class="p">(</span><span class="s2">"path"</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"fill"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">color</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">dist_frb</span>  <span class="o">=</span> <span class="nx">frbdefinitions</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">id</span><span class="p">)</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span> <span class="p">})</span>
+      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"d"</span><span class="p">,</span> <span class="nx">path</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">"title"</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span> 
+        <span class="k">return</span> <span class="s2">"District: "</span> <span class="o">+</span> <span class="p">(</span><span class="o">+</span><span class="nx">d</span><span class="p">.</span><span class="nx">dist_frb</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="s2">". "</span> <span class="o">+</span>
+               <span class="nx">districtNames</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="o">+</span><span class="nx">d</span><span class="p">.</span><span class="nx">dist_frb</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span> <span class="o">+</span>
+               <span class="s2">"County fips: "</span> <span class="o">+</span> <span class="nx">d</span><span class="p">.</span><span class="nx">id</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span> <span class="o">+</span>
+               <span class="s2">"County name: "</span> <span class="o">+</span> <span class="nx">countynames</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">id</span><span class="p">)});</span>
 
-  // Define boundaries for states
-  svg.append(&quot;path&quot;)
-      .datum(topojson.mesh(us, us.objects.states, function(a, b) { return a !== b; }))
-      .attr(&quot;class&quot;, &quot;states&quot;)
-      .attr(&quot;d&quot;, path);
+  <span class="c1">// Define boundaries for states</span>
+  <span class="nx">svg</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">"path"</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">datum</span><span class="p">(</span><span class="nx">topojson</span><span class="p">.</span><span class="nx">mesh</span><span class="p">(</span><span class="nx">us</span><span class="p">,</span> <span class="nx">us</span><span class="p">.</span><span class="nx">objects</span><span class="p">.</span><span class="nx">states</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">a</span> <span class="o">!==</span> <span class="nx">b</span><span class="p">;</span> <span class="p">}))</span>
+      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"class"</span><span class="p">,</span> <span class="s2">"states"</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"d"</span><span class="p">,</span> <span class="nx">path</span><span class="p">);</span>
 
-  // Define boundaries for Fed Districts using counties
-  svg.append(&quot;path&quot;)
-      .datum(topojson.mesh(us, us.objects.counties, function(a, b) { 
-        return (frbdefinitions.get(a.id) !== frbdefinitions.get(b.id)) &amp; (a !== b); }))
-      .attr(&quot;class&quot;, &quot;districts&quot;)
-      .attr(&quot;d&quot;, path);
+  <span class="c1">// Define boundaries for Fed Districts using counties</span>
+  <span class="nx">svg</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">"path"</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">datum</span><span class="p">(</span><span class="nx">topojson</span><span class="p">.</span><span class="nx">mesh</span><span class="p">(</span><span class="nx">us</span><span class="p">,</span> <span class="nx">us</span><span class="p">.</span><span class="nx">objects</span><span class="p">.</span><span class="nx">counties</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span> 
+        <span class="k">return</span> <span class="p">(</span><span class="nx">frbdefinitions</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">id</span><span class="p">)</span> <span class="o">!==</span> <span class="nx">frbdefinitions</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">b</span><span class="p">.</span><span class="nx">id</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="nx">a</span> <span class="o">!==</span> <span class="nx">b</span><span class="p">);</span> <span class="p">}))</span>
+      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"class"</span><span class="p">,</span> <span class="s2">"districts"</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"d"</span><span class="p">,</span> <span class="nx">path</span><span class="p">);</span>
 
-}
+<span class="p">}</span>
 
-&lt;/script&gt;
+<span class="nt">&lt;/script&gt;</span>
 </code></pre></div>
 
     </article>
