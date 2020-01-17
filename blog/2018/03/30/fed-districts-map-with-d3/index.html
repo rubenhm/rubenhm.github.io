@@ -58,50 +58,50 @@
 </head>
 <body>
 
-<header> 
-  <!-- 	
+<header>
+	<!-- 	
   <h1 class="h2 m-0"><a href="https://rubenhm.org">rubenhm.org</a></h1>
   <p>Research, Writings + Code</p> 
   -->
 
-  <!-- Bootstrap navbar -->
-  <nav class = "navbar navbar-default navbar-fixed-top" role="navigation">
-   <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-   	<div class = "navbar-header">
-   		<button type="button"  class = "navbar-toggle" data-toggle = "collapse" data-target = "#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>  
-   			<span class = "icon-bar"></span>
-   			<span class = "icon-bar"></span>
-   			<span class = "icon-bar"></span>
-   		</button>
-      <a class = "navbar-brand" href ="https://rubenhm.org">rubenhm.org</a>
-    </div>
-    
-    <!-- Collect the nav links, forms, and other content for toggling -->
-   	<div class ="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
- 			<ul class ="nav navbar-nav navbar-right">
- 				<li ><a href = "/">Home</a></li>
- 				<li><a href = "/cv/">CV</a></li>
- 				<li class ="dropdown">
- 					<a href ="#" class = "dropdown-toggle" data-toggle ="dropdown">Research <b class="caret"></b></a>
- 					<ul class = "dropdown-menu">
- 						<li><a href="/pubs/journal_articles/">Journal articles</a></li>
- 						<li><a href="/pubs/fed_pubs/">Fed Pubs</a></li>
- 						<li><a href="/pubs/commentary/">Commentary</a></li>
- 						<li><a href="/pubs/working_papers/">Working papers</a></li>
- 					</ul>
- 				</li> 
- 				<li><a href="/blog/">Blog</a></li>
-        <li><a href="/news/">News</a></li>
-        <li><a href="/about/">About</a></li>
- 			</ul>
-   	</div><!-- /.navbar-collapse -->
- </div><!-- /.container-fluid -->
-</nav>	
+	<!-- Bootstrap navbar -->
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+		<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="https://rubenhm.org">rubenhm.org</a>
+			</div>
 
-</header>  
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="/">Home</a></li>
+					<li><a href="/cv/">CV</a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Research <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="/pubs/journal_articles/">Journal articles</a></li>
+							<li><a href="/pubs/fed_pubs/">Fed Pubs</a></li>
+							<li><a href="/pubs/commentary/">Commentary</a></li>
+							<li><a href="/pubs/chronological">Chronological</a></li>
+						</ul>
+					</li>
+					<li><a href="/blog/">Blog</a></li>
+					<li><a href="/news/">News</a></li>
+					<li><a href="/about/">About</a></li>
+				</ul>
+			</div><!-- /.navbar-collapse -->
+		</div><!-- /.container-fluid -->
+	</nav>
 
+</header>
 <div class="container">
     <div class="visible-print"> <!--Header for print version -->
             <h1 class="text-left">https://rubenhm.org/blog/</h1>
@@ -172,9 +172,9 @@ Over time, some of the county definitions <a href="https://www.census.gov/geo/re
 <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://d3js.org/topojson.v2.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
 <span class="nt">&lt;script&gt;</span>
 
-<span class="kd">var</span> <span class="nx">svg</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">"svg"</span><span class="p">),</span>
-    <span class="nx">width</span> <span class="o">=</span> <span class="o">+</span><span class="nx">svg</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"width"</span><span class="p">),</span>
-    <span class="nx">height</span> <span class="o">=</span> <span class="o">+</span><span class="nx">svg</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"height"</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">svg</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="dl">"</span><span class="s2">svg</span><span class="dl">"</span><span class="p">),</span>
+    <span class="nx">width</span> <span class="o">=</span> <span class="o">+</span><span class="nx">svg</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">width</span><span class="dl">"</span><span class="p">),</span>
+    <span class="nx">height</span> <span class="o">=</span> <span class="o">+</span><span class="nx">svg</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">height</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="c1">// Define maps with definitions and county and District names</span>
 <span class="kd">var</span> <span class="nx">frbdefinitions</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">map</span><span class="p">();</span>
@@ -184,18 +184,18 @@ Over time, some of the county definitions <a href="https://www.census.gov/geo/re
 <span class="c1">// Harcoded Fed District denominations</span>
 <span class="c1">// The city name indicates the city of the main office</span>
 <span class="c1">// Notice that the district numbers are defined in a Westerly direction </span>
-<span class="nx">districtNames</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s2">"Boston"</span><span class="p">)</span>
-<span class="nx">districtNames</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="s2">"New York"</span><span class="p">)</span>
-<span class="nx">districtNames</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="s2">"Philadelphia"</span><span class="p">)</span>
-<span class="nx">districtNames</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="s2">"Cleveland"</span><span class="p">)</span>
-<span class="nx">districtNames</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="s2">"Richmond"</span><span class="p">)</span>
-<span class="nx">districtNames</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="s2">"Atlanta"</span><span class="p">)</span>
-<span class="nx">districtNames</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="s2">"Chicago"</span><span class="p">)</span>
-<span class="nx">districtNames</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="s2">"St. Louis"</span><span class="p">)</span>
-<span class="nx">districtNames</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="s2">"Minneapolis"</span><span class="p">)</span>
-<span class="nx">districtNames</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="s2">"Kansas City"</span><span class="p">)</span>
-<span class="nx">districtNames</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span><span class="s2">"Dallas"</span><span class="p">)</span>
-<span class="nx">districtNames</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="s2">"San Francisco"</span><span class="p">)</span>
+<span class="nx">districtNames</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">Boston</span><span class="dl">"</span><span class="p">)</span>
+<span class="nx">districtNames</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="dl">"</span><span class="s2">New York</span><span class="dl">"</span><span class="p">)</span>
+<span class="nx">districtNames</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="dl">"</span><span class="s2">Philadelphia</span><span class="dl">"</span><span class="p">)</span>
+<span class="nx">districtNames</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="dl">"</span><span class="s2">Cleveland</span><span class="dl">"</span><span class="p">)</span>
+<span class="nx">districtNames</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="dl">"</span><span class="s2">Richmond</span><span class="dl">"</span><span class="p">)</span>
+<span class="nx">districtNames</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="dl">"</span><span class="s2">Atlanta</span><span class="dl">"</span><span class="p">)</span>
+<span class="nx">districtNames</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="dl">"</span><span class="s2">Chicago</span><span class="dl">"</span><span class="p">)</span>
+<span class="nx">districtNames</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="dl">"</span><span class="s2">St. Louis</span><span class="dl">"</span><span class="p">)</span>
+<span class="nx">districtNames</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="dl">"</span><span class="s2">Minneapolis</span><span class="dl">"</span><span class="p">)</span>
+<span class="nx">districtNames</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="dl">"</span><span class="s2">Kansas City</span><span class="dl">"</span><span class="p">)</span>
+<span class="nx">districtNames</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span><span class="dl">"</span><span class="s2">Dallas</span><span class="dl">"</span><span class="p">)</span>
+<span class="nx">districtNames</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="dl">"</span><span class="s2">San Francisco</span><span class="dl">"</span><span class="p">)</span>
 
 <span class="kd">var</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">geoPath</span><span class="p">();</span>
 
@@ -205,48 +205,48 @@ Over time, some of the county definitions <a href="https://www.census.gov/geo/re
 
 <span class="kd">var</span> <span class="nx">color</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">scaleThreshold</span><span class="p">()</span>
     <span class="p">.</span><span class="nx">domain</span><span class="p">(</span><span class="nx">d3</span><span class="p">.</span><span class="nx">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">13</span><span class="p">))</span>
-    <span class="p">.</span><span class="nx">range</span><span class="p">([</span><span class="s1">'#8dd3c7'</span><span class="p">,</span><span class="s1">'#ffffb3'</span><span class="p">,</span><span class="s1">'#bebada'</span><span class="p">,</span><span class="s1">'#fb8072'</span><span class="p">,</span><span class="s1">'#80b1d3'</span><span class="p">,</span><span class="s1">'#fdb462'</span><span class="p">,</span><span class="s1">'#b3de69'</span><span class="p">,</span><span class="s1">'#fccde5'</span><span class="p">,</span><span class="s1">'#d9d9d9'</span><span class="p">,</span><span class="s1">'#bc80bd'</span><span class="p">,</span><span class="s1">'#ccebc5'</span><span class="p">,</span><span class="s1">'#ffed6f'</span><span class="p">]);</span>
+    <span class="p">.</span><span class="nx">range</span><span class="p">([</span><span class="dl">'</span><span class="s1">#8dd3c7</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">#ffffb3</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">#bebada</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">#fb8072</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">#80b1d3</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">#fdb462</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">#b3de69</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">#fccde5</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">#d9d9d9</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">#bc80bd</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">#ccebc5</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">#ffed6f</span><span class="dl">'</span><span class="p">]);</span>
 
-<span class="kd">var</span> <span class="nx">g</span> <span class="o">=</span> <span class="nx">svg</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">"g"</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"class"</span><span class="p">,</span> <span class="s2">"key"</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"transform"</span><span class="p">,</span> <span class="s2">"translate(0,40)"</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">g</span> <span class="o">=</span> <span class="nx">svg</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">g</span><span class="dl">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">class</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">key</span><span class="dl">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">transform</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">translate(0,40)</span><span class="dl">"</span><span class="p">);</span>
 
-<span class="nx">g</span><span class="p">.</span><span class="nx">selectAll</span><span class="p">(</span><span class="s2">"rect"</span><span class="p">)</span>
+<span class="nx">g</span><span class="p">.</span><span class="nx">selectAll</span><span class="p">(</span><span class="dl">"</span><span class="s2">rect</span><span class="dl">"</span><span class="p">)</span>
   <span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="nx">color</span><span class="p">.</span><span class="nx">range</span><span class="p">().</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span>
       <span class="nx">d</span> <span class="o">=</span> <span class="nx">color</span><span class="p">.</span><span class="nx">invertExtent</span><span class="p">(</span><span class="nx">d</span><span class="p">);</span>
       <span class="k">if</span> <span class="p">(</span><span class="nx">d</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="nx">d</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="nx">x</span><span class="p">.</span><span class="nx">domain</span><span class="p">()[</span><span class="mi">0</span><span class="p">];</span>
       <span class="k">if</span> <span class="p">(</span><span class="nx">d</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="nx">d</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nx">x</span><span class="p">.</span><span class="nx">domain</span><span class="p">()[</span><span class="mi">1</span><span class="p">];</span>
       <span class="k">return</span> <span class="nx">d</span><span class="p">;</span>
     <span class="p">}))</span>
-  <span class="p">.</span><span class="nx">enter</span><span class="p">().</span><span class="nx">append</span><span class="p">(</span><span class="s2">"rect"</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"height"</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"x"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">x</span><span class="p">(</span><span class="nx">d</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span> <span class="p">})</span>
-    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"width"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">x</span><span class="p">(</span><span class="nx">d</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">-</span> <span class="nx">x</span><span class="p">(</span><span class="nx">d</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span> <span class="p">})</span>
-    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"fill"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">color</span><span class="p">(</span><span class="nx">d</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span> <span class="p">});</span>
+  <span class="p">.</span><span class="nx">enter</span><span class="p">().</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">rect</span><span class="dl">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">height</span><span class="dl">"</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">x</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">x</span><span class="p">(</span><span class="nx">d</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span> <span class="p">})</span>
+    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">width</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">x</span><span class="p">(</span><span class="nx">d</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">-</span> <span class="nx">x</span><span class="p">(</span><span class="nx">d</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span> <span class="p">})</span>
+    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">fill</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">color</span><span class="p">(</span><span class="nx">d</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span> <span class="p">});</span>
 
-<span class="nx">g</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">"text"</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"class"</span><span class="p">,</span> <span class="s2">"caption"</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"x"</span><span class="p">,</span> <span class="nx">x</span><span class="p">.</span><span class="nx">range</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
-    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"y"</span><span class="p">,</span> <span class="o">-</span><span class="mi">6</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"fill"</span><span class="p">,</span> <span class="s2">"#000"</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"text-anchor"</span><span class="p">,</span> <span class="s2">"start"</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"font-weight"</span><span class="p">,</span> <span class="s2">"bold"</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="s2">"Fed District"</span><span class="p">);</span>
+<span class="nx">g</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">text</span><span class="dl">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">class</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">caption</span><span class="dl">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">x</span><span class="dl">"</span><span class="p">,</span> <span class="nx">x</span><span class="p">.</span><span class="nx">range</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">y</span><span class="dl">"</span><span class="p">,</span> <span class="o">-</span><span class="mi">6</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">fill</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">#000</span><span class="dl">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">text-anchor</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">start</span><span class="dl">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">font-weight</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">bold</span><span class="dl">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="dl">"</span><span class="s2">Fed District</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="nx">g</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">d3</span><span class="p">.</span><span class="nx">axisBottom</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">tickSize</span><span class="p">(</span><span class="mi">13</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">tickFormat</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">i</span> <span class="p">?</span> <span class="nx">x</span> <span class="p">:</span> <span class="nx">x</span> <span class="p">;</span> <span class="p">})</span>
     <span class="p">.</span><span class="nx">tickValues</span><span class="p">(</span><span class="nx">color</span><span class="p">.</span><span class="nx">domain</span><span class="p">()))</span>
-  <span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">".domain"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="dl">"</span><span class="s2">.domain</span><span class="dl">"</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">remove</span><span class="p">();</span>
 
 <span class="nx">d3</span><span class="p">.</span><span class="nx">queue</span><span class="p">()</span>
-    <span class="p">.</span><span class="nx">defer</span><span class="p">(</span><span class="nx">d3</span><span class="p">.</span><span class="nx">json</span><span class="p">,</span> <span class="s2">"https://d3js.org/us-10m.v1.json"</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">defer</span><span class="p">(</span><span class="nx">d3</span><span class="p">.</span><span class="nx">tsv</span><span class="p">,</span> <span class="s2">"counties-by-fed-district.tsv"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span> 
+    <span class="p">.</span><span class="nx">defer</span><span class="p">(</span><span class="nx">d3</span><span class="p">.</span><span class="nx">json</span><span class="p">,</span> <span class="dl">"</span><span class="s2">https://d3js.org/us-10m.v1.json</span><span class="dl">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">defer</span><span class="p">(</span><span class="nx">d3</span><span class="p">.</span><span class="nx">tsv</span><span class="p">,</span> <span class="dl">"</span><span class="s2">counties-by-fed-district.tsv</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span> 
         <span class="nx">frbdefinitions</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">countyfips</span><span class="p">,</span> <span class="o">+</span><span class="nx">d</span><span class="p">.</span><span class="nx">dist_frb</span><span class="p">);</span> 
-        <span class="nx">countynames</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">countyfips</span><span class="p">,</span> <span class="nx">d</span><span class="p">.</span><span class="nx">county_name</span><span class="o">+</span><span class="s2">", "</span><span class="o">+</span><span class="nx">d</span><span class="p">.</span><span class="nx">state_abbr</span><span class="p">);</span>
+        <span class="nx">countynames</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">countyfips</span><span class="p">,</span> <span class="nx">d</span><span class="p">.</span><span class="nx">county_name</span><span class="o">+</span><span class="dl">"</span><span class="s2">, </span><span class="dl">"</span><span class="o">+</span><span class="nx">d</span><span class="p">.</span><span class="nx">state_abbr</span><span class="p">);</span>
       <span class="p">})</span>
-    <span class="p">.</span><span class="kr">await</span><span class="p">(</span><span class="nx">ready</span><span class="p">);</span>
+    <span class="p">.</span><span class="k">await</span><span class="p">(</span><span class="nx">ready</span><span class="p">);</span>
 
 <span class="kd">function</span> <span class="nx">ready</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">us</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">if</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="k">throw</span> <span class="nx">error</span><span class="p">;</span>
@@ -254,32 +254,32 @@ Over time, some of the county definitions <a href="https://www.census.gov/geo/re
   <span class="c1">// Select fill color for Fed Districts using the map for the definitions</span>
   <span class="c1">// and the color scheme defined earlier</span>
   <span class="c1">// Also add information to each county to be displayed on hover</span>
-  <span class="nx">svg</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">"g"</span><span class="p">)</span>
-      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"class"</span><span class="p">,</span> <span class="s2">"counties"</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">selectAll</span><span class="p">(</span><span class="s2">"path"</span><span class="p">)</span>
+  <span class="nx">svg</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">g</span><span class="dl">"</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">class</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">counties</span><span class="dl">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">selectAll</span><span class="p">(</span><span class="dl">"</span><span class="s2">path</span><span class="dl">"</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="nx">topojson</span><span class="p">.</span><span class="nx">feature</span><span class="p">(</span><span class="nx">us</span><span class="p">,</span> <span class="nx">us</span><span class="p">.</span><span class="nx">objects</span><span class="p">.</span><span class="nx">counties</span><span class="p">).</span><span class="nx">features</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">enter</span><span class="p">().</span><span class="nx">append</span><span class="p">(</span><span class="s2">"path"</span><span class="p">)</span>
-      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"fill"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">color</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">dist_frb</span>  <span class="o">=</span> <span class="nx">frbdefinitions</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">id</span><span class="p">)</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span> <span class="p">})</span>
-      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"d"</span><span class="p">,</span> <span class="nx">path</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">"title"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">enter</span><span class="p">().</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">path</span><span class="dl">"</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">fill</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">color</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">dist_frb</span>  <span class="o">=</span> <span class="nx">frbdefinitions</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">id</span><span class="p">)</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span> <span class="p">})</span>
+      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">d</span><span class="dl">"</span><span class="p">,</span> <span class="nx">path</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">title</span><span class="dl">"</span><span class="p">)</span>
       <span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span> 
-        <span class="k">return</span> <span class="s2">"District: "</span> <span class="o">+</span> <span class="p">(</span><span class="o">+</span><span class="nx">d</span><span class="p">.</span><span class="nx">dist_frb</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="s2">". "</span> <span class="o">+</span>
-               <span class="nx">districtNames</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="o">+</span><span class="nx">d</span><span class="p">.</span><span class="nx">dist_frb</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span> <span class="o">+</span>
-               <span class="s2">"County fips: "</span> <span class="o">+</span> <span class="nx">d</span><span class="p">.</span><span class="nx">id</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span> <span class="o">+</span>
-               <span class="s2">"County name: "</span> <span class="o">+</span> <span class="nx">countynames</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">id</span><span class="p">)});</span>
+        <span class="k">return</span> <span class="dl">"</span><span class="s2">District: </span><span class="dl">"</span> <span class="o">+</span> <span class="p">(</span><span class="o">+</span><span class="nx">d</span><span class="p">.</span><span class="nx">dist_frb</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">. </span><span class="dl">"</span> <span class="o">+</span>
+               <span class="nx">districtNames</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="o">+</span><span class="nx">d</span><span class="p">.</span><span class="nx">dist_frb</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="dl">"</span><span class="se">\n</span><span class="dl">"</span> <span class="o">+</span>
+               <span class="dl">"</span><span class="s2">County fips: </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">d</span><span class="p">.</span><span class="nx">id</span> <span class="o">+</span> <span class="dl">"</span><span class="se">\n</span><span class="dl">"</span> <span class="o">+</span>
+               <span class="dl">"</span><span class="s2">County name: </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">countynames</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">id</span><span class="p">)});</span>
 
   <span class="c1">// Define boundaries for states</span>
-  <span class="nx">svg</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">"path"</span><span class="p">)</span>
+  <span class="nx">svg</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">path</span><span class="dl">"</span><span class="p">)</span>
       <span class="p">.</span><span class="nx">datum</span><span class="p">(</span><span class="nx">topojson</span><span class="p">.</span><span class="nx">mesh</span><span class="p">(</span><span class="nx">us</span><span class="p">,</span> <span class="nx">us</span><span class="p">.</span><span class="nx">objects</span><span class="p">.</span><span class="nx">states</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">a</span> <span class="o">!==</span> <span class="nx">b</span><span class="p">;</span> <span class="p">}))</span>
-      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"class"</span><span class="p">,</span> <span class="s2">"states"</span><span class="p">)</span>
-      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"d"</span><span class="p">,</span> <span class="nx">path</span><span class="p">);</span>
+      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">class</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">states</span><span class="dl">"</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">d</span><span class="dl">"</span><span class="p">,</span> <span class="nx">path</span><span class="p">);</span>
 
   <span class="c1">// Define boundaries for Fed Districts using counties</span>
-  <span class="nx">svg</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">"path"</span><span class="p">)</span>
+  <span class="nx">svg</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">path</span><span class="dl">"</span><span class="p">)</span>
       <span class="p">.</span><span class="nx">datum</span><span class="p">(</span><span class="nx">topojson</span><span class="p">.</span><span class="nx">mesh</span><span class="p">(</span><span class="nx">us</span><span class="p">,</span> <span class="nx">us</span><span class="p">.</span><span class="nx">objects</span><span class="p">.</span><span class="nx">counties</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span> 
         <span class="k">return</span> <span class="p">(</span><span class="nx">frbdefinitions</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">id</span><span class="p">)</span> <span class="o">!==</span> <span class="nx">frbdefinitions</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">b</span><span class="p">.</span><span class="nx">id</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="nx">a</span> <span class="o">!==</span> <span class="nx">b</span><span class="p">);</span> <span class="p">}))</span>
-      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"class"</span><span class="p">,</span> <span class="s2">"districts"</span><span class="p">)</span>
-      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"d"</span><span class="p">,</span> <span class="nx">path</span><span class="p">);</span>
+      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">class</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">districts</span><span class="dl">"</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">d</span><span class="dl">"</span><span class="p">,</span> <span class="nx">path</span><span class="p">);</span>
 
 <span class="p">}</span>
 

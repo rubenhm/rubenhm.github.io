@@ -54,54 +54,54 @@
   <meta name="author" content="Rubén Hernández-Murillo">
   <meta name="description" content="Research, Writings + Code">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="canonical" href="https://rubenhm.org/blog/2019/01/12/docker-on-Windows-10-Home-and-WSL/">
+  <link rel="canonical" href="https://rubenhm.org/blog/2019/01/12/docker-on-windows-10-home-edition-and-wsl/">
 </head>
 <body>
 
-<header> 
-  <!-- 	
+<header>
+	<!-- 	
   <h1 class="h2 m-0"><a href="https://rubenhm.org">rubenhm.org</a></h1>
   <p>Research, Writings + Code</p> 
   -->
 
-  <!-- Bootstrap navbar -->
-  <nav class = "navbar navbar-default navbar-fixed-top" role="navigation">
-   <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-   	<div class = "navbar-header">
-   		<button type="button"  class = "navbar-toggle" data-toggle = "collapse" data-target = "#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>  
-   			<span class = "icon-bar"></span>
-   			<span class = "icon-bar"></span>
-   			<span class = "icon-bar"></span>
-   		</button>
-      <a class = "navbar-brand" href ="https://rubenhm.org">rubenhm.org</a>
-    </div>
-    
-    <!-- Collect the nav links, forms, and other content for toggling -->
-   	<div class ="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
- 			<ul class ="nav navbar-nav navbar-right">
- 				<li ><a href = "/">Home</a></li>
- 				<li><a href = "/cv/">CV</a></li>
- 				<li class ="dropdown">
- 					<a href ="#" class = "dropdown-toggle" data-toggle ="dropdown">Research <b class="caret"></b></a>
- 					<ul class = "dropdown-menu">
- 						<li><a href="/pubs/journal_articles/">Journal articles</a></li>
- 						<li><a href="/pubs/fed_pubs/">Fed Pubs</a></li>
- 						<li><a href="/pubs/commentary/">Commentary</a></li>
- 						<li><a href="/pubs/working_papers/">Working papers</a></li>
- 					</ul>
- 				</li> 
- 				<li><a href="/blog/">Blog</a></li>
-        <li><a href="/news/">News</a></li>
-        <li><a href="/about/">About</a></li>
- 			</ul>
-   	</div><!-- /.navbar-collapse -->
- </div><!-- /.container-fluid -->
-</nav>	
+	<!-- Bootstrap navbar -->
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+		<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="https://rubenhm.org">rubenhm.org</a>
+			</div>
 
-</header>  
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="/">Home</a></li>
+					<li><a href="/cv/">CV</a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Research <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="/pubs/journal_articles/">Journal articles</a></li>
+							<li><a href="/pubs/fed_pubs/">Fed Pubs</a></li>
+							<li><a href="/pubs/commentary/">Commentary</a></li>
+							<li><a href="/pubs/chronological">Chronological</a></li>
+						</ul>
+					</li>
+					<li><a href="/blog/">Blog</a></li>
+					<li><a href="/news/">News</a></li>
+					<li><a href="/about/">About</a></li>
+				</ul>
+			</div><!-- /.navbar-collapse -->
+		</div><!-- /.container-fluid -->
+	</nav>
 
+</header>
 <div class="container">
     <div class="visible-print"> <!--Header for print version -->
             <h1 class="text-left">https://rubenhm.org/blog/</h1>
@@ -117,31 +117,30 @@
     <hr>
     <article class="post">
 
-        <p>Recently I started learning about Docker for reproducible research. 
-I also wanted to try the <em>Windows Subsystem for Linux</em> (WSL) in Windows 10. </p>
+        <p>Recently I started learning about Docker for reproducible research.
+I also wanted to try the <em>Windows Subsystem for Linux</em> (WSL) in Windows 10.</p>
 
 <h3>Docker on Windows 10 Home</h3>
 
 <p>My old Thinkpad X230 only has Windows 10 Home, which means I could not
- install <em>Docker for Windows</em>, as it requires Windows 10 Professional or 
-Enterprise edition. The alternative for Windows 10 Home edition 
-is to install <a href="https://docs.docker.com/toolbox/toolbox_install_windows/">Docker Toolbox</a>. </p>
+install <em>Docker for Windows</em>, as it requires Windows 10 Professional or
+Enterprise edition. The alternative for Windows 10 Home edition
+is to install <a href="https://docs.docker.com/toolbox/toolbox_install_windows/">Docker Toolbox</a>.</p>
 
 <h3>Docker engine on Windows</h3>
 
-<p>The docker engine does not run natively on Windows, it has to 
-run on a linux virtual machine. The difference is the hypervisor 
-of choice. <em>Docker for Windows</em> uses a linux VM running on 
-Hyper-V, which runs natively on Windows 10 Pro, but not on Windows Home. 
+<p>The docker engine does not run natively on Windows, it has to
+run on a linux virtual machine. The difference is the hypervisor
+of choice. <em>Docker for Windows</em> uses a linux VM running on
+Hyper-V, which runs natively on Windows 10 Pro, but not on Windows Home.
 Docker Toolbox instead uses a linux VM running on Virtualbox, which runs on Windows Home.</p>
 
-<p>This guideline for setting up <a href="https://nickjanetakis.com/blog/setting-up-docker-for-windows-and-wsl-to-work-flawlessly">Docker on WSL and Windows 
-10</a> 
+<p>This guideline for setting up <a href="https://nickjanetakis.com/blog/setting-up-docker-for-windows-and-wsl-to-work-flawlessly">Docker on WSL and Windows
+10</a>
 was useful to set up docker on Windows Home.
-If you prefer, you can also install the linux VM on the free  VMWare player
-as an alternative to Virtualbox to run the Docker engine. 
-Follow <a href="https://nickjanetakis.com/blog/docker-tip-73-connecting-to-a-remote-docker-daemon">this 
-guide</a></p>
+If you prefer, you can also install the linux VM on the free VMWare player
+as an alternative to Virtualbox to run the Docker engine.
+Follow <a href="https://nickjanetakis.com/blog/docker-tip-73-connecting-to-a-remote-docker-daemon">this guide</a></p>
 
 
     </article>
@@ -149,10 +148,10 @@ guide</a></p>
         <div class="row hidden-print">
         <div class="col-md-6">
             <p>If you enjoyed this article, consider sharing it.</p>
-            <p><a href="https://twitter.com/intent/tweet?text=Docker on Windows 10 Home edition and WSL&url=https://rubenhm.org/blog/2019/01/12/docker-on-Windows-10-Home-and-WSL/&via=rubenhm_org" title="Share link on Twitter"><span class="flaticon-social19"></span></a>
-            <a  href="https://plus.google.com/share?url=https://rubenhm.org/blog/2019/01/12/docker-on-Windows-10-Home-and-WSL/" title="Share link on G+"><span class="flaticon-google23"></span></a>
-            <a href="https://www.facebook.com/sharer/sharer.php?u=https://rubenhm.org/blog/2019/01/12/docker-on-Windows-10-Home-and-WSL/" title="Share link on FB"><span class="flaticon-facebook29"></span></a>
-            <a href="mailto:?Subject=Docker on Windows 10 Home edition and WSL&amp;Body=https://rubenhm.org/blog/2019/01/12/docker-on-Windows-10-Home-and-WSL/" title="Share link by email"><span class="flaticon-opened4"></span></a>
+            <p><a href="https://twitter.com/intent/tweet?text=Docker on Windows 10 Home edition and WSL&url=https://rubenhm.org/blog/2019/01/12/docker-on-windows-10-home-edition-and-wsl/&via=rubenhm_org" title="Share link on Twitter"><span class="flaticon-social19"></span></a>
+            <a  href="https://plus.google.com/share?url=https://rubenhm.org/blog/2019/01/12/docker-on-windows-10-home-edition-and-wsl/" title="Share link on G+"><span class="flaticon-google23"></span></a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://rubenhm.org/blog/2019/01/12/docker-on-windows-10-home-edition-and-wsl/" title="Share link on FB"><span class="flaticon-facebook29"></span></a>
+            <a href="mailto:?Subject=Docker on Windows 10 Home edition and WSL&amp;Body=https://rubenhm.org/blog/2019/01/12/docker-on-windows-10-home-edition-and-wsl/" title="Share link by email"><span class="flaticon-opened4"></span></a>
             <a href="/downloads/blog/2019-01-12-docker-on-windows-10-home-edition-and-wsl/2019-01-12-docker-on-windows-10-home-edition-and-wsl.pdf" title="Download PDF"><span class="flaticon-adobe21"></span></a></p>
             
             <!-- <a><span class="flaticon-printer70"></span></a> -->
@@ -184,8 +183,8 @@ guide</a></p>
     <script type="text/javascript">
         /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
         var disqus_shortname = 'rubenhm'; // required: replace example with your forum shortnam
-        var disqus_identifier = '/blog/2019/01/12/docker-on-Windows-10-Home-and-WSL/';
-        var disqus_url = 'https://rubenhm.org/blog/2019/01/12/docker-on-Windows-10-Home-and-WSL/';
+        var disqus_identifier = '/blog/2019/01/12/docker-on-windows-10-home-edition-and-wsl/';
+        var disqus_url = 'https://rubenhm.org/blog/2019/01/12/docker-on-windows-10-home-edition-and-wsl/';
 
         /* * * DON'T EDIT BELOW THIS LINE * * */
         (function() {
@@ -202,8 +201,8 @@ guide</a></p>
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
     var disqus_shortname = 'rubenhm'; // required: replace example with your forum shortname
-    var disqus_identifier = '/blog/2019/01/12/docker-on-Windows-10-Home-and-WSL/';
-    var disqus_url = 'https://rubenhm.org/blog/2019/01/12/docker-on-Windows-10-Home-and-WSL/';
+    var disqus_identifier = '/blog/2019/01/12/docker-on-windows-10-home-edition-and-wsl/';
+    var disqus_url = 'https://rubenhm.org/blog/2019/01/12/docker-on-windows-10-home-edition-and-wsl/';
 
     /* * * DON'T EDIT BELOW THIS LINE * * */
     (function () {
