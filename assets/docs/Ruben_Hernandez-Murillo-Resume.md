@@ -24,7 +24,7 @@ Work Experience
 2000-2005
 :   _Federal Reserve Bank of St. Louis._  Economist.
 
-+   Published 20+ scholarly articles and 40+ non-technical articles.
++   Published 25 scholarly articles and 40+ non-technical articles.
 +   Served as reviewer for 30+ academic journals.
 +   Interests: applied microeconomics, public economics, regional and urban, and real estate economics.
 

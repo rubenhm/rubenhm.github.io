@@ -62,9 +62,9 @@ $(BIBTXT): $(BIBFILE)
 	xelatex $(basename $<)
 	-rm -f *.log *.out *.fls *.fdb* *.bak *.bbl *.aux *.blg
 	# copy pdf to correct destination
-	cp $@ /workdir/rubenhm.github.io/assets/docs/
+	cp $@ /workdir/assets/docs/
 	# copy tex to correct destination
-	cp $(basename $@).tex /workdir/rubenhm.github.io/assets/docs/
+	cp $(basename $@).tex /workdir/assets/docs/
 
 
 clean:
