@@ -25,7 +25,6 @@ permalink: /about/
   
   <h3>My other research pages</h3>
 
-  + [Cleveland Fed](https://www.clevelandfed.org/hernandez-murillo-ruben)
   + [Repec](https://ideas.repec.org/e/phe35.html)
   + [Fed in Print](https://fedinprint.org/authors/rubenhernandezmurillo.html)
   + [Google Scholar](https://scholar.google.com/citations?user=ONu4SBcAAAAJ&hl=en)
