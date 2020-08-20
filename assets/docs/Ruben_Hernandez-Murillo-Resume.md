@@ -16,12 +16,9 @@ Work Experience
 ### Research  ### 
 
 2015-Present
-:   _Federal Reserve Bank of Cleveland._  Senior policy economist.
+:   _Federal Reserve Bank of Cleveland._  Policy economist.
 
-2005-2015
-:   _Federal Reserve Bank of St. Louis._  Senior economist.
-
-2000-2005
+2000-2015
 :   _Federal Reserve Bank of St. Louis._  Economist.
 
 +   Published 25 scholarly articles and 40+ non-technical articles.
