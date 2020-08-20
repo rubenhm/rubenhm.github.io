@@ -3,15 +3,13 @@
 **Federal Reserve Bank of Cleveland**
 
 2015–Present
-:	Senior Policy Economist.
+:	Policy Economist.
 
 **Federal Reserve Bank of St. Louis**
 
-2005–2015
-:	Senior Economist.
-
-2000–2005
+2000–2015
 :	Economist.
+
 
 **Washington University in St. Louis**
 

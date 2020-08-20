@@ -8,16 +8,33 @@ title: Articles in Fed Publications
 
 <ul class="pagination">
   <li>
+    <a href="#forefront">Economic Commentary</a>
+  </li>
+  <li>
     <a href="#forefront">Forefront</a>
   </li>
+</ul>
+<ul class="pagination">
   <li>
     <a href="#review">Review</a>
   </li>
   <li>
     <a href="#regional-economist">The Regional Economist</a>
   </li>
+    <li>
+    <a href="#regional-economist">Economic Synopses</a>
+  </li>
 </ul>
 
+
+# <a name="forefront"></a>**Federal Reserve Bank of Cleveland _Economic Commentary_** 
+
+{% bibliography  -q @*[pubtype=EComm] %}
+
+
+<div class="row">
+  <a class="btn btn-default btn-xs  navbar-right" role="button" href="#" title="Top">Back to Top<span class="glyphicon glyphicon-arrow-up"></span></a>
+</div>  
 
 # <a name="forefront"></a>**Federal Reserve Bank of Cleveland _Forefront_** 
 
@@ -27,6 +44,7 @@ title: Articles in Fed Publications
 <div class="row">
   <a class="btn btn-default btn-xs  navbar-right" role="button" href="#" title="Top">Back to Top<span class="glyphicon glyphicon-arrow-up"></span></a>
 </div>  
+
 
 # <a name="review"></a>**Federal Reserve Bank of St. Louis _Review_**
 
@@ -51,3 +69,14 @@ title: Articles in Fed Publications
   <a class="btn btn-default btn-xs  navbar-right" role="button" href="#" title="Top">Back to Top<span class="glyphicon glyphicon-arrow-up"></span></a>
 </div>  
 
+# <a name="regional-economist"></a>**Federal Reserve Bank of St. Louis _Economic Synopses_** 
+
+
+{% bibliography  -q @*[pubtype=ES] %}
+
+
+
+
+<div class="row">
+  <a class="btn btn-default btn-xs  navbar-right" role="button" href="#" title="Top">Back to Top<span class="glyphicon glyphicon-arrow-up"></span></a>
+</div>  
