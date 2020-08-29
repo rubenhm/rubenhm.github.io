@@ -3,3 +3,4 @@ _site/
 *bak
 *.jekyll-metadata
 
+fix_texlive/

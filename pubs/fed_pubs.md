@@ -10,6 +10,10 @@ title: Articles in Fed Publications
   <li>
     <a href="#forefront">Economic Commentary</a>
   </li>
+    <li>
+    <a href="#forefront">District Data Brief</a>
+  </li>
+
   <li>
     <a href="#forefront">Forefront</a>
   </li>
@@ -30,6 +34,15 @@ title: Articles in Fed Publications
 # <a name="forefront"></a>**Federal Reserve Bank of Cleveland _Economic Commentary_** 
 
 {% bibliography  -q @*[pubtype=EComm] %}
+
+
+<div class="row">
+  <a class="btn btn-default btn-xs  navbar-right" role="button" href="#" title="Top">Back to Top<span class="glyphicon glyphicon-arrow-up"></span></a>
+</div>  
+
+# <a name="forefront"></a>**Federal Reserve Bank of Cleveland _District Data Brief_** 
+
+{% bibliography  -q @*[pubtype=DDB] %}
 
 
 <div class="row">
