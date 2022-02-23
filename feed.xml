@@ -28,7 +28,7 @@ to run images from a remote Docker engine via &lt;code&gt;https&lt;/code&gt; or 
 host, but it seems to work fine and you can run all kinds of things on your phone. 
 For example, I have images for RStudio, and one with Ruby, Jekyll, and TeXLive for maintaining this website.&lt;/p&gt;
 </description>
-        <pubDate>Thu, 31 Jan 2019 00:00:00 +0000</pubDate>
+        <pubDate>Thu, 31 Jan 2019 00:00:00 -0500</pubDate>
         <link>https://rubenhm.org/blog/2019/01/31/docker-for-reproducible-research-on-android/</link>
         <guid isPermaLink="true">https://rubenhm.org/blog/2019/01/31/docker-for-reproducible-research-on-android/</guid>
       </item>
@@ -64,7 +64,7 @@ If you prefer, you can also install the linux VM on the free VMWare player
 as an alternative to Virtualbox to run the Docker engine.
 Follow &lt;a href=&quot;https://nickjanetakis.com/blog/docker-tip-73-connecting-to-a-remote-docker-daemon&quot;&gt;this guide&lt;/a&gt;&lt;/p&gt;
 </description>
-        <pubDate>Sat, 12 Jan 2019 00:00:00 +0000</pubDate>
+        <pubDate>Sat, 12 Jan 2019 00:00:00 -0500</pubDate>
         <link>https://rubenhm.org/blog/2019/01/12/docker-on-windows-10-home-edition-and-wsl/</link>
         <guid isPermaLink="true">https://rubenhm.org/blog/2019/01/12/docker-on-windows-10-home-edition-and-wsl/</guid>
       </item>
@@ -241,7 +241,7 @@ Over time, some of the county definitions &lt;a href=&quot;https://www.census.go
 
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
-        <pubDate>Fri, 30 Mar 2018 00:00:00 +0000</pubDate>
+        <pubDate>Fri, 30 Mar 2018 00:00:00 -0400</pubDate>
         <link>https://rubenhm.org/blog/2018/03/30/fed-districts-map-with-d3/</link>
         <guid isPermaLink="true">https://rubenhm.org/blog/2018/03/30/fed-districts-map-with-d3/</guid>
       </item>
@@ -894,7 +894,7 @@ df.transpose().reset_index().to_json(&quot;dotplot.json&quot;,orient='records')&
 &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 </description>
-        <pubDate>Tue, 03 Jan 2017 00:00:00 +0000</pubDate>
+        <pubDate>Tue, 03 Jan 2017 00:00:00 -0500</pubDate>
         <link>https://rubenhm.org/blog/2017/01/03/fomc-dotplot-with-d3-and-python/</link>
         <guid isPermaLink="true">https://rubenhm.org/blog/2017/01/03/fomc-dotplot-with-d3-and-python/</guid>
       </item>
@@ -1249,7 +1249,7 @@ print cutoffs
 
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
-        <pubDate>Wed, 06 Jul 2016 00:00:00 +0000</pubDate>
+        <pubDate>Wed, 06 Jul 2016 00:00:00 -0400</pubDate>
         <link>https://rubenhm.org/blog/2016/07/06/choropleth-maps-with-d3-python-and-data-from-fred/</link>
         <guid isPermaLink="true">https://rubenhm.org/blog/2016/07/06/choropleth-maps-with-d3-python-and-data-from-fred/</guid>
       </item>
