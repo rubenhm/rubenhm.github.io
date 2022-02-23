@@ -43,12 +43,12 @@ _cv_select_pubs_long.md:  $(BIBFILE)
 _cv_select_pubs_long.html: _cv_select_pubs_long.md
 	pandoc -f markdown+definition_lists-markdown_in_html_blocks $< -o $@ 
 	# copy to correct destination
-	cp $@ /workdir/_includes/
+	cp $@ $(WORKDIR)/_includes/
 
 %.html: %.md
 	pandoc -f markdown+markdown_in_html_blocks --section-divs $< -o $@
 	# copy to correct destination
-	cp $@ /workdir/_includes/
+	cp $@ $(WORKDIR)/_includes/
 
 clean:
 	-rm -f _cv*pubs*.md*  _cv*pubs*.html* _cv*.html 

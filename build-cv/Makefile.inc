@@ -2,5 +2,6 @@
 # Common variables
 
 # Location of BIB and CSL files
-BIBFILE= /workdir/assets/bibliography/bibliography.bib
-CSLFILE= /workdir/assets/bibliography/review.csl
+WORKDIR=/home/ruben/repos/personal/rubenhm.github.io
+BIBFILE=$(WORKDIR)/assets/bibliography/bibliography.bib
+CSLFILE=$(WORKDIR)/assets/bibliography/review.csl

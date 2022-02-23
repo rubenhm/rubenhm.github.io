@@ -1,3 +1,6 @@
+# Include common definitions
+include ../Makefile.inc
+
 # Macros
 SRC     =$(wildcard *.md)
 PDF     =$(SRC:.md=.pdf)
@@ -19,23 +22,23 @@ tex:   clean $(TEX)
 	python resume.py html $(GRAVATAR_OPTION) < $< | pandoc --template=$(HTML_TEMPLATE) -t html -c resume.css -o $@
 	mv $@ index.html
 	# copy to correct destination
-	cp index.html /workdir/resume/
+	cp index.html $(WORKDIR)/resume/
 
 %.html: %.md
 	python resume.py html $(GRAVATAR_OPTION) < $< | pandoc -s -t html -c resume.css -o $@
 	# copy to correct destination
-	cp $@ /workdir/assets/docs/
+	cp $@ $(WORKDIR)/assets/docs/
 
 %.pdf:  %.md $(LATEX_TEMPLATE)
 	python resume.py tex < $< | pandoc $(PANDOCARGS) --variable=fontsize:10pt --template=$(LATEX_TEMPLATE) --pdf-engine=xelatex -H header.txt -o $@
 	# copy to correct destination
-	cp $@ /workdir/assets/docs/
+	cp $@ $(WORKDIR)/assets/docs/
 
 %.tex: %.md
 	python resume.py tex < $< | pandoc $(PANDOCARGS) --variable=fontsize:10pt --template=$(LATEX_TEMPLATE) --pdf-engine=xelatex -H header.txt -o $@
 	# copy to correct destination
-	cp $@ /workdir/assets/docs/
-	cp $(basename $@).md /workdir/assets/docs/
+	cp $@ $(WORKDIR)/assets/docs/
+	cp $(basename $@).md $(WORKDIR)/assets/docs/
 
 
 ifeq ($(OS),Windows_NT)
@@ -47,6 +50,6 @@ else
 endif
 
 clean:
-	$(RM) *.html *.pdf *.tex
+	$(RM) *.html *.pdf *.tex *.log
 
 

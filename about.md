@@ -5,13 +5,13 @@ permalink: /about/
 ---
 
   <div class="col-md-2">
-      <img  src="/assets/img/rhm_chapala.jpg"  height="300px">
+      <img  src="/assets/img/hernandez-murillo-280.jpg"  height="300px">
   </div>
   <div class="col-md-2"></div>
   <div class="col-md-8">
   <h2 >Rubén Hernández-Murillo</h2>
  
-  I am an economist at the [Federal Reserve Bank of  Cleveland.](http://www.clevelandfed.org)
+  I am an economist currently at the [Federal Reserve Bank of  Cleveland.](http://www.clevelandfed.org)
 
   I attended the [University of Rochester](http://www.econ.rochester.edu) in Rochester, NY and  
   [ITAM](http://economia.itam.mx/es) in Mexico City.

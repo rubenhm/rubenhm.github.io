@@ -1,6 +1,6 @@
 % This example document class is based on the Typesetting your
 % academic CV in LaTeX by Dario Taraborelli.  The original article
-% is avaiable at http://nitens.org/taraborelli/cvtex
+% is available at http://nitens.org/taraborelli/cvtex
 %
 % Additional modifications made by Robert Oakes.  Copyright 2009.
 
@@ -16,8 +16,8 @@ uses the xetex typesetting system.]
 \RequirePackage{fontspec}
 \RequirePackage{xunicode}
 \RequirePackage{xltxtra}
-
 \RequirePackage{graphicx}
+\RequirePackage{fancyhdr}
 \RequirePackage[colorlinks]{hyperref}
 \hypersetup{linkcolor=blue,citecolor=blue,filecolor=black,urlcolor=blue} 
 
@@ -26,12 +26,22 @@ uses the xetex typesetting system.]
 \setsansfont [Ligatures={Common}, BoldFont={FontinSans-Bold}, ItalicFont={FontinSans-BoldItalic}]{Fontin Sans Bold}
 \setromanfont[BoldFont={Gentium Basic Bold}]{Gentium}
 
+
+% Page numbers
+\fancypagestyle{myplain}
+{
+  \fancyhf{}
+  \renewcommand\headrulewidth{0pt}
+  \renewcommand\footrulewidth{0pt}
+  \fancyfoot[R]{\thepage}
+}
+
 % Custom Document Formatting
 \newcommand\decorativeline[1][1pt]{%
 	\par\noindent%
 	\rule[0.5ex]{\linewidth}{#1}\par}
 
-\pagestyle{empty}
+\pagestyle{myplain}
 \hyphenpenalty=5000
 \tolerance=1000
 
@@ -111,24 +121,27 @@ uses the xetex typesetting system.]
 	{ % Create Without Image
 	\ifthenelse{\equal{\@cvname}{\relax}}{}
 	{\textsf{\LARGE\bfseries \@cvname}\decorativeline\vspace{0.3cm}}
-	\leftskip 116pt
-	% Contact Information and Other Details
-	\ifthenelse{\equal{\@institution}{\relax}}{}
-		{\bfseries{\@institution}\\}
-	\ifthenelse{\equal{\@contactaddress}{\relax}}{}
-		{\mdseries \@contactaddress\\[0.2cm]}
-	\ifthenelse{\equal{\@phonenumber}{\relax}}{}
-		{Phone: \texttt{\@phonenumber}~(w)~
-                \ifthenelse{\equal{\@cellphonenumber}{\relax}}{}$\bullet$~\texttt{\@cellphonenumber}~(c)\\}
-	\ifthenelse{\equal{\@faxnumber}{\relax}}{}
-		{Fax: \texttt{\@faxnumber}\\[0.2cm]}
-	\ifthenelse{\equal{\@email}{\relax}}{}
-		{Email: \href{mailto:\@email}{\@email}~
-                \ifthenelse{\equal{\@emailb}{\relax}}{}{$\bullet$~\href{mailto:\@emailb}{\@emailb}}\\}
-	\ifthenelse{\equal{\@website}{\relax}}{}
-		{Website: \href{http://\@website}{\@website}~
-                \ifthenelse{\equal{\@websiteb}{\relax}}{}{$\bullet$~\href{http://\@websiteb}{\@websiteb}}}
-        }
+	\begin{minipage}{6in}
+		\begin{minipage}{114pt}
+			%\resizebox*{100pt}{!}{\includegraphics{\@cvimage}}
+			\resizebox*{100pt}{!}{\hspace{2cm}}
+		\end{minipage}
+		\begin{minipage}{4in}%
+            %\vspace*{5ex}
+		    \ifthenelse{\equal{\@institution}{\relax}}{}{			
+		    $\begin{array}{ll}{\includegraphics[height=10pt]{email20.png}
+		    }\end{array}$\@institution\\}
+			\mdseries\@contactaddress\\[0.2cm]
+			\ifthenelse{\equal{\@faxnumber}{\relax}}{}{Fax: \texttt{\@faxnumber}\\[0.2cm]}
+			\ifthenelse{\equal{\@email}{\relax}}{}{$\begin{array}{l}{\includegraphics[height=10pt]{opened4.png}}\end{array}$\href{mailto:\@email}{\@email}~
+                        \ifthenelse{\equal{\@emailb}{\relax}}{}{$\bullet$~\href{mailto:\@emailb}{\@emailb}}\\}
+			\ifthenelse{\equal{\@website}{\relax}}{}{$\begin{array}{l}{\includegraphics[height=10pt]{world86.png}}\end{array}$\href{http://\@website}{\@website}~
+                        \ifthenelse{\equal{\@websiteb}{\relax}}{}{$\bullet$~\href{http://\@websiteb}{\@websiteb}}\\}
+			\ifthenelse{\equal{\@phonenumber}{\relax}}{}{$\begin{array}{l}{\includegraphics[height=10pt]{phone72.png}}\end{array}$\texttt{\@phonenumber}\\}
+			\ifthenelse{\equal{\@cellphonenumber}{\relax}}{}{$\begin{array}{l}{\includegraphics[height=10pt]{phone72.png}}\end{array}$Cell: \texttt{\@cellphonenumber}\\}
+		\end{minipage}
+	\end{minipage}
+    }
 	{% Create With Image
 	\ifthenelse{\equal{\@cvname}{\relax}}{}
 	{\textsf{\LARGE\bfseries \@cvname}\decorativeline\vspace{0.3cm}}
