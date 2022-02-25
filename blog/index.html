@@ -1,6 +1,15 @@
 <!DOCTYPE html> 
 <html> 
 <head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-53244112-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-53244112-1');
+  </script>
   <meta http-equiv="content-type" content="text/html;" charset="UTF-8"/>
   <title>Blog</title>
   <!--[if lt IE 9]>
@@ -29,18 +38,7 @@
   <!--
   <link rel="stylesheet" type="text/css" href="/assets/css/prettify.css" />
  -->
-  <!-- Google Analytics -->
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-53244112-1', 'auto');
-    ga('send', 'pageview');
-
-  </script>
-    <!-- CSS for flaticons -->
+  <!-- CSS for flaticons -->
   <link rel="stylesheet" type="text/css" href="/assets/css/flaticon.css"> 
   <!-- Script for jQuery library -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -118,6 +116,17 @@
           <p>While researching about docker I came across this <a href="https://www.reddit.com/r/docker/comments/7r7t6b/is_docker_possible_on_mobile/">reddit 
 post</a> 
 on how to install <a href="https://github.com/nmilosev/anyfed"><em>anyfed</em></a> in <a href="https://termux.com">Termux</a> on Android to run a Fedora linux image as a <code>chroot</code> on an Android phone.</p>
+
+<p>A similar project, <a href="https://github.com/Hax4us/TermuxAlpine">TermuxAlpine</a>, 
+runs <a href="https://alpinelinux.org">Alpine linux</a> on Termux. 
+One can then install the docker client on Alpine and set it up 
+to run images from a remote Docker engine via <code>https</code> or <code>ssh</code>.</p>
+
+<p>For example, you can set up the remote Docker host at home, securing access with the instructions in the documentation for <a href="https://docs.docker.com/engine/security/https/">protecting the Docker daemon socket</a>.</p>
+
+<p>You can build and run Docker images, create data volumes, etc. Everything lives in the remote 
+host, but it seems to work fine and you can run all kinds of things on your phone. 
+For example, I have images for RStudio, and one with Ruby, Jekyll, and TeXLive for maintaining this website.</p>
  
           <small><a href="https://rubenhm.org/blog/2019/01/31/docker-for-reproducible-research-on-android/" title="Docker for reproducible research on Android">Read more ... </a></small>
           </br >
@@ -132,6 +141,28 @@ on how to install <a href="https://github.com/nmilosev/anyfed"><em>anyfed</em></
           <a class="post-link" href="/blog/2019/01/12/docker-on-windows-10-home-edition-and-wsl/">Docker on Windows 10 Home edition and WSL</a></br >
           <p>Recently I started learning about Docker for reproducible research.
 I also wanted to try the <em>Windows Subsystem for Linux</em> (WSL) in Windows 10.</p>
+
+<h3>Docker on Windows 10 Home</h3>
+
+<p>My old Thinkpad X230 only has Windows 10 Home, which means I could not
+install <em>Docker for Windows</em>, as it requires Windows 10 Professional or
+Enterprise edition. The alternative for Windows 10 Home edition
+is to install <a href="https://docs.docker.com/toolbox/toolbox_install_windows/">Docker Toolbox</a>.</p>
+
+<h3>Docker engine on Windows</h3>
+
+<p>The docker engine does not run natively on Windows, it has to
+run on a linux virtual machine. The difference is the hypervisor
+of choice. <em>Docker for Windows</em> uses a linux VM running on
+Hyper-V, which runs natively on Windows 10 Pro, but not on Windows Home.
+Docker Toolbox instead uses a linux VM running on Virtualbox, which runs on Windows Home.</p>
+
+<p>This guideline for setting up <a href="https://nickjanetakis.com/blog/setting-up-docker-for-windows-and-wsl-to-work-flawlessly">Docker on WSL and Windows
+10</a>
+was useful to set up docker on Windows Home.
+If you prefer, you can also install the linux VM on the free VMWare player
+as an alternative to Virtualbox to run the Docker engine.
+Follow <a href="https://nickjanetakis.com/blog/docker-tip-73-connecting-to-a-remote-docker-daemon">this guide</a></p>
  
           <small><a href="https://rubenhm.org/blog/2019/01/12/docker-on-windows-10-home-edition-and-wsl/" title="Docker on Windows 10 Home edition and WSL">Read more ... </a></small>
           </br >
@@ -143,7 +174,173 @@ I also wanted to try the <em>Windows Subsystem for Linux</em> (WSL) in Windows 1
           <span class="post-date">Mar 30, 2018</span>
           <a class="post-link" href="/blog/2018/03/30/fed-districts-map-with-d3/">Fed Districts Map with D3</a></br >
           <p>The goal is to generate a map of the 12 Federal Reserve Districts using d3.js.</p>
- 
+
+<p>Here is the final result:</p>
+
+<div class="map-container">
+  <iframe src="/downloads/blog/2018-03-30-fed-districts-map-with-d3/fed-districts.html" frameborder="0" allowfullscreen marginwidth="0" marginheight="0" style="height:600px;" scrolling="no">
+  </iframe>
+</div>
+
+<div class="index-pop">
+    <a target="_blank" title="Open map in a new window." href="/downloads/blog/2018-03-30-fed-districts-map-with-d3/fed-districts.html">Open<svg height="16" width="12"><path d="M11 10h1v3c0 0.55-0.45 1-1 1H1c-0.55 0-1-0.45-1-1V3c0-0.55 0.45-1 1-1h3v1H1v10h10V10zM6 2l2.25 2.25-3.25 3.25 1.5 1.5 3.25-3.25 2.25 2.25V2H6z"></path></svg></a>
+</div>
+
+<p>The historical definitions of the Fed Districts are available from <a href="https://fraser.stlouisfed.org/files/docs/historical/federal%20reserve%20history/frdistricts/frb_districts_199603.pdf">FRASER</a>, a service for archival information from the St. Louis Fed.</p>
+
+<p>The county definitions in the PDF were manually coded into a <a href="/downloads/blog/2018-03-30-fed-districts-map-with-d3/counties-by-fed-district.tsv">TSV file</a> by <a href="https://github.com/chris-vecchio">Chris Vecchio</a>.
+Over time, some of the county definitions <a href="https://www.census.gov/geo/reference/county-changes.html">have changed</a> but some may have been missed, so clearly, this file does not represent official definitions.</p>
+
+<h2>Choropleth map</h2>
+
+<p>The Fed Districts map is a straight-up modification of the recent example of a choropleth map for unemployment rates by <a href="https://bl.ocks.org/mbostock/4060606">Mike Bostock</a>. He uses a threshold scale and the blues color scheme which work great for a continuous variable such as the unemployment rate, but are probably not the best choice for a categorical map with 12 categories! For one, the blues color scheme does not even have 12 categories. So I went over to <a href="http://colorbrewer2.org/#type=qualitative&scheme=Set3&n=12">ColorBrewer</a> and selected a scheme with soft colors for qualitative data with 12 categories.</p>
+
+<p>I replaced the CSV file for the unemployment rates with the Fed Districts definitions and I added code to define the boundaries between Districts using <code>topojson.mesh</code> in the same way as Mike generated the boundaries between states.</p>
+
+<p>I also learned about <code>map()</code> to define dictionary-like variables that contain useful information about each county to display on hover.</p>
+
+<p>Notice that the Fed District numbers are defined in a Westerly direction.</p>
+<div class="highlight"><pre><code class="language-" data-lang=""><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;style&gt;</span>
+
+<span class="nc">.counties</span> <span class="p">{</span>
+  <span class="py">fill</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.states</span> <span class="p">{</span>
+  <span class="py">fill</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+  <span class="py">stroke</span><span class="p">:</span> <span class="m">#fff</span><span class="p">;</span>
+  <span class="py">stroke-linejoin</span><span class="p">:</span> <span class="n">round</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.districts</span> <span class="p">{</span>
+  <span class="py">fill</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+  <span class="py">stroke</span><span class="p">:</span> <span class="m">#808080</span><span class="p">;</span>
+  <span class="py">stroke-linejoin</span><span class="p">:</span> <span class="n">round</span><span class="p">;</span>
+  <span class="py">stroke-width</span><span class="p">:</span> <span class="m">1.5px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;svg</span> <span class="na">width=</span><span class="s">"960"</span> <span class="na">height=</span><span class="s">"600"</span><span class="nt">&gt;&lt;/svg&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://d3js.org/d3.v4.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://d3js.org/d3-scale-chromatic.v1.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://d3js.org/topojson.v2.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+
+<span class="kd">var</span> <span class="nx">svg</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="dl">"</span><span class="s2">svg</span><span class="dl">"</span><span class="p">),</span>
+    <span class="nx">width</span> <span class="o">=</span> <span class="o">+</span><span class="nx">svg</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">width</span><span class="dl">"</span><span class="p">),</span>
+    <span class="nx">height</span> <span class="o">=</span> <span class="o">+</span><span class="nx">svg</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">height</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="c1">// Define maps with definitions and county and District names</span>
+<span class="kd">var</span> <span class="nx">frbdefinitions</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">map</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">countynames</span>    <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">map</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">districtNames</span>  <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">map</span><span class="p">();</span>
+
+<span class="c1">// Harcoded Fed District denominations</span>
+<span class="c1">// The city name indicates the city of the main office</span>
+<span class="c1">// Notice that the district numbers are defined in a Westerly direction </span>
+<span class="nx">districtNames</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">Boston</span><span class="dl">"</span><span class="p">)</span>
+<span class="nx">districtNames</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="dl">"</span><span class="s2">New York</span><span class="dl">"</span><span class="p">)</span>
+<span class="nx">districtNames</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="dl">"</span><span class="s2">Philadelphia</span><span class="dl">"</span><span class="p">)</span>
+<span class="nx">districtNames</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="dl">"</span><span class="s2">Cleveland</span><span class="dl">"</span><span class="p">)</span>
+<span class="nx">districtNames</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="dl">"</span><span class="s2">Richmond</span><span class="dl">"</span><span class="p">)</span>
+<span class="nx">districtNames</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="dl">"</span><span class="s2">Atlanta</span><span class="dl">"</span><span class="p">)</span>
+<span class="nx">districtNames</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="dl">"</span><span class="s2">Chicago</span><span class="dl">"</span><span class="p">)</span>
+<span class="nx">districtNames</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="dl">"</span><span class="s2">St. Louis</span><span class="dl">"</span><span class="p">)</span>
+<span class="nx">districtNames</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="dl">"</span><span class="s2">Minneapolis</span><span class="dl">"</span><span class="p">)</span>
+<span class="nx">districtNames</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="dl">"</span><span class="s2">Kansas City</span><span class="dl">"</span><span class="p">)</span>
+<span class="nx">districtNames</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span><span class="dl">"</span><span class="s2">Dallas</span><span class="dl">"</span><span class="p">)</span>
+<span class="nx">districtNames</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="dl">"</span><span class="s2">San Francisco</span><span class="dl">"</span><span class="p">)</span>
+
+<span class="kd">var</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">geoPath</span><span class="p">();</span>
+
+<span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">scaleLinear</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">domain</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">12</span><span class="p">])</span>
+    <span class="p">.</span><span class="nx">rangeRound</span><span class="p">([</span><span class="mi">600</span><span class="p">,</span> <span class="mi">860</span><span class="p">]);</span>
+
+<span class="kd">var</span> <span class="nx">color</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">scaleThreshold</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">domain</span><span class="p">(</span><span class="nx">d3</span><span class="p">.</span><span class="nx">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">13</span><span class="p">))</span>
+    <span class="p">.</span><span class="nx">range</span><span class="p">([</span><span class="dl">'</span><span class="s1">#8dd3c7</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">#ffffb3</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">#bebada</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">#fb8072</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">#80b1d3</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">#fdb462</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">#b3de69</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">#fccde5</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">#d9d9d9</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">#bc80bd</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">#ccebc5</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">#ffed6f</span><span class="dl">'</span><span class="p">]);</span>
+
+<span class="kd">var</span> <span class="nx">g</span> <span class="o">=</span> <span class="nx">svg</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">g</span><span class="dl">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">class</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">key</span><span class="dl">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">transform</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">translate(0,40)</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="nx">g</span><span class="p">.</span><span class="nx">selectAll</span><span class="p">(</span><span class="dl">"</span><span class="s2">rect</span><span class="dl">"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="nx">color</span><span class="p">.</span><span class="nx">range</span><span class="p">().</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">d</span> <span class="o">=</span> <span class="nx">color</span><span class="p">.</span><span class="nx">invertExtent</span><span class="p">(</span><span class="nx">d</span><span class="p">);</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">d</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="nx">d</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="nx">x</span><span class="p">.</span><span class="nx">domain</span><span class="p">()[</span><span class="mi">0</span><span class="p">];</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">d</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="nx">d</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nx">x</span><span class="p">.</span><span class="nx">domain</span><span class="p">()[</span><span class="mi">1</span><span class="p">];</span>
+      <span class="k">return</span> <span class="nx">d</span><span class="p">;</span>
+    <span class="p">}))</span>
+  <span class="p">.</span><span class="nx">enter</span><span class="p">().</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">rect</span><span class="dl">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">height</span><span class="dl">"</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">x</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">x</span><span class="p">(</span><span class="nx">d</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span> <span class="p">})</span>
+    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">width</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">x</span><span class="p">(</span><span class="nx">d</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">-</span> <span class="nx">x</span><span class="p">(</span><span class="nx">d</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span> <span class="p">})</span>
+    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">fill</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">color</span><span class="p">(</span><span class="nx">d</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span> <span class="p">});</span>
+
+<span class="nx">g</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">text</span><span class="dl">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">class</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">caption</span><span class="dl">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">x</span><span class="dl">"</span><span class="p">,</span> <span class="nx">x</span><span class="p">.</span><span class="nx">range</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">y</span><span class="dl">"</span><span class="p">,</span> <span class="o">-</span><span class="mi">6</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">fill</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">#000</span><span class="dl">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">text-anchor</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">start</span><span class="dl">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">font-weight</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">bold</span><span class="dl">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="dl">"</span><span class="s2">Fed District</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="nx">g</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">d3</span><span class="p">.</span><span class="nx">axisBottom</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">tickSize</span><span class="p">(</span><span class="mi">13</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">tickFormat</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">i</span> <span class="p">?</span> <span class="nx">x</span> <span class="p">:</span> <span class="nx">x</span> <span class="p">;</span> <span class="p">})</span>
+    <span class="p">.</span><span class="nx">tickValues</span><span class="p">(</span><span class="nx">color</span><span class="p">.</span><span class="nx">domain</span><span class="p">()))</span>
+  <span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="dl">"</span><span class="s2">.domain</span><span class="dl">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">remove</span><span class="p">();</span>
+
+<span class="nx">d3</span><span class="p">.</span><span class="nx">queue</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">defer</span><span class="p">(</span><span class="nx">d3</span><span class="p">.</span><span class="nx">json</span><span class="p">,</span> <span class="dl">"</span><span class="s2">https://d3js.org/us-10m.v1.json</span><span class="dl">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">defer</span><span class="p">(</span><span class="nx">d3</span><span class="p">.</span><span class="nx">tsv</span><span class="p">,</span> <span class="dl">"</span><span class="s2">counties-by-fed-district.tsv</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span> 
+        <span class="nx">frbdefinitions</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">countyfips</span><span class="p">,</span> <span class="o">+</span><span class="nx">d</span><span class="p">.</span><span class="nx">dist_frb</span><span class="p">);</span> 
+        <span class="nx">countynames</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">countyfips</span><span class="p">,</span> <span class="nx">d</span><span class="p">.</span><span class="nx">county_name</span><span class="o">+</span><span class="dl">"</span><span class="s2">, </span><span class="dl">"</span><span class="o">+</span><span class="nx">d</span><span class="p">.</span><span class="nx">state_abbr</span><span class="p">);</span>
+      <span class="p">})</span>
+    <span class="p">.</span><span class="k">await</span><span class="p">(</span><span class="nx">ready</span><span class="p">);</span>
+
+<span class="kd">function</span> <span class="nx">ready</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">us</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="k">throw</span> <span class="nx">error</span><span class="p">;</span>
+
+  <span class="c1">// Select fill color for Fed Districts using the map for the definitions</span>
+  <span class="c1">// and the color scheme defined earlier</span>
+  <span class="c1">// Also add information to each county to be displayed on hover</span>
+  <span class="nx">svg</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">g</span><span class="dl">"</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">class</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">counties</span><span class="dl">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">selectAll</span><span class="p">(</span><span class="dl">"</span><span class="s2">path</span><span class="dl">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="nx">topojson</span><span class="p">.</span><span class="nx">feature</span><span class="p">(</span><span class="nx">us</span><span class="p">,</span> <span class="nx">us</span><span class="p">.</span><span class="nx">objects</span><span class="p">.</span><span class="nx">counties</span><span class="p">).</span><span class="nx">features</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">enter</span><span class="p">().</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">path</span><span class="dl">"</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">fill</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">color</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">dist_frb</span>  <span class="o">=</span> <span class="nx">frbdefinitions</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">id</span><span class="p">)</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span> <span class="p">})</span>
+      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">d</span><span class="dl">"</span><span class="p">,</span> <span class="nx">path</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">title</span><span class="dl">"</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span> 
+        <span class="k">return</span> <span class="dl">"</span><span class="s2">District: </span><span class="dl">"</span> <span class="o">+</span> <span class="p">(</span><span class="o">+</span><span class="nx">d</span><span class="p">.</span><span class="nx">dist_frb</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">. </span><span class="dl">"</span> <span class="o">+</span>
+               <span class="nx">districtNames</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="o">+</span><span class="nx">d</span><span class="p">.</span><span class="nx">dist_frb</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="dl">"</span><span class="se">\n</span><span class="dl">"</span> <span class="o">+</span>
+               <span class="dl">"</span><span class="s2">County fips: </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">d</span><span class="p">.</span><span class="nx">id</span> <span class="o">+</span> <span class="dl">"</span><span class="se">\n</span><span class="dl">"</span> <span class="o">+</span>
+               <span class="dl">"</span><span class="s2">County name: </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">countynames</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">id</span><span class="p">)});</span>
+
+  <span class="c1">// Define boundaries for states</span>
+  <span class="nx">svg</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">path</span><span class="dl">"</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">datum</span><span class="p">(</span><span class="nx">topojson</span><span class="p">.</span><span class="nx">mesh</span><span class="p">(</span><span class="nx">us</span><span class="p">,</span> <span class="nx">us</span><span class="p">.</span><span class="nx">objects</span><span class="p">.</span><span class="nx">states</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">a</span> <span class="o">!==</span> <span class="nx">b</span><span class="p">;</span> <span class="p">}))</span>
+      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">class</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">states</span><span class="dl">"</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">d</span><span class="dl">"</span><span class="p">,</span> <span class="nx">path</span><span class="p">);</span>
+
+  <span class="c1">// Define boundaries for Fed Districts using counties</span>
+  <span class="nx">svg</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">path</span><span class="dl">"</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">datum</span><span class="p">(</span><span class="nx">topojson</span><span class="p">.</span><span class="nx">mesh</span><span class="p">(</span><span class="nx">us</span><span class="p">,</span> <span class="nx">us</span><span class="p">.</span><span class="nx">objects</span><span class="p">.</span><span class="nx">counties</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span> 
+        <span class="k">return</span> <span class="p">(</span><span class="nx">frbdefinitions</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">id</span><span class="p">)</span> <span class="o">!==</span> <span class="nx">frbdefinitions</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">b</span><span class="p">.</span><span class="nx">id</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="nx">a</span> <span class="o">!==</span> <span class="nx">b</span><span class="p">);</span> <span class="p">}))</span>
+      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">class</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">districts</span><span class="dl">"</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">d</span><span class="dl">"</span><span class="p">,</span> <span class="nx">path</span><span class="p">);</span>
+
+<span class="p">}</span>
+
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div> 
           <small><a href="https://rubenhm.org/blog/2018/03/30/fed-districts-map-with-d3/" title="Fed Districts Map with D3">Read more ... </a></small>
           </br >
         </li>
@@ -159,6 +356,686 @@ I also wanted to try the <em>Windows Subsystem for Linux</em> (WSL) in Windows 1
           <a class="post-link" href="/blog/2017/01/03/fomc-dotplot-with-d3-and-python/">FOMC dotplot with D3 and Python</a></br >
           <p>The FOMC&#39;s <strong>dotplot</strong> is part of the Summary of Economic Projections (SEPs) released 4 times per year along with the policy decision statement on the 2nd, 4th, 6th, and 8th meetings of the FOMC. 
 It shows the views of each of the FOMC&#39;s participants regarding the end-of-year level of the fed funds rate over the next few years and in the longer run.  </p>
+
+<p>See page 3 of the <a href="https://www.federalreserve.gov/monetarypolicy/files/fomcprojtabl20161214.pdf">projection materials</a> from the December 2016 meeting.</p>
+
+<p>Recreating this chart in Excel or some other program, such as Matlab or STATA, is not particularly straightforward.
+I wanted to recreate the plot using <a href="https://d3js.org/">D3</a> but it wasn&#39;t clear how to prepare the source data to use D3&#39;s data-binding capabilities.</p>
+
+<p>The <a href="https://www.federalreserve.gov/monetarypolicy/fomcprojtabl20161214.htm#figure2">html version</a> of the projection materials provides the following source data (also from the December 2016 meeting).</p>
+
+<table><thead>
+<tr>
+<th>Midpoint of target range</th>
+<th>2016</th>
+<th>2017</th>
+<th>2018</th>
+<th>2019</th>
+<th>Longer run</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>0.125</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>0.250</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>0.375</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>0.500</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>0.625</td>
+<td>17</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>0.750</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>0.875</td>
+<td></td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>1.000</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>1.125</td>
+<td></td>
+<td>4</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>1.250</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>1.375</td>
+<td></td>
+<td>6</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>1.500</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>1.625</td>
+<td></td>
+<td>3</td>
+<td>1</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>1.750</td>
+<td></td>
+<td>1</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>1.875</td>
+<td></td>
+<td></td>
+<td>5</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2.000</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2.125</td>
+<td></td>
+<td>1</td>
+<td>3</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>2.250</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2.375</td>
+<td></td>
+<td></td>
+<td>2</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>2.500</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>1</td>
+</tr>
+<tr>
+<td>2.625</td>
+<td></td>
+<td></td>
+<td>2</td>
+<td>3</td>
+<td></td>
+</tr>
+<tr>
+<td>2.750</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>6</td>
+</tr>
+<tr>
+<td>2.875</td>
+<td></td>
+<td></td>
+<td></td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>3.000</td>
+<td></td>
+<td></td>
+<td>1</td>
+<td>2</td>
+<td>7</td>
+</tr>
+<tr>
+<td>3.125</td>
+<td></td>
+<td></td>
+<td></td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>3.250</td>
+<td></td>
+<td></td>
+<td>1</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>3.375</td>
+<td></td>
+<td></td>
+<td>1</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3.500</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>1</td>
+</tr>
+<tr>
+<td>3.625</td>
+<td></td>
+<td></td>
+<td></td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>3.750</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>1</td>
+</tr>
+<tr>
+<td>3.875</td>
+<td></td>
+<td></td>
+<td></td>
+<td>1</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<h2>The dotplot is a scatterplot</h2>
+
+<p>This post from <a href="http://lenkiefer.com/2016/06/22/Make-a-dotplot">Len Kiefer&#39;s blog</a> made me realize I could treat the plot as a simple scatterplot. The key, then is to expand the count of participants at each rate level provided in the source table to be able to identify each of them with a circle.</p>
+
+<p>Here is the final result using D3:</p>
+
+<div class="map-container">
+  <iframe src="/downloads/blog/2017-01-03-fomc-dotplot-with-d3-and-python/dotplot.html" frameborder="0" allowfullscreen marginwidth="0" marginheight="0" style="width:1200px;" scrolling="no">
+  </iframe>
+</div>
+
+<div class="index-pop">
+    <a target="_blank" title="Open map in a new window." href="/downloads/blog/2017-01-03-fomc-dotplot-with-d3-and-python/dotplot.html">Open<svg height="16" width="12"><path d="M11 10h1v3c0 0.55-0.45 1-1 1H1c-0.55 0-1-0.45-1-1V3c0-0.55 0.45-1 1-1h3v1H1v10h10V10zM6 2l2.25 2.25-3.25 3.25 1.5 1.5 3.25-3.25 2.25 2.25V2H6z"></path></svg></a>
+</div>
+
+<h2>Collect and prepare the source data with Python</h2>
+
+<p>The simplest approach is to scrap the html code for the table using python and export the data to JSON format.</p>
+
+<figure class="highlight"><pre><code class="language-ipy" data-lang="ipy"># Download data for constructing the dotplot.
+# The source URL has the following structure:
+# https://www.federalreserve.gov/monetarypolicy/fomcprojtabl20161214.htm
+# (the file name seems to reference the date of the release)
+
+
+import pandas as pd
+import bs4
+import requests
+
+
+url = u'https://www.federalreserve.gov/monetarypolicy/fomcprojtabl20161214.htm'
+
+
+# Download file
+res = requests.get(url)
+# Check for errors
+try:
+    res.raise_for_status()
+except Exception as exc:
+    print('There was a problem: %s' % (exc))
+
+# Save file to disk
+projectionFile = open('fomcprojtabl.htm','wb')
+for chunk in res.iter_content(100000):
+    projectionFile.write(chunk)
+projectionFile.close()
+
+
+# Make the soup
+soup = bs4.BeautifulSoup(res.text,'lxml')
+
+# Find the public tables
+tables = soup.select('table[class="pubtables"]')
+
+
+# Parse table to generate a pandas DataFrame
+def parse_table(table):
+    # Parse rows
+    bdata = []
+    rows = table.find_all('tr')
+    for row in rows:
+        # find first column header
+        cols0 = row.find_all('th')
+        cols0 = [ele.text.strip() for ele in cols0]
+        cols = row.find_all('td')
+        cols = [ele.text.strip() for ele in cols]
+        cols = [ele for ele in cols0]+[ele for ele in cols]
+        bdata.append(cols)
+    # Convert to DataFrame
+    bdata[0][0] = "MidpointTargetRange" 
+    bdata[0][-1]= "Longer Run"
+    df = pd.DataFrame(bdata[1:], columns=bdata[0])
+    df.set_index("MidpointTargetRange", inplace=True)
+    return   df
+
+
+# Parse the last table only
+df = parse_table(tables[-1])
+
+# Expand count of participants to an array to identify
+# each dot individually
+
+dfsize = df.shape
+for rows in range(0,dfsize[0]-1):
+    for cols in range (0,dfsize[1]):
+        # print (df.ix[rows][cols])
+        count = df.ix[rows][cols]
+        if count:
+            array = range(1,int(count)+1)
+        else:
+            array = [0]
+        df.ix[rows][cols] = array
+
+# Write data to json file resetting the index, per the following stackoverflow question:
+# http://stackoverflow.com/questions/28590663/pandas-dataframe-to-json-without-index
+
+df.transpose().reset_index().to_json("dotplot.json",orient='records')</code></pre></figure>
+
+<p>Here is the <a href="/downloads/blog/2017-01-03-fomc-dotplot-with-d3-and-python/dotplot.json">resulting JSON file</a>.</p>
+
+<h2>The javascript code</h2>
+
+<p>Embedding the javascript in an html file, we have the following <a href="/downloads/blog/2017-01-03-fomc-dotplot-with-d3-and-python/dotplot.html">dotplot.html</a> file.</p>
+
+<p>What&#39;s great is that when a new set of SEPs comes out, you need only to regenerate the updated json data file. The html file below need not be changed and the new dotplot will be updated.</p>
+
+<p>The trickiest part was to figure out I had to use two scales for the x-axis: first an ordinal <strong>band scale</strong> for the different periods, and within each period, a <strong>point scale</strong> to organize the dots. </p>
+
+<p>I also had to figure out how to center the dots in each period using the appropriate <code>translate</code> operation calculating where to start placing the dots along the point scale.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;style&gt;</span>
+<span class="nt">circle</span><span class="nc">.dots</span> <span class="p">{</span>
+  <span class="py">fill</span><span class="p">:</span> <span class="m">#0860aa</span><span class="p">;</span>
+  <span class="nl">opacity</span><span class="p">:</span> <span class="m">1.0</span>
+<span class="p">}</span>
+<span class="nt">g</span><span class="nc">.tick</span> <span class="nt">line</span> <span class="p">{</span>
+  <span class="py">stroke</span><span class="p">:</span> <span class="no">black</span><span class="p">;</span>
+  <span class="nl">opacity</span><span class="p">:</span> <span class="m">0.5</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">g</span><span class="nc">.x.axis</span> <span class="nt">text</span> <span class="p">{</span>
+  <span class="nl">font-size</span><span class="p">:</span> <span class="m">18px</span><span class="p">;</span>
+  <span class="py">fill</span><span class="p">:</span> <span class="no">black</span><span class="p">;</span>
+  <span class="nl">font-family</span><span class="p">:</span> <span class="n">Helvetica</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">g</span><span class="nc">.y.axis</span> <span class="nt">text</span> <span class="p">{</span>
+  <span class="nl">font-size</span><span class="p">:</span> <span class="m">18px</span><span class="p">;</span>
+  <span class="py">fill</span><span class="p">:</span> <span class="no">black</span><span class="p">;</span>
+  <span class="nl">font-family</span><span class="p">:</span> <span class="n">Helvetica</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">g</span><span class="nc">.grid</span> <span class="nt">line</span> <span class="p">{</span>
+  <span class="py">stroke</span><span class="p">:</span> <span class="n">grey</span><span class="p">;</span>
+  <span class="py">stroke-opacity</span><span class="p">:</span> <span class="m">0.5</span><span class="p">;</span>
+  <span class="py">shape-rendering</span><span class="p">:</span> <span class="n">crispEdges</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">g</span><span class="nc">.grid</span> <span class="nt">text</span><span class="nc">.y.label</span><span class="p">{</span>
+  <span class="nl">font-size</span><span class="p">:</span> <span class="m">18px</span><span class="p">;</span>
+  <span class="py">fill</span><span class="p">:</span> <span class="no">black</span><span class="p">;</span>
+  <span class="nl">font-family</span><span class="p">:</span> <span class="n">Helvetica</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">g</span><span class="nc">.grid</span> <span class="nt">path</span> <span class="p">{</span>
+  <span class="py">stroke-width</span><span class="p">:</span> <span class="m">1px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"dotplot"</span><span class="nt">&gt;</span>
+
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"//d3js.org/d3.v4.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="c1">// Reads data from a JSON file with the annual SEPs projections
+</span>
+
+<span class="c1">// Auxiliary function
+</span>
+<span class="c1">// Create array [1,2,...,N]
+</span>
+<span class="c1">// http://stackoverflow.com/questions/3746725/create-a-javascript-array-containing-1-n
+</span>
+<span class="kd">function</span> <span class="nx">nArray</span> <span class="p">(</span><span class="nx">N</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">dotArray</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="nx">N</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">dotArray</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">dotArray</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">rArray</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">N</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">newArray</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="nx">N</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">newArray</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">newArray</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">margin</span> <span class="o">=</span> <span class="p">{</span><span class="na">top</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span> <span class="na">right</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span> <span class="na">bottom</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span> <span class="na">left</span><span class="p">:</span> <span class="mi">50</span><span class="p">};</span>
+<span class="kd">var</span> <span class="nx">outerWidth</span> <span class="o">=</span> <span class="mi">1210</span> <span class="p">;</span>
+<span class="kd">var</span> <span class="nx">outerHeight</span> <span class="o">=</span> <span class="mi">600</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">innerWidth</span> <span class="o">=</span> <span class="nx">outerWidth</span> <span class="o">-</span> <span class="nx">margin</span><span class="p">.</span><span class="nx">left</span> <span class="o">-</span> <span class="nx">margin</span><span class="p">.</span><span class="nx">right</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">innerHeight</span> <span class="o">=</span> <span class="nx">outerHeight</span> <span class="o">-</span> <span class="nx">margin</span><span class="p">.</span><span class="nx">top</span> <span class="o">-</span> <span class="nx">margin</span><span class="p">.</span><span class="nx">bottom</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">topYAxisPadding</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+
+<span class="kd">var</span> <span class="nx">plotDotPlot</span> <span class="o">=</span> <span class="p">{};</span>
+<span class="nx">plotDotPlot</span><span class="p">.</span><span class="nx">svg</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+
+<span class="c1">// Define SVG
+</span>
+<span class="nx">plotDotPlot</span><span class="p">.</span><span class="nx">svg</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="dl">"</span><span class="s2">#dotplot</span><span class="dl">"</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">svg</span><span class="dl">"</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">width</span><span class="dl">"</span><span class="p">,</span> <span class="nx">outerWidth</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">height</span><span class="dl">"</span><span class="p">,</span> <span class="nx">outerHeight</span><span class="p">);</span>
+
+<span class="c1">// Read data
+</span>
+<span class="nx">d3</span><span class="p">.</span><span class="nx">json</span><span class="p">(</span><span class="dl">'</span><span class="s1">dotplot.json</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+
+
+      <span class="k">if</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">pt</span><span class="p">.</span><span class="nx">displayError</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+      <span class="p">}</span>
+
+      <span class="c1">// Examine data
+</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
+
+      <span class="c1">// Read years
+</span>
+      <span class="kd">var</span> <span class="nx">years</span> <span class="o">=</span> <span class="p">[]</span>
+      <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="nx">i</span><span class="o">&lt;</span><span class="nx">data</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">years</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">data</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">index</span><span class="p">)</span>
+      <span class="p">}</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">years</span><span class="p">)</span>
+
+      <span class="c1">// Read rates
+</span>
+      <span class="c1">// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys
+</span>
+      <span class="kd">var</span> <span class="nx">dataCols</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">data</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+      <span class="c1">// Remove index
+</span>
+      <span class="nx">dataCols</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+      <span class="c1">// Interest Rate Scale range provided in SEPs
+</span>
+      <span class="c1">// make numeric
+</span>
+      <span class="kd">var</span> <span class="nx">numScale</span> <span class="o">=</span> <span class="nx">dataCols</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="o">+</span><span class="nx">d</span><span class="p">;</span>
+      <span class="p">})</span>
+
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">dataCols</span><span class="p">)</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">numScale</span><span class="p">)</span>
+
+      <span class="c1">// Calculate max number of dots for the same rate
+</span>
+      <span class="kd">var</span> <span class="nx">maxDots</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">max</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span>
+       <span class="o">|</span>   <span class="dl">'</span><span class="s1">use strict</span><span class="dl">'</span><span class="p">;</span>
+          <span class="c1">// Generate array of values
+</span>
+          <span class="c1">// console.log(d)
+</span>
+          <span class="kd">var</span> <span class="nx">dvalues</span> <span class="o">=</span> <span class="p">[];</span>
+          <span class="kd">var</span> <span class="nx">ic</span><span class="p">;</span>
+          <span class="k">for</span> <span class="p">(</span><span class="nx">ic</span> <span class="k">in</span> <span class="nx">dataCols</span><span class="p">)</span> <span class="p">{</span>
+              <span class="kd">var</span> <span class="nx">col</span> <span class="o">=</span> <span class="nx">dataCols</span><span class="p">[</span><span class="nx">ic</span><span class="p">]</span>
+              <span class="c1">// if (col != "Period") {
+</span>
+                <span class="nx">dvalues</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="nx">d</span><span class="p">[</span><span class="nx">col</span><span class="p">].</span><span class="nx">length</span><span class="p">)</span>
+              <span class="c1">// }
+</span>
+          <span class="p">}</span>
+          <span class="c1">// console.log(dvalues)
+</span>
+          <span class="c1">// Spread operator (...) to calculate max of an array:
+</span>
+          <span class="c1">// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max
+</span>
+          <span class="c1">// console.log(Math.max(...dvalues)) 
+</span>
+          <span class="k">return</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">max</span><span class="p">(...</span><span class="nx">dvalues</span><span class="p">);</span>
+        <span class="p">});</span>
+
+      <span class="c1">// console.log(maxDots)
+</span>
+
+      <span class="c1">// Generate array of serials
+</span>
+      <span class="c1">// dotArray = [1, 2, ..., N]
+</span>
+      <span class="kd">var</span> <span class="nx">dotArray</span> <span class="o">=</span> <span class="nx">nArray</span><span class="p">(</span><span class="nx">maxDots</span><span class="p">)</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">dotArray</span><span class="p">)</span>
+
+      <span class="c1">// Scales and Axes
+</span>
+      <span class="c1">// Ordinal Band scale for X. Keep as string (don't use +d.index)
+</span>
+      <span class="nx">plotDotPlot</span><span class="p">.</span><span class="nx">x0</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">scaleBand</span><span class="p">()</span>
+             <span class="p">.</span><span class="nx">domain</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span><span class="k">return</span> <span class="nx">d</span><span class="p">.</span><span class="nx">index</span><span class="p">;</span> <span class="p">}))</span>
+             <span class="p">.</span><span class="nx">rangeRound</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="nx">innerWidth</span><span class="p">])</span>
+             <span class="p">.</span><span class="nx">padding</span><span class="p">(</span><span class="mf">0.1</span><span class="p">);</span>
+
+      <span class="c1">// Ordinal point scale to arrange dots in each band
+</span>
+      <span class="c1">// domain is the largest number of dots in any given band
+</span>
+      <span class="c1">// range is the bandwidth of the band
+</span>
+      <span class="nx">plotDotPlot</span><span class="p">.</span><span class="nx">x1</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">scalePoint</span><span class="p">()</span>
+              <span class="p">.</span><span class="nx">domain</span><span class="p">(</span><span class="nx">dotArray</span><span class="p">)</span>
+              <span class="p">.</span><span class="nx">range</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="nx">plotDotPlot</span><span class="p">.</span><span class="nx">x0</span><span class="p">.</span><span class="nx">bandwidth</span><span class="p">()])</span>
+
+      <span class="c1">// Y linear scale with hardcoded bounds
+</span>
+      <span class="nx">plotDotPlot</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">scaleLinear</span><span class="p">()</span>
+              <span class="c1">// .domain(d3.extent(numScale)) // automatic
+</span>
+              <span class="p">.</span><span class="nx">domain</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>                 <span class="c1">// harcoded
+</span>
+              <span class="p">.</span><span class="nx">range</span><span class="p">([</span><span class="nx">innerHeight</span><span class="p">,</span><span class="mi">0</span><span class="p">]);</span>
+
+      <span class="c1">// Axes generators
+</span>
+      <span class="nx">plotDotPlot</span><span class="p">.</span><span class="nx">xAxis</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">axisBottom</span><span class="p">(</span><span class="nx">plotDotPlot</span><span class="p">.</span><span class="nx">x0</span><span class="p">);</span>
+      <span class="nx">plotDotPlot</span><span class="p">.</span><span class="nx">yAxis</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">axisRight</span><span class="p">(</span><span class="nx">plotDotPlot</span><span class="p">.</span><span class="nx">y</span><span class="p">).</span><span class="nx">ticks</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+
+      <span class="c1">// Gridlines: https://bl.ocks.org/d3noob/c506ac45617cf9ed39337f99f8511218
+</span>
+      <span class="c1">// gridlines in x axis function
+</span>
+      <span class="kd">function</span> <span class="nx">make_x_gridlines</span><span class="p">()</span> <span class="p">{</span>   
+          <span class="k">return</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">axisBottom</span><span class="p">(</span><span class="nx">plotDotPlot</span><span class="p">.</span><span class="nx">x0</span><span class="p">)</span>
+              <span class="p">.</span><span class="nx">ticks</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+      <span class="p">}</span>
+
+      <span class="c1">// gridlines in y axis function
+</span>
+      <span class="kd">function</span> <span class="nx">make_y_gridlines</span><span class="p">()</span> <span class="p">{</span>   
+          <span class="k">return</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">axisLeft</span><span class="p">(</span><span class="nx">plotDotPlot</span><span class="p">.</span><span class="nx">y</span><span class="p">)</span>
+              <span class="p">.</span><span class="nx">ticks</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+      <span class="p">}</span>
+
+      <span class="c1">// Add svg
+</span>
+      <span class="nx">plotDotPlot</span><span class="p">.</span><span class="nx">chartGroup</span> <span class="o">=</span> <span class="nx">plotDotPlot</span><span class="p">.</span><span class="nx">svg</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">g</span><span class="dl">"</span><span class="p">)</span>
+              <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">transform</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">translate(</span><span class="dl">"</span><span class="o">+</span><span class="nx">margin</span><span class="p">.</span><span class="nx">left</span><span class="o">+</span><span class="dl">"</span><span class="s2">,</span><span class="dl">"</span><span class="o">+</span><span class="nx">margin</span><span class="p">.</span><span class="nx">top</span><span class="o">+</span><span class="dl">"</span><span class="s2">)</span><span class="dl">"</span><span class="p">);</span>
+
+      <span class="nx">plotDotPlot</span><span class="p">.</span><span class="nx">chartGroup</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">g</span><span class="dl">"</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">class</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">x axis</span><span class="dl">"</span><span class="p">)</span>
+               <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">transform</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">translate(0,</span><span class="dl">"</span><span class="o">+</span><span class="nx">innerHeight</span><span class="o">+</span><span class="dl">"</span><span class="s2">)</span><span class="dl">"</span><span class="p">)</span>
+               <span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">plotDotPlot</span><span class="p">.</span><span class="nx">xAxis</span><span class="p">);</span>
+               
+
+      <span class="nx">plotDotPlot</span><span class="p">.</span><span class="nx">chartGroup</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">g</span><span class="dl">"</span><span class="p">)</span>
+                <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">class</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">grid</span><span class="dl">"</span><span class="p">)</span>
+                <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">transform</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">translate(0,</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">innerHeight</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">)</span><span class="dl">"</span><span class="p">)</span>
+                <span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">make_x_gridlines</span><span class="p">()</span>
+                  <span class="p">.</span><span class="nx">tickSize</span><span class="p">(</span><span class="o">-</span><span class="nx">innerHeight</span><span class="p">)</span>
+                  <span class="p">.</span><span class="nx">tickFormat</span><span class="p">(</span><span class="dl">""</span><span class="p">)</span>
+                <span class="p">);</span>
+
+      <span class="nx">plotDotPlot</span><span class="p">.</span><span class="nx">chartGroup</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">g</span><span class="dl">"</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">class</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">y axis</span><span class="dl">"</span><span class="p">)</span>
+               <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">transform</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">translate(</span><span class="dl">"</span><span class="o">+</span><span class="nx">innerWidth</span><span class="o">+</span><span class="dl">"</span><span class="s2">,0)</span><span class="dl">"</span><span class="p">)</span>
+               <span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">plotDotPlot</span><span class="p">.</span><span class="nx">yAxis</span><span class="p">);</span>
+
+      <span class="nx">plotDotPlot</span><span class="p">.</span><span class="nx">chartGroup</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">g</span><span class="dl">"</span><span class="p">)</span>
+               <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">class</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">grid</span><span class="dl">"</span><span class="p">)</span>
+               <span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">make_y_gridlines</span><span class="p">()</span>
+                  <span class="p">.</span><span class="nx">tickSize</span><span class="p">(</span><span class="o">-</span><span class="nx">innerWidth</span><span class="p">)</span>
+                  <span class="p">.</span><span class="nx">tickFormat</span><span class="p">(</span><span class="dl">""</span><span class="p">)</span>
+                <span class="p">);</span>
+
+      <span class="c1">// Add labels to axes
+</span>
+      <span class="nx">plotDotPlot</span><span class="p">.</span><span class="nx">chartGroup</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">text</span><span class="dl">"</span><span class="p">)</span>
+              <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">class</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">y label</span><span class="dl">"</span><span class="p">)</span>
+              <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">text-anchor</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">end</span><span class="dl">"</span><span class="p">)</span>
+              <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">x</span><span class="dl">"</span><span class="p">,</span> <span class="nx">innerWidth</span><span class="p">)</span>
+              <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">y</span><span class="dl">"</span><span class="p">,</span> <span class="o">-</span><span class="nx">topYAxisPadding</span><span class="p">)</span>
+              <span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="dl">"</span><span class="s2">Percent, end of year</span><span class="dl">"</span><span class="p">)</span>
+
+
+      <span class="c1">// Add circles
+</span>
+      <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">rows</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">rows</span> <span class="o">&lt;</span> <span class="nx">years</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">rows</span><span class="o">++</span><span class="p">)</span>  <span class="p">{</span>
+
+          <span class="kd">var</span> <span class="nx">rateData</span> <span class="o">=</span> <span class="nx">data</span><span class="p">[</span><span class="nx">rows</span><span class="p">]</span>
+          <span class="nx">plotDotPlot</span><span class="p">.</span><span class="nx">chartGroup</span><span class="p">.</span><span class="nx">selectAll</span><span class="p">(</span><span class="dl">"</span><span class="s2">fomc </span><span class="dl">"</span><span class="o">+</span><span class="dl">"</span><span class="s2">M</span><span class="dl">"</span><span class="o">+</span><span class="nx">years</span><span class="p">[</span><span class="nx">rows</span><span class="p">])</span>
+                <span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="nx">rateData</span><span class="p">)</span>
+                <span class="p">.</span><span class="nx">enter</span><span class="p">().</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">g</span><span class="dl">"</span><span class="p">)</span>
+                <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">class</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">fomc </span><span class="dl">"</span><span class="o">+</span><span class="dl">"</span><span class="s2">M</span><span class="dl">"</span><span class="o">+</span><span class="nx">years</span><span class="p">[</span><span class="nx">rows</span><span class="p">])</span>
+
+          <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">cols</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">cols</span><span class="o">&lt;</span> <span class="nx">dataCols</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">cols</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+               <span class="c1">// Calculate length of dot array
+</span>
+               <span class="kd">var</span> <span class="nx">lenDotArray</span> <span class="o">=</span> <span class="nx">rateData</span><span class="p">[</span><span class="nx">dataCols</span><span class="p">[</span><span class="nx">cols</span><span class="p">]].</span><span class="nx">length</span>
+               <span class="kd">var</span> <span class="nx">mclass</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">dots </span><span class="dl">"</span><span class="o">+</span><span class="dl">"</span><span class="s2">M</span><span class="dl">"</span><span class="o">+</span> <span class="nx">rows</span><span class="o">+</span><span class="dl">"</span><span class="s2"> N</span><span class="dl">"</span><span class="o">+</span><span class="nx">cols</span>
+               <span class="nx">plotDotPlot</span><span class="p">.</span><span class="nx">chartGroup</span><span class="p">.</span><span class="nx">selectAll</span><span class="p">(</span><span class="nx">mclass</span><span class="p">)</span>
+                     <span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="k">return</span> <span class="nx">d</span><span class="o">=</span><span class="nx">rateData</span><span class="p">[</span><span class="nx">dataCols</span><span class="p">[</span><span class="nx">cols</span><span class="p">]];</span>
+                     <span class="p">})</span>
+                     <span class="p">.</span><span class="nx">enter</span><span class="p">()</span>
+                     <span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">circle</span><span class="dl">"</span><span class="p">)</span>
+                     <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">class</span><span class="dl">"</span><span class="p">,</span><span class="nx">mclass</span><span class="p">)</span>
+                     <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">transform</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="c1">// Center dots in each band:
+</span>
+                        <span class="c1">// Caculate translate distance as half of diff with bandwidth
+</span>
+                        <span class="kd">var</span> <span class="nx">transDim</span> <span class="o">=</span> <span class="nx">plotDotPlot</span><span class="p">.</span><span class="nx">x0</span><span class="p">(</span><span class="nx">years</span><span class="p">[</span><span class="nx">rows</span><span class="p">])</span><span class="o">+</span><span class="p">(</span><span class="nx">plotDotPlot</span><span class="p">.</span><span class="nx">x0</span><span class="p">.</span><span class="nx">bandwidth</span><span class="p">()</span><span class="o">-</span><span class="nx">plotDotPlot</span><span class="p">.</span><span class="nx">x1</span><span class="p">(</span><span class="nx">lenDotArray</span><span class="p">))</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
+                        <span class="k">return</span> <span class="dl">"</span><span class="s2">translate(</span><span class="dl">"</span><span class="o">+</span><span class="nx">transDim</span><span class="o">+</span><span class="dl">"</span><span class="s2">,0)</span><span class="dl">"</span><span class="p">;</span> 
+                      <span class="p">})</span>
+                     <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">cx</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span> 
+                        <span class="k">return</span> <span class="nx">plotDotPlot</span><span class="p">.</span><span class="nx">x1</span><span class="p">(</span><span class="nx">d</span><span class="p">);</span>
+                     <span class="p">})</span>
+                     <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">cy</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span>
+                           <span class="k">return</span>  <span class="nx">plotDotPlot</span><span class="p">.</span><span class="nx">y</span><span class="p">(</span><span class="o">+</span><span class="nx">dataCols</span><span class="p">[</span><span class="nx">cols</span><span class="p">]);</span> <span class="p">})</span>
+                     <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">r</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span> 
+                            <span class="k">if</span> <span class="p">(</span><span class="nx">d</span> <span class="o">&gt;</span><span class="mi">0</span><span class="p">){</span>
+                              <span class="k">return</span> <span class="mi">5</span><span class="p">;</span>
+                            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                              <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+                            <span class="p">}</span>
+                      <span class="p">})</span>
+          <span class="p">}</span>
+      <span class="p">}</span>
+
+<span class="p">})</span>
+<span class="nt">&lt;/script&gt;</span></code></pre></figure>
  
           <small><a href="https://rubenhm.org/blog/2017/01/03/fomc-dotplot-with-d3-and-python/" title="FOMC dotplot with D3 and Python">Read more ... </a></small>
           </br >
@@ -172,7 +1049,349 @@ It shows the views of each of the FOMC&#39;s participants regarding the end-of-y
           <span class="post-date">Jul 6, 2016</span>
           <a class="post-link" href="/blog/2016/07/06/choropleth-maps-with-d3-python-and-data-from-fred/">Choropleth maps with D3, Python, and data from FRED</a></br >
           <p>I often need to create simple thematic maps of the Fourth <a href="https://en.wikipedia.org/wiki/Federal_Reserve_Bank">Federal Reserve District</a>, for example of the unemployment rate by county. The data are readily available from <a href="https://fred.stlouisfed.org">FRED</a>, but using ArcView is no fun.  </p>
- 
+
+<p>I found a nice tutorial by <a href="http://flowingdata.com/2009/11/12/how-to-make-a-us-county-thematic-map-using-free-tools/">Nathan Yau</a> that showed how to edit an SVG map with IPython using BeautifulSoup, but it required to have an SVG map to work with already.  </p>
+
+<p>Then I found another tutorial by <a href="https://bost.ocks.org/mike/map/">Mike Bostock</a> that uses <a href="http://d3js.org">D3</a> and <a href="https://github.com/mbostock/topojson">TopoJSON</a> to generate the SVG map from a script. Mike Bostock&#39;s multiple <a href="https://bl.ocks.org/mbostock">examples pages</a> provide tutorials for generating and manipulating all kinds of maps.  </p>
+
+<p>My map is based on the example for a simple Choropleth map of <a href="https://bl.ocks.org/mbostock/3306362">unemployment rates with thresholds</a> and the example that uses a <a href="https://bl.ocks.org/mbostock/5416405">selection of geographic units</a>.</p>
+
+<h2>Map</h2>
+
+<p>The Fourth Federal Reserve District includes all of Ohio, counties in eastern Kentucky, counties in western Pennsylvania, and a few counties in the northern section of West Virginia that lies between Ohio and Pennsylvania.</p>
+
+<p>Here is the final result:</p>
+
+<div class="map-container">
+  <iframe src="/downloads/blog/2016-07-06-choropleth-maps-with-d3-python-and-data-from-fred/d4urmap.html" frameborder="0" allowfullscreen marginwidth="0" marginheight="0" style="height:600px;" scrolling="no">
+  </iframe>
+</div>
+
+<div class="index-pop">
+    <a target="_blank" title="Open map in a new window." href="/downloads/blog/2016-07-06-choropleth-maps-with-d3-python-and-data-from-fred/d4urmap.html">Open<svg height="16" width="12"><path d="M11 10h1v3c0 0.55-0.45 1-1 1H1c-0.55 0-1-0.45-1-1V3c0-0.55 0.45-1 1-1h3v1H1v10h10V10zM6 2l2.25 2.25-3.25 3.25 1.5 1.5 3.25-3.25 2.25 2.25V2H6z"></path></svg></a>
+</div>
+
+<h2>Steps</h2>
+
+<ol>
+<li>Create a file with the definition of the selection.<br></li>
+<li>Obtain data for each county from FRED.</li>
+<li>Create the map.</li>
+</ol>
+
+<h3>Geographic definition</h3>
+
+<p>My file <a href="/downloads/blog/2016-07-06-choropleth-maps-with-d3-python-and-data-from-fred/d4ctydef.csv">d4ctydef.csv</a> is a comma-delimited file with the <a href="http://www.census.gov/geo/reference/codes/cou.html">FIPS</a> codes of the counties in the District.</p>
+<div class="highlight"><pre><code class="language-" data-lang="">STATE,STATE_FIPS,FIPS,COUNTY_NAME,D4
+KY,"21","21001",Adair County,FALSE
+KY,"21","21003",Allen County,FALSE
+KY,"21","21005",Anderson County,FALSE
+KY,"21","21007",Ballard County,FALSE
+KY,"21","21009",Barren County,FALSE
+KY,"21","21011",Bath County,TRUE
+KY,"21","21013",Bell County,TRUE
+KY,"21","21015",Boone County,TRUE
+KY,"21","21017",Bourbon County,TRUE
+...
+</code></pre></div>
+<h3>Downloading data from FRED</h3>
+
+<p>Automated downloading of data from FRED requires an API key and signing up for the service. 
+Install the <code>fredapi</code> Python module from <a href="https://github.com/mortada/fredapi">https://github.com/mortada/fredapi</a>.
+Now try the following in a Jupyter or IPython notebook.</p>
+
+<figure class="highlight"><pre><code class="language-ipy" data-lang="ipy"># Import fredapi module
+from fredapi import Fred
+# Apply your personal api key
+fred = Fred(api_key='abcdefghijklmnopqrstuv0123456789')
+
+# Import pandas
+import pandas as pd
+
+# Get information on realease=116, which includes data on Unemployment in States and Local Areas
+df = fred.search_by_release(116)
+df['title'].head(10) # df has information on 6,000+ series
+
+# Restrict information to the unemployment series
+state_df = df[df['title'].str.startswith('Unemployment Rate in')]
+
+# Create a column with states by selecting the first two letters of the index, series id
+# The following commands throw up an error/warning but it works
+state_df['state'] = state_df.apply(lambda row: row.id[:2], axis=1)
+
+# Restrict further to the states in the Fourth District
+d4_states = state_df[state_df.state.isin(['OH','KY','PA','WV'])]
+
+# Read District definitions to a pandas dataframe
+d4def = pd.read_csv('../data/d4ctydef.csv')
+
+# Select District counties only using the boolean variable d4def.D4
+d4strict = d4def[d4def["D4"]]
+
+# Search for county names in Fred series to obtain series id
+d4_states.loc[d4_states["title"].str.contains("Adair County"),"id"]
+
+# Get FRED id of unemployment series if county is in the District and create 
+# a dictionary with county fips, county name, and FRED id
+d4_county_series = {}
+for row in d4strict.itertuples():
+        state,fips,county = row[1],row[3],row[4]
+        seriesid = d4_states.loc[d4_states["id"].str.startswith(state) &amp; d4_states["title"].str.contains(county)]['id']
+        d4_county_series[fips] = [seriesid[0], county + ', ' + state, '"' + str(fips) + '"']
+
+# Download the latest observation for each county and create 
+# a dictionary of FRED id, county fips, county name, and unemployment rate
+end_time = max(d4_states.observation_end)
+d4_cty_ur = {}
+for fips, dictitem in d4_county_series.iteritems():
+    seriesid, county, cty_fips = dictitem
+    d4_cty_ur[fips] = [fips, county, fred.get_series(seriesid, observation_start=end_time, observation_end=end_time)[0]]
+
+# Write dictionary to tab-delimited file with header
+with open('urd4.tsv', 'w') as f:
+    f.write('id\tcounty\trate\n')
+    [f.write('"{0}"\t"{1}"\t{2}\n'.format(fips, county, rate)) for key, [fips, county, rate] in d4_cty_ur.items()]</code></pre></figure>
+
+<p>The file <a href="/downloads/blog/2016-07-06-choropleth-maps-with-d3-python-and-data-from-fred/urd4.tsv">urd4.tsv</a> looks like this:</p>
+<div class="highlight"><pre><code class="language-" data-lang="">id  county  rate
+"21165" "Menifee County, KY"    8.0
+"21011" "Bath County, KY"   6.6
+"21013" "Bell County, KY"   8.4
+"21015" "Boone County, KY"  3.7
+"21017" "Bourbon County, KY"    4.6
+"21019" "Boyd County, KY"   7.5
+"21023" "Bracken County, KY"    5.7
+...
+</code></pre></div>
+<p>Determine natural breaks in the data using the python module <code>jenks</code> from <a href="https://github.com/perrygeo/jenks">https://github.com/perrygeo/jenks</a>.</p>
+
+<figure class="highlight"><pre><code class="language-ipy" data-lang="ipy"># Determine cutoffs for choropleth map
+from jenks import jenks
+
+# Create list from dictionary and obtain cutoffs
+# http://stackoverflow.com/questions/16228248/python-simplest-way-to-get-list-of-values-from-dict
+values = [ d4_cty_ur[key][2] for key in d4_cty_ur] 
+cutoffs = jenks(values,4)
+print cutoffs
+[2.9000001, 4.8000002, 6.4000001, 8.3999996, 15.6]</code></pre></figure>
+
+<h2>Create the map</h2>
+
+<p>The TopoJSON file for the US corresponds to the file <code>topo/us-10m.json</code> and is generated according to the instructions in Mike Bostock&#39;s repository for the <a href="https://github.com/mbostock/us-atlas">US-Atlas</a>.</p>
+
+<p>Finally, the code for the SVG map is as follows:</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="c">&lt;!-- This maps uses bits and pieces from multiple Mike Bostock's examples, including: 
+  https://bl.ocks.org/mbostock/5737662 
+  https://bl.ocks.org/mbostock/9943478
+  https://bl.ocks.org/mbostock/9943478
+  http://bl.ocks.org/mbostock/4090848
+--&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;style&gt;</span>
+
+<span class="c">/* CSS goes here. */</span>
+<span class="nt">path</span> <span class="p">{</span>
+  <span class="py">stroke-linejoin</span><span class="p">:</span> <span class="n">round</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* This is style for the different thresholds. */</span>
+<span class="nc">.colour1</span> <span class="p">{</span><span class="py">fill</span><span class="p">:</span> <span class="m">#f2f0f7</span><span class="p">;}</span>
+<span class="nc">.colour2</span> <span class="p">{</span><span class="py">fill</span><span class="p">:</span> <span class="m">#dadaeb</span><span class="p">;}</span>
+<span class="nc">.colour3</span> <span class="p">{</span><span class="py">fill</span><span class="p">:</span> <span class="m">#bcbddc</span><span class="p">;}</span>
+<span class="nc">.colour4</span> <span class="p">{</span><span class="py">fill</span><span class="p">:</span> <span class="m">#9e9ac8</span><span class="p">;}</span>
+<span class="nc">.colour5</span> <span class="p">{</span><span class="py">fill</span><span class="p">:</span> <span class="m">#756bb1</span><span class="p">;}</span>
+
+<span class="nc">.label</span> <span class="p">{</span>
+  <span class="nl">font-family</span><span class="p">:</span> <span class="n">Verdana</span><span class="p">;</span>
+  <span class="nl">font-size</span><span class="p">:</span> <span class="m">16px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.d4-county</span><span class="nd">:hover</span> <span class="p">{</span>
+  <span class="nl">opacity</span><span class="p">:</span> <span class="m">0.3</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.counties</span> <span class="p">{</span>
+  <span class="py">fill</span><span class="p">:</span> <span class="m">#ccc</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.county-boundary</span> <span class="p">{</span>
+  <span class="py">fill</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+  <span class="py">stroke</span><span class="p">:</span> <span class="m">#777</span><span class="p">;</span>
+  <span class="py">stroke-width</span><span class="p">:</span> <span class="m">.35px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.d4-county-boundary</span> <span class="p">{</span>
+  <span class="py">fill</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+  <span class="py">stroke</span><span class="p">:</span> <span class="m">#145eda</span><span class="p">;</span>
+  <span class="py">stroke-width</span><span class="p">:</span> <span class="m">2px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.state-boundary</span> <span class="p">{</span>
+  <span class="py">fill</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+  <span class="py">stroke</span><span class="p">:</span> <span class="no">white</span><span class="p">;</span>
+  <span class="py">stroke-width</span><span class="p">:</span> <span class="m">2px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"//d3js.org/d3.v3.min.js"</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"//d3js.org/queue.v1.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"//d3js.org/topojson.v1.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+
+<span class="cm">/* JavaScript goes here. */</span>
+
+<span class="cm">/* These constraints on width and height produce a nice squarish size. */</span>
+<span class="kd">var</span> <span class="nx">width</span>  <span class="o">=</span> <span class="mi">960</span><span class="o">*</span><span class="mf">0.7</span><span class="p">,</span>
+    <span class="nx">height</span> <span class="o">=</span> <span class="mi">500</span><span class="o">*</span><span class="mf">1.2</span><span class="p">;</span>
+
+<span class="kd">var</span> <span class="nx">formatNumber</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="dl">"</span><span class="s2">,.1f</span><span class="dl">"</span><span class="p">);</span> 
+
+<span class="cm">/* The thresholds are hardcoded here. The jenks breaks are rounded some. */</span>
+<span class="kd">var</span> <span class="nx">color</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">scale</span><span class="p">.</span><span class="nx">threshold</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">domain</span><span class="p">([</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">7.0</span><span class="p">,</span> <span class="mf">9.0</span><span class="p">,</span> <span class="mf">16.0</span><span class="p">])</span>
+    <span class="p">.</span><span class="nx">range</span><span class="p">([</span><span class="dl">"</span><span class="s2">#f2f0f7</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">#dadaeb</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">#bcbddc</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">#9e9ac8</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">#756bb1</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">#54278f</span><span class="dl">"</span><span class="p">]);</span>
+
+<span class="cm">/* I played around with the projection options to limit the view to the Fourth District. */</span>
+<span class="kd">var</span> <span class="nx">projection</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">geo</span><span class="p">.</span><span class="nx">albers</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">center</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mf">39.43</span><span class="p">])</span>
+    <span class="p">.</span><span class="nx">rotate</span><span class="p">([</span><span class="mi">85</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+    <span class="p">.</span><span class="nx">parallels</span><span class="p">([</span><span class="mf">29.5</span><span class="p">,</span> <span class="mf">45.5</span><span class="p">])</span>
+    <span class="p">.</span><span class="nx">scale</span><span class="p">(</span><span class="mi">5800</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">translate</span><span class="p">([</span><span class="nx">width</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="nx">height</span> <span class="o">/</span> <span class="mi">2</span><span class="p">]);</span>
+
+<span class="kd">var</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">geo</span><span class="p">.</span><span class="nx">path</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">projection</span><span class="p">(</span><span class="nx">projection</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">svg</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="dl">"</span><span class="s2">body</span><span class="dl">"</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">svg</span><span class="dl">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">width</span><span class="dl">"</span><span class="p">,</span> <span class="nx">width</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">height</span><span class="dl">"</span><span class="p">,</span> <span class="nx">height</span><span class="p">);</span>
+
+<span class="cm">/* Here is the selection of counties in the Fourth District. */</span>
+<span class="kd">var</span> <span class="nx">selected</span> <span class="o">=</span> <span class="p">{</span><span class="dl">"</span><span class="s2">21011</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">21013</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">21015</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">21017</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">21019</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">21023</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">21025</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">21037</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">21043</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">21049</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">21051</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">21063</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">21065</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">21067</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">21069</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">21071</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">21079</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">21081</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">21089</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">21095</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">21097</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">21109</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">21113</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">21115</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">21117</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">21119</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">21121</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">21125</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">21127</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">21129</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">21131</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">21133</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">21135</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">21137</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">21147</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">21151</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">21153</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">21159</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">21161</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">21165</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">21173</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">21175</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">21181</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">21189</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">21191</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">21193</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">21195</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">21197</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">21199</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">21201</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">21203</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">21205</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">21209</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">21235</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">21237</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">21239</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39001</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39003</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39005</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39007</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39009</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39011</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39013</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39015</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39017</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39019</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39021</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39023</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39025</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39027</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39029</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39031</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39033</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39035</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39037</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39039</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39041</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39043</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39045</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39047</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39049</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39051</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39053</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39055</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39057</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39059</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39061</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39063</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39065</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39067</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39069</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39071</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39073</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39075</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39077</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39079</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39081</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39083</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39085</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39087</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39089</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39091</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39093</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39095</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39097</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39099</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39101</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39103</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39105</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39107</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39109</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39111</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39113</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39115</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39117</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39119</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39121</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39123</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39125</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39127</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39129</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39131</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39133</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39135</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39137</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39139</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39141</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39143</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39145</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39147</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39149</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39151</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39153</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39155</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39157</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39159</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39161</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39163</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39165</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39167</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39169</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39171</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39173</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">39175</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">42003</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">42005</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">42007</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">42019</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">42031</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">42039</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">42049</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">42051</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">42053</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">42059</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">42063</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">42065</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">42073</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">42085</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">42111</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">42121</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">42123</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">42125</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">42129</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">54009</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">54029</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">54051</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">54069</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">54095</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="dl">"</span><span class="s2">54103</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">};</span>
+
+<span class="cm">/* Loading the JSON and unemployment data. */</span>
+
+<span class="nx">queue</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">defer</span><span class="p">(</span><span class="nx">d3</span><span class="p">.</span><span class="nx">json</span><span class="p">,</span> <span class="dl">"</span><span class="s2">us.json</span><span class="dl">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">defer</span><span class="p">(</span><span class="nx">d3</span><span class="p">.</span><span class="nx">tsv</span><span class="p">,</span> <span class="dl">"</span><span class="s2">urd4.tsv</span><span class="dl">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="k">await</span><span class="p">(</span><span class="nx">ready</span><span class="p">);</span>
+
+<span class="kd">function</span> <span class="nx">ready</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">us</span><span class="p">,</span> <span class="nx">unemployment</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="k">throw</span> <span class="nx">error</span><span class="p">;</span>
+
+  <span class="kd">var</span> <span class="nx">cutoffs</span>  <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">7.0</span><span class="p">,</span> <span class="mf">9.0</span><span class="p">,</span> <span class="mf">16.0</span><span class="p">]</span>
+  <span class="kd">var</span> <span class="nx">rateById</span> <span class="o">=</span> <span class="p">{},</span>
+      <span class="nx">nameById</span> <span class="o">=</span> <span class="p">{}</span>
+
+  <span class="nx">unemployment</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span> <span class="nx">rateById</span><span class="p">[</span><span class="nx">d</span><span class="p">.</span><span class="nx">id</span><span class="p">]</span> <span class="o">=</span> <span class="o">+</span><span class="nx">d</span><span class="p">.</span><span class="nx">rate</span><span class="p">;</span> <span class="p">})</span>
+  <span class="nx">unemployment</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span> <span class="nx">nameById</span><span class="p">[</span><span class="nx">d</span><span class="p">.</span><span class="nx">id</span><span class="p">]</span> <span class="o">=</span>  <span class="nx">d</span><span class="p">.</span><span class="nx">county</span><span class="p">;</span> <span class="p">})</span>
+
+  <span class="kd">var</span> <span class="nx">counties</span> <span class="o">=</span> <span class="nx">topojson</span><span class="p">.</span><span class="nx">feature</span><span class="p">(</span><span class="nx">us</span><span class="p">,</span> <span class="nx">us</span><span class="p">.</span><span class="nx">objects</span><span class="p">.</span><span class="nx">counties</span><span class="p">)</span>
+
+  <span class="kd">var</span> <span class="nx">selection</span> <span class="o">=</span> <span class="p">{</span><span class="na">type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">FeatureCollection</span><span class="dl">"</span><span class="p">,</span> <span class="na">features</span><span class="p">:</span> <span class="nx">counties</span><span class="p">.</span><span class="nx">features</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">d</span><span class="p">.</span><span class="nx">id</span> <span class="k">in</span> <span class="nx">selected</span><span class="p">;</span> <span class="p">})</span>
+     <span class="p">};</span>
+
+  <span class="kd">var</span> <span class="nx">exselection</span> <span class="o">=</span> <span class="p">{</span><span class="na">type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">FeatureCollection</span><span class="dl">"</span><span class="p">,</span> <span class="na">features</span><span class="p">:</span> <span class="nx">counties</span><span class="p">.</span><span class="nx">features</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">d</span><span class="p">.</span><span class="nx">id</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">id</span> <span class="k">in</span> <span class="nx">selected</span><span class="p">);</span> <span class="p">})</span>
+     <span class="p">};</span>
+
+<span class="c1">// Create path for Counties outside selection</span>
+  <span class="nx">svg</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">path</span><span class="dl">"</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">datum</span><span class="p">(</span><span class="nx">exselection</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">class</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">counties</span><span class="dl">"</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">d</span><span class="dl">"</span><span class="p">,</span> <span class="nx">path</span><span class="p">);</span>
+
+  <span class="nx">svg</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">path</span><span class="dl">"</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">datum</span><span class="p">(</span><span class="nx">topojson</span><span class="p">.</span><span class="nx">mesh</span><span class="p">(</span><span class="nx">us</span><span class="p">,</span> <span class="nx">us</span><span class="p">.</span><span class="nx">objects</span><span class="p">.</span><span class="nx">counties</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">a</span> <span class="o">!==</span> <span class="nx">b</span> <span class="c1">// a border between two counties</span>
+            <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">id</span> <span class="o">===</span> <span class="mi">53000</span> <span class="o">||</span> <span class="nx">b</span><span class="p">.</span><span class="nx">id</span> <span class="o">===</span> <span class="mi">5300</span> <span class="c1">// where a and b are in puget sound</span>
+              <span class="o">||</span> <span class="nx">a</span><span class="p">.</span><span class="nx">id</span> <span class="o">%</span> <span class="mi">1000</span> <span class="o">&amp;&amp;</span> <span class="nx">b</span><span class="p">.</span><span class="nx">id</span> <span class="o">%</span> <span class="mi">1000</span><span class="p">)</span> <span class="c1">// or a and b are not in a lake</span>
+            <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">id</span> <span class="o">/</span> <span class="mi">1000</span> <span class="o">^</span> <span class="nx">b</span><span class="p">.</span><span class="nx">id</span> <span class="o">/</span> <span class="mi">1000</span><span class="p">)</span> <span class="c1">// and a and b are in the same state</span>
+            <span class="o">&amp;&amp;</span> <span class="p">(</span>
+               <span class="p">(</span> <span class="o">!</span><span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">id</span> <span class="k">in</span> <span class="nx">selected</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="p">(</span><span class="nx">b</span><span class="p">.</span><span class="nx">id</span> <span class="k">in</span> <span class="nx">selected</span><span class="p">)</span> <span class="p">)</span>
+            <span class="o">||</span> <span class="p">(</span>  <span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">id</span> <span class="k">in</span> <span class="nx">selected</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="p">(</span><span class="nx">b</span><span class="p">.</span><span class="nx">id</span> <span class="k">in</span> <span class="nx">selected</span><span class="p">)</span> <span class="p">)</span>
+            <span class="o">||</span> <span class="p">(</span> <span class="o">!</span><span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">id</span> <span class="k">in</span> <span class="nx">selected</span><span class="p">)</span> <span class="o">&amp;&amp;</span>  <span class="p">(</span><span class="nx">b</span><span class="p">.</span><span class="nx">id</span> <span class="k">in</span> <span class="nx">selected</span><span class="p">)</span> <span class="p">)</span>
+            <span class="p">);</span> 
+      <span class="p">}))</span>
+      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">class</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">county-boundary</span><span class="dl">"</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">d</span><span class="dl">"</span><span class="p">,</span> <span class="nx">path</span><span class="p">);</span>
+
+<span class="c1">// Create path for Counties inside selection</span>
+<span class="c1">// Here the counties are color-coded according to their unemployment rate.</span>
+
+  <span class="nx">svg</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">g</span><span class="dl">"</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">selectAll</span><span class="p">(</span><span class="dl">"</span><span class="s2">path</span><span class="dl">"</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="nx">selection</span><span class="p">.</span><span class="nx">features</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">enter</span><span class="p">()</span>
+        <span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">path</span><span class="dl">"</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">class</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">d4-county</span><span class="dl">"</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">id</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span> 
+           <span class="k">return</span> <span class="dl">"</span><span class="s2">F</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">d</span><span class="p">.</span><span class="nx">id</span> <span class="p">;}</span>
+             <span class="p">)</span>
+         <span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="dl">"</span><span class="s2">fill</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">color</span><span class="p">(</span><span class="nx">rateById</span><span class="p">[</span><span class="nx">d</span><span class="p">.</span><span class="nx">id</span><span class="p">]);</span> <span class="p">})</span>
+         <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">d</span><span class="dl">"</span><span class="p">,</span> <span class="nx">path</span><span class="p">)</span>
+         <span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">title</span><span class="dl">"</span><span class="p">)</span>
+         <span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">nameById</span><span class="p">[</span><span class="nx">d</span><span class="p">.</span><span class="nx">id</span><span class="p">]</span> <span class="o">+</span> <span class="dl">"</span><span class="s2"> (FIPS: </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">d</span><span class="p">.</span><span class="nx">id</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">)</span><span class="dl">"</span>
+            <span class="o">+</span> <span class="dl">"</span><span class="se">\n</span><span class="s2">Unemployment rate: </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">formatNumber</span><span class="p">(</span><span class="nx">rateById</span><span class="p">[</span><span class="nx">d</span><span class="p">.</span><span class="nx">id</span><span class="p">])</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">%</span><span class="dl">"</span><span class="p">;</span> <span class="p">});</span>
+
+  <span class="nx">svg</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">path</span><span class="dl">"</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">datum</span><span class="p">(</span><span class="nx">topojson</span><span class="p">.</span><span class="nx">mesh</span><span class="p">(</span><span class="nx">us</span><span class="p">,</span> <span class="nx">us</span><span class="p">.</span><span class="nx">objects</span><span class="p">.</span><span class="nx">counties</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">a</span> <span class="o">!==</span> <span class="nx">b</span> <span class="c1">// a border between two counties</span>
+            <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">id</span> <span class="o">===</span> <span class="mi">53000</span> <span class="o">||</span> <span class="nx">b</span><span class="p">.</span><span class="nx">id</span> <span class="o">===</span> <span class="mi">5300</span> <span class="c1">// where a and b are in puget sound</span>
+              <span class="o">||</span> <span class="nx">a</span><span class="p">.</span><span class="nx">id</span> <span class="o">%</span> <span class="mi">1000</span> <span class="o">&amp;&amp;</span> <span class="nx">b</span><span class="p">.</span><span class="nx">id</span> <span class="o">%</span> <span class="mi">1000</span><span class="p">)</span> <span class="c1">// or a and b are not in a lake</span>
+            <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">id</span> <span class="o">/</span> <span class="mi">1000</span> <span class="o">^</span> <span class="nx">b</span><span class="p">.</span><span class="nx">id</span> <span class="o">/</span> <span class="mi">1000</span><span class="p">)</span> <span class="c1">// and a and b are in the same state</span>
+            <span class="o">&amp;&amp;</span> <span class="p">(</span>
+               <span class="p">(</span>  <span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">id</span> <span class="k">in</span> <span class="nx">selected</span><span class="p">)</span> <span class="o">&amp;&amp;</span>  <span class="p">(</span><span class="nx">b</span><span class="p">.</span><span class="nx">id</span> <span class="k">in</span> <span class="nx">selected</span><span class="p">)</span> <span class="p">)</span>
+            <span class="o">||</span> <span class="p">(</span>  <span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">id</span> <span class="k">in</span> <span class="nx">selected</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="p">(</span><span class="nx">b</span><span class="p">.</span><span class="nx">id</span> <span class="k">in</span> <span class="nx">selected</span><span class="p">)</span> <span class="p">)</span>
+            <span class="o">||</span> <span class="p">(</span> <span class="o">!</span><span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">id</span> <span class="k">in</span> <span class="nx">selected</span><span class="p">)</span> <span class="o">&amp;&amp;</span>  <span class="p">(</span><span class="nx">b</span><span class="p">.</span><span class="nx">id</span> <span class="k">in</span> <span class="nx">selected</span><span class="p">)</span> <span class="p">)</span>
+            <span class="p">);</span> 
+      <span class="p">}))</span>
+      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">class</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">d4-county-boundary</span><span class="dl">"</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">d</span><span class="dl">"</span><span class="p">,</span> <span class="nx">path</span><span class="p">);</span>
+
+<span class="c1">// Create path for State boundaries</span>
+
+  <span class="nx">svg</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">path</span><span class="dl">"</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">datum</span><span class="p">(</span><span class="nx">topojson</span><span class="p">.</span><span class="nx">mesh</span><span class="p">(</span><span class="nx">us</span><span class="p">,</span> <span class="nx">us</span><span class="p">.</span><span class="nx">objects</span><span class="p">.</span><span class="nx">states</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span> 
+         <span class="k">return</span> <span class="nx">a</span> <span class="o">!==</span> <span class="nx">b</span> <span class="p">;</span> <span class="c1">// a and b not in selection//</span>
+        <span class="p">}))</span>
+      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">class</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">state-boundary</span><span class="dl">"</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">d</span><span class="dl">"</span><span class="p">,</span> <span class="nx">path</span><span class="p">);</span>
+
+<span class="c1">// Add labels and color guide</span>
+  <span class="nx">svg</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">g</span><span class="dl">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">class</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">label</span><span class="dl">"</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">id</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">keycolor</span><span class="dl">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">selectAll</span><span class="p">(</span><span class="dl">"</span><span class="s2">rect</span><span class="dl">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">data</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
+    <span class="p">.</span><span class="nx">enter</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">rect</span><span class="dl">"</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">x</span><span class="dl">"</span><span class="p">,</span> <span class="mi">450</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">y</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span><span class="k">return</span> <span class="mi">350</span> <span class="o">+</span> <span class="nx">d</span><span class="o">*</span><span class="mi">25</span><span class="p">;</span> <span class="p">})</span>
+        <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">width</span><span class="dl">"</span><span class="p">,</span> <span class="mi">20</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">height</span><span class="dl">"</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">class</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span><span class="k">return</span> <span class="dl">"</span><span class="s2">key colour</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">d</span> <span class="p">;});</span>
+
+  <span class="nx">svg</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">g</span><span class="dl">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">class</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">label</span><span class="dl">"</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">id</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">keytext</span><span class="dl">"</span><span class="p">)</span> 
+    <span class="p">.</span><span class="nx">selectAll</span><span class="p">(</span><span class="dl">"</span><span class="s2">text</span><span class="dl">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">data</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
+    <span class="p">.</span><span class="nx">enter</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">text</span><span class="dl">"</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">x</span><span class="dl">"</span><span class="p">,</span> <span class="mi">475</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">y</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span><span class="k">return</span> <span class="mi">365</span> <span class="o">+</span> <span class="nx">d</span><span class="o">*</span><span class="mi">25</span><span class="p">;</span> <span class="p">})</span>
+        <span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span> 
+          <span class="k">if</span> <span class="p">(</span><span class="nx">d</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span>
+            <span class="p">{</span><span class="k">return</span> <span class="dl">"</span><span class="s2">0.0 to </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">formatNumber</span><span class="p">(</span><span class="nx">cutoffs</span><span class="p">[</span><span class="nx">d</span><span class="p">])</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">%</span><span class="dl">"</span><span class="p">}</span>
+          <span class="k">else</span>
+            <span class="p">{</span><span class="k">return</span> <span class="nx">formatNumber</span><span class="p">(</span><span class="nx">cutoffs</span><span class="p">[</span><span class="nx">d</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="dl">"</span><span class="s2"> to </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">formatNumber</span><span class="p">(</span><span class="nx">cutoffs</span><span class="p">[</span><span class="nx">d</span><span class="p">])</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">%</span><span class="dl">"</span> <span class="p">}</span>
+          <span class="p">;});</span>
+
+<span class="p">}</span>
+
+<span class="nx">d3</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="nb">self</span><span class="p">.</span><span class="nx">frameElement</span><span class="p">).</span><span class="nx">style</span><span class="p">(</span><span class="dl">"</span><span class="s2">height</span><span class="dl">"</span><span class="p">,</span> <span class="nx">height</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">px</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div> 
           <small><a href="https://rubenhm.org/blog/2016/07/06/choropleth-maps-with-d3-python-and-data-from-fred/" title="Choropleth maps with D3, Python, and data from FRED">Read more ... </a></small>
           </br >
         </li>
@@ -192,6 +1411,38 @@ It shows the views of each of the FOMC&#39;s participants regarding the end-of-y
 but with a simple macro one can export charts in <code>PNG</code> format.
 This format is great for including charts in LaTeX documents
 with <code>\includegraphics{chart.png}</code>.</p>
+
+<p>The macro can be stored in the personal macro file <code>PERSONAL.XLSB</code>.
+Excel 2010 places the file in the following location:
+<code>C:\Users\yourusername\AppData\Roaming\Microsoft\Excel\XLSTART</code></p>
+
+<p>This file is hidden when first starting Excel. To unhide, perform
+the following steps.</p>
+<div class="highlight"><pre><code class="language-" data-lang="">+ View -&gt; Unhide
+    + Unhide personal macros file.
+</code></pre></div>
+<p>You can now select the <code>View -&gt; Macro</code> or the <code>Developer -&gt; Macros</code> menu items to create a new macro.
+The macro for saving the generated <code>PNG</code> files is as follows:</p>
+<div class="highlight"><pre><code class="language-" data-lang="">Sub Export_ActiveChart_as_PNG()
+'
+' Export_ActiveChart_as_PNG Macro
+' Export Active Chart as PNG
+'
+        ActiveChart.Export Filename:="C:\path\to\save\excelcharts\" &amp; ActiveSheet.Name &amp; ".png", Filtername:="PNG"
+
+End Sub
+</code></pre></div>
+<p>The generated <code>PNG</code> file can now be used in <code>tex</code> documents as usual.</p>
+
+<p>Today, however, I found another alternative, but it doesn&#39;t work as well. </p>
+
+<h1>Save chart as <code>PDF</code></h1>
+
+<p>Excel 2010 provides a <code>Save As</code> option that can save the active chart as a <code>PDF</code> file. 
+The file can be used directly with <code>\includegraphics{chart.pdf}</code> 
+but the resulting <code>PDF</code> has a significant white margin all around that 
+would have to be cropped for better results. 
+Cropping a <code>PDF</code> without the full version of Acrobat can be a problem, so the <code>PNG</code> route works  better, in my opinion.</p>
  
           <small><a href="https://rubenhm.org/blog/2014/09/25/export-png-charts-from-excel/" title="Export PNG charts from Excel">Read more ... </a></small>
           </br >
@@ -203,6 +1454,66 @@ with <code>\includegraphics{chart.png}</code>.</p>
           <span class="post-date">Aug 1, 2014</span>
           <a class="post-link" href="/blog/2014/08/01/pandoc-beamer-make-workflow/">Pandoc, beamer, MAKE workflow</a></br >
           <p>The goal is to produce a nicely formatted beamer presentation in pdf format without losing focus away from the slides content by constantly meddling with the latex styles.</p>
+
+<p>The solution is to write the presentation core content in <code>markdown</code>, then process the file with <code>pandoc</code> to obtain the pdf using a <code>beamer</code> template, automating the process with <code>make</code>.</p>
+
+<p>We require the following tools. (I won&#39;t discuss how to install them in this post.)</p>
+
+<ol>
+<li><p><a href="http://johnmacfarlane.net/pandoc/">Pandoc</a> is a tool used to convert files between different formats. In particular, it is great for converting markdown input files into LaTeX, html, pdf, or Word format, including beamer latex presentations.</p></li>
+<li><p><a href="https://www.tug.org/texlive/">Texlive</a> is one of the many LaTeX system distributions, available for Linux and Windows.</p></li>
+<li><p><a href="http://www.gnu.org/software/make/">Make</a> is a &quot;tool which controls the generation of executables and other non-source files of a program from the program&#39;s source files.&quot; In our case, we will use it to automate the generation of pdf files from a markdown source using texlive as the engine to compile the latex files.</p></li>
+<li><p><a href="http://www.gnu.org/software/sed/">Sed</a> is a stream editor which operates on files. We will use it to automatically change strings of text using regular expressions.</p></li>
+</ol>
+
+<p>While <code>make</code> and <code>sed</code> are common tools in a Linux environment, the <a href="http://gnuwin32.sourceforge.net/">GnuWin32 project</a> provides alternatives for Windows.</p>
+
+<h2>Steps</h2>
+
+<ol>
+<li>The core of the presentation is written in markdown. See <a href="http://rubenhm.org/downloads/blog/2014-08-01-pandoc-beamer-make-workflow/example_pres.md">example</a>.</li>
+<li>This file is run through pandoc to generate a <code>tex</code> <a href="http://rubenhm.org/downloads/blog/2014-08-01-pandoc-beamer-make-workflow/example_pres.tex">file</a>.</li>
+<li>The above tex file is embedded as input in a beamer presentation <a href="http://rubenhm.org/downloads/blog/2014-08-01-pandoc-beamer-make-workflow/presentation_example.tex">template</a>.</li>
+<li>The presentation template file is finally processed by <code>xelatex</code> to generate a pdf <a href="http://rubenhm.org/downloads/blog/2014-08-01-pandoc-beamer-make-workflow/presentation_example.pdf">presentation</a>. 
+We use <code>xelatex</code> because in Windows we can use TrueType fonts, for example <code>Calibri</code>. The example uses <code>Times New Roman</code>.</li>
+<li>The entire process is automated with <code>make</code> (with optional use of <code>sed</code>).</li>
+</ol>
+
+<p>Running the following command in the command line will produce the final presentation pdf file and will clean up any auxiliary files, except for the intermediate tex files and the original markdown source.</p>
+<div class="highlight"><pre><code class="language-" data-lang="">make FILE=example
+</code></pre></div>
+<p>To automate the process, the <code>make</code> command uses the following set of instructions from a file named <a href="http://rubenhm.org/downloads/blog/2014-08-01-pandoc-beamer-make-workflow/makefile">makefile</a>.</p>
+<div class="highlight"><pre><code class="language-" data-lang="">FILE=
+MDFILE=$(FILE)_pres
+TEXFILE=presentation_$(FILE)
+INPUTS=
+
+all:  pdf; make clean
+
+.PHONY: all clean
+
+pdf:
+    # Use pandoc to convert the main markdown source to latex
+    pandoc $(MDFILE).md --slide-level 2 -t beamer -o $(MDFILE).tex
+    # Use sed to replace a string in the latex file that sets spaces in itemize environment
+    sed -i "s/\\itemsep1pt\\parskip0pt\\parsep0pt/\\itemsep1.6pt\\parskip1.6pt\\parsep0pt/g" $(MDFILE).tex
+    # Apply xelatex twice to obtain the pdf
+    xelatex $(TEXFILE).tex
+    xelatex $(TEXFILE).tex  
+
+# Remove unnecessary files
+clean: 
+    -rm -f $(TEXFILE).log $(TEXFILE).aux  $(TEXFILE).toc  $(TEXFILE).snm $(TEXFILE).nav $(TEXFILE).out $(TEXFILE).fdb_latemk $(TEXFILE).synctex.gz $(TEXFILE).fls
+    -rm -f sed*.*
+
+</code></pre></div>
+<p>The <code>--slide-level 2</code> option indicates we can use <code>##</code> in the markdown file to generate new slides, and <code>###</code> to create subheadings inside a slide. A single <code>#</code> creates sections.</p>
+
+<h2>Attributions</h2>
+
+<p>This post is my implementation (really a simplified version) of this post in <a href="http://jeromyanglim.blogspot.com/2012/07/beamer-pandoc-markdown.html">Jeromy Anglim&#39;s blog</a>.</p>
+
+<p>Pictures used in the example are attributed to <a href="http://placekitten.com/attribution.html">placekitten.com</a>.</p>
  
           <small><a href="https://rubenhm.org/blog/2014/08/01/pandoc-beamer-make-workflow/" title="Pandoc, beamer, MAKE workflow">Read more ... </a></small>
           </br >
@@ -218,6 +1529,38 @@ with <code>\includegraphics{chart.png}</code>.</p>
           <p>When writing papers in latex, I usually use WinEdt and MikTeX (more recently,
 I started using SublimeText with TexLive), but most of my co-authors only use
 <em>ScientificWorkplace</em> with the dated TrueTeX latex engine.</p>
+
+<p>In preparing papers, I like to have the following folder structure:</p>
+<div class="highlight"><pre><code class="language-" data-lang="">bibfiles/
+project-files/
+    |
+    |-plots/
+    |-tables/
+</code></pre></div>
+<p>But this does not work for SWP because in order to compile the main document, it copies the  tex file to a temporary file under a temporary folder, and therefore, SWP cannot find any folders or graphics included with
+<code>\input</code> or <code>\includegraphics</code> that are in the above subfolders. SWP also cannot find any <code>bib</code> files, unless the <code>bibfiles</code> folder is appropriately selected in the general settings, or the <code>bib</code> file is copied to the standard folder: <code>c:\SWP folder\TCITeX\TeX\BibTeX\bib\</code>.</p>
+
+<p>The solution, which does not require to manually edit any settings file under SWP (which does not work anyway), involves three steps:</p>
+
+<ol>
+<li><p>To fix the issue with finding graphics files (e.g, <code>png</code> or <code>pdf</code> files, because I use <code>pdflatex</code>), include the following commands in the preamble. Notice the two sets of braces and the trailing <code>/</code>. The path can be absolute or relative (see 2).</p>
+<div class="highlight"><pre><code class="language-latex" data-lang="latex"><span class="k">\usepackage</span><span class="p">{</span>graphicx<span class="p">}</span>
+<span class="k">\graphicspath</span><span class="p">{</span> <span class="p">{</span>/path/to/graphics/folder/<span class="p">}</span> <span class="p">}</span>
+</code></pre></div></li>
+<li><p>To be able to work with relative paths and subfolders we have to prevent SWP from copying the main tex file to a temporary folder when compiling. This is achieved by setting the main tex files as a <code>master document</code>. Include the following code somewhere after <code>\begin{document}</code>:</p>
+<div class="highlight"><pre><code class="language-latex" data-lang="latex"><span class="c">%TCIMACRO{\QSubDoc{Include subdoc}{\input{tables/subdoc.tex}}}%</span>
+<span class="c">%BeginExpansion</span>
+<span class="k">\input</span><span class="p">{</span>tables/subdoc.tex<span class="p">}</span>
+<span class="c">%EndExpansion</span>
+</code></pre></div>
+<p>The file <code>subdoc.tex</code> located in the <code>tables/</code> folder has to include the following code (and it can be empty otherwise; it can also be located in the main folder, but the paths above have to reflect this):</p>
+<div class="highlight"><pre><code class="language-latex" data-lang="latex"><span class="c">%TCIDATA{LaTeXparent=0,0,main.tex}</span>
+</code></pre></div>
+<p>where <code>main.tex</code> is the name of the master file. For additional files in the <code>plots</code> and <code>tables</code> subfolders, the TCI macro is not needed, and the usual <code>\input</code> or <code>\includegraphics</code> commands will work and the tex or graphics files will be found.</p></li>
+<li><p>As mentioned before, to find the correct <code>bib</code> files, the options are to change the standard path in SWP&#39;s general settings or to copy the <code>bib</code> files to the standard path under the SWP installation folder,
+<code>c:\SWP folder\TCITeX\TeX\BibTeX\bib\</code>.</p></li>
+<li><p>Finally, it goes without saying that your coauthors should always save project files in <code>Portable LaTeX</code> format.</p></li>
+</ol>
  
           <small><a href="https://rubenhm.org/blog/2014/04/01/how-to-collaborate-with-scientific-workplace-users/" title="How to collaborate with Scientific Workplace users">Read more ... </a></small>
           </br >

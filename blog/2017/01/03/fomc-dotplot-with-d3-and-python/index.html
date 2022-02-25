@@ -542,11 +542,15 @@ df.transpose().reset_index().to_json("dotplot.json",orient='records')</code></pr
 <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"//d3js.org/d3.v4.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
 <span class="nt">&lt;script&gt;</span>
-<span class="c1">// Reads data from a JSON file with the annual SEPs projections</span>
+<span class="c1">// Reads data from a JSON file with the annual SEPs projections
+</span>
 
-<span class="c1">// Auxiliary function</span>
-<span class="c1">// Create array [1,2,...,N]</span>
-<span class="c1">// http://stackoverflow.com/questions/3746725/create-a-javascript-array-containing-1-n</span>
+<span class="c1">// Auxiliary function
+</span>
+<span class="c1">// Create array [1,2,...,N]
+</span>
+<span class="c1">// http://stackoverflow.com/questions/3746725/create-a-javascript-array-containing-1-n
+</span>
 <span class="kd">function</span> <span class="nx">nArray</span> <span class="p">(</span><span class="nx">N</span><span class="p">)</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">dotArray</span> <span class="o">=</span> <span class="p">[];</span>
     <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="nx">N</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
@@ -573,13 +577,15 @@ df.transpose().reset_index().to_json("dotplot.json",orient='records')</code></pr
 <span class="kd">var</span> <span class="nx">plotDotPlot</span> <span class="o">=</span> <span class="p">{};</span>
 <span class="nx">plotDotPlot</span><span class="p">.</span><span class="nx">svg</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
 
-<span class="c1">// Define SVG</span>
+<span class="c1">// Define SVG
+</span>
 <span class="nx">plotDotPlot</span><span class="p">.</span><span class="nx">svg</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="dl">"</span><span class="s2">#dotplot</span><span class="dl">"</span><span class="p">)</span>
       <span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">svg</span><span class="dl">"</span><span class="p">)</span>
       <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">width</span><span class="dl">"</span><span class="p">,</span> <span class="nx">outerWidth</span><span class="p">)</span>
       <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">height</span><span class="dl">"</span><span class="p">,</span> <span class="nx">outerHeight</span><span class="p">);</span>
 
-<span class="c1">// Read data</span>
+<span class="c1">// Read data
+</span>
 <span class="nx">d3</span><span class="p">.</span><span class="nx">json</span><span class="p">(</span><span class="dl">'</span><span class="s1">dotplot.json</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
 
 
@@ -587,23 +593,30 @@ df.transpose().reset_index().to_json("dotplot.json",orient='records')</code></pr
         <span class="k">return</span> <span class="nx">pt</span><span class="p">.</span><span class="nx">displayError</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
       <span class="p">}</span>
 
-      <span class="c1">// Examine data</span>
+      <span class="c1">// Examine data
+</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
 
-      <span class="c1">// Read years</span>
+      <span class="c1">// Read years
+</span>
       <span class="kd">var</span> <span class="nx">years</span> <span class="o">=</span> <span class="p">[]</span>
       <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="nx">i</span><span class="o">&lt;</span><span class="nx">data</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">years</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">data</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">index</span><span class="p">)</span>
       <span class="p">}</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">years</span><span class="p">)</span>
 
-      <span class="c1">// Read rates</span>
-      <span class="c1">// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys</span>
+      <span class="c1">// Read rates
+</span>
+      <span class="c1">// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys
+</span>
       <span class="kd">var</span> <span class="nx">dataCols</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">data</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-      <span class="c1">// Remove index</span>
+      <span class="c1">// Remove index
+</span>
       <span class="nx">dataCols</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
-      <span class="c1">// Interest Rate Scale range provided in SEPs</span>
-      <span class="c1">// make numeric</span>
+      <span class="c1">// Interest Rate Scale range provided in SEPs
+</span>
+      <span class="c1">// make numeric
+</span>
       <span class="kd">var</span> <span class="nx">numScale</span> <span class="o">=</span> <span class="nx">dataCols</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">return</span> <span class="o">+</span><span class="nx">d</span><span class="p">;</span>
       <span class="p">})</span>
@@ -611,71 +624,96 @@ df.transpose().reset_index().to_json("dotplot.json",orient='records')</code></pr
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">dataCols</span><span class="p">)</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">numScale</span><span class="p">)</span>
 
-      <span class="c1">// Calculate max number of dots for the same rate</span>
+      <span class="c1">// Calculate max number of dots for the same rate
+</span>
       <span class="kd">var</span> <span class="nx">maxDots</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">max</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span>
        <span class="o">|</span>   <span class="dl">'</span><span class="s1">use strict</span><span class="dl">'</span><span class="p">;</span>
-          <span class="c1">// Generate array of values</span>
-          <span class="c1">// console.log(d)</span>
+          <span class="c1">// Generate array of values
+</span>
+          <span class="c1">// console.log(d)
+</span>
           <span class="kd">var</span> <span class="nx">dvalues</span> <span class="o">=</span> <span class="p">[];</span>
           <span class="kd">var</span> <span class="nx">ic</span><span class="p">;</span>
           <span class="k">for</span> <span class="p">(</span><span class="nx">ic</span> <span class="k">in</span> <span class="nx">dataCols</span><span class="p">)</span> <span class="p">{</span>
               <span class="kd">var</span> <span class="nx">col</span> <span class="o">=</span> <span class="nx">dataCols</span><span class="p">[</span><span class="nx">ic</span><span class="p">]</span>
-              <span class="c1">// if (col != "Period") {</span>
+              <span class="c1">// if (col != "Period") {
+</span>
                 <span class="nx">dvalues</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="nx">d</span><span class="p">[</span><span class="nx">col</span><span class="p">].</span><span class="nx">length</span><span class="p">)</span>
-              <span class="c1">// }</span>
+              <span class="c1">// }
+</span>
           <span class="p">}</span>
-          <span class="c1">// console.log(dvalues)</span>
-          <span class="c1">// Spread operator (...) to calculate max of an array:</span>
-          <span class="c1">// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max</span>
-          <span class="c1">// console.log(Math.max(...dvalues)) </span>
+          <span class="c1">// console.log(dvalues)
+</span>
+          <span class="c1">// Spread operator (...) to calculate max of an array:
+</span>
+          <span class="c1">// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max
+</span>
+          <span class="c1">// console.log(Math.max(...dvalues)) 
+</span>
           <span class="k">return</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">max</span><span class="p">(...</span><span class="nx">dvalues</span><span class="p">);</span>
         <span class="p">});</span>
 
-      <span class="c1">// console.log(maxDots)</span>
+      <span class="c1">// console.log(maxDots)
+</span>
 
-      <span class="c1">// Generate array of serials</span>
-      <span class="c1">// dotArray = [1, 2, ..., N]</span>
+      <span class="c1">// Generate array of serials
+</span>
+      <span class="c1">// dotArray = [1, 2, ..., N]
+</span>
       <span class="kd">var</span> <span class="nx">dotArray</span> <span class="o">=</span> <span class="nx">nArray</span><span class="p">(</span><span class="nx">maxDots</span><span class="p">)</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">dotArray</span><span class="p">)</span>
 
-      <span class="c1">// Scales and Axes</span>
-      <span class="c1">// Ordinal Band scale for X. Keep as string (don't use +d.index)</span>
+      <span class="c1">// Scales and Axes
+</span>
+      <span class="c1">// Ordinal Band scale for X. Keep as string (don't use +d.index)
+</span>
       <span class="nx">plotDotPlot</span><span class="p">.</span><span class="nx">x0</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">scaleBand</span><span class="p">()</span>
              <span class="p">.</span><span class="nx">domain</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span><span class="k">return</span> <span class="nx">d</span><span class="p">.</span><span class="nx">index</span><span class="p">;</span> <span class="p">}))</span>
              <span class="p">.</span><span class="nx">rangeRound</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="nx">innerWidth</span><span class="p">])</span>
              <span class="p">.</span><span class="nx">padding</span><span class="p">(</span><span class="mf">0.1</span><span class="p">);</span>
 
-      <span class="c1">// Ordinal point scale to arrange dots in each band</span>
-      <span class="c1">// domain is the largest number of dots in any given band</span>
-      <span class="c1">// range is the bandwidth of the band</span>
+      <span class="c1">// Ordinal point scale to arrange dots in each band
+</span>
+      <span class="c1">// domain is the largest number of dots in any given band
+</span>
+      <span class="c1">// range is the bandwidth of the band
+</span>
       <span class="nx">plotDotPlot</span><span class="p">.</span><span class="nx">x1</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">scalePoint</span><span class="p">()</span>
               <span class="p">.</span><span class="nx">domain</span><span class="p">(</span><span class="nx">dotArray</span><span class="p">)</span>
               <span class="p">.</span><span class="nx">range</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="nx">plotDotPlot</span><span class="p">.</span><span class="nx">x0</span><span class="p">.</span><span class="nx">bandwidth</span><span class="p">()])</span>
 
-      <span class="c1">// Y linear scale with hardcoded bounds</span>
+      <span class="c1">// Y linear scale with hardcoded bounds
+</span>
       <span class="nx">plotDotPlot</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">scaleLinear</span><span class="p">()</span>
-              <span class="c1">// .domain(d3.extent(numScale)) // automatic</span>
-              <span class="p">.</span><span class="nx">domain</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>                 <span class="c1">// harcoded</span>
+              <span class="c1">// .domain(d3.extent(numScale)) // automatic
+</span>
+              <span class="p">.</span><span class="nx">domain</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>                 <span class="c1">// harcoded
+</span>
               <span class="p">.</span><span class="nx">range</span><span class="p">([</span><span class="nx">innerHeight</span><span class="p">,</span><span class="mi">0</span><span class="p">]);</span>
 
-      <span class="c1">// Axes generators</span>
+      <span class="c1">// Axes generators
+</span>
       <span class="nx">plotDotPlot</span><span class="p">.</span><span class="nx">xAxis</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">axisBottom</span><span class="p">(</span><span class="nx">plotDotPlot</span><span class="p">.</span><span class="nx">x0</span><span class="p">);</span>
       <span class="nx">plotDotPlot</span><span class="p">.</span><span class="nx">yAxis</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">axisRight</span><span class="p">(</span><span class="nx">plotDotPlot</span><span class="p">.</span><span class="nx">y</span><span class="p">).</span><span class="nx">ticks</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
 
-      <span class="c1">// Gridlines: https://bl.ocks.org/d3noob/c506ac45617cf9ed39337f99f8511218</span>
-      <span class="c1">// gridlines in x axis function</span>
+      <span class="c1">// Gridlines: https://bl.ocks.org/d3noob/c506ac45617cf9ed39337f99f8511218
+</span>
+      <span class="c1">// gridlines in x axis function
+</span>
       <span class="kd">function</span> <span class="nx">make_x_gridlines</span><span class="p">()</span> <span class="p">{</span>   
           <span class="k">return</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">axisBottom</span><span class="p">(</span><span class="nx">plotDotPlot</span><span class="p">.</span><span class="nx">x0</span><span class="p">)</span>
               <span class="p">.</span><span class="nx">ticks</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
       <span class="p">}</span>
 
-      <span class="c1">// gridlines in y axis function</span>
+      <span class="c1">// gridlines in y axis function
+</span>
       <span class="kd">function</span> <span class="nx">make_y_gridlines</span><span class="p">()</span> <span class="p">{</span>   
           <span class="k">return</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">axisLeft</span><span class="p">(</span><span class="nx">plotDotPlot</span><span class="p">.</span><span class="nx">y</span><span class="p">)</span>
               <span class="p">.</span><span class="nx">ticks</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
       <span class="p">}</span>
 
-      <span class="c1">// Add svg</span>
+      <span class="c1">// Add svg
+</span>
       <span class="nx">plotDotPlot</span><span class="p">.</span><span class="nx">chartGroup</span> <span class="o">=</span> <span class="nx">plotDotPlot</span><span class="p">.</span><span class="nx">svg</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">g</span><span class="dl">"</span><span class="p">)</span>
               <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">transform</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">translate(</span><span class="dl">"</span><span class="o">+</span><span class="nx">margin</span><span class="p">.</span><span class="nx">left</span><span class="o">+</span><span class="dl">"</span><span class="s2">,</span><span class="dl">"</span><span class="o">+</span><span class="nx">margin</span><span class="p">.</span><span class="nx">top</span><span class="o">+</span><span class="dl">"</span><span class="s2">)</span><span class="dl">"</span><span class="p">);</span>
 
@@ -703,7 +741,8 @@ df.transpose().reset_index().to_json("dotplot.json",orient='records')</code></pr
                   <span class="p">.</span><span class="nx">tickFormat</span><span class="p">(</span><span class="dl">""</span><span class="p">)</span>
                 <span class="p">);</span>
 
-      <span class="c1">// Add labels to axes</span>
+      <span class="c1">// Add labels to axes
+</span>
       <span class="nx">plotDotPlot</span><span class="p">.</span><span class="nx">chartGroup</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">text</span><span class="dl">"</span><span class="p">)</span>
               <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">class</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">y label</span><span class="dl">"</span><span class="p">)</span>
               <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">text-anchor</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">end</span><span class="dl">"</span><span class="p">)</span>
@@ -712,7 +751,8 @@ df.transpose().reset_index().to_json("dotplot.json",orient='records')</code></pr
               <span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="dl">"</span><span class="s2">Percent, end of year</span><span class="dl">"</span><span class="p">)</span>
 
 
-      <span class="c1">// Add circles</span>
+      <span class="c1">// Add circles
+</span>
       <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">rows</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">rows</span> <span class="o">&lt;</span> <span class="nx">years</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">rows</span><span class="o">++</span><span class="p">)</span>  <span class="p">{</span>
 
           <span class="kd">var</span> <span class="nx">rateData</span> <span class="o">=</span> <span class="nx">data</span><span class="p">[</span><span class="nx">rows</span><span class="p">]</span>
@@ -722,7 +762,8 @@ df.transpose().reset_index().to_json("dotplot.json",orient='records')</code></pr
                 <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">class</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">fomc </span><span class="dl">"</span><span class="o">+</span><span class="dl">"</span><span class="s2">M</span><span class="dl">"</span><span class="o">+</span><span class="nx">years</span><span class="p">[</span><span class="nx">rows</span><span class="p">])</span>
 
           <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">cols</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">cols</span><span class="o">&lt;</span> <span class="nx">dataCols</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">cols</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-               <span class="c1">// Calculate length of dot array</span>
+               <span class="c1">// Calculate length of dot array
+</span>
                <span class="kd">var</span> <span class="nx">lenDotArray</span> <span class="o">=</span> <span class="nx">rateData</span><span class="p">[</span><span class="nx">dataCols</span><span class="p">[</span><span class="nx">cols</span><span class="p">]].</span><span class="nx">length</span>
                <span class="kd">var</span> <span class="nx">mclass</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">dots </span><span class="dl">"</span><span class="o">+</span><span class="dl">"</span><span class="s2">M</span><span class="dl">"</span><span class="o">+</span> <span class="nx">rows</span><span class="o">+</span><span class="dl">"</span><span class="s2"> N</span><span class="dl">"</span><span class="o">+</span><span class="nx">cols</span>
                <span class="nx">plotDotPlot</span><span class="p">.</span><span class="nx">chartGroup</span><span class="p">.</span><span class="nx">selectAll</span><span class="p">(</span><span class="nx">mclass</span><span class="p">)</span>
@@ -733,8 +774,10 @@ df.transpose().reset_index().to_json("dotplot.json",orient='records')</code></pr
                      <span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">circle</span><span class="dl">"</span><span class="p">)</span>
                      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">class</span><span class="dl">"</span><span class="p">,</span><span class="nx">mclass</span><span class="p">)</span>
                      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">transform</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span>
-                        <span class="c1">// Center dots in each band:</span>
-                        <span class="c1">// Caculate translate distance as half of diff with bandwidth</span>
+                        <span class="c1">// Center dots in each band:
+</span>
+                        <span class="c1">// Caculate translate distance as half of diff with bandwidth
+</span>
                         <span class="kd">var</span> <span class="nx">transDim</span> <span class="o">=</span> <span class="nx">plotDotPlot</span><span class="p">.</span><span class="nx">x0</span><span class="p">(</span><span class="nx">years</span><span class="p">[</span><span class="nx">rows</span><span class="p">])</span><span class="o">+</span><span class="p">(</span><span class="nx">plotDotPlot</span><span class="p">.</span><span class="nx">x0</span><span class="p">.</span><span class="nx">bandwidth</span><span class="p">()</span><span class="o">-</span><span class="nx">plotDotPlot</span><span class="p">.</span><span class="nx">x1</span><span class="p">(</span><span class="nx">lenDotArray</span><span class="p">))</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
                         <span class="k">return</span> <span class="dl">"</span><span class="s2">translate(</span><span class="dl">"</span><span class="o">+</span><span class="nx">transDim</span><span class="o">+</span><span class="dl">"</span><span class="s2">,0)</span><span class="dl">"</span><span class="p">;</span> 
                       <span class="p">})</span>
