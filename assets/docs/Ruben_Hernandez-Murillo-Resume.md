@@ -3,11 +3,11 @@ Rubén Hernández-Murillo
 
 Email: <ruben@rubenhm.org> • Website: [rubenhm.org](http://www.rubenhm.org) • 314-827-6381 (c) • Citizenship: US • 
 
-Interests 
----------
+Skills/ Interests 
+-----------------
 
 +   R, Python, SQL, MATLAB, Stata.
-+   RStudio Connect, GitHub, GitLab.
++   RStudio Connect, Git, GitHub, GitLab.
 +   Text analytics and  machine learning models in economics.
 +   Public speaking.
 
