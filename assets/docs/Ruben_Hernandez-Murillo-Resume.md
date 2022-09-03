@@ -14,9 +14,14 @@ Skills/ Interests
 Work Experience
 ---------------
 
+### Analysis ###
+
+2022-Present
+:   _KeyBank, N.A._  Quant Analytics Sr Assoc.
+
 ### Research  ### 
 
-2015-Present
+2015-2022
 :   _Federal Reserve Bank of Cleveland._  Policy economist.
 
 2000-2015
@@ -26,8 +31,7 @@ Work Experience
 +   Topics: applied microeconomics; econometrics and forecasting; real estate economics; regional economics.
 +   Served as reviewer for 40+ academic journals.
 
-
-### Policy/Analysis ###
+### Policy ###
 
 2015-Present
 :   _Federal Reserve Bank of Cleveland._
@@ -91,9 +95,4 @@ Selected and Recent Publications
 2010
 :   [“Strategic Online Banking Adoption,”](http://dx.doi.org/10.1016/j.jbankfin.2010.03.011) (with Gerard Llobet and Roberto Fuentes) _Journal of Banking and Finance_, 34(7), pp. 1650–1663. 
 
-2009
-:   [“Measuring the Information Content of the Beige Book: A Mixed Data Sampling Approach.”](https://dx.doi.org/10.1111/j.1538-4616.2008.00186.x) (with Michelle T. Armesto, Michael T. Owyang, and Jeremy Piger) _Journal of Money, Credit and Banking_, 41 (1): 35–55
-
-2007
-:   [“Experiments in Financial Liberalization: The Mexican Banking Sector.”](http://research.stlouisfed.org/publications/review/07/09/HernandezMurillo.pdf) _Federal Reserve Bank of St. Louis Review_, 89(5), pp. 415–32.
 

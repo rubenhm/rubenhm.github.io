@@ -1,8 +1,13 @@
 ## Appointments Held
 
+**KeyBank, N.A.**
+
+2022-Present
+:	Quant Analytics Sr Assoc.
+
 **Federal Reserve Bank of Cleveland**
 
-2015–Present
+2015–2022
 :	Policy Economist.
 
 **Federal Reserve Bank of St. Louis**
