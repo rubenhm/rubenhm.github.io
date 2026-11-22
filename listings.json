@@ -1,0 +1,643 @@
+[
+  {
+    "listing": "/research/unpublished/2014-interjurisdictional-competition-location-decisions-firms/index.html",
+    "items": [
+      "/research/articles/2019-interjurisdictional-competition-adverse-selection/index.html",
+      "/research/articles/2004-tax-competition-tax-harmonization-evasion/index.html"
+    ]
+  },
+  {
+    "listing": "/research/unpublished/2003-spatial-probit-geographic-patterns-state-lotteries/index.html",
+    "items": [
+      "/research/articles/2007-spatial-dependence-models-state-fiscal-policy/index.html",
+      "/research/articles/2006-geography-economics-politics-lottery-adoption/index.html"
+    ]
+  },
+  {
+    "listing": "/research/index.html",
+    "items": [
+      "/research/articles/2019-interjurisdictional-competition-adverse-selection/index.html",
+      "/research/articles/2018-state-level-analysis-okuns-law/index.html",
+      "/research/articles/2017-clustered-housing-cycles/index.html",
+      "/research/articles/2015-did-affordable-housing-legislation-contribute-subprime/index.html",
+      "/research/articles/2015-risk-aversion-country-level/index.html",
+      "/research/articles/2014-differences-subprime-loan-pricing-across-races/index.html",
+      "/research/articles/2013-what-do-happiness-health-satisfaction-data/index.html",
+      "/research/articles/2011-patterns-interstate-migration-united-states-from/index.html",
+      "/research/articles/2011-regional-aggregation-forecasting-application-federal-reserves/index.html",
+      "/research/articles/2010-strategic-online-banking-adoption/index.html",
+      "/research/articles/2010-nonlinear-effects-school-quality-house-prices/index.html",
+      "/research/articles/2009-impact-inflation-unemployment-subjective-personal-country/index.html",
+      "/research/articles/2009-measuring-information-content-beige-book-mixed/index.html",
+      "/research/articles/2008-drug-prices-under-medicare-drug-discount/index.html",
+      "/research/articles/2007-experiments-financial-liberalization-mexican-banking-sector/index.html",
+      "/research/articles/2007-spatial-dependence-models-state-fiscal-policy/index.html",
+      "/research/articles/2006-geography-economics-politics-lottery-adoption/index.html",
+      "/research/articles/2006-information-content-regional-employment-data-forecasting/index.html",
+      "/research/articles/2006-patent-licensing-revisited-heterogeneous-firms-product/index.html",
+      "/research/articles/2005-does-consumer-sentiment-predict-regional-consumption/index.html",
+      "/research/articles/2005-diffusion-electronic-business-united-states/index.html",
+      "/research/articles/2004-racial-profiling-or-racist-policing-bounds/index.html",
+      "/research/articles/2004-tax-competition-tax-harmonization-evasion/index.html",
+      "/research/articles/2003-strategic-interaction-tax-policies-among-states/index.html",
+      "/research/articles/2002-did-right-to-work-work-idaho/index.html",
+      "/research/fed-pubs/2022-age-adjusted-covid-19-mortality-rates-demographic-groups/index.html",
+      "/research/fed-pubs/2020-assessing-layoffs-four-midwestern-states-during/index.html",
+      "/research/fed-pubs/2020-layoffs-during-covid-19-pandemic-four-findings/index.html",
+      "/research/fed-pubs/2020-labor-market-skills-foreign-born-workers-united-states/index.html",
+      "/research/fed-pubs/2016-rosie-refiner-two-manufacturing-industries-rising/index.html",
+      "/research/fed-pubs/2014-rising-complexity-fomc-statement/index.html",
+      "/research/fed-pubs/2013-urban-areas-host-largest-manufacturing-service/index.html",
+      "/research/fed-pubs/2012-manufacturing-construction-decline-ranks-top-10/index.html",
+      "/research/fed-pubs/2011-immigrants-skills-occupations-locations/index.html",
+      "/research/fed-pubs/2011-immigration-extremes-skill-distribution/index.html",
+      "/research/fed-pubs/2011-hispanics-play-different-role-districts-growth/index.html",
+      "/research/fed-pubs/2011-effects-education-health/index.html",
+      "/research/fed-pubs/2011-which-came-first-better-education-or-better/index.html",
+      "/research/fed-pubs/2010-mortality-rates-business-cycle/index.html",
+      "/research/fed-pubs/2010-some-cases-sick-economy-can-be/index.html",
+      "/research/fed-pubs/2010-city-growth-industry-employment-reallocation/index.html",
+      "/research/fed-pubs/2010-dismal-science-tackles-happiness-data/index.html",
+      "/research/fed-pubs/2010-eighth-district-fares-better-than-nation/index.html",
+      "/research/fed-pubs/2009-district-fares-better-than-nation-prime-mortgage/index.html",
+      "/research/fed-pubs/2009-us-migration-over-life-cycle/index.html",
+      "/research/fed-pubs/2009-corporate-social-responsibility-can-be-profitable/index.html",
+      "/research/fed-pubs/2009-employment-growth-mixed-across-eighth-district/index.html",
+      "/research/fed-pubs/2008-local-income-inequality/index.html",
+      "/research/fed-pubs/2008-regional-aggregation-forecasting-application-federal-reserves/index.html",
+      "/research/fed-pubs/2008-what-is-beige-book-how-is/index.html",
+      "/research/fed-pubs/2008-strategic-social-responsibility/index.html",
+      "/research/fed-pubs/2008-eighth-district-population-growth-follows-national/index.html",
+      "/research/fed-pubs/2008-which-came-first-democracy-or-growth/index.html",
+      "/research/fed-pubs/2007-employment-growth-slows-eighth-district/index.html",
+      "/research/fed-pubs/2007-us-exporters-rare-but-beneficial/index.html",
+      "/research/fed-pubs/2007-us-exporters-rare-breed/index.html",
+      "/research/fed-pubs/2006-adding-up-economic-effects-immigration/index.html",
+      "/research/fed-pubs/2006-professional-business-services-bounce-back-memphis/index.html",
+      "/research/fed-pubs/2006-new-views-immigration/index.html",
+      "/research/fed-pubs/2006-employment-trends-nearby-metro-areas-take/index.html",
+      "/research/fed-pubs/2005-economics-charitable-giving-what-gives/index.html",
+      "/research/fed-pubs/2005-economics-giving/index.html",
+      "/research/fed-pubs/2005-health-care-industry-pulls-memphis-out-job/index.html",
+      "/research/fed-pubs/2004-metropolitan-growth-sun-belt-vs-snow/index.html",
+      "/research/fed-pubs/2004-point-click-or-mortar-brick-look/index.html",
+      "/research/fed-pubs/2004-entrepreneurship/index.html",
+      "/research/fed-pubs/2004-tough-lesson-more-money-doesnt-help/index.html",
+      "/research/fed-pubs/2003-computer-use-productivity-growth/index.html",
+      "/research/fed-pubs/2003-innovation-is-eighth-district-catching-up/index.html",
+      "/research/fed-pubs/2003-cities-centers-innovation/index.html",
+      "/research/fed-pubs/2002-health-care-costs-coverage/index.html",
+      "/research/fed-pubs/2001-give-me-your-skilled/index.html",
+      "/research/fed-pubs/2001-suburban-expansion/index.html",
+      "/research/fed-pubs/2001-earned-income-tax-credit-work/index.html",
+      "/research/unpublished/2014-interjurisdictional-competition-location-decisions-firms/index.html",
+      "/research/unpublished/2012-effect-neighborhood-spillovers-mortgage-selection/index.html",
+      "/research/unpublished/2003-spatial-probit-geographic-patterns-state-lotteries/index.html"
+    ]
+  },
+  {
+    "listing": "/research/fed-pubs/2020-layoffs-during-covid-19-pandemic-four-findings/index.html",
+    "items": [
+      "/research/fed-pubs/2020-assessing-layoffs-four-midwestern-states-during/index.html",
+      "/research/fed-pubs/2007-employment-growth-slows-eighth-district/index.html"
+    ]
+  },
+  {
+    "listing": "/research/fed-pubs/2020-assessing-layoffs-four-midwestern-states-during/index.html",
+    "items": [
+      "/research/fed-pubs/2007-employment-growth-slows-eighth-district/index.html",
+      "/research/fed-pubs/2020-layoffs-during-covid-19-pandemic-four-findings/index.html"
+    ]
+  },
+  {
+    "listing": "/research/fed-pubs/2014-rising-complexity-fomc-statement/index.html",
+    "items": [
+      "/research/articles/2009-measuring-information-content-beige-book-mixed/index.html",
+      "/research/fed-pubs/2008-what-is-beige-book-how-is/index.html"
+    ]
+  },
+  {
+    "listing": "/research/fed-pubs/2012-manufacturing-construction-decline-ranks-top-10/index.html",
+    "items": [
+      "/research/fed-pubs/2009-employment-growth-mixed-across-eighth-district/index.html",
+      "/research/fed-pubs/2013-urban-areas-host-largest-manufacturing-service/index.html"
+    ]
+  },
+  {
+    "listing": "/research/fed-pubs/2011-immigration-extremes-skill-distribution/index.html",
+    "items": [
+      "/research/fed-pubs/2006-adding-up-economic-effects-immigration/index.html",
+      "/research/fed-pubs/2011-immigrants-skills-occupations-locations/index.html",
+      "/research/fed-pubs/2006-new-views-immigration/index.html",
+      "/research/fed-pubs/2020-labor-market-skills-foreign-born-workers-united-states/index.html"
+    ]
+  },
+  {
+    "listing": "/research/fed-pubs/2011-hispanics-play-different-role-districts-growth/index.html",
+    "items": [
+      "/research/fed-pubs/2008-eighth-district-population-growth-follows-national/index.html",
+      "/research/fed-pubs/2001-suburban-expansion/index.html"
+    ]
+  },
+  {
+    "listing": "/research/fed-pubs/2010-some-cases-sick-economy-can-be/index.html",
+    "items": [
+      "/research/fed-pubs/2010-mortality-rates-business-cycle/index.html",
+      "/research/fed-pubs/2010-dismal-science-tackles-happiness-data/index.html"
+    ]
+  },
+  {
+    "listing": "/research/fed-pubs/2010-eighth-district-fares-better-than-nation/index.html",
+    "items": [
+      "/research/fed-pubs/2009-employment-growth-mixed-across-eighth-district/index.html",
+      "/research/fed-pubs/2007-employment-growth-slows-eighth-district/index.html"
+    ]
+  },
+  {
+    "listing": "/research/fed-pubs/2010-city-growth-industry-employment-reallocation/index.html",
+    "items": [
+      "/research/fed-pubs/2003-cities-centers-innovation/index.html",
+      "/research/fed-pubs/2011-immigrants-skills-occupations-locations/index.html",
+      "/research/fed-pubs/2009-us-migration-over-life-cycle/index.html"
+    ]
+  },
+  {
+    "listing": "/research/fed-pubs/2009-employment-growth-mixed-across-eighth-district/index.html",
+    "items": [
+      "/research/fed-pubs/2010-eighth-district-fares-better-than-nation/index.html",
+      "/research/fed-pubs/2007-employment-growth-slows-eighth-district/index.html"
+    ]
+  },
+  {
+    "listing": "/research/fed-pubs/2009-corporate-social-responsibility-can-be-profitable/index.html",
+    "items": [
+      "/research/fed-pubs/2004-entrepreneurship/index.html",
+      "/research/fed-pubs/2008-strategic-social-responsibility/index.html"
+    ]
+  },
+  {
+    "listing": "/research/fed-pubs/2008-what-is-beige-book-how-is/index.html",
+    "items": [
+      "/research/articles/2009-measuring-information-content-beige-book-mixed/index.html",
+      "/research/fed-pubs/2014-rising-complexity-fomc-statement/index.html"
+    ]
+  },
+  {
+    "listing": "/research/fed-pubs/2008-regional-aggregation-forecasting-application-federal-reserves/index.html",
+    "items": [
+      "/research/articles/2011-regional-aggregation-forecasting-application-federal-reserves/index.html",
+      "/research/articles/2006-information-content-regional-employment-data-forecasting/index.html"
+    ]
+  },
+  {
+    "listing": "/research/fed-pubs/2008-eighth-district-population-growth-follows-national/index.html",
+    "items": [
+      "/research/fed-pubs/2009-employment-growth-mixed-across-eighth-district/index.html",
+      "/research/fed-pubs/2007-employment-growth-slows-eighth-district/index.html"
+    ]
+  },
+  {
+    "listing": "/research/fed-pubs/2007-us-exporters-rare-breed/index.html",
+    "items": [
+      "/research/fed-pubs/2004-entrepreneurship/index.html",
+      "/research/fed-pubs/2007-us-exporters-rare-but-beneficial/index.html"
+    ]
+  },
+  {
+    "listing": "/research/fed-pubs/2006-professional-business-services-bounce-back-memphis/index.html",
+    "items": [
+      "/research/fed-pubs/2006-employment-trends-nearby-metro-areas-take/index.html",
+      "/research/fed-pubs/2005-health-care-industry-pulls-memphis-out-job/index.html"
+    ]
+  },
+  {
+    "listing": "/research/fed-pubs/2006-employment-trends-nearby-metro-areas-take/index.html",
+    "items": [
+      "/research/fed-pubs/2005-health-care-industry-pulls-memphis-out-job/index.html",
+      "/research/fed-pubs/2006-professional-business-services-bounce-back-memphis/index.html"
+    ]
+  },
+  {
+    "listing": "/research/fed-pubs/2005-health-care-industry-pulls-memphis-out-job/index.html",
+    "items": [
+      "/research/fed-pubs/2006-employment-trends-nearby-metro-areas-take/index.html",
+      "/research/fed-pubs/2006-professional-business-services-bounce-back-memphis/index.html"
+    ]
+  },
+  {
+    "listing": "/research/fed-pubs/2005-economics-charitable-giving-what-gives/index.html",
+    "items": [
+      "/research/fed-pubs/2010-dismal-science-tackles-happiness-data/index.html",
+      "/research/fed-pubs/2005-economics-giving/index.html"
+    ]
+  },
+  {
+    "listing": "/research/fed-pubs/2004-point-click-or-mortar-brick-look/index.html",
+    "items": [
+      "/research/fed-pubs/2003-innovation-is-eighth-district-catching-up/index.html",
+      "/research/articles/2010-strategic-online-banking-adoption/index.html"
+    ]
+  },
+  {
+    "listing": "/research/fed-pubs/2004-entrepreneurship/index.html",
+    "items": [
+      "/research/fed-pubs/2007-us-exporters-rare-breed/index.html",
+      "/research/fed-pubs/2008-which-came-first-democracy-or-growth/index.html"
+    ]
+  },
+  {
+    "listing": "/research/fed-pubs/2003-computer-use-productivity-growth/index.html",
+    "items": [
+      "/research/fed-pubs/2003-cities-centers-innovation/index.html",
+      "/research/fed-pubs/2016-rosie-refiner-two-manufacturing-industries-rising/index.html",
+      "/research/articles/2005-diffusion-electronic-business-united-states/index.html",
+      "/research/fed-pubs/2007-us-exporters-rare-breed/index.html"
+    ]
+  },
+  {
+    "listing": "/research/fed-pubs/2002-health-care-costs-coverage/index.html",
+    "items": [
+      "/research/fed-pubs/2010-some-cases-sick-economy-can-be/index.html",
+      "/research/fed-pubs/2006-new-views-immigration/index.html"
+    ]
+  },
+  {
+    "listing": "/research/fed-pubs/2001-give-me-your-skilled/index.html",
+    "items": [
+      "/research/fed-pubs/2006-adding-up-economic-effects-immigration/index.html",
+      "/research/fed-pubs/2011-immigration-extremes-skill-distribution/index.html"
+    ]
+  },
+  {
+    "listing": "/research/articles/2019-interjurisdictional-competition-adverse-selection/index.html",
+    "items": [
+      "/research/unpublished/2014-interjurisdictional-competition-location-decisions-firms/index.html",
+      "/research/articles/2004-tax-competition-tax-harmonization-evasion/index.html"
+    ]
+  },
+  {
+    "listing": "/research/articles/2017-clustered-housing-cycles/index.html",
+    "items": [
+      "/research/articles/2007-spatial-dependence-models-state-fiscal-policy/index.html",
+      "/research/fed-pubs/2009-us-migration-over-life-cycle/index.html"
+    ]
+  },
+  {
+    "listing": "/research/articles/2015-did-affordable-housing-legislation-contribute-subprime/index.html",
+    "items": [
+      "/research/articles/2014-differences-subprime-loan-pricing-across-races/index.html",
+      "/research/fed-pubs/2009-district-fares-better-than-nation-prime-mortgage/index.html",
+      "/research/unpublished/2012-effect-neighborhood-spillovers-mortgage-selection/index.html"
+    ]
+  },
+  {
+    "listing": "/research/articles/2013-what-do-happiness-health-satisfaction-data/index.html",
+    "items": [
+      "/research/articles/2015-risk-aversion-country-level/index.html",
+      "/research/fed-pubs/2010-dismal-science-tackles-happiness-data/index.html"
+    ]
+  },
+  {
+    "listing": "/research/articles/2011-patterns-interstate-migration-united-states-from/index.html",
+    "items": [
+      "/research/fed-pubs/2006-new-views-immigration/index.html",
+      "/research/fed-pubs/2009-us-migration-over-life-cycle/index.html"
+    ]
+  },
+  {
+    "listing": "/research/articles/2010-nonlinear-effects-school-quality-house-prices/index.html",
+    "items": [
+      "/research/articles/2014-differences-subprime-loan-pricing-across-races/index.html",
+      "/research/fed-pubs/2004-tough-lesson-more-money-doesnt-help/index.html"
+    ]
+  },
+  {
+    "listing": "/research/articles/2009-impact-inflation-unemployment-subjective-personal-country/index.html",
+    "items": [
+      "/research/articles/2015-risk-aversion-country-level/index.html",
+      "/research/fed-pubs/2010-dismal-science-tackles-happiness-data/index.html"
+    ]
+  },
+  {
+    "listing": "/research/articles/2007-spatial-dependence-models-state-fiscal-policy/index.html",
+    "items": [
+      "/research/unpublished/2003-spatial-probit-geographic-patterns-state-lotteries/index.html",
+      "/research/articles/2003-strategic-interaction-tax-policies-among-states/index.html"
+    ]
+  },
+  {
+    "listing": "/research/articles/2006-patent-licensing-revisited-heterogeneous-firms-product/index.html",
+    "items": [
+      "/research/unpublished/2014-interjurisdictional-competition-location-decisions-firms/index.html",
+      "/research/articles/2019-interjurisdictional-competition-adverse-selection/index.html"
+    ]
+  },
+  {
+    "listing": "/research/articles/2006-geography-economics-politics-lottery-adoption/index.html",
+    "items": [
+      "/research/articles/2007-spatial-dependence-models-state-fiscal-policy/index.html",
+      "/research/unpublished/2003-spatial-probit-geographic-patterns-state-lotteries/index.html"
+    ]
+  },
+  {
+    "listing": "/research/articles/2005-diffusion-electronic-business-united-states/index.html",
+    "items": [
+      "/research/fed-pubs/2012-manufacturing-construction-decline-ranks-top-10/index.html",
+      "/research/articles/2010-strategic-online-banking-adoption/index.html"
+    ]
+  },
+  {
+    "listing": "/research/articles/2004-racial-profiling-or-racist-policing-bounds/index.html",
+    "items": [
+      "/research/articles/2014-differences-subprime-loan-pricing-across-races/index.html",
+      "/research/articles/2011-regional-aggregation-forecasting-application-federal-reserves/index.html"
+    ]
+  },
+  {
+    "listing": "/research/articles/2002-did-right-to-work-work-idaho/index.html",
+    "items": [
+      "/research/articles/2018-state-level-analysis-okuns-law/index.html",
+      "/research/fed-pubs/2020-layoffs-during-covid-19-pandemic-four-findings/index.html"
+    ]
+  },
+  {
+    "listing": "/research/articles/2003-strategic-interaction-tax-policies-among-states/index.html",
+    "items": [
+      "/research/articles/2007-spatial-dependence-models-state-fiscal-policy/index.html",
+      "/research/articles/2004-tax-competition-tax-harmonization-evasion/index.html"
+    ]
+  },
+  {
+    "listing": "/research/articles/2004-tax-competition-tax-harmonization-evasion/index.html",
+    "items": [
+      "/research/unpublished/2014-interjurisdictional-competition-location-decisions-firms/index.html",
+      "/research/articles/2019-interjurisdictional-competition-adverse-selection/index.html",
+      "/research/articles/2003-strategic-interaction-tax-policies-among-states/index.html"
+    ]
+  },
+  {
+    "listing": "/research/articles/2005-does-consumer-sentiment-predict-regional-consumption/index.html",
+    "items": [
+      "/research/articles/2009-measuring-information-content-beige-book-mixed/index.html",
+      "/research/articles/2011-regional-aggregation-forecasting-application-federal-reserves/index.html"
+    ]
+  },
+  {
+    "listing": "/research/articles/2006-information-content-regional-employment-data-forecasting/index.html",
+    "items": [
+      "/research/articles/2011-regional-aggregation-forecasting-application-federal-reserves/index.html",
+      "/research/fed-pubs/2008-regional-aggregation-forecasting-application-federal-reserves/index.html"
+    ]
+  },
+  {
+    "listing": "/research/articles/2007-experiments-financial-liberalization-mexican-banking-sector/index.html",
+    "items": [
+      "/research/articles/2015-did-affordable-housing-legislation-contribute-subprime/index.html",
+      "/research/articles/2010-strategic-online-banking-adoption/index.html"
+    ]
+  },
+  {
+    "listing": "/research/articles/2008-drug-prices-under-medicare-drug-discount/index.html",
+    "items": [
+      "/research/articles/2014-differences-subprime-loan-pricing-across-races/index.html",
+      "/research/articles/2019-interjurisdictional-competition-adverse-selection/index.html",
+      "/research/articles/2006-patent-licensing-revisited-heterogeneous-firms-product/index.html"
+    ]
+  },
+  {
+    "listing": "/research/articles/2009-measuring-information-content-beige-book-mixed/index.html",
+    "items": [
+      "/research/articles/2005-does-consumer-sentiment-predict-regional-consumption/index.html",
+      "/research/fed-pubs/2008-what-is-beige-book-how-is/index.html"
+    ]
+  },
+  {
+    "listing": "/research/articles/2010-strategic-online-banking-adoption/index.html",
+    "items": [
+      "/research/fed-pubs/2004-point-click-or-mortar-brick-look/index.html",
+      "/research/articles/2005-diffusion-electronic-business-united-states/index.html"
+    ]
+  },
+  {
+    "listing": "/research/articles/2011-regional-aggregation-forecasting-application-federal-reserves/index.html",
+    "items": [
+      "/research/fed-pubs/2008-regional-aggregation-forecasting-application-federal-reserves/index.html",
+      "/research/articles/2006-information-content-regional-employment-data-forecasting/index.html"
+    ]
+  },
+  {
+    "listing": "/research/articles/2014-differences-subprime-loan-pricing-across-races/index.html",
+    "items": [
+      "/research/articles/2015-did-affordable-housing-legislation-contribute-subprime/index.html",
+      "/research/unpublished/2012-effect-neighborhood-spillovers-mortgage-selection/index.html"
+    ]
+  },
+  {
+    "listing": "/research/articles/2015-risk-aversion-country-level/index.html",
+    "items": [
+      "/research/articles/2009-impact-inflation-unemployment-subjective-personal-country/index.html",
+      "/research/articles/2013-what-do-happiness-health-satisfaction-data/index.html"
+    ]
+  },
+  {
+    "listing": "/research/articles/2018-state-level-analysis-okuns-law/index.html",
+    "items": [
+      "/research/fed-pubs/2010-mortality-rates-business-cycle/index.html",
+      "/research/articles/2003-strategic-interaction-tax-policies-among-states/index.html"
+    ]
+  },
+  {
+    "listing": "/research/fed-pubs/2001-earned-income-tax-credit-work/index.html",
+    "items": [
+      "/research/fed-pubs/2006-adding-up-economic-effects-immigration/index.html",
+      "/research/fed-pubs/2011-immigration-extremes-skill-distribution/index.html",
+      "/research/unpublished/2014-interjurisdictional-competition-location-decisions-firms/index.html",
+      "/research/fed-pubs/2006-new-views-immigration/index.html"
+    ]
+  },
+  {
+    "listing": "/research/fed-pubs/2001-suburban-expansion/index.html",
+    "items": [
+      "/research/fed-pubs/2008-eighth-district-population-growth-follows-national/index.html",
+      "/research/fed-pubs/2011-hispanics-play-different-role-districts-growth/index.html",
+      "/research/fed-pubs/2003-innovation-is-eighth-district-catching-up/index.html"
+    ]
+  },
+  {
+    "listing": "/research/fed-pubs/2003-cities-centers-innovation/index.html",
+    "items": [
+      "/research/fed-pubs/2010-city-growth-industry-employment-reallocation/index.html",
+      "/research/fed-pubs/2003-innovation-is-eighth-district-catching-up/index.html"
+    ]
+  },
+  {
+    "listing": "/research/fed-pubs/2003-innovation-is-eighth-district-catching-up/index.html",
+    "items": [
+      "/research/fed-pubs/2003-cities-centers-innovation/index.html",
+      "/research/fed-pubs/2016-rosie-refiner-two-manufacturing-industries-rising/index.html"
+    ]
+  },
+  {
+    "listing": "/research/fed-pubs/2004-metropolitan-growth-sun-belt-vs-snow/index.html",
+    "items": [
+      "/research/fed-pubs/2010-city-growth-industry-employment-reallocation/index.html",
+      "/research/fed-pubs/2009-us-migration-over-life-cycle/index.html"
+    ]
+  },
+  {
+    "listing": "/research/fed-pubs/2004-tough-lesson-more-money-doesnt-help/index.html",
+    "items": [
+      "/research/articles/2010-nonlinear-effects-school-quality-house-prices/index.html",
+      "/research/articles/2007-spatial-dependence-models-state-fiscal-policy/index.html"
+    ]
+  },
+  {
+    "listing": "/research/fed-pubs/2005-economics-giving/index.html",
+    "items": [
+      "/research/fed-pubs/2005-economics-charitable-giving-what-gives/index.html",
+      "/research/articles/2006-geography-economics-politics-lottery-adoption/index.html"
+    ]
+  },
+  {
+    "listing": "/research/fed-pubs/2006-adding-up-economic-effects-immigration/index.html",
+    "items": [
+      "/research/fed-pubs/2011-immigration-extremes-skill-distribution/index.html",
+      "/research/fed-pubs/2006-new-views-immigration/index.html"
+    ]
+  },
+  {
+    "listing": "/research/fed-pubs/2006-new-views-immigration/index.html",
+    "items": [
+      "/research/fed-pubs/2006-adding-up-economic-effects-immigration/index.html",
+      "/research/fed-pubs/2011-immigration-extremes-skill-distribution/index.html"
+    ]
+  },
+  {
+    "listing": "/research/fed-pubs/2007-employment-growth-slows-eighth-district/index.html",
+    "items": [
+      "/research/fed-pubs/2010-eighth-district-fares-better-than-nation/index.html",
+      "/research/fed-pubs/2009-employment-growth-mixed-across-eighth-district/index.html"
+    ]
+  },
+  {
+    "listing": "/research/fed-pubs/2007-us-exporters-rare-but-beneficial/index.html",
+    "items": [
+      "/research/fed-pubs/2012-manufacturing-construction-decline-ranks-top-10/index.html",
+      "/research/fed-pubs/2007-us-exporters-rare-breed/index.html",
+      "/research/fed-pubs/2013-urban-areas-host-largest-manufacturing-service/index.html"
+    ]
+  },
+  {
+    "listing": "/research/fed-pubs/2008-local-income-inequality/index.html",
+    "items": [
+      "/research/fed-pubs/2010-city-growth-industry-employment-reallocation/index.html",
+      "/research/fed-pubs/2011-immigrants-skills-occupations-locations/index.html",
+      "/research/fed-pubs/2004-metropolitan-growth-sun-belt-vs-snow/index.html",
+      "/research/fed-pubs/2009-us-migration-over-life-cycle/index.html"
+    ]
+  },
+  {
+    "listing": "/research/fed-pubs/2008-strategic-social-responsibility/index.html",
+    "items": [
+      "/research/fed-pubs/2009-corporate-social-responsibility-can-be-profitable/index.html",
+      "/research/fed-pubs/2005-economics-giving/index.html"
+    ]
+  },
+  {
+    "listing": "/research/fed-pubs/2008-which-came-first-democracy-or-growth/index.html",
+    "items": [
+      "/research/fed-pubs/2004-entrepreneurship/index.html",
+      "/research/fed-pubs/2011-which-came-first-better-education-or-better/index.html"
+    ]
+  },
+  {
+    "listing": "/research/fed-pubs/2009-district-fares-better-than-nation-prime-mortgage/index.html",
+    "items": [
+      "/research/articles/2015-did-affordable-housing-legislation-contribute-subprime/index.html",
+      "/research/articles/2014-differences-subprime-loan-pricing-across-races/index.html",
+      "/research/fed-pubs/2010-eighth-district-fares-better-than-nation/index.html"
+    ]
+  },
+  {
+    "listing": "/research/fed-pubs/2009-us-migration-over-life-cycle/index.html",
+    "items": [
+      "/research/fed-pubs/2010-city-growth-industry-employment-reallocation/index.html",
+      "/research/fed-pubs/2004-metropolitan-growth-sun-belt-vs-snow/index.html",
+      "/research/articles/2011-patterns-interstate-migration-united-states-from/index.html"
+    ]
+  },
+  {
+    "listing": "/research/fed-pubs/2010-dismal-science-tackles-happiness-data/index.html",
+    "items": [
+      "/research/fed-pubs/2010-some-cases-sick-economy-can-be/index.html",
+      "/research/articles/2009-impact-inflation-unemployment-subjective-personal-country/index.html"
+    ]
+  },
+  {
+    "listing": "/research/fed-pubs/2010-mortality-rates-business-cycle/index.html",
+    "items": [
+      "/research/fed-pubs/2010-some-cases-sick-economy-can-be/index.html",
+      "/research/fed-pubs/2010-dismal-science-tackles-happiness-data/index.html"
+    ]
+  },
+  {
+    "listing": "/research/fed-pubs/2011-effects-education-health/index.html",
+    "items": [
+      "/research/fed-pubs/2004-metropolitan-growth-sun-belt-vs-snow/index.html",
+      "/research/fed-pubs/2011-which-came-first-better-education-or-better/index.html"
+    ]
+  },
+  {
+    "listing": "/research/fed-pubs/2011-immigrants-skills-occupations-locations/index.html",
+    "items": [
+      "/research/fed-pubs/2011-immigration-extremes-skill-distribution/index.html",
+      "/research/fed-pubs/2020-labor-market-skills-foreign-born-workers-united-states/index.html"
+    ]
+  },
+  {
+    "listing": "/research/fed-pubs/2011-which-came-first-better-education-or-better/index.html",
+    "items": [
+      "/research/fed-pubs/2010-some-cases-sick-economy-can-be/index.html",
+      "/research/fed-pubs/2011-effects-education-health/index.html"
+    ]
+  },
+  {
+    "listing": "/research/fed-pubs/2013-urban-areas-host-largest-manufacturing-service/index.html",
+    "items": [
+      "/research/fed-pubs/2010-eighth-district-fares-better-than-nation/index.html",
+      "/research/fed-pubs/2009-employment-growth-mixed-across-eighth-district/index.html",
+      "/research/fed-pubs/2007-employment-growth-slows-eighth-district/index.html",
+      "/research/fed-pubs/2012-manufacturing-construction-decline-ranks-top-10/index.html"
+    ]
+  },
+  {
+    "listing": "/research/fed-pubs/2016-rosie-refiner-two-manufacturing-industries-rising/index.html",
+    "items": [
+      "/research/fed-pubs/2007-employment-growth-slows-eighth-district/index.html",
+      "/research/fed-pubs/2012-manufacturing-construction-decline-ranks-top-10/index.html"
+    ]
+  },
+  {
+    "listing": "/research/fed-pubs/2020-labor-market-skills-foreign-born-workers-united-states/index.html",
+    "items": [
+      "/research/fed-pubs/2006-adding-up-economic-effects-immigration/index.html",
+      "/research/fed-pubs/2011-immigrants-skills-occupations-locations/index.html",
+      "/research/fed-pubs/2011-immigration-extremes-skill-distribution/index.html",
+      "/research/fed-pubs/2006-new-views-immigration/index.html"
+    ]
+  },
+  {
+    "listing": "/research/fed-pubs/2022-age-adjusted-covid-19-mortality-rates-demographic-groups/index.html",
+    "items": [
+      "/research/fed-pubs/2010-mortality-rates-business-cycle/index.html",
+      "/research/fed-pubs/2011-effects-education-health/index.html"
+    ]
+  },
+  {
+    "listing": "/research/unpublished/2012-effect-neighborhood-spillovers-mortgage-selection/index.html",
+    "items": [
+      "/research/articles/2015-did-affordable-housing-legislation-contribute-subprime/index.html",
+      "/research/articles/2014-differences-subprime-loan-pricing-across-races/index.html"
+    ]
+  }
+]

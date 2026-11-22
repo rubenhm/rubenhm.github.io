@@ -1,0 +1,654 @@
+{
+  "frbcddb20220323": {
+    "categories": [
+      "Health Education and Welfare",
+      "Econometrics and Methods",
+      "Labor and Demographic Economics"
+    ],
+    "borderline": false
+  },
+  "frbcddb20200827": {
+    "categories": [
+      "Labor and Demographic Economics",
+      "Urban and Regional Economics"
+    ],
+    "borderline": false
+  },
+  "frbcec202021": {
+    "categories": [
+      "Labor and Demographic Economics",
+      "Urban and Regional Economics"
+    ],
+    "borderline": false
+  },
+  "frbcec202010": {
+    "categories": [
+      "Labor and Demographic Economics",
+      "Economic Development and Growth",
+      "International and Trade"
+    ],
+    "borderline": false
+  },
+  "jpube2019": {
+    "categories": [
+      "Public Economics",
+      "Urban and Regional Economics",
+      "Microeconomics"
+    ],
+    "borderline": false
+  },
+  "rsue2018": {
+    "categories": [
+      "Macroeconomics and Monetary Economics",
+      "Econometrics and Methods",
+      "Urban and Regional Economics"
+    ],
+    "borderline": false
+  },
+  "rsue2017": {
+    "categories": [
+      "Macroeconomics and Monetary Economics",
+      "Urban and Regional Economics",
+      "Econometrics and Methods"
+    ],
+    "borderline": false
+  },
+  "fedff2016fall": {
+    "categories": [
+      "Industrial Organization",
+      "Macroeconomics and Monetary Economics",
+      "Urban and Regional Economics",
+      "Economic Development and Growth"
+    ],
+    "borderline": false
+  },
+  "fedlrv2015q1": {
+    "categories": [
+      "Health Education and Welfare",
+      "Microeconomics",
+      "Economic Development and Growth"
+    ],
+    "borderline": false
+  },
+  "ree2015": {
+    "categories": [
+      "Banking and Finance",
+      "Macroeconomics and Monetary Economics",
+      "Urban and Regional Economics",
+      "Public Economics"
+    ],
+    "borderline": false
+  },
+  "fedles2014n23": {
+    "categories": [
+      "Banking and Finance",
+      "Macroeconomics and Monetary Economics",
+      "Microeconomics"
+    ],
+    "borderline": false
+  },
+  "fedlwp2014-036": {
+    "categories": [
+      "Health Education and Welfare",
+      "Econometrics and Methods",
+      "Public Economics",
+      "Microeconomics"
+    ],
+    "borderline": false
+  },
+  "rsue2014": {
+    "categories": [
+      "Banking and Finance",
+      "Labor and Demographic Economics",
+      "Urban and Regional Economics",
+      "Econometrics and Methods"
+    ],
+    "borderline": false
+  },
+  "fedlre2013jul": {
+    "categories": [
+      "Industrial Organization",
+      "Urban and Regional Economics",
+      "Labor and Demographic Economics"
+    ],
+    "borderline": false
+  },
+  "jepsy2013": {
+    "categories": [
+      "Banking and Finance",
+      "Health Education and Welfare",
+      "Microeconomics"
+    ],
+    "borderline": false
+  },
+  "fedlre2012oct": {
+    "categories": [
+      "Macroeconomics and Monetary Economics",
+      "Industrial Organization",
+      "Urban and Regional Economics",
+      "Labor and Demographic Economics"
+    ],
+    "borderline": false
+  },
+  "fedles2011n11": {
+    "categories": [
+      "Health Education and Welfare",
+      "Microeconomics",
+      "Labor and Demographic Economics"
+    ],
+    "borderline": false
+  },
+  "fedles2010n35": {
+    "categories": [
+      "Macroeconomics and Monetary Economics",
+      "Health Education and Welfare",
+      "Microeconomics",
+      "Labor and Demographic Economics"
+    ],
+    "borderline": false
+  },
+  "fedles2011n31": {
+    "categories": [
+      "Labor and Demographic Economics",
+      "Public Economics",
+      "Economic Development and Growth",
+      "International and Trade"
+    ],
+    "borderline": false
+  },
+  "fedlre2011apr": {
+    "categories": [
+      "Health Education and Welfare",
+      "Public Economics",
+      "Labor and Demographic Economics"
+    ],
+    "borderline": false
+  },
+  "fedlre2011jul": {
+    "categories": [
+      "Labor and Demographic Economics",
+      "Urban and Regional Economics",
+      "Economic Development and Growth",
+      "Economic History"
+    ],
+    "borderline": false
+  },
+  "fedlre2011oct": {
+    "categories": [
+      "Labor and Demographic Economics",
+      "Urban and Regional Economics",
+      "Economic Development and Growth"
+    ],
+    "borderline": false
+  },
+  "fedlrv2011may": {
+    "categories": [
+      "Labor and Demographic Economics",
+      "Urban and Regional Economics"
+    ],
+    "borderline": false
+  },
+  "fedlrv2011mayb": {
+    "categories": [
+      "Econometrics and Methods",
+      "Urban and Regional Economics"
+    ],
+    "borderline": false
+  },
+  "fedlwp2011-036": {
+    "categories": [
+      "Banking and Finance",
+      "Labor and Demographic Economics",
+      "Urban and Regional Economics"
+    ],
+    "borderline": false
+  },
+  "fedles2010n13": {
+    "categories": [
+      "Industrial Organization",
+      "Labor and Demographic Economics",
+      "Urban and Regional Economics",
+      "Economic Development and Growth"
+    ],
+    "borderline": false
+  },
+  "fedlre2010jan": {
+    "categories": [
+      "Macroeconomics and Monetary Economics",
+      "Health Education and Welfare",
+      "Economic Development and Growth",
+      "Labor and Demographic Economics"
+    ],
+    "borderline": false
+  },
+  "fedlre2010janb": {
+    "categories": [
+      "Industrial Organization",
+      "Macroeconomics and Monetary Economics",
+      "Urban and Regional Economics",
+      "Economic Development and Growth"
+    ],
+    "borderline": false
+  },
+  "fedlre2010oct": {
+    "categories": [
+      "Macroeconomics and Monetary Economics",
+      "Health Education and Welfare",
+      "Economic History",
+      "Labor and Demographic Economics"
+    ],
+    "borderline": false
+  },
+  "fedlrv2010may": {
+    "categories": [
+      "Econometrics and Methods",
+      "Urban and Regional Economics",
+      "Health Education and Welfare"
+    ],
+    "borderline": false
+  },
+  "jobafi2010": {
+    "categories": [
+      "Banking and Finance",
+      "Econometrics and Methods",
+      "Industrial Organization",
+      "Economic Development and Growth"
+    ],
+    "borderline": false
+  },
+  "fedles2009n33": {
+    "categories": [
+      "Labor and Demographic Economics",
+      "Urban and Regional Economics",
+      "Public Economics",
+      "Economic Development and Growth"
+    ],
+    "borderline": false
+  },
+  "fedlre2009apr": {
+    "categories": [
+      "Business Economics",
+      "Public Economics",
+      "Microeconomics",
+      "Industrial Organization",
+      "Agricultural and Natural Resources"
+    ],
+    "borderline": false
+  },
+  "fedlre2009jan": {
+    "categories": [
+      "Labor and Demographic Economics",
+      "Economic History",
+      "Macroeconomics and Monetary Economics",
+      "Industrial Organization",
+      "Urban and Regional Economics"
+    ],
+    "borderline": false
+  },
+  "fedlre2009jul": {
+    "categories": [
+      "Public Economics",
+      "Banking and Finance",
+      "Macroeconomics and Monetary Economics",
+      "Industrial Organization",
+      "Urban and Regional Economics"
+    ],
+    "borderline": false
+  },
+  "fedlrv2009may": {
+    "categories": [
+      "Macroeconomics and Monetary Economics",
+      "Health Education and Welfare",
+      "Microeconomics"
+    ],
+    "borderline": false
+  },
+  "jmoncb2009": {
+    "categories": [
+      "Macroeconomics and Monetary Economics",
+      "Econometrics and Methods",
+      "Urban and Regional Economics"
+    ],
+    "borderline": false
+  },
+  "fedlne2008dec": {
+    "categories": [
+      "Public Economics",
+      "Labor and Demographic Economics",
+      "Urban and Regional Economics",
+      "Microeconomics"
+    ],
+    "borderline": false
+  },
+  "fedlne2008sep": {
+    "categories": [
+      "Industrial Organization",
+      "Business Economics",
+      "Agricultural and Natural Resources",
+      "Microeconomics"
+    ],
+    "borderline": false
+  },
+  "fedlrd2008oct": {
+    "categories": [
+      "Econometrics and Methods",
+      "Urban and Regional Economics"
+    ],
+    "borderline": false
+  },
+  "fedlre2008apr": {
+    "categories": [
+      "Public Economics",
+      "Macroeconomics and Monetary Economics",
+      "Microeconomics",
+      "Economic Development and Growth",
+      "Political Economy and Economic Systems"
+    ],
+    "borderline": false
+  },
+  "fedlre2008jul": {
+    "categories": [
+      "Labor and Demographic Economics",
+      "Urban and Regional Economics",
+      "Economic Development and Growth",
+      "Economic History"
+    ],
+    "borderline": false
+  },
+  "fedlre2008oct": {
+    "categories": [
+      "Macroeconomics and Monetary Economics",
+      "Urban and Regional Economics",
+      "Economic History"
+    ],
+    "borderline": false
+  },
+  "fedlrv2008nov": {
+    "categories": [
+      "Industrial Organization",
+      "Health Education and Welfare",
+      "Microeconomics"
+    ],
+    "borderline": false
+  },
+  "fedlne2007aug": {
+    "categories": [
+      "Industrial Organization",
+      "Urban and Regional Economics",
+      "Economic Development and Growth",
+      "International and Trade"
+    ],
+    "borderline": false
+  },
+  "fedlre2007oct": {
+    "categories": [
+      "Industrial Organization",
+      "Urban and Regional Economics",
+      "Economic Development and Growth",
+      "International and Trade"
+    ],
+    "borderline": false
+  },
+  "fedlre2007octb": {
+    "categories": [
+      "Labor and Demographic Economics",
+      "Economic History",
+      "Macroeconomics and Monetary Economics",
+      "Industrial Organization",
+      "Urban and Regional Economics"
+    ],
+    "borderline": false
+  },
+  "fedlrv2007sep": {
+    "categories": [
+      "Banking and Finance",
+      "Political Economy and Economic Systems",
+      "Microeconomics"
+    ],
+    "borderline": false
+  },
+  "pufire2007": {
+    "categories": [
+      "Econometrics and Methods",
+      "Urban and Regional Economics",
+      "Public Economics"
+    ],
+    "borderline": false
+  },
+  "ecolet2006": {
+    "categories": [
+      "Econometrics and Methods",
+      "Urban and Regional Economics"
+    ],
+    "borderline": false
+  },
+  "fedlne2006jun": {
+    "categories": [
+      "Labor and Demographic Economics",
+      "Economic Development and Growth",
+      "International and Trade"
+    ],
+    "borderline": false
+  },
+  "fedlre2006jan": {
+    "categories": [
+      "Labor and Demographic Economics",
+      "Economic History",
+      "Macroeconomics and Monetary Economics",
+      "Industrial Organization",
+      "Urban and Regional Economics"
+    ],
+    "borderline": false
+  },
+  "fedlre2006jul": {
+    "categories": [
+      "Labor and Demographic Economics",
+      "Economic History",
+      "Macroeconomics and Monetary Economics",
+      "Economic Development and Growth",
+      "Industrial Organization",
+      "Urban and Regional Economics"
+    ],
+    "borderline": false
+  },
+  "fedlre2006oct": {
+    "categories": [
+      "Labor and Demographic Economics",
+      "Economic Development and Growth",
+      "International and Trade"
+    ],
+    "borderline": false
+  },
+  "fedlrv2006may": {
+    "categories": [
+      "Urban and Regional Economics",
+      "Public Economics",
+      "Microeconomics"
+    ],
+    "borderline": false
+  },
+  "indorg2006": {
+    "categories": [
+      "Industrial Organization",
+      "Economic Development and Growth"
+    ],
+    "borderline": false
+  },
+  "fedlne2005oct": {
+    "categories": [
+      "Public Economics",
+      "Industrial Organization",
+      "Microeconomics"
+    ],
+    "borderline": false
+  },
+  "fedlre2005jul": {
+    "categories": [
+      "Health Education and Welfare",
+      "Labor and Demographic Economics",
+      "Economic History",
+      "Economic Development and Growth",
+      "Urban and Regional Economics"
+    ],
+    "borderline": false
+  },
+  "fedlre2005oct": {
+    "categories": [
+      "Public Economics",
+      "Health Education and Welfare",
+      "Microeconomics"
+    ],
+    "borderline": false
+  },
+  "fedlrv2005jan": {
+    "categories": [
+      "Industrial Organization",
+      "Microeconomics",
+      "Economic Development and Growth",
+      "Business Economics"
+    ],
+    "borderline": false
+  },
+  "fedlrv2005mar": {
+    "categories": [
+      "Macroeconomics and Monetary Economics",
+      "Urban and Regional Economics",
+      "Microeconomics"
+    ],
+    "borderline": false
+  },
+  "bejeap2004": {
+    "categories": [
+      "Public Economics",
+      "Urban and Regional Economics",
+      "Microeconomics"
+    ],
+    "borderline": false
+  },
+  "fedlne2004may": {
+    "categories": [
+      "Industrial Organization",
+      "Microeconomics",
+      "Economic Development and Growth",
+      "Political Economy and Economic Systems"
+    ],
+    "borderline": false
+  },
+  "fedlne2004oct": {
+    "categories": [
+      "Labor and Demographic Economics",
+      "Urban and Regional Economics",
+      "Agricultural and Natural Resources",
+      "Economic Development and Growth"
+    ],
+    "borderline": false
+  },
+  "fedlre2004apr": {
+    "categories": [
+      "Health Education and Welfare",
+      "Public Economics",
+      "Labor and Demographic Economics"
+    ],
+    "borderline": false
+  },
+  "fedlre2004oct": {
+    "categories": [
+      "Banking and Finance",
+      "Industrial Organization",
+      "Urban and Regional Economics",
+      "Microeconomics"
+    ],
+    "borderline": false
+  },
+  "iecrev2004": {
+    "categories": [
+      "Econometrics and Methods",
+      "Microeconomics",
+      "Law and Economics"
+    ],
+    "borderline": false
+  },
+  "fedlwp2003-042b": {
+    "categories": [
+      "Econometrics and Methods",
+      "Urban and Regional Economics",
+      "Public Economics"
+    ],
+    "borderline": false
+  },
+  "fedlne2003dec": {
+    "categories": [
+      "Industrial Organization",
+      "Microeconomics",
+      "Economic Development and Growth"
+    ],
+    "borderline": false
+  },
+  "fedlne2003mar": {
+    "categories": [
+      "Industrial Organization",
+      "Urban and Regional Economics",
+      "Economic Development and Growth"
+    ],
+    "borderline": false
+  },
+  "fedlre2003apr": {
+    "categories": [
+      "Industrial Organization",
+      "Urban and Regional Economics",
+      "Economic Development and Growth",
+      "Labor and Demographic Economics"
+    ],
+    "borderline": false
+  },
+  "fedlrv2003may": {
+    "categories": [
+      "Econometrics and Methods",
+      "Urban and Regional Economics",
+      "Public Economics"
+    ],
+    "borderline": false
+  },
+  "fedlne2002nov": {
+    "categories": [
+      "Health Education and Welfare",
+      "Public Economics",
+      "Microeconomics",
+      "Labor and Demographic Economics"
+    ],
+    "borderline": false
+  },
+  "fedlrv2002may": {
+    "categories": [
+      "Industrial Organization",
+      "Labor and Demographic Economics",
+      "Urban and Regional Economics"
+    ],
+    "borderline": false
+  },
+  "fedlne2001apr": {
+    "categories": [
+      "Health Education and Welfare",
+      "Public Economics",
+      "Microeconomics",
+      "Labor and Demographic Economics"
+    ],
+    "borderline": false
+  },
+  "fedlne2001oct": {
+    "categories": [
+      "Labor and Demographic Economics",
+      "Public Economics",
+      "International and Trade"
+    ],
+    "borderline": false
+  },
+  "fedlre2001oct": {
+    "categories": [
+      "Labor and Demographic Economics",
+      "Urban and Regional Economics",
+      "Economic History"
+    ],
+    "borderline": false
+  }
+}
