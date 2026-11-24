@@ -68,6 +68,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="quarto:offset" content="../../../">
 <script src="../../../site_libs/quarto-listing/list.min.js"></script>
 <script src="../../../site_libs/quarto-listing/quarto-listing.js"></script>
+<script src="../../../site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="../../../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
 <script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
@@ -79,14 +81,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-9b13294eb98a7ccc9837366643235be5.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-7e81aea6a40004cbec14db8f83f49827.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../../site_libs/bootstrap/bootstrap-dark-256deae87a136ac20d510f053f550997.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="../../../site_libs/bootstrap/bootstrap-7e81aea6a40004cbec14db8f83f49827.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
-<script src="../../../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script>
-<link href="../../../site_libs/quarto-contrib/fontawesome6-6.7.2/all.min.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-contrib/fontawesome6-6.7.2/latex-fontsize.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-6d8dda6857bef871feda3986595c7c29.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-68d26a3458bc6fd3314dbadba61de66d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-6d8dda6857bef871feda3986595c7c29.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <link href="../../../site_libs/quarto-contrib/academicons-1.9.4/all.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-contrib/academicons-1.9.4/size.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
+<link href="../../../site_libs/quarto-contrib/academicons-1.9.4/size.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-contrib/fontawesome6-6.7.2/all.min.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-contrib/fontawesome6-6.7.2/latex-fontsize.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -140,7 +141,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       window['quarto-listing-loaded']();
     }
   })
-  </script><style>
+  </script><script type="text/javascript" charset="UTF-8">
+document.addEventListener('DOMContentLoaded', function () {
+cookieconsent.run({
+  "notice_banner_type":"simple",
+  "consent_type":"express",
+  "palette":"light",
+  "language":"en",
+  "page_load_consent_levels":["strictly-necessary"],
+  "notice_banner_reject_button_hide":false,
+  "preferences_center_close_button_hide":false,
+  "website_name":""
+  ,
+"language":"en"
+  });
+});
+</script><style>
 
       .quarto-title-block .quarto-title-banner h1,
       .quarto-title-block .quarto-title-banner h2,
@@ -157,7 +173,39 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 background: #0b3556;
       }
 </style>
-<script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script><script type="text/javascript">
+<!-- GA4 (G-KTHTSBRKDY), consent-gated. Quarto's cookie-consent banner
+     (_quarto.yml: cookie-consent) runs scripts marked cookie-consent="tracking"
+     only after the visitor opts in, so nothing reaches Google before that:
+     this snippet loads gtag.js itself instead of using Quarto's
+     google-analytics option, which loads gtag.js unconditionally. --><script type="text/plain" cookie-consent="tracking">
+  (function () {
+    var s = document.createElement("script");
+    s.async = true;
+    s.src = "https://www.googletagmanager.com/gtag/js?id=G-KTHTSBRKDY";
+    document.head.appendChild(s);
+  })();
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag("js", new Date());
+  gtag("config", "G-KTHTSBRKDY");
+</script><!-- The banner's stock wording mentions "personalized content and targeted
+     ads", which this site doesn't do; replace it once the banner appears. --><script>
+  document.addEventListener("DOMContentLoaded", function () {
+    function fix() {
+      var title = document.querySelector(".cc-nb-title");
+      var text = document.querySelector(".cc-nb-text");
+      if (!title || !text) return false;
+      title.textContent = "Analytics cookies";
+      text.textContent = "With your consent, this site uses Google Analytics to count visits " +
+        "and see which pages are read. No ads and no personalised content. You can change " +
+        "your choice any time with “Cookie Preferences” at the bottom of every page.";
+      return true;
+    }
+    if (fix()) return;
+    var mo = new MutationObserver(function () { if (fix()) mo.disconnect(); });
+    mo.observe(document.body, { childList: true, subtree: true });
+  });
+</script><script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script><script type="text/javascript">
 const typesetMath = (el) => {
   if (window.MathJax) {
     // MathJax Typeset
@@ -227,23 +275,23 @@ window.Quarto = {
 <ul class="navbar-nav navbar-nav-scroll ms-auto">
 <li class="nav-item">
     <a class="nav-link" href="https://www.linkedin.com/in/rubenhernandezmurillo"> 
-<span class="menu-text"><iconify-icon role="img" inline="" icon="bi:linkedin" style="font-size: 1.1em;" aria-label="Icon linkedin from bi Iconify.design set." title="LinkedIn"></iconify-icon></span></a>
+<span class="menu-text"><i class="fa-brands fa-linkedin" title="LinkedIn" aria-label="linkedin"></i></span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="https://github.com/rubenhm"> 
-<span class="menu-text"><iconify-icon role="img" inline="" icon="bi:github" style="font-size: 1.1em;" aria-label="Icon github from bi Iconify.design set." title="GitHub"></iconify-icon></span></a>
+<span class="menu-text"><i class="fa-brands fa-github" title="GitHub" aria-label="github"></i></span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="https://ideas.repec.org/e/phe35.html"> 
-<span class="menu-text"><iconify-icon role="img" inline="" icon="academicons:ideas-repec" style="font-size: 1.3em;" aria-label="Icon ideas-repec from academicons Iconify.design set." title="Ideas RePEc"></iconify-icon></span></a>
+<span class="menu-text"><i class="ai  ai-ideas-repec" title="Ideas RePEc" aria-label="ideas-repec"></i></span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="https://scholar.google.com/citations?user=%7B%7B<%20var%20ids.google_scholar%20>%7D%7D=en"> 
-<span class="menu-text"><iconify-icon role="img" inline="" icon="academicons:google-scholar-square" style="font-size: 1.3em;" aria-label="Icon google-scholar-square from academicons Iconify.design set." title="Google Scholar"></iconify-icon></span></a>
+<span class="menu-text"><i class="ai  ai-google-scholar-square" title="Google Scholar" aria-label="google-scholar-square"></i></span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="https://orcid.org/%7B%7B<%20var%20ids.orcid%20>%7D%7D"> 
-<span class="menu-text"><iconify-icon role="img" inline="" icon="simple-icons:orcid" style="font-size: 1.1em;" aria-label="Icon orcid from simple-icons Iconify.design set." title="Orcid"></iconify-icon></span></a>
+<span class="menu-text"><i class="ai  ai-orcid" title="ORCID" aria-label="orcid"></i></span></a>
   </li>  
 </ul>
 </div> <!-- /navcollapse -->
@@ -619,7 +667,7 @@ window.Quarto = {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/rubenhm\.org");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -952,8 +1000,8 @@ window.Quarto = {
       &nbsp;
     </div>   
     <div class="nav-footer-center">
-<p><a href="../../../cv/" title="CV"><iconify-icon role="img" inline="" icon="academicons:cv" style="font-size: 1.3em;" aria-label="Icon cv from academicons Iconify.design set." title="CV"></iconify-icon></a> <a href="https://www.linkedin.com/in/rubenhernandezmurillo" target="blank"><iconify-icon role="img" inline="" icon="bi:linkedin" style="font-size: 1.3em;" aria-label="Icon linkedin from bi Iconify.design set." title="LinkedIn"></iconify-icon></a> <a href="https://github.com/rubenhm" target="blank"><iconify-icon role="img" inline="" icon="bi:github" style="font-size: 1.3em;" aria-label="Icon github from bi Iconify.design set." title="GitHub"></iconify-icon></a> <a href="https://ideas.repec.org/e/phe35.html" target="blank"><iconify-icon role="img" inline="" icon="academicons:ideas-repec" style="font-size: 1.3em;" aria-label="Icon ideas-repec from academicons Iconify.design set." title="Ideas RePEc"></iconify-icon></a> <a href="https://scholar.google.com/citations?user=ONu4SBcAAAAJ" target="blank"><iconify-icon role="img" inline="" icon="academicons:google-scholar-square" style="font-size: 1.3em;" aria-label="Icon google-scholar-square from academicons Iconify.design set." title="Google Scholar"></iconify-icon></a> <a href="https://orcid.org/0000-0001-6474-9510" target="blank"><iconify-icon role="img" inline="" icon="simple-icons:orcid" style="font-size: 1.3em;" aria-label="Icon orcid from simple-icons Iconify.design set." title="Orcid"></iconify-icon></a></p>
-</div>
+<p><a href="../../../cv/" title="CV"><i class="ai  ai-cv" title="CV" aria-label="cv"></i></a> <a href="https://www.linkedin.com/in/rubenhernandezmurillo" target="blank"><i class="fa-brands fa-linkedin" title="LinkedIn" aria-label="linkedin"></i></a> <a href="https://github.com/rubenhm" target="blank"><i class="fa-brands fa-github" title="GitHub" aria-label="github"></i></a> <a href="https://ideas.repec.org/e/phe35.html" target="blank"><i class="ai  ai-ideas-repec" title="Ideas RePEc" aria-label="ideas-repec"></i></a> <a href="https://scholar.google.com/citations?user=ONu4SBcAAAAJ" target="blank"><i class="ai  ai-google-scholar-square" title="Google Scholar" aria-label="google-scholar-square"></i></a> <a href="https://orcid.org/0000-0001-6474-9510" target="blank"><i class="ai  ai-orcid" title="ORCID" aria-label="orcid"></i></a></p>
+<div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
     <div class="nav-footer-right">
 <p>Made with <i class="fa-brands fa-r-project" aria-label="r-project"></i> and <a href="https://quarto.org/">Quarto</a>. Design inspired by <a href="https://www.andrewheiss.com/">Andrew Heiss</a> and <a href="https://www.jhelvy.com/">John Helveston</a>.</p>
 </div>
